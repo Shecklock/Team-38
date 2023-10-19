@@ -1,1 +1,2 @@
-class Math {}
+class Math (int x, int y) {
+}
