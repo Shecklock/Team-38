@@ -13,3 +13,4 @@ This is a e-commerce website called "Sportify Pro Max"
 
 <h2>Website Walkthrough</h2>
 
+The webiste is still in development 
