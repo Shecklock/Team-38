@@ -3,6 +3,8 @@
 <h2>Environment used</h2>
 - VS code<br>
 - Laravelle<br>
+- MyphpAdmin<br>
+- virtualmin<br>
 
 <h2>Description</h2>
 This is the website/software development project in group 38 in Aston university, this is a website developed during the module "team project" during the academic year 2023-2024.
@@ -13,3 +15,4 @@ This is a e-commerce website called "Sportify Pro Max"
 
 <h2>Website Walkthrough</h2>
 
+The webiste is still in development 
