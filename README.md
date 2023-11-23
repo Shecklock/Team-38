@@ -7,7 +7,7 @@
 - virtualmin<br>
 
 <h2>Description</h2>
-This is the website/software development project in group 38 in Aston university, this is a website developed during the module "team project" during the academic year 2023-2024.
+This is the website/software development project in group 38 during the study in Aston university, this is a website developed during the module "team project" during the academic year 2023-2024.
 
 This is a e-commerce website called "Sportify Pro Max"
 
