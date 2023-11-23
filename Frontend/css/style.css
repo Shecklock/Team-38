@@ -1,89 +1,117 @@
 *{
     margin:0;
     padding:0;
-    font-family: Century;
-    
 }
 
-header{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../sources/background_color.png);
-    height:20vh;
-    background-size: cover;
-    background-position: center;
-    min-height:100px;
-    padding-bottom: 10px;
+body{
+    background:white;
+    font-size:14px;
+    font-family:sans-serif;
 }
 
-ul{
-    float:right;
-    list-style-type:none;
-    margin-top: 30px;
-    min-height: 400px;
-    margin-right: 60px;
-    font-size:20px;
-}
-
-ul li{
-    display:inline-block;
+.container{
+    width:80%;
+    margin:50px auto;
 
 }
-ul li a{
-    text-decoration: none;
-    color:white;
-    padding: 5px 20px;
-    border:1px solid transparent;
-    transition: 0.5 ease;
-}
 
-ul li a:hover{
-    background-color: white;
-    color: black;
-}
-
-ul li.active a{
-    background-color: white;
-    color: black;
-}
-
-.logo img{
-    float:left;
-    width: 120px;
-    height:120px;
-    
-}
-
-.main{
-    max-width: 1200px;
-    margin:auto;
-}
-
-.contact-us-form{
-    position: relative;
-    margin:0px;
-    padding:30px;
-    box-shadow: border-box;
-    font-family: Century;
-    align-content: center;
-    min-height: 100vh;
+.contact-box{
+    background-color:cadetblue;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 30px;
+    
+
+}
+.contact-form{
+    flex-basis: 60%;
+    padding:40px 60px;
+
+}
+
+.company-info{
+    flex-basis: 40%;
+    padding:40px;
+    background-color: darkcyan;
     color:black;
-    font-size: 16px;
-    flex-direction: column;
-    background-color: dimgrey;
+    border-radius: 30px;
+
+}
+h1{
+    margin-bottom:10px;
+
+}
+.container p{
+    margin-bottom:40px;
+    font-family:sans-serif;
+
+}
+
+.input-info{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-info .inputs{
+    flex-basis:45%;
+}
+
+input{
     width:100%;
-    padding-bottom: 0px;
+    border:none;
+    border-bottom:1px solid black;
+    outline:none;
+    padding-bottom: 5px;
+}
+textarea{
+    width:100%;
+    border:1px solid black;
+    outline:none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+label{
+    margin-bottom: 6px;
+    display:block;
+    color:white;
 }
 
-.contact-us-form .content{
-    text-align: center;
-    max-width: 800px;
-    font-family: Century;
+button{
+    background:white;
+    color:black;
+    border:none;
+    width:70px;
+    margin-top:20px;
+    border-radius: 30px;
+    height:25px;
 }
 
-.contact-us-form .content h2{
-    text-align: center;
-    font-family: Century;
-    font-size: 20px;
+.contact-form h3{
+    color:white;
+    font-family:sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+}
+
+.company-info h3{
+    color:white;
+    font-family:sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+}
+
+tr td:first-child{
+    padding-right:20px;
+
+}
+
+tr td{
+    padding-top: 40px;
+}
+.company-info{
+    color:white;
+    font-family:sans-serif;
+    
 }
