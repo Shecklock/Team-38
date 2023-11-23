@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; // Ensure you are extending the correct base controller
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
