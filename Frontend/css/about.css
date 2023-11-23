@@ -43,8 +43,29 @@ body{
     color: white;
 }
 
-.about-us{
+.About-Us{
     color:white;
-    margin-top: 50px;
-    padding-top: 50px;
+    margin-top:50px;
+    padding: 150px;
+    padding-bottom: 250px;
+    text-align:center;
+    display: flex;
+    justify-content:center;
+    background-color: blueviolet;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: column;
+}
+
+
+.Our-team{
+    color:white;
+    margin-top: 0px;
+    padding: 70px;
+    padding-bottom: 250px;
+    text-align: left;
+    display: flex;
+    justify-content:center;
+    background-color: green;
+
 }
