@@ -1,45 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=”en”>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> sign in </title>
-    <link rel="stylesheet" href="styles.css">
+ <meta charset="UTF-8"/> 
+ <link rel="stylesheet" href="signin.css">
+<title> Sign in </title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h1> </h1>
-            <p> Don't have an account? </p>
-            <p> First name : </p>
-            <input type = "firstname" name = "firstname" placeholder = "first name" />
-            <p> surname : </p>
-            <input type = "surname" name = "surname" placeholder = "surname" />
-            <p> D.O.B : </p>
-            <input type = "dob" name = "dob" placeholder = "date of birth" />
-            <p> Email : </p>
-            <input type = "email" name = "email" placeholder = "email address" />
-        </section>
-        <section id= >
-            <h2></h2>
-            <p></p>
-        </section>
-        <section id= >
-            <h2> </h2>
-            <p></p>
-        </section>
-    </main>
-    <footer>
-        <p> </p>
-    </footer>
+    <div class="container">
+
+    
+<div class ="navbar2">
+<div class ="logo">
+    <li><a href ="homepage.html"><img src="images/logo.png" width="100px" height="100px"></a></li></img>
+</div>
+<nav>
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Account</a></li>
+        <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0
+             0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0
+              3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5
+               0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5
+                0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
+          </svg></a></li></a></li>
+    </ul>
+</nav>
+</div>
+</div>
+<main>
+    <div class ="signin-page">
+<div class="form-signin">
+    <div class ="form-container">
+        <h1> Don't have an account? </h1>
+        <div class ="select-user-type">
+       <label>i am <input type = radio name = “rdo” value = Admin/> Admin </label>
+        <input type = radio name = “rdo” value = Custmor/> Custmor </label>
+    </div>
+    <div class ="Form">
+    <label> First name : </label><input type = text name = username />
+    <br><label> Surname : </label><input type = text name = username /><br>
+    <label for="DOB">Date of birth: <input type="date" id="birthday" name="birthday"></label><br>
+    <br><label>Gender : <input type = radio name = rdo/> Female </label>
+    <label><input type = radio name = rdo/> Male </label><br>
+    <label> Email adderss : <input type = email name = “email”/></label><br>
+    <label> Create Password : </label><input type = "password" name = "password"/><br>
+    <label> Phone number : <input type = phonenumber name = "PhoneNumber/"></label><br>
+    <label>How do you prefer to be contacted ? <br> <input type = radio name = rdo/> by email </label>
+    <label><input type = radio name = rdo/> by text </label><br>
+    <button type = "submit" class = "Register"> Create account </button>
+    <br><li><a href = "login.html"> Have an account with us already? </a></li>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+    <div class ="footer">
+        <div class ="footer.container">
+        <p> Get to know us </p>
+        <ul>
+            <li> location </li>
+        </ul>
+        <p> Get in touch </p>
+        <ul>
+            <li> contact form </li>
+        </ul>
+
+
+    </div>
+</div>
+</footer>
+</main>
 </body>
 </html>
-
