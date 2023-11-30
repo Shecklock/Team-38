@@ -25,5 +25,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Correcting the route group
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // You can define more routes specific to the 'dashboard' prefix here
-    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
+    Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
+    Route::get('category/create',[App\Http\Controllers\Admin\CategoryController::class, 'create']); 
+    Route::post('category',[App\Http\Controllers\Admin\CategoryController::class, 'store']);
+
 });
