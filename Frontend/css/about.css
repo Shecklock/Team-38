@@ -1,5 +1,5 @@
 *{
-    font-family: Century;
+    
     margin:0;
     padding:0;
     box-sizing:border-box;  
@@ -7,38 +7,59 @@
 
 body{
     min-height:100vh;
-    background:  url(../sources/background_color.png)no-repeat;
+    background: white;
     background-size: cover;
     background-position: center;
 
 }
 
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:20px 100px;
-    background:black;
-    display: flex;
-    justify-content:space-between;
+
+
+.navbar{
+    display:flex;
     align-items: center;
-    z-index: 100;
-    padding-bottom: 1px;
-    padding-top:1px;
-    margin-bottom: 10px;
-
+    padding:10px;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
 }
 
-.navbar a{
-    font-size: 20px;
-    color:white;
-    font-weight: 400;
+nav ul li{
+    display: inline-block;
+    margin-right:50px;
+    font-size: medium;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
     text-decoration: none;
-    margin-left: 40px;
-
+    color: black;
+}
+.logo{
+    list-style-type:none;
+    align-items: center;
+    width:max-content;
 }
 
+.main{
+    max-width: 1300px;
+    height: 100px;
+    margin: auto;
+    padding-left: 25px;
+    background-color: lightgreen;
+    border-radius: 25px;
+}
+ul{
+    list-style-type: none;
+   text-align: justify;
+   text-decoration: none;
+   align-items: center;
+}
 .navbar a:hover{
     background-color: black;
     color: white;
