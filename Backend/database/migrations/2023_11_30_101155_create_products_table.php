@@ -18,7 +18,7 @@ return new class extends Migration
             $table->double('Price');
             $table->integer('StockQuantity')->default('0');
             $table->string('image')->nullable();
-            $table->integer('CategoryID')->references('CategoryID')->on('categories');
+            $table->integer('CategoryID')->references('CategoryID')->on('categories')->default('0');
 
             $table->timestamps();
         });
