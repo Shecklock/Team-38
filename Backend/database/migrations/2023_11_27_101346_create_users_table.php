@@ -18,19 +18,29 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->tinyInteger('role_as')->default('0')->comment('0=user,1=admin');
             $table->timestamps();
         });
 
         /**
-         * Input example User and Admin account
+         * Input dummy User and Admin account
          */
-        // DB::table('users')->insert(
-        //     array(
-        //         'name' => 'admin',
-        //         'email' => 'admin@admin.com',
-        //         'password' => 'abcd1234'
-        //     )
-        // );
+        DB::table('users')->insert(
+            array(
+                'name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('abcd1234'),
+                'role_as' => '1'
+            )
+        );
+
+        DB::table('users')->insert(
+            array(
+                'name' => 'user',
+                'email' => 'user@user.com',
+                'password' => Hash::make('abcd1234')
+            )
+        );
     }
 
     /**
