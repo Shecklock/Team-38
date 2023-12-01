@@ -66,28 +66,143 @@ ul{
 }
 
 .About-Us{
-    color:white;
+    color:black;
     margin-top:50px;
     padding: 150px;
+    padding-top: 40px;
     padding-bottom: 250px;
     text-align:center;
-    display: flex;
-    justify-content:center;
-    background-color: blueviolet;
+    display: flexbox;
+    /*justify-content:space-between;*/
+    background-color: rgb(109, 192, 109);
     align-items: center;
     flex-wrap:wrap;
     flex-direction: column;
+    margin-left: 60px;
+    width:90%;
+    height:90px;
+    border-radius: 25px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.team-section{
+    width:90%;
+    background-color:lightgreen;
+    height:500px;
+    margin-bottom:20px;
+    margin-left: 60px;
+    border-radius: 25px;
+    
+
+}
+
+.team-section .container{
+    width:80%;
+    margin:auto;
+
+}
+.team-section .container .row{
+    width:20%;
+    margin:auto;
+
+}
+
+.team-section .container .row .Our-team{
+    text-align: center;
+    margin-top: 50px;
+
+}
+.team-section .container .row .Our-team h1{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:35px;
+    padding-top: 30px;
+    
+}
+.team-section .container .team-profiles{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+    margin-top: 60px;
+
+}
+.team-section .container .team-profiles .team-role{
+    width:100%;
+    background-color: lightgreen;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.team-section .container .team-profiles .team-role .team-images img{
+    height:200px;
+    width:200px;
+    border-radius: 30px;
+ 
+
+}
+.team-section .container .team-profiles .team-role .role-explain{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+
+}
+.team-section .container .team-profiles .team-role .role-explain1{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+    margin-bottom: 20px;
 }
 
 
-.Our-team{
-    color:white;
-    margin-top: 0px;
+/* .Our-team{
+    color:black;
+    margin-top: 10px;
     padding: 70px;
     padding-bottom: 250px;
-    text-align: left;
-    display: flex;
-    justify-content:center;
-    background-color: green;
+    text-align: center;
+    /* display: block;
+    justify-content:space-around; 
+    /* background-color: lightgreen;
+    width:90%;
+    height:min-content;
+    border-radius: 25px;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
 
-}
+} */ 
+
+/* .team_profiles{
+    margin-top: 60px;
+    display:flex;
+    justify-content: space-between;
+    text-align:center;
+    margin-right: 10px;
+    margin-bottom: 1px;
+    float: left;
+    flex-wrap: wrap;
+    
+    
+} */
+
+/* .team-members{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center; 
+    margin-top:20px;
+    text-align: left;
+    align-items: left;
+} */
+
+/* .team-members p{
+    margin-top:230px;
+    text-align: left;
+    align-items: left;
+   
+} */ 
