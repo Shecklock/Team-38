@@ -212,11 +212,20 @@ footer{
     height:90px;
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:black;
+    align-items: center;
+    
+}
+
+footer p{
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 14px;
     align-items: center;
 }
-
-footer a{
+footer a {
+    font-size: 14px;
+    color:black;
     text-decoration: underline;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    align-items: center;
+
 }
