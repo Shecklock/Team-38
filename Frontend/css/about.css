@@ -85,6 +85,7 @@ ul{
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .team-section{
     width:90%;
     background-color:lightgreen;
@@ -158,7 +159,37 @@ ul{
     margin-bottom: 20px;
 }
 
+hr{
+    color: black;
+    font-weight: 900;
+    background-color: black;
+}
 
+.About-Us hr{
+    width:300px;
+    margin-left: 270px;
+    
+}
+
+footer{
+    width:100%;
+    margin:auto;
+    padding-left: 40px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    height:90px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    font-size: 14px;
+    align-items: center;
+}
+
+footer a{
+    text-decoration: underline;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
 /* .Our-team{
     color:black;
     margin-top: 10px;
