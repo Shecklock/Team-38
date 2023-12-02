@@ -1,7 +1,7 @@
 .navbar2{
     display: flex;
     align-items: center;
-    padding:30px;
+    padding:10px;
 }
 nav{
     flex:1;
@@ -30,7 +30,6 @@ p{
 .container{
     max-width: 1300px;
     margin: auto;
-    padding-left: 25px;
     padding-left: 25px;
     background-color: lightgreen;
     border-radius: 25px;

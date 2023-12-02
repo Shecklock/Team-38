@@ -7,7 +7,7 @@ body {
 .navbar {
     display: flex;
     align-items:center;
-    padding: 30px;
+    padding: 10px;
 }
 nav{
     flex:1;
@@ -34,14 +34,10 @@ p{
 max-width: 1300px;
 margin: auto;
 padding-left: 25px;
-padding-left: 25px;
 background-color: lightgreen;
 border-radius: 25px;
 }
-/* IF I CHANGED THE NAV BAR TO BE IN THE RIGHT UNCOMMENT THIS CODE CURRENTLY ITS IN THE CENTER,
-CHECK WITH THE TEAM LATER 
-padding-right: 25px;
-*/
+
 section{
     text-align: center;
 }
@@ -85,8 +81,6 @@ footer{
     text-align: center;
     color: black;
     border-radius: 8px;
-    
 }
-
 
 
