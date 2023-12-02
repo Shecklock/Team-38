@@ -37,4 +37,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     //created routes for category controller
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
     Route::get('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
+    Route::post('category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
+
+
 });
