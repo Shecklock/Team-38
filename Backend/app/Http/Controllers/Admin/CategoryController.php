@@ -12,7 +12,8 @@ class CategoryController extends Controller
 
     public function index() 
     {
-        return view('admin.category.index');
+        $category = category::all();
+        return view ('admin.category.index')->with('category', $category);
     }
 
     public function create() 
@@ -22,14 +23,36 @@ class CategoryController extends Controller
 
     public function store(CategoryFormRequest $request) 
     {
-        $validatedData = $request->validate([
-            'CategoryName' => 'required|string|max:255',
-        ]);
-
-        $category = new Category($validatedData);
-        $category->save();
-
-        return redirect('/admin/category');
+        $input = $request->all();
+        category::create($input);
+        return redirect('admin/category/create')->with('flash_message', 'Category Addedd!');
     }
+
+    public function show($CategoryID)
+    {
+        $category = category::find($CategoryID);
+        return view('admin\category\show')->with('category', $category);
+    }
+
+    public function edit($CategoryID)
+    {
+        $category = category::find($CategoryID);
+        return view('category.edit')->with('category', $category);
+    }
+
+    public function update(CategoryFormRequest $request, $id)
+    {
+        $category = category::find($id);
+        $input = $request->all();
+        $category->update($input);
+        return redirect('category')->with('flash_message', 'category Updated!');  
+    }
+
+    public function destroy($CategoryID)
+    {
+        category::destroy($CategoryID);
+        return redirect('category')->with('flash_message', 'category deleted!');  
+    }
+
 
 }
