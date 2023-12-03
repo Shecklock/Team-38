@@ -3,88 +3,73 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product; // Ensure that the products model is imported
-use Illuminate\Support\Str;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->get(); // Fetch products here or adjust the query accordingly
+        $products = Product::latest()->get();
         return view('admin.products.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('admin.products.create'); // Added semicolon at the end
+        return view('admin.products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
-    {
-        $request->validate([
-            'ProductName' => 'required',
-            'Description' => 'required',
-            'image' => 'required',
-            'Price' => 'required',
-        ]); // Added semicolon at the end
+{
+    // Validate the request
+    $request->validate([
+        'ProductName' => 'required',
+        'Description' => 'required',
+        'image' => 'required|image',
+        'Price' => 'required',
+    ]);
 
-        Product::create($request->all());
+    try {
+        // Create a new product instance
+        $product = new Product();
+        $product->ProductName = $request->input('ProductName');
+        $product->Description = $request->input('Description');
+        $product->Price = $request->input('Price');
 
-        return redirect()->route('products.index')
-            ->with('success', 'Product created successfully');
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $file->getClientOriginalName();
+            $file->move('uploads/product/', $filename);
+            $product->image = $filename;
+        }
+
+        // Save the product
+        $product->save();
+
+        return redirect()->route('products.index')->with('success', 'Product created successfully');
+    } catch (\Exception $e) {
+        // Handle exceptions (e.g., database errors) and redirect with an error message
+        return redirect()->route('products.index')->with('error', 'Failed to create product: ' . $e->getMessage());
     }
+}
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Product $product)
     {
         return view('admin.products.show', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Product $product)
     {
         return view('admin.products.edit', compact('product'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        $request->validate([
-            'ProductName' => 'required',
-            'Description' => 'required',
-            'image' => 'required',
-            'Price' => 'required',
-        ]); // Added validation rules
-
-        $product->update($request->all());
-
-        return redirect()->route('products.index')
-            ->with('success', 'Product updated successfully');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return redirect()->route('products.index')
-             ->with('success', 'Product deleted successfully');
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 }
-

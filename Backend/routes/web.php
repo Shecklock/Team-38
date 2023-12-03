@@ -34,4 +34,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // Explicitly define the create route
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
 
+    Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
+    Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
+
+
 });
