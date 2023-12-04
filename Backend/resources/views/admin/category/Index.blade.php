@@ -32,11 +32,14 @@
                                             <a href="{{ url('admin/category/show/' . $item->CategoryID) }}" title="View Categories"><button class="btn btn-info btn-sm"></i> View</button></a>
                                             <a href="{{ url('admin/category/edit/' . $item->CategoryID) }}" title="Edit Categories"><button class="btn btn-info btn-sm"></i> Edit</button></a>
   
-                                            <form method="POST" action="{{ url('/student' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm("Confirm delete?")"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <form action="{{ route('admin/category/destroy/', $item->CategoryID) }}" method="POST">
+                                                @csrf
+                                               
+
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                             </form>
+
+
                                         </td>
                                     </tr>
                                 @endforeach

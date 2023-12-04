@@ -58,10 +58,11 @@ class CategoryController extends Controller
 
 
 
-    public function destroy($CategoryID)
+    public function destroy($category)
     {
-        category::destroy($CategoryID);
-        return redirect('category')->with('flash_message', 'category deleted!');  
+        category::destroy($category);
+        return redirect()->route('admin/category/index')->with('success', 'CATEGORY DELETED');
+           
     }
 
 
