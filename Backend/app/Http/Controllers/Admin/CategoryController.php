@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryFormRequest;
 
+
 class CategoryController extends Controller
 {
 
@@ -37,16 +38,25 @@ class CategoryController extends Controller
     public function edit($CategoryID)
     {
         $category = category::find($CategoryID);
-        return view('category.edit')->with('category', $category);
+        return view('admin\category\edit')->with('category', $category);
     }
 
-    public function update(CategoryFormRequest $request, $id)
-    {
-        $category = category::find($id);
-        $input = $request->all();
-        $category->update($input);
-        return redirect('category')->with('flash_message', 'category Updated!');  
-    }
+     
+
+
+        public function update(CategoryFormRequest $request, $category)
+        {
+            $category = Category::find($category);
+            $input = $request->all();
+            $category->update($input);
+            return redirect()->route('admin/category/index')->with('success', 'Category updated successfully');
+           
+        }
+
+
+
+
+
 
     public function destroy($CategoryID)
     {

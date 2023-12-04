@@ -1,46 +1,22 @@
 @extends('layouts.admin')
-
 @section('content')
+  
+<div class="card" style="margin:20px;">
+  <div class="card-header">Edit Category</div>
+  <div class="card-body">
 
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Edit Categories</h2>
-        </div>
+    
+      <form action="{{ url('admin/category/update', $category->CategoryID) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="CategoryID" id="CategoryID" value="{{$category->CategoryID}}" id="CategoryID" />
+        <label>Name</label></br>
+        <input type="text" name="CategoryName" id="CategoryName" value="{{$category->CategoryName}}" class="form-control"></br>
+        <input type="submit" value="Update" class="btn btn-success"></br>
+    </form>
 
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('category.index') }}">Back</a>
-        </div>
-    </div>
+  
+  </div>
 </div>
-
-@if($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input. <br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-<form action="{{ route('category.update', $item->CategoryID) }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>CategoryName:</strong>
-                <input type="text" name="CategoryName" value="{{ $item->CategoryName }}" class="form-control" placeholder="CategoryName">
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
-</form>
-
-@endsection
+  
+@stop

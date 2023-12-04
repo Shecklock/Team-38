@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Requests\CategoryFormRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
     Route::post('category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
 
-    Route::get('/category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin\category\show');
+    Route::get('/category/show/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin\category\show');
+    Route::get('/category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin\category\edit');
+    Route::get('admin/category/index',[App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin/category/index');
+    Route::match(['put'], '/category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin/category/update');
 });
 

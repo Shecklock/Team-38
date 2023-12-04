@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('content')
   
 <div class="card" style="margin:20px;">
   <div class="card-header"><h1>Category Information Page<h1></div></br></br>
@@ -18,3 +18,4 @@
     <a href="{{ url('admin/category')}}" class="btn btn-primary btn-sm text-white float-end">BACK</a>
   </div>
 </div>
+@stop
