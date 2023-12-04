@@ -28,19 +28,21 @@
                                     <tr>
                                         <td>{{ $item->CategoryID }}</td>
                                         <td>{{ $item->CategoryName }}</td>
-                                        <td>
-                                            <a href="{{ url('admin/category/show/' . $item->CategoryID) }}" title="View Categories"><button class="btn btn-info btn-sm"></i> View</button></a>
-                                            <a href="{{ url('admin/category/edit/' . $item->CategoryID) }}" title="Edit Categories"><button class="btn btn-info btn-sm"></i> Edit</button></a>
-  
-                                                <form action="{{ route('admin/category/destroy/', $item->CategoryID) }}" method="POST">
-                                                @csrf
-                                               
+                                        <div class = "Option buttons float-right">
+                                            <td>
+                                                <a href="{{ url('admin/category/show/' . $item->CategoryID) }}" title="View Categories"><button class="btn btn-info btn-md"></i> View</button></a>
+                                                <a href="{{ url('admin/category/edit/' . $item->CategoryID) }}" title="Edit Categories"><button class="btn btn-success btn-md"></i> Edit</button></a>
+        
+                                                <form action="{{ route('admin/category/destroy/', $item->CategoryID) }}" method="POST" style="display: inline-block;">
+                                                    @csrf
+                                                    
 
-                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                            </form>
+                                                    <button type="submit" class="btn btn-danger btn-md">Delete</button>
+                                                </form>
 
-
-                                        </td>
+                                            </td>
+                                        </div>
+                                                    
                                     </tr>
                                 @endforeach
                                 </tbody>
