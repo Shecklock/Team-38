@@ -8,36 +8,50 @@ body{
     font-size:14px;
     font-family:sans-serif;
 }
-.navbar{
-    display:flex;
+.container1{
+    padding: 10px 10%;
+    background: lightgreen;
+    border-radius: 25px;
+  }
+  nav {
+    display: flex;
     align-items: center;
-    padding:10px;
-}
-nav{
-    flex:1;
-    text-align: right;
-}
-nav ul{
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 250px;
+  }
+  
+  nav ul li {
     display: inline-block;
-    list-style-type: none;
-}
-
-nav ul li{
-    display: inline-block;
-    margin-right:50px;
-    font-size: medium;
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-a{
-    text-decoration: none;
+    list-style: none;
+    margin: 10px 20px;
+    background-color: none;
+  }
+  
+  nav ul li a {
     color: black;
-}
-.logo{
-    list-style-type:none;
-    align-items: center;
-    width:max-content;
-}
+    text-decoration: none;
+    font-size: 13px;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #79AC78;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
 
 .main{
     max-width: 1300px;
