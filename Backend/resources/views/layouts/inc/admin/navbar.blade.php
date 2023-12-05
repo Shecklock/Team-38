@@ -1,12 +1,14 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html">
+          <a class="navbar-brand brand-logo" href="dashboard">
         
-            Lara Ecom 
+            <!-- Try to get the logo instead of text, issue with white text on white background -->
+            <!-- <img src="images/logo2.png" alt="Sportify Pro Max"> -->
+            Sportify Pro Max
 
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard"><img src="images/favicon.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -35,37 +37,49 @@
               <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="images/faces/img_male.png" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">David Grey
+                  <h6 class="ellipsis font-weight-normal">Zaen
                   </h6>
                   <p class="font-weight-light small-text text-muted mb-0">
-                    The meeting is cancelled
+                    Category controller created
                   </p>
                 </div>
               </a>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="images/faces/img_male.png" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">Tim Cook
+                  <h6 class="ellipsis font-weight-normal">Matthew
                   </h6>
                   <p class="font-weight-light small-text text-muted mb-0">
-                    New product launch
+                    New product added
                   </p>
                 </div>
               </a>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="images/faces/img_male.png" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal"> Johnson
+                  <h6 class="ellipsis font-weight-normal"> Ricky
                   </h6>
                   <p class="font-weight-light small-text text-muted mb-0">
-                    Upcoming board meeting
+                    Meeting soon
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/img_male.png" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal"> Ho
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Pushing to GitHub 
                   </p>
                 </div>
               </a>
@@ -85,7 +99,7 @@
                   </div>
                 </div>
                 <div class="item-content">
-                  <h6 class="font-weight-normal">Application Error</h6>
+                  <h6 class="font-weight-normal">Example Error</h6>
                   <p class="font-weight-light small-text mb-0 text-muted">
                     Just now
                   </p>
@@ -111,9 +125,9 @@
                   </div>
                 </div>
                 <div class="item-content">
-                  <h6 class="font-weight-normal">New user registration</h6>
+                  <h6 class="font-weight-normal">Example registration</h6>
                   <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
+                    Just now
                   </p>
                 </div>
               </a>
@@ -121,13 +135,14 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face5.jpg" alt="profile"/>
+              <img src="images/faces/img_male.png" alt="profile"/>
               <span class="nav-profile-name">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <!-- Add 'href="account"' into line below when accounts page is created-->
               <a class="dropdown-item">
                 <i class="mdi mdi-settings text-primary"></i>
-                Settings
+                Account
               </a>
               <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
