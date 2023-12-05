@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Requests\CategoryFormRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,15 +28,13 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // You can define more routes specific to the 'dashboard' prefix here
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-    Route::get('category', [App\Http\Controllers\Admin\ProductController::class, 'index']);
+    
     Route::get('products/create',[App\Http\Controllers\Admin\ProductController::class, 'create']); 
     // Using resource route for product
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
     // Explicitly define the create route
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
 
-    Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
-    Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
-
 
 });
+
