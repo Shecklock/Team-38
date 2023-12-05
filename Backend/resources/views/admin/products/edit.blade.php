@@ -25,7 +25,7 @@
     </div>
 @endif
 
-<form action="{{ route('products.update', $product->ProductID) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('admin/products/update', $product->ProductID) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -47,10 +47,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Image:</strong>
-                <input type="file" name="image" class="form-control">
+                <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg, image/gif">
+                @error('image')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+            @if (isset($product) && $product->image)
+                <img src="{{ asset('admin/images/' . $product->image) }}" alt="Product Image">
+            @endif
             </div>
         </div>
-
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>

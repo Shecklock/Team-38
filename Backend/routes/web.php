@@ -34,6 +34,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
     // Explicitly define the create route
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
+    Route::match(['put'], 'products/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin/products/update');
 
     
     //created routes for category controller

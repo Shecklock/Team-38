@@ -23,6 +23,7 @@
             <tr>
                 <th>ProductID</th>
                 <th>Name</th>
+                <th>CategoryID</th>
                 <th>Description</th>
                 <th>Image</th>
                 <th>Price</th>
@@ -33,6 +34,7 @@
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $product->ProductName }}</td>
+                <td>{{ $product->CategoryID}}</td>
                 <td>{{ $product->Description }}</td>
                 <td>
                     @if($product->image)

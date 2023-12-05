@@ -36,22 +36,24 @@ class CategoryController extends Controller
     }
 
     public function edit($CategoryID)
-    {
-        $category = category::find($CategoryID);
-        return view('admin\category\edit')->with('category', $category);
-    }
+{
+    $category = Category::find($CategoryID);
+    return view('admin.category.edit')->with('category', $category);
+}
+
 
      
 
 
-        public function update(CategoryFormRequest $request, $category)
-        {
-            $category = Category::find($category);
-            $input = $request->all();
-            $category->update($input);
-            return redirect()->route('admin/category/index')->with('success', 'Category updated successfully');
-           
-        }
+    public function update(CategoryFormRequest $request, $category)
+{
+    $category = Category::find($category);
+    $input = $request->all();
+    $category->update($input);
+    return redirect()->route('admin.category.index')->with('success', 'Category updated successfully');
+}
+
+    
 
 
 

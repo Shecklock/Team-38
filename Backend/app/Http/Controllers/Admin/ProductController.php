@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Category;
+
 
 class ProductController extends Controller
 {
@@ -28,6 +30,8 @@ class ProductController extends Controller
         'Description' => 'required',
         'image' => 'required|image',
         'Price' => 'required',
+        'CategoryID' => 'required',
+        
     ]);
 
     try {
@@ -56,15 +60,50 @@ class ProductController extends Controller
     }
 }
 
+public function update(Request $request, Product $product)
+{
+    $request->validate([
+        'ProductName' => 'required',
+        'Description' => 'required',
+        'Price' => 'required',
+        'CategoryID' => 'required',
+    ]);
+
+    try {
+        $product->update([
+            'ProductName' => $request->input('ProductName'),
+            'Description' => $request->input('Description'),
+            'Price' => $request->input('Price'),
+            'CategoryID' => $request->input('CategoryID'),
+        ]);
+
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
+    } catch (\Exception $e) {
+        return redirect()->route('products.edit', $product->id)->with('error', 'Failed to update product: ' . $e->getMessage());
+    }
+}
+
+
     public function show(Product $product)
     {
         return view('admin.products.show', compact('product'));
     }
 
     public function edit(Product $product)
-    {
-        return view('admin.products.edit', compact('product'));
-    }
+{
+    $categories = Category::all();
+    return view('admin.products.edit', compact('product', 'categories'));
+}
+
+
+    public function categoryEdit($categoryID)
+{
+    $category = Category::find($categoryID);
+    return view('admin.category.edit')->with('category', $category);
+}
+
+
+
 
     public function destroy(Product $product)
     {
