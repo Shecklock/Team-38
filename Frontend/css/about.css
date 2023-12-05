@@ -130,6 +130,7 @@ ul{
     text-align: center;
     margin-top: 50px;
 
+
 }
 .team-section .container .row .Our-team h1{
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -273,3 +274,6 @@ footer a {
     align-items: left;
    
 } */ 
+
+    padding-top: 50px;
+}
