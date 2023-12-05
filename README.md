@@ -23,3 +23,8 @@ The webiste is still in development, admin dashboard prototype was done, admin c
 Detail page has to be added so that it admin can view the product deatils before editing.<br>
 Edit page has to be modify also so admin don't need to re-enter field if the details has not been changed.<br>
 Database is not yet finsh as only product table was fine tuned.
+
+05/12/2023
+Futher development, category tag can be create now. When creating any product, a tag must be include. tag can be changed after the creating the product.
+Product create function was destoryed during the development but got fixed. 
+Now the function is working perfect and fine.
