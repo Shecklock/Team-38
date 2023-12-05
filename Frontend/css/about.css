@@ -1,0 +1,50 @@
+*{
+    font-family: Century;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;  
+}
+
+body{
+    min-height:100vh;
+    background:  url(../sources/background_color.png)no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 100px;
+    background:black;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 100;
+    padding-bottom: 1px;
+    padding-top:1px;
+
+}
+
+.navbar a{
+    font-size: 20px;
+    color:white;
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: 40px;
+
+}
+
+.navbar a:hover{
+    background-color: black;
+    color: white;
+}
+
+.about-us{
+    color:white;
+    margin-top: 50px;
+    padding-top: 50px;
+}
