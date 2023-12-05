@@ -1,0 +1,88 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Century;
+    
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../sources/background_color.png);
+    height:20vh;
+    background-size: cover;
+    background-position: center;
+    min-height:100px;
+    padding-bottom: 10px;
+}
+
+ul{
+    float:right;
+    list-style-type:none;
+    margin-top: 30px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size:20px;
+}
+
+ul li{
+    display:inline-block;
+
+}
+ul li a{
+    text-decoration: none;
+    color:white;
+    padding: 5px 20px;
+    border:1px solid transparent;
+    transition: 0.5 ease;
+}
+
+ul li a:hover{
+    background-color: white;
+    color: black;
+}
+
+ul li.active a{
+    background-color: white;
+    color: black;
+}
+
+.logo img{
+    float:left;
+    width: 120px;
+    height:120px;
+    
+}
+
+.main{
+    max-width: 1200px;
+    margin:auto;
+}
+
+.contact-us-form{
+    position: relative;
+    margin:0;
+    padding:0;
+    box-shadow: border-box;
+    font-family: Century;
+    align-content: center;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-size: 16px;
+    flex-direction: column;
+    background-color: dimgrey;
+    width:100%;
+}
+
+.contact-us-form .content{
+    text-align: center;
+    max-width: 800px;
+    font-family: Century;
+}
+
+.contact-us-form .content h2{
+    text-align: center;
+    font-family: Century;
+    font-size: 20px;
+}
