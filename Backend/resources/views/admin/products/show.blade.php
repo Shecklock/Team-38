@@ -35,6 +35,7 @@
                     <p class="card-text">Description: {{ $product->Description }}</p>
                     <p class="card-text">Price: ${{ $product->Price }}</p>
                     <p class="card-text">Stock Quantity: {{ $product->StockQuantity }}</p>
+                    <p class="card-text">Category: {{ $product->category->CategoryName ?? 'Uncategorized' }}</p>
                     <!-- Display other relevant product details -->
                     @if($product->image)
                         <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">

@@ -24,6 +24,7 @@
                 <th>ProductID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Category</th>
                 <th>Image</th>
                 <th>Price</th>
                 <th>Action</th>
@@ -34,6 +35,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $product->ProductName }}</td>
                 <td>{{ $product->Description }}</td>
+                <td>{{ $product->category->CategoryName ?? 'Uncategorized' }}</td>
                 <td>
                     @if($product->image)
                         <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
