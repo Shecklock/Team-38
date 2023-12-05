@@ -12,7 +12,8 @@ textarea {
 
 .container1{
   padding: 10px 10%;
-  background: linear-gradient(90deg, rgba(176,217,177,1) 0%, rgba(226,241,224,1) 87%, rgba(255,255,255,1) 100%);
+  background: lightgreen;
+  border-radius: 25px;
 }
 nav {
   display: flex;
@@ -25,6 +26,40 @@ nav {
   width: 250px;
 }
 
+nav ul li input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+nav ul li input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 10px;
+  background-color: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+nav ul li input[type="text"] {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 nav ul li {
   display: inline-block;
   list-style: none;
@@ -33,7 +68,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #79AC78;
+  color: black;
   text-decoration: none;
   font-size: 15px;
   position: relative;
@@ -43,7 +78,7 @@ nav ul li a::after {
   content: '';
   width: 0;
   height: 3px;
-  background: #79AC78;
+  background: black;
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -55,7 +90,7 @@ nav ul li a:hover::after {
 }
 
 .title-link {
-  color: #B0D9B1;
+  color: lightgreen;
   text-decoration: none;
   font-size: 15px;
   
@@ -124,7 +159,7 @@ form {
 
 
 .checkout-form {
-  background-color: #B0D9B1;
+  background-color: lightgreen;
   position: relative;
 }
 
@@ -144,7 +179,7 @@ form {
 .input_billing {
   width: 100%;
   outline: none;
-  border: 2px solid #B0D9B1;
+  border: 2px solid lightgreen;
   background: none;
   padding: 0.6rem 1.2rem;
   color: #000000;
@@ -186,8 +221,8 @@ textarea.input {
 
 .btn_basket {
   padding: 0.6rem 1.3rem;
-  background-color: #B0D9B1;
-  border: 2px solid #B0D9B1;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
   font-size: 0.95rem;
   color: #fff;
   line-height: 1;
@@ -200,7 +235,7 @@ textarea.input {
 
 .btn_basket:hover {
   background-color: transparent;
-  color: #B0D9B1;
+  color: lightgreen;
 }
 
 .btn {
@@ -208,7 +243,7 @@ textarea.input {
   background-color: #fff;
   border: 2px solid #fafafa;
   font-size: 0.95rem;
-  color: #B0D9B1;
+  color: lightgreen;
   line-height: 1;
   border-radius: 25px;
   outline: none;
@@ -241,7 +276,7 @@ textarea.input {
 }
 
 .checkout-info .title {
-  color: #B0D9B1;
+  color: lightgreen;
 }
 
 .text {
@@ -279,7 +314,7 @@ textarea.input {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: linear-gradient(45deg, #D0E7D2, #79AC78);
+  background: linear-gradient(45deg, #D0E7D2, lightgreen);
   color: #fff;
   text-align: center;
   line-height: 35px;
@@ -289,4 +324,33 @@ textarea.input {
 
 .social-icons a:hover {
   transform: scale(1.05);
+}
+
+footer{
+  width:97%;
+  margin:auto;
+  padding-left: 40px;
+  background-color: lightgreen;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  height:90px;
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:black;
+  align-items: center;
+  
+}
+
+footer p{
+  text-decoration: none;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  align-items: center;
+}
+footer a {
+  font-size: 14px;
+  color:black;
+  text-decoration: underline;
+  align-items: center;
+
 }
