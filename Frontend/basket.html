@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <link href="css/style2.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container1">
+            <nav>
+                <a href="index.html"><img src="images/logo2.png" class="logo"></a>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Nav</a></li>
+                    <li><a href="#">Nav</a></li>
+                    <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <span class="big-circle"></span>
+
+        <div class="form_basket">
+
+            <div class="checkout-info">
+                <h3 class="title">Your Basket</h3>
+
+                
+
+
+                <div class="total">
+                    <p>Total:</p>
+                    <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
+
+                    <script>
+                        function redirectToCheckout() {
+                            window.location.href = "checkout.html";
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
