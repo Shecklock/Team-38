@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 
 body{
@@ -53,6 +54,7 @@ body{
     width: 100%;
   }
 
+
 .main{
     max-width: 1300px;
     height: 100px;
@@ -71,6 +73,41 @@ ul{
     background-color: black;
     color: white;
 }
+
+
+nav ul li input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    transition: 0.3s;
+  }
+  
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 10px;
+    background-color: none;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  nav ul li input[type="text"] {
+    animation: fadeIn 0.5s ease-in-out;
+  }
 
 .container{
     width:80%;
