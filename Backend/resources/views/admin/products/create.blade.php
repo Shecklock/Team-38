@@ -42,11 +42,15 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Image:</strong>
-                <input type="file" name="image" class="form-control">
-            </div>
+        <div class="form-group">
+            <label for="image">Product Image</label>
+            <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg, image/gif">
+            @error('image')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+            @if (isset($product) && $product->image)
+                <img src="{{ asset('admin/images/' . $product->image) }}" alt="Product Image">
+            @endif
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">

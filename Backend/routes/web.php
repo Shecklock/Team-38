@@ -35,7 +35,6 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // Explicitly define the create route
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
 
-    //created routes for category controller
-    
+
 });
 

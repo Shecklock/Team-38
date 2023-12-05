@@ -19,24 +19,33 @@
     @endif
 
     <table class="table table-bordered">
-        <tr>
-            <th>ProductID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th>Price</th>
-        </tr>
-        @foreach($products as $products)
+        <thead class="thead-dark">
+            <tr>
+                <th>ProductID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        @foreach($products as $product)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $products->ProductName }}</td>
-                <td>{{ $products->Description }}</td>
-                <td>{{ $products->image }}</td>
-                <td>{{ $products->Price }}</td>
+                <td>{{ $product->ProductName }}</td>
+                <td>{{ $product->Description }}</td>
                 <td>
-                    <form action="{{ route('products.destroy', $products->ProductID) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('products.show', $products->ProductID) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('products.edit', $products->ProductID) }}">Edit</a>
+                    @if($product->image)
+                        <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
+                    @else
+                        No Image
+                    @endif
+                </td>    
+                <td>{{ $product->Price }}</td>
+                <td>
+                    <form onsubmit="return confirm('Are you sure you want to delete?')" action="{{ route('products.destroy', $product->ProductID) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('products.show', $product->ProductID) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('products.edit', $product->ProductID) }}">Edit</a>
 
                         @csrf
                         @method('DELETE')
