@@ -1,34 +1,87 @@
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     justify-content: center;
     min-height: fit-content;
     background-color: white;
 }
-.navbar {
+nav {
     display: flex;
-    align-items:center;
-    padding: 10px;
-}
-nav{
-    flex:1;
-    text-align: right;
-}
-nav ul{
-    display:inline-block;
-    list-style-type: none;
-}
-nav ul li{
-    display:inline-block;
-    margin-right: 50px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    background-color: none;
+  }
+  
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: medium;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #79AC78;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+  }
+.blogo{
+    display: inline-block;
 }
+  
+nav ul li a:hover::after {
+    width: 100%;
+  }
+  nav ul li input[type="text"] {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+    .navbar a:hover{
+      color: gray;
+    }
+    nav ul li input[type="text"] {
+        padding: 8px;
+        border: none;
+        border-radius: 20px;
+        margin-top: 8px;
+        transition: 0.3s;
+      }
+      
+      nav ul li input[type="text"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 10px;
+        background-color: none;
+      }
 a{
     text-decoration: none;
     color:black;
 }
 p{
     color:black;
+    display: inline-block;
 }
 .container{
 max-width: 1300px;
@@ -37,7 +90,6 @@ padding-left: 25px;
 background-color: lightgreen;
 border-radius: 25px;
 }
-
 section{
     text-align: center;
 }
@@ -46,6 +98,7 @@ main{
 }
 ul{
     list-style-type: none;
+    display:inline-table;
 }
 button:hover {
     opacity: 0.8;
@@ -53,13 +106,23 @@ button:hover {
   }
 .logo{
     list-style-type: none;
+    width: 130px;
 }
 .submit{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 12px 28px;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 4px;
     background-color: white;
+    border: none;
+}
+button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: auto;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
 }
 .login-page{
     width: 1200px;
@@ -69,18 +132,48 @@ button:hover {
 .form-container{
 background: lightgreen;
 width : 300px;
-height: 500px;
+height: 435px;
 position: relative;
-text-align: center;
+text-align:center;
 padding :20px 0;
 margin: auto;
 border-radius: 8px;
 }
-footer{
-    background: lightgreen;
-    text-align: center;
-    color: black;
-    border-radius: 8px;
+.Register{
+text-align:center;
+display: inline-block;
+}
+.passwordReset{
+    display: inline-block;
 }
 
+footer{
+    width:97%;
+    margin:auto;
+    padding-left: 40px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    height:90px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:black;
+    align-items: center;
+}
 
+footer p{
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    align-items: center;
+}
+footer a {
+    font-size: 14px;
+    color:black;
+    text-decoration: none;
+    align-items: center;
+}
+
+.navbtt{
+border-radius: 10px;
+}
