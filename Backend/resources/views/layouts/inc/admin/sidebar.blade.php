@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard">
+            <a class="nav-link" href="/admin/dashboard">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -14,8 +14,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="products">Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="category">Categories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/products">Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/category">Categories</a></li>
               </ul>
             </div>
           </li>
