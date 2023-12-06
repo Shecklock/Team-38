@@ -16,7 +16,7 @@
                     <nav>
                     <ul>
                       
-                        <li><input type="text" placeholder="Search.."></li><button class="button">submit</button>
+                        <li><input type="text" placeholder="Search.."></li><button class="button1">submit</button>
                       <li><a href="a">Home</a></li>
                       <li><a href="a">Products</a></li>
                       <li class="active"><a href="contact_us.html">Contact Us</a></li>
@@ -33,34 +33,52 @@
 </div>
 <main>
     <div class ="signin-page">
-<div class="form-signin">
-    <div class ="form-container">
-        <h1> Don't have an account? </h1>
-        <div class ="select-user-type">
-       <label>I am <br><input type = radio name = “rdo” value = Admin/> Admin </label>
-        <input type = radio name = “rdo” value = Custmor/> Custmor </label>
+        <div class = "form-container"> 
+            <form class ="input-feild">
+                <div class="containerr">
+                <h1> Don't have an account ?</h1>
+                <label> I'm </label>
+                <input type="radio" id ="rdo" name ="rdo" value="admin" required>
+                <label for ="Admin"> Admin </label>
+                <input type="radio" id ="rdo" name ="rdo" value="client" required>
+                <label for ="Client"> Client </label><br>
+                <br><label>First Name : </label>
+                <input type ="name" class ="input-feilds" required><br>
+                <br><label>Surname : </label>
+                <input type ="name" class ="input-feilds" ><br>
+                <br><label>Email : </label>
+                <input type ="email" class ="input-feilds" required><br>
+                <br><label>Password : </label>
+                <input type ="password" class ="input-feilds" required><br>
+                <br><label>Confirm Password : </label>
+                <input type ="password" class ="input-feilds" required><br>
+                <br><label>Phone number : </label>
+                <input type ="phonenumber" class ="input-feilds" ><br>
+                <br><label for="birthday">Birthday:</label>
+                <input type="date" id="input-feilds" name="birthday"><br>
+                <br><label> Gender : </label>
+                <input type="radio" id ="rdo" name ="rdo" value="male">
+                <label for ="gender1"> Male </label>
+                <input type="radio" id ="rdo" name ="rdo" value="female">
+                <label for ="Female"> Female </label><br>
+                <br><label>How do you prefer to be contacted ? </label><br>
+                </label><input type ="checkbox" id="contact1" name ="methodOfContact1">
+                <label>by email </label>
+                <input type ="checkbox" id="contact2" name ="methodOfContact2">
+                <label>by text </label><br>
+                <br><button type ="submit" class = "signin"> Sign in </a></button>
+            
+                <label>
+                    <ul>
+                        <li><a href ="login.html">Have an account already ?</a></li>
+                    </ul>
+                </label>
+            </form>
+</div>
+            </div>
+        </div>
     </div>
-    <div class ="Form">
-    <label> First name : </label><input type = firstname name = username />
-    <br><label> Surname : </label><input type = surename name = username /><br>
-    <label for="DOB">Date of birth: <input type="date" id="dateofbirth" name="dateofbirth"></label><br>
-    <br><label>Gender : <input type = radio name = rdo/> Female </label>
-    <label><input type = radio name = rdo/> Male </label><br>
-    <label> Email adderss : <input type = email name = email/></label><br>
-    <label> Create Password : </label><input type = "password" name = "password"/><br>
-    <label> Confirm Password : </label><input type = "password" name = "confirm-pass"/><br>
-    <label> Phone number : <input type = phonenumber name = "PhoneNumber/"></label><br>
-    <label>How do you prefer to be contacted ? <br> <input type = checkbox name = cbx/> by email </label>
-    <label><input type = checkbox name = cbx/> by text </label><br>
-    <button type = "submit" class = "Register"> Create account </button>
-    <br><li><a href = "login.html"> Have an account with us already? </a></li>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    
 <footer>
     <p>
         <a href="contact_us.html"> <b> Contact us </b></a><br>

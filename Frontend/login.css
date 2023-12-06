@@ -78,6 +78,7 @@ nav ul li a:hover::after {
 a{
     text-decoration: none;
     color:black;
+    
 }
 p{
     color:black;
@@ -98,7 +99,7 @@ main{
 }
 ul{
     list-style-type: none;
-    display:inline-table;
+    display:center;
 }
 button:hover {
     opacity: 0.8;
@@ -110,17 +111,17 @@ button:hover {
 }
 .submit{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 12px 28px;
+    padding: 10px 28px;
     font-size: 15px;
-    border-radius: 4px;
+    border-radius: 40px;
     background-color: white;
     border: none;
 }
-button{
+button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
-    padding: auto;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: 40px;
     background-color: white;
     border: none;
 }
@@ -131,22 +132,27 @@ button{
 }
 .form-container{
 background: lightgreen;
-width : 300px;
-height: 435px;
+width : 400px;
+height: 460px;
 position: relative;
 text-align:center;
 padding :20px 0;
 margin: auto;
 border-radius: 8px;
 }
-.Register{
+.Register p{
 text-align:center;
 display: inline-block;
+padding-left: 0px;
 }
-.passwordReset{
-    display: inline-block;
+#butt{
+top:0;
+left:0;
+position: absolute;
+width: 110px;
+height: 100%;
+background: #17B169;
 }
-
 footer{
     width:97%;
     margin:auto;
@@ -173,7 +179,11 @@ footer a {
     text-decoration: none;
     align-items: center;
 }
-
 .navbtt{
 border-radius: 10px;
+}
+input{
+  border-radius: 12px;
+  border: none;
+  height: 25px;
 }

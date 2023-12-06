@@ -35,28 +35,29 @@
                     <form action="products.html" method="GET"></form>
                         <form class ="form-container">
             <h1> login </h1>
-             <label> I am <br><label> Admin <input type = radio name = “rdo” value = “a”/></label></label>
+             <label> I am <br><label> Admin <input type = radio name = “rdo” value = “a” required/></label></label>
              <form>
-            <label> Custmor <input type = radio name = “rdo” value = "b"/></label>
+            <label> Custmor <input type = radio name = “rdo” value = "b" required/></label>
             <div class = "input-control">
-            <p> Enter your username : </p><input type = "username" name = "username"/>
+            <p> Enter your username : </p><input type = "username" name = "username" required/>
             <div class ="error"></div>
         </div>
         <div class ="input-control">
-            <p> Enter your password : </p><input type = "password" name = "password"/><br>
+            <p> Enter your password : </p><input type = "password" name = "password" required/><br>
             <div class ="error"></div>
         </div>
-            <br><button type ="submit" class = "submit"> login </a></button>
-            <div class ="passwordReset"> 
-            <ul>
-                <li><a href ="Forgot_password.html">Forgot password</a></li><br>
-            
-            <div class ="Register">
-                <p> First time shopping in our store? </p><br><li><a href ="signin.html">Sign in here</a></li>
+            <br><button type ="submit" class = "submit"> login </a></button><br>
+            <p> First time shooping in our store? </p><br><ul><li><a href ="signin.html">Register here</a></ul></li>
+            <label>
+                <ul>
+                    <li><a href ="Forgot_password.html">Forgot password</a></li>
+                </ul>
+            </label>
+            </label>
             </form>
         </form>
             </div> 
-            </ul>
+            
         </div>
                     </div>
             </div>
