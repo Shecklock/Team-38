@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller
@@ -48,7 +49,7 @@ class ProductController extends Controller
             $file = $request->file('image');
             $filename = $file->getClientOriginalName(); // Consider renaming to avoid conflicts
             $file->move('uploads/product/', $filename); // Move the uploaded file to the desired location
-            $product->image = 'uploads/product/' . $filename; // Store the path to the image in the database
+            $product->image = $filename;
         }
 
         $product->save();
@@ -72,39 +73,42 @@ class ProductController extends Controller
         return view('admin.products.edit', compact('product', 'categories'));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
 {
     $request->validate([
-        'ProductName' => 'required',
-        'Description' => 'required',
-        'Price' => 'required',
-        'CategoryID' => 'required',
+        'ProductName' => 'required|string',
+        'Description' => 'required|string',
+        'Price' => 'required|numeric',
+        'CategoryID' => 'required|exists:categories,CategoryID',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    try {
-        $product->ProductName = $request->input('ProductName');
-        $product->Description = $request->input('Description');
-        $product->Price = $request->input('Price');
-        $product->CategoryID = $request->input('CategoryID');
+    $product = Product::find($id);
+    $product->ProductName = $request->input('ProductName');
+    $product->Description = $request->input('Description');
+    $product->Price = $request->input('Price');
+    $product->CategoryID = $request->input('CategoryID');
 
-        // Handle image update
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName(); // Consider renaming to avoid conflicts
-            $file->move('uploads/product/', $filename); // Move the uploaded file to the desired location
-            $product->image = 'uploads/product/' . $filename; // Update the path to the image in the database
+    // Check if a new image is uploaded
+    if ($request->hasFile('image')) {
+        // Delete the old image file
+        if ($product->image) {
+            Storage::delete('uploads/product/' . $product->image);
         }
-
-        $product->save();
-
-        return redirect()->route('products.index')->with('success', 'Product updated successfully');
-    } catch (\Exception $e) {
-        Log::error('Failed to update product: ' . $e->getMessage());
-        return redirect()->route('products.index')->with('error', 'Failed to update product: ' . $e->getMessage());
+        // Upload the new image file
+        $file = $request->file('image');
+        $filename = $file->getClientOriginalName(); // Consider renaming to avoid conflicts
+        $file->move(public_path('uploads/product'), $filename);
+        $product->image = $filename;
     }
+
+    $product->save();
+
+    return redirect()->route('products.index')->with('success', 'Product updated successfully.');
 }
 
-    public function destroy(Product $product)
+
+   public function destroy(Product $product)
     {
         $product->delete();
 
