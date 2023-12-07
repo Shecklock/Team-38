@@ -48,7 +48,10 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
-
+    Route::get('/about', function () {
+        return view('about_us');
+    })->name('about');
+    
 
 
 });
