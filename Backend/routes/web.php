@@ -125,3 +125,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+use App\Http\Controllers\BasketController;
+
+Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+
