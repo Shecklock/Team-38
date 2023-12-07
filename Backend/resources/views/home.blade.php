@@ -15,7 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <br><a href="/admin/dashboard"><button>Admin Dashboard</button></a>
+                    @if (Auth::user()->role_as == '1')
+                        <br><br><a href="/admin/dashboard"><button>Admin Dashboard</button></a>
+                    @endif
+                    <br><br><a href="/assets/index.html"><button>Home Page</button></a>
                 </div>
             </div>
         </div>
