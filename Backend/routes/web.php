@@ -62,29 +62,43 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 });
 
-Route::get('/about-us', function () {
-    return view('about_us');
+Route::get('/about-us', function () { //URL LINK
+    return view('about_us'); //File Name
 
 });
 
-
-Route::get('/basket', function () {
-    return view('basket');
-
-});
-
-Route::get('/checkout', function () {
-    return view('checkout');
+Route::get('/basket', function () { //URL LINK
+    return view('basket'); //File Name
 
 });
 
-Route::get('/contact-us', function () {
-    return view('contact_us');
+Route::get('/checkout', function () { //URL LINK
+    return view('checkout'); //File Name
 
 });
 
-Route::get('/faqs', function () {
-    return view('faqs');
+Route::get('/contact-us', function () { //URL LINK
+    return view('contact_us'); //File Name
+
+});
+
+Route::get('/faqs', function () { //URL LINK
+    return view('faqs'); //File Name
+
+});
+
+Route::get('/forgot-password', function () { //URL LINK
+    return view('forgot_password'); //File Name
+
+});
+
+Route::get('/login', function () { //URL LINK
+    return view('login'); //File Name
+
+});
+
+Route::get('/register', function () { //URL LINK
+    return view('register'); //File Name
 
 });
 
