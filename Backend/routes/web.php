@@ -84,7 +84,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about-us', function () { //URL LINK
+Route::get('/about_us', function () { //URL LINK
     return view('about_us'); //File Name
 
 });

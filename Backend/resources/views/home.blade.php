@@ -43,13 +43,6 @@
                     <h2 class="productPrice">${{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
                     <button class="productButton">BUY NOW!</button>
-
-                    {{ __('You are logged in!') }}
-                    @if (Auth::user()->role_as == '1')
-                        <br><br><a href="/admin/dashboard"><button>Admin Dashboard</button></a>
-                    @endif
-                    <br><br><a href="/assets/index.html"><button>Home Page</button></a>
-
                 </div>
             </div>
         @endforeach
