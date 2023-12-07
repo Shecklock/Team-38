@@ -52,7 +52,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 });
 
-Route::get('/custom-about-us', function () {
+Route::get('/about-us', function () {
     return view('about_us');
 
 });
