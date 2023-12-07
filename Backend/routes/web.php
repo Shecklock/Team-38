@@ -22,6 +22,20 @@ Route::get('/', function () {
 Auth::routes();
 
 
+
+// Sending the user to the index page no matter if they are logged in or not
+Route::get('/', function() {
+    return redirect('assets/index.html');
+});
+
+// Sending admins to the dashboard if they input the wrong url
+Route::get('/admin', function() {
+    return redirect('/admin/dashboard');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 // Correcting the route group
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // You can define more routes specific to the 'dashboard' prefix here
@@ -51,6 +65,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 });
 
+
 Route::get('/about-us', function () {
     return view('about_us');
     
@@ -68,3 +83,50 @@ use App\Http\Controllers\HomeController;
 // Your other existing routes...
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/about-us', function () { //URL LINK
+    return view('about_us'); //File Name
+
+});
+
+Route::get('/basket', function () { //URL LINK
+    return view('basket'); //File Name
+
+});
+
+Route::get('/checkout', function () { //URL LINK
+    return view('checkout'); //File Name
+
+});
+
+Route::get('/contact-us', function () { //URL LINK
+    return view('contact_us'); //File Name
+
+});
+
+Route::get('/faqs', function () { //URL LINK
+    return view('faqs'); //File Name
+
+});
+
+Route::get('/forgot-password', function () { //URL LINK
+    return view('forgot_password'); //File Name
+
+});
+
+Route::get('/login', function () { //URL LINK
+    return view('login'); //File Name
+
+});
+
+Route::get('/register', function () { //URL LINK
+    return view('register'); //File Name
+
+});
+
+// Route any unknown webpage to display the 404 error
+Route::get('/{any}', function() {
+    return view('/errors/404');
+})->where('any', '.*');
+
+

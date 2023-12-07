@@ -14,6 +14,7 @@
             <div id="header">
                 <div class="container1">
                 <nav>
+
                     <a href="index.html"><img src="assets/sources/logo2.png" class="logo"></a>
                     <ul>
                       <!-- Nav Bar -->
@@ -21,6 +22,18 @@
                       <li><a href="{{ route('home') }}">Home</a></li>
                       <li><a href="a">Products</a></li>
                       <li class="active"><a href="contact_us.html">Contact Us</a></li>  
+
+                    <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
+                    <ul>
+                      <!-- Nav Bar -->
+                      <li><input type="text" placeholder="Search.."></li>
+                      <li><a href="home">Home</a></li>
+                      <li><a href="a">Products</a></li>
+                      <li class="active"><a href="contact-us">Contact Us</a></li>
+                      <li><a href="about-us">About Us</a></li>
+                      <li><a href="a">Account</a></li>
+                      <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>         
+
                     </ul>
                     <!-- Nav Bar -->
                   </nav>
@@ -51,7 +64,11 @@
                 <div class="team-profiles">
                     <div class="team-role">
                         <div class="team-images">
+
                             <img src="assets/sources/img_female.png" alt="female"></img>
+
+                            <img src="{{ asset('assets/sources/img_female.png') }}" alt="female"></img>
+
                         </div>
                         <div class="role-explain1">
                             <h3>Christina Jenkins </h3>
@@ -60,7 +77,11 @@
                     </div>
                     <div class="team-role">
                         <div class="team-images">
+
                             <img src="assets/sources/img_male.png" alt="male"></img>
+
+                            <img src="{{ asset('assets/sources/img_male.png') }}" alt="male"></img>
+
                         </div>
                         <div class="role-explain">
                             <h3>Gary Voldermort </h3>
@@ -69,7 +90,11 @@
                     </div>
                     <div class="team-role">
                         <div class="team-images">
+
                             <img src="assets/sources/img_female.png" alt="girl"></img>
+
+                            <img src="{{ asset('assets/sources/img_female.png') }}" alt="girl"></img>
+
                         </div>
                         <div class="role-explain">
                             <h3>Jennifer Mcdonald</h3>
@@ -85,17 +110,17 @@
 
         <footer>
             <p>
-                <a href="contact_us.html">Contact us</a><br>
+                <a href="contact-us">Contact us</a><br>
                 Telephone: +44 123435390 <br>
                 Email: sportifypromax@gmail.com
                 
             </p>
             <p>
-                <a href="about_us.html">About us </a><br>
+                <a href="about-us">About us </a><br>
                 Address: Aston St, Birmingham B4 7ET
             </p>
             <p>
-                    <a href="faqs.html">FAQs</a><br>
+                    <a href="faqs">FAQs</a><br>
                     <a href="https://www.instagram.com/">Instagram</a><br>
                     <a href="https://en-gb.facebook.com/">Facebook</a><br>
                     <a href="https://twitter.com/login">X</a>

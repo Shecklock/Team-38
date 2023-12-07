@@ -28,3 +28,7 @@ Database is not yet finsh as only product table was fine tuned.
 Futher development, category tag can be create now. When creating any product, a tag must be include. tag can be changed after the creating the product.
 Product create function was destoryed during the development but got fixed. 
 Now the function is working perfect and fine.
+
+07/12/2023
+Futher developmet was made, html files from front end was converted to lade templates for the laravel framework. Home page is linked to the database so that it show any products uploaded by the admin.
+
