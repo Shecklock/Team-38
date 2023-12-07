@@ -52,7 +52,27 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 });
 
-Route::get('/custom-about-us', function () {
+Route::get('/about-us', function () {
     return view('about_us');
+
+});
+
+Route::get('/basket', function () {
+    return view('basket');
+
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+
+});
+
+Route::get('/contact-us', function () {
+    return view('contact_us');
+
+});
+
+Route::get('/faqs', function () {
+    return view('faqs');
 
 });
