@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -128,5 +129,13 @@ Route::get('/register', function () { //URL LINK
 Route::get('/{any}', function() {
     return view('/errors/404');
 })->where('any', '.*');
+
+
+// Other routes...
+
+// Authentication routes
+Auth::routes();
+
+// Your other routes...
 
 
