@@ -58,11 +58,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
-
-
+    
 
 });
 
+Route::get('/custom-about-us', function () {
+    return view('about_us');
+
+});
+
+// Route any unknown webpage to display the 404 error
 Route::get('/{any}', function() {
     return view('/errors/404');
 })->where('any', '.*');

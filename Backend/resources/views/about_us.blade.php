@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 
 <html lang = "en">
     <head>
         <title>About Us</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/about.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/about.css') }}">
         <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -16,7 +18,7 @@
                     <ul>
                       <!-- Nav Bar -->
                       <li><input type="text" placeholder="Search.."></li>
-                      <li><a href="index.html">Home</a></li>
+                      <li><a href="a">Home</a></li>
                       <li><a href="a">Products</a></li>
                       <li class="active"><a href="contact_us.html">Contact Us</a></li>
                       <li><a href="about_us.html">About Us</a></li>
@@ -107,6 +109,3 @@
 
 
 </html>
-
-
-
