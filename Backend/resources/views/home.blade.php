@@ -18,6 +18,8 @@
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="#">Products</a></li>
                         <li><a href="{{ route('about_us') }}">About Us</a></li>
+                        <li><a href="a">Account</a></li>
+                        <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,12 +51,13 @@
     </div>
 </nav>
 
-    <footer>
-        <p>
-            
-            Telephone: +44 123435390 <br>
-            Email: sportifypromax@gmail.com
-        </p>
+<footer>
+            <p>
+                <a href="contact_us.html">Contact us</a><br>
+                Telephone: +44 123435390 <br>
+                Email: sportifypromax@gmail.com
+                
+            </p>
         <p>
             <a href="{{ route('about_us') }}">About us</a><br>
             Address: Aston St, Birmingham B4 7ET
