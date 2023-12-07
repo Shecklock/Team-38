@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 // Sending the user to the index page no matter if they are logged in or not
 Route::get('/', function() {
     return redirect('assets/index.html');
@@ -32,6 +34,7 @@ Route::get('/admin', function() {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Correcting the route group
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
@@ -61,6 +64,25 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     
 
 });
+
+
+Route::get('/about-us', function () {
+    return view('about_us');
+    
+    
+})->name('about_us');
+
+
+Route::get('/home', function () {
+    return view('home');
+
+})->name('home');
+
+use App\Http\Controllers\HomeController;
+
+// Your other existing routes...
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about-us', function () { //URL LINK
     return view('about_us'); //File Name
@@ -106,4 +128,5 @@ Route::get('/register', function () { //URL LINK
 Route::get('/{any}', function() {
     return view('/errors/404');
 })->where('any', '.*');
+
 
