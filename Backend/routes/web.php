@@ -21,18 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Sending the user to the index page no matter if they are logged in or not
-Route::get('/', function() {
-    return redirect('assets/index.html');
-});
-
-// Sending admins to the dashboard if they input the wrong url
-Route::get('/admin', function() {
-    return redirect('/admin/dashboard');
-});
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // Correcting the route group
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     // You can define more routes specific to the 'dashboard' prefix here
@@ -64,6 +52,11 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 Route::get('/about-us', function () {
     return view('about_us');
+
+});
+
+Route::get('/home', function () {
+    return view('index');
 
 });
 

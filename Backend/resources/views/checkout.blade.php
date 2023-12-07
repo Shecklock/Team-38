@@ -11,11 +11,11 @@
     <div id="header">
         <div class="container1">
             <nav>
-                <a href="{{ url('index.html') }}"><img src="{{ asset('sources/logo2.png') }}" class="logo"></a>
+                <a href="{{ url('index.html') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                 <ul>
                     <!-- Nav Bar -->
                     <li><input type="text" placeholder="Search.."></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home">Home</a></li>
                     <li><a href="#">Products</a></li>
                     <li class="active"><a href="{{ url('contact_us.html') }}">Contact Us</a></li>
                     <li><a href="{{ url('about_us.html') }}">About Us</a></li>

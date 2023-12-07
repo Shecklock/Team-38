@@ -18,7 +18,7 @@
                     @if (Auth::user()->role_as == '1')
                         <br><br><a href="/admin/dashboard"><button>Admin Dashboard</button></a>
                     @endif
-                    <br><br><a href="/assets/index.html"><button>Home Page</button></a>
+                    <br><br><a href="/views/index"><button>Home Page</button></a>
                 </div>
             </div>
         </div>
