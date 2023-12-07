@@ -1,0 +1,87 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    min-height: fit-content;
+    background-color: white;
+}
+.navbar {
+    display: flex;
+    align-items:center;
+    padding: 20px;
+}
+nav{
+    flex:1;
+    text-align: center;
+}
+nav ul{
+    display:inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display:inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color:#555;
+}
+p{
+    color:#555;
+}
+.container{
+max-width: 1300px;
+margin: auto;
+padding-left: 25px;
+padding-left: 25px;
+background-color: lightgreen;
+}
+/* IF I CHANGED THE NAV BAR TO BE IN THE RIGHT UNCOMMENT THIS CODE CURRENTLY ITS IN THE CENTER,
+CHECK WITH THE TEAM LATER 
+padding-right: 25px;
+*/
+section{
+    text-align: center;
+}
+main{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+button:hover {
+    opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+li{
+    list-style-type: none;
+}
+.submit{
+    /** font-family: ; */
+    padding: 12px 28px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: lightgreen;
+}
+.account-page{
+    width: 1200px;
+    background: white;
+    padding:50px 0;
+}
+.form-container{
+background: lightgreen;
+width : 300px;
+height: 400px;
+position: relative;
+text-align: center;
+padding :20px 0;
+margin: auto;
+box-shadow: 0 0 20px 0pxrgba(0,0,0,0.1);
+border-radius: 8px;
+}
+/* .passwordReset{
+
+} */
+
+
+
+

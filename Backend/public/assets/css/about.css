@@ -1,0 +1,263 @@
+*{
+    
+    margin:0;
+    padding:0;
+    box-sizing:border-box;  
+}
+
+body{
+    min-height:100vh;
+    background: white;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.container1{
+    padding: 10px 10%;
+    background: lightgreen;
+    border-radius: 25px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 250px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    background-color: none;
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #79AC78;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+
+.main{
+    max-width: 1300px;
+    height: 100px;
+    margin: auto;
+    padding-left: 25px;
+    background-color: lightgreen;
+    border-radius: 25px;
+}
+ul{
+    list-style-type: none;
+   text-align: justify;
+   text-decoration: none;
+   align-items: center;
+}
+.navbar a:hover{
+    background-color: black;
+    color: white;
+}
+
+nav ul li input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    transition: 0.3s;
+  }
+  
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 10px;
+    background-color: none;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  nav ul li input[type="text"] {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+.About-Us{
+    color:black;
+    margin-top:50px;
+    padding: 150px;
+    padding-top: 40px;
+    padding-bottom: 250px;
+    text-align:center;
+    display: flexbox;
+    /*justify-content:space-between;*/
+    background-color:rgb(162, 251, 162);
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: column;
+    margin-left: 60px;
+    width:90%;
+    height:90px;
+    border-radius: 25px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.About-Us h3{
+    font-weight: 600;
+}
+
+
+.team-section{
+    width:90%;
+    background-color:rgb(109, 192, 109);
+    height:500px;
+    margin-bottom:20px;
+    margin-left: 60px;
+    border-radius: 25px;
+    
+
+}
+
+.team-section .container{
+    width:80%;
+    margin:auto;
+
+}
+.team-section .container .row{
+    width:20%;
+    margin:auto;
+
+}
+
+.team-section .container .row .Our-team{
+    text-align: center;
+    margin-top: 50px;
+
+
+}
+.team-section .container .row .Our-team h1{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:35px;
+    padding-top: 30px;
+    
+}
+.team-section .container .team-profiles{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+    margin-top: 60px;
+
+}
+.team-section .container .team-profiles .team-role{
+    width:100%;
+    background-color: rgb(109, 192, 109);
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.team-section .container .team-profiles .team-role .team-images img{
+    height:200px;
+    width:200px;
+    border-radius: 30px;
+ 
+
+}
+.team-section .container .team-profiles .team-role .role-explain{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+
+}
+.team-section .container .team-profiles .team-role .role-explain1{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+    margin-bottom: 20px;
+}
+.team-section .container .team-profiles .team-role .role-explain1 h4{
+   
+    font-weight: 500;
+}
+
+.team-section .container .team-profiles .team-role .role-explain h4{
+   
+    font-weight: 500;
+}
+
+hr{
+    color: black;
+    font-weight: 900;
+    background-color: black;
+}
+
+.About-Us hr{
+    width:300px;
+    margin-left: 270px;
+    
+}
+
+footer{
+    width:100%;
+    margin:auto;
+    padding-left: 40px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    height:90px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    align-items: center;
+    
+}
+
+footer p{
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    align-items: center;
+}
+footer a {
+    font-size: 14px;
+    color:black;
+    text-decoration: underline;
+    align-items: center;
+
+}
