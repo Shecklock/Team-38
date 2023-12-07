@@ -10,9 +10,18 @@
 
 <body>
     <header>
+    <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <!-- Nav Bar -->
+                <li><input type="text" placeholder="Search.."></li>
+                <li><a href="home">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li class="active"><a href="contact-us">Contact Us</a></li>
+                <li><a href="about-us">About Us</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                <!-- Nav Bar -->
             </ul>
         </nav>
     </header>

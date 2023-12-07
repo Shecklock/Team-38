@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <script src="{{ asset('js/contact.js') }}"></script>
+    <script src="{{ asset('assets/js/contact.js') }}"></script>
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
 
@@ -12,18 +12,18 @@
     <div id="header">
         <div class="container1">
             <nav>
-                <a href="{{ url('index.html') }}"><img src="{{ asset('sources/logo2.png') }}" class="logo"></a>
+                <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                 <nav>
                     <ul>
-                        <!-- Nav Bar -->
-                        <li><input type="text" placeholder="Search.."></li>
-                        <li><a href="{{ url('a') }}">Home</a></li>
-                        <li><a href="{{ url('a') }}">Products</a></li>
-                        <li class="active"><a href="{{ url('contact_us.html') }}">Contact Us</a></li>
-                        <li><a href="{{ url('about_us.html') }}">About Us</a></li>
-                        <li><a href="{{ url('a') }}">Account</a></li>
-                        <li><a href="{{ url('basket.html') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
-                        <!-- Nav Bar -->
+                    <!-- Nav Bar -->
+                    <li><input type="text" placeholder="Search.."></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li class="active"><a href="contact-us">Contact Us</a></li>
+                    <li><a href="about-us">About Us</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                    <!-- Nav Bar -->
                     </ul>
                 </nav>
             </div>
@@ -65,7 +65,7 @@
                 <script>
                     document.getElementById('myForm').addEventListener('submit', function(event) {
                         event.preventDefault();
-                        window.location.href = '{{ url("about_us.html") }}'; 
+                        window.location.href = "about-us"; 
                     });
                 </script>
             </div>
@@ -92,16 +92,16 @@
 
     <footer>
         <p>
-            <a href="{{ url('contact_us.html') }}">Contact us</a><br>
+            <a href="contact-us">Contact us</a><br>
             Telephone: +44 123435390 <br>
             Email: sportifypromax@gmail.com
         </p>
         <p>
-            <a href="{{ url('about_us.html') }}">About us </a><br>
+            <a href="about-us">About us </a><br>
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
-            <a href="{{ url('faqs.html') }}">FAQs</a><br>
+            <a href="faqs">FAQs</a><br>
             <a href="https://www.instagram.com/">Instagram</a><br>
             <a href="https://en-gb.facebook.com/">Facebook</a><br>
             <a href="https://twitter.com/login">X</a>

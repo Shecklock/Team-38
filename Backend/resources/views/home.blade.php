@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Page</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style2.css') }}">
-    <script src="{{ asset('js/contact.js') }}"></script>
+    <script src="{{ asset('assets/js/contact.js') }}"></script>
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,12 +12,17 @@
         <div id="header">
             <div class="container1">
                 <nav>
-                    <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
+                    <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                     <ul>
-                        <li><input type="text" placeholder="Search.."></li>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="{{ route('about_us') }}">About Us</a></li>
+                    <!-- Nav Bar -->
+                    <li><input type="text" placeholder="Search.."></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li class="active"><a href="contact-us">Contact Us</a></li>
+                    <li><a href="about-us">About Us</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                    <!-- Nav Bar -->
                     </ul>
                 </nav>
             </div>
@@ -51,16 +56,16 @@
 
     <footer>
         <p>
-            
+            <a href="contact-us">Contact us</a><br>
             Telephone: +44 123435390 <br>
             Email: sportifypromax@gmail.com
         </p>
         <p>
-            <a href="{{ route('about_us') }}">About us</a><br>
+            <a href="about-us">About us</a><br>
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
-            
+            <a href="faqs">FAQs</a><br>
             <a href="https://www.instagram.com/">Instagram</a><br>
             <a href="https://en-gb.facebook.com/">Facebook</a><br>
             <a href="https://twitter.com/login">X</a>

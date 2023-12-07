@@ -26,7 +26,7 @@ Auth::routes();
 
 // Sending the user to the index page no matter if they are logged in or not
 Route::get('/', function() {
-    return redirect('assets/index.html');
+    return redirect('home');
 });
 
 // Sending admins to the dashboard if they input the wrong url
@@ -115,12 +115,12 @@ Route::get('/forgot-password', function () { //URL LINK
 
 });
 
-Route::get('/login', function () { //URL LINK
+Route::get('/sign-in', function () { //URL LINK
     return view('login'); //File Name
 
 });
 
-Route::get('/register', function () { //URL LINK
+Route::get('/sign-up', function () { //URL LINK
     return view('register'); //File Name
 
 });

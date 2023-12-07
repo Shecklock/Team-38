@@ -11,16 +11,16 @@
     <div id="header">
         <div class="container1">
             <nav>
-                <a href="{{ url('index.html') }}"><img src="{{ asset('sources/logo2.png') }}" class="logo"></a>
+                <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                 <ul>
                     <!-- Nav Bar -->
                     <li><input type="text" placeholder="Search.."></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home">Home</a></li>
                     <li><a href="#">Products</a></li>
-                    <li class="active"><a href="{{ url('contact_us.html') }}">Contact Us</a></li>
-                    <li><a href="{{ url('about_us.html') }}">About Us</a></li>
+                    <li class="active"><a href="contact-us">Contact Us</a></li>
+                    <li><a href="about-us">About Us</a></li>
                     <li><a href="#">Account</a></li>
-                    <li><a href="{{ url('basket.html') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>       
+                    <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
                     <!-- Nav Bar -->
                 </ul>
             </nav>
@@ -32,7 +32,7 @@
 
         <div class="form">
             <div class="checkout-info">
-                <h1 class="title"><a href="{{ url('basket.html') }}" class="title-link"><i class="fa-solid fa-arrow-left"></i> Back to Basket</a></h1>
+                <h1 class="title"><a href="basket" class="title-link"><i class="fa-solid fa-arrow-left"></i> Back to Basket</a></h1>
 
                 <h3 class="title">Billing Information</h3>
                 <div class="billing-info">
@@ -79,7 +79,7 @@
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action="{{ url('checkout.html') }}" autocomplete="off">
+                <form action="checkout" autocomplete="off">
                     <h3 class="title">Card Details</h3>
                     <div class="input-container">
                         <input type="text" name="name" placeholder="Name On Card" class="input" required>
@@ -104,16 +104,16 @@
     </div>
     <footer>
         <p>
-            <a href="{{ url('contact_us.html') }}">Contact us</a><br>
+            <a href="contact-us">Contact us</a><br>
             Telephone: +44 123435390 <br>
             Email: sportifypromax@gmail.com
         </p>
         <p>
-            <a href="{{ url('about_us.html') }}">About us </a><br>
+            <a href="about-us">About us </a><br>
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
-            <a href="{{ url('faqs.html') }}">FAQs</a><br>
+            <a href="faqs">FAQs</a><br>
             <a href="https://www.instagram.com/">Instagram</a><br>
             <a href="https://en-gb.facebook.com/">Facebook</a><br>
             <a href="https://twitter.com/login">X</a>
