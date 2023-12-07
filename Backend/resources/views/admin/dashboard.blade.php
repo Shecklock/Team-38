@@ -8,7 +8,7 @@
             <div class="d-flex align-items-end flex-wrap">
               <div class="me-md-3 me-xl-5">
                   <h2>Admin dashboard</h2>
-                <p class="mb-md-0">Sportify Pro Pax admin dashboard.</p>
+                <p class="mb-md-0">Sportify Pro Max admin dashboard.</p>
               </div>
               <!-- <div class="d-flex">
                 <i class="mdi mdi-home text-muted hover-cursor"></i>
