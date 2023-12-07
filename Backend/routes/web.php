@@ -21,7 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Correcting the route group
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
@@ -52,7 +51,20 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
 });
 
-Route::get('/custom-about-us', function () {
+Route::get('/about-us', function () {
     return view('about_us');
+    
+    
+})->name('about_us');
 
-});
+
+Route::get('/home', function () {
+    return view('home');
+
+})->name('home');
+
+use App\Http\Controllers\HomeController;
+
+// Your other existing routes...
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

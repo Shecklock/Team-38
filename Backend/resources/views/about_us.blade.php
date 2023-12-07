@@ -14,16 +14,13 @@
             <div id="header">
                 <div class="container1">
                 <nav>
-                    <a href="index.html"><img src="sources/logo2.png" class="logo"></a>
+                    <a href="index.html"><img src="assets/sources/logo2.png" class="logo"></a>
                     <ul>
                       <!-- Nav Bar -->
                       <li><input type="text" placeholder="Search.."></li>
-                      <li><a href="a">Home</a></li>
+                      <li><a href="{{ route('home') }}">Home</a></li>
                       <li><a href="a">Products</a></li>
-                      <li class="active"><a href="contact_us.html">Contact Us</a></li>
-                      <li><a href="about_us.html">About Us</a></li>
-                      <li><a href="a">Account</a></li>
-                      <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>         
+                      <li class="active"><a href="contact_us.html">Contact Us</a></li>  
                     </ul>
                     <!-- Nav Bar -->
                   </nav>
@@ -54,7 +51,7 @@
                 <div class="team-profiles">
                     <div class="team-role">
                         <div class="team-images">
-                            <img src="sources/img_female.png" alt="female"></img>
+                            <img src="assets/sources/img_female.png" alt="female"></img>
                         </div>
                         <div class="role-explain1">
                             <h3>Christina Jenkins </h3>
@@ -63,7 +60,7 @@
                     </div>
                     <div class="team-role">
                         <div class="team-images">
-                            <img src="sources/img_male.png" alt="male"></img>
+                            <img src="assets/sources/img_male.png" alt="male"></img>
                         </div>
                         <div class="role-explain">
                             <h3>Gary Voldermort </h3>
@@ -72,7 +69,7 @@
                     </div>
                     <div class="team-role">
                         <div class="team-images">
-                            <img src="sources/img_female.png" alt="girl"></img>
+                            <img src="assets/sources/img_female.png" alt="girl"></img>
                         </div>
                         <div class="role-explain">
                             <h3>Jennifer Mcdonald</h3>
