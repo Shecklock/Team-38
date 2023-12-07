@@ -18,6 +18,15 @@
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="#">Products</a></li>
                         <li><a href="{{ route('about_us') }}">About Us</a></li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                               <i class="mdi mdi-logout text-primary"></i> {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </nav>
             </div>
