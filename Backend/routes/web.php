@@ -17,12 +17,10 @@ use App\Http\Requests\CategoryFormRequest;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
-
-
 
 // Sending the user to the index page no matter if they are logged in or not
 Route::get('/', function() {
@@ -74,21 +72,7 @@ Route::get('/about-us', function () {
 })->name('about_us');
 
 
-Route::get('/home', function () {
-    return view('home');
-
-})->name('home');
-
 use App\Http\Controllers\HomeController;
-
-// Your other existing routes...
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/about_us', function () { //URL LINK
-    return view('about_us'); //File Name
-
-});
 
 Route::get('/basket', function () { //URL LINK
     return view('basket'); //File Name
@@ -138,4 +122,6 @@ Auth::routes();
 
 // Your other routes...
 
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
