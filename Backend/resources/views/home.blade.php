@@ -19,8 +19,16 @@
                     <div class="container1">
                         <nav>
                             <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
-                            <ul>
-                                <li><input type="text" placeholder="Search.."></li>
+                            
+                                <form action="{{ url('/search') }}" method="GET" role="search">
+                                    <div class="input-group">                                  
+                                        <input type="search" name="search" placeholder="Search...">
+                                        <button class="btn bg-white" type="submit">
+                                            <i>search<i>
+                                    </div>
+                                </form>
+
+                                <ul>
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="#">Products</a></li>
                                 <li><a href="{{ route('about_us') }}">About Us</a></li>
