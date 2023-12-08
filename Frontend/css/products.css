@@ -117,7 +117,7 @@ nav ul li input[type="text"] {
   .Product-Intro{
     background-color: white;
     border: solid;
-    border-color: black;
+    border-color: grey;
     margin:10px;
     text-align: center;
     display:block;
@@ -240,7 +240,7 @@ hr{
 }
 .pro{
     padding:10px 10%;
-    border-color: black;
+    border-color:grey;
     border:solid;
     border-radius: 30px;
     width:100%;
@@ -250,8 +250,8 @@ hr{
     width:270px;
     background-color: white;
     border:solid;
-    border-color: black;
-    border-radius: 25px;
+    border-color: #ddd;
+    border-radius: 10px;
     padding:5px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -275,7 +275,7 @@ hr{
 
 .products .card .title{
     font-size:20px;
-    color:blue;
+    color:black;
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:  0 20px;
 }
