@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BasketController extends Controller
 {
@@ -18,52 +19,17 @@ class BasketController extends Controller
     }
 
     /**
-     * Add an item to the basket.
-     *
-     * @param  int  $productId
-     * @return \Illuminate\Http\Response
-     */
-    public function addItem($productId)
-    {
-        // Logic to add an item to the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
-        // BasketService::addItem($productId);
-
-        return redirect()->route('basket')->with('success', 'Item added to the basket successfully!');
-    }
-
-    /**
-     * Remove an item from the basket.
-     *
-     * @param  int  $itemId
-     * @return \Illuminate\Http\Response
-     */
-    public function removeItem($itemId)
-    {
-        // Logic to remove an item from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
-        // BasketService::removeItem($itemId);
-
-        return redirect()->route('basket')->with('success', 'Item removed from the basket successfully!');
-    }
-
-    /**
-     * Clear all items from the basket.
+     * Show the basket with product data.
      *
      * @return \Illuminate\Http\Response
      */
-    public function clearBasket()
+    public function showBasket()
     {
-        // Logic to clear all items from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
-        // BasketService::clearBasket();
-
-        return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
+        $productId = request('productId');
+        $products = DB::table('products')->get(); // Adjust this based on your database structure
+        
+        return view('basket', compact('products'));
     }
+    
+    
 }

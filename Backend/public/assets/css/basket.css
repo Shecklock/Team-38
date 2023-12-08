@@ -163,6 +163,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 
 .bag-item {
@@ -191,6 +192,7 @@ body {
 }
 
 
+
 /* .delivery-info {
     margin-bottom: 20px;
 }
@@ -210,6 +212,80 @@ body {
 
 .btn:hover {
     background-color: #0056b3;
+} */
+
+
+.btn_basket {
+  padding: 0.6rem 1.3rem;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
+  font-size: 0.95rem;
+  color: #fff;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+}
+
+.btn_basket:hover {
+  background-color: transparent;
+  color: lightgreen;
+}
+
+.btn {
+  padding: 0.6rem 1.3rem;
+  background-color: #fff;
+  border: 2px solid #fafafa;
+  font-size: 0.95rem;
+  color: black;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 490px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-container span {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  padding: 0 0.4rem;
+  color: transparent;
+  pointer-events: none;
+  z-index: 500;
+}
+
+
+.checkout-info {
+  padding: 2.3rem 2.2rem;
+  position: relative;
+}
+
+.checkout-info .title {
+  color: lightgreen;
+  display: flex;
+  justify-content: right;
+} 
+.delivery-info .btn-btn-primary{
+    display: block;
+    justify-content: right;
+    text-align: right;
+    
+}
+/* .delivery-info{
+    margin-left: 200px;
 } */
 
 .delivery-info,
@@ -244,7 +320,7 @@ body {
 }
 
 footer{
-    width:97%;
+    width:100%;
     margin:auto;
     padding-left: 40px;
     background-color: lightgreen;
@@ -255,7 +331,7 @@ footer{
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:black;
     align-items: center;
-    
+    margin-top: 70px;
 }
 
 footer p{

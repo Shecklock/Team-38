@@ -88,26 +88,31 @@
 </script>
 
     <nav>
-    <div class="product" id="product">
-        @foreach($products as $product)
-            <div class="productItem">
-                <div class="productDetails">
-                <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
-                    <h1 class="productTitle">{{ $product->ProductName }}</h1>
-                    <h2 class="productPrice">${{ $product->Price }}</h2>
-                    <p class="productDesc">{{ $product->Description }}</p>
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+        <div class="product" id="product">
+            @foreach($products as $product)
+                <div class="productItem">
+                    <div class="productDetails">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                        <h1 class="productTitle">{{ $product->ProductName }}</h1>
+                        <h2 class="productPrice">${{ $product->Price }}</h2>
+                        <p class="productDesc">{{ $product->Description }}</p>
+                        <button class="productButton" onclick="redirectToBasket({{ $product->ProductID }})">BUY NOW!</button>                    </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
-</nav>
+            @endforeach
+        </div>
 
-<script>
-    function redirectToBasket() {
-        window.location.href = "{{ route('basket') }}";
-    }
-</script>
+        <script>
+            function redirectToBasket(productId) {
+                // You can use the productId as needed, for example, append it to the URL
+                const url = `/basket?productId=${productId}`;
+                
+                // Redirect to the basket page
+                window.location.href = url;
+            }
+        </script>
+        
+        
+</nav>
 
 <footer>
             <p>
