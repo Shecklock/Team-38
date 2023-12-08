@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+<!-- resources/views/search.blade.php -->
 
-@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +16,11 @@
 </head>
 <body>
 
+
+
 <nav>
     <div class="product" id="product">
-        @foreach($searchTerm as $product)
+        @foreach($search as $product)
             <div class="productItem">
                 <div class="productDetails">
                     <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
@@ -50,4 +52,4 @@
 </footer>
 </body>
 </html>
-@endsection
+

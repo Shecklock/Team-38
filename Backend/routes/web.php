@@ -58,10 +58,11 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
+   
     
-
 });
 
+Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
 
 Route::get('/about-us', function () {
     return view('about_us');
@@ -127,6 +128,6 @@ use App\Http\Controllers\BasketController;
 
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 
-Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
+
 
 

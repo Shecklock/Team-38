@@ -1,4 +1,4 @@
-<html lang = "en">
+<!-- <html lang = "en">
    <head>
         <title>404 Page Not Found</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
                <nav>
                   <a href="../../assets/index.html"><img src="../../assets/sources/logo2.png" class="logo"></a>
                   <ul>
-                     <!-- Nav Bar -->
+                    
                      <li><input type="text" placeholder="Search.."></li>
                      <li><a href="../../assets/index.html">Home</a></li>
                      <li><a href="a">Products</a></li>
@@ -46,4 +46,4 @@
          </p>
       </footer>
    </body>
-</html>
+</html> -->
