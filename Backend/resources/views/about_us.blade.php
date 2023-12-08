@@ -15,13 +15,13 @@
                 <div class="container1">
                 <nav>
 
-                    <a href="index.html"><img src="assets/sources/logo2.png" class="logo"></a>
+                    {{-- <a href="index.html"><img src="assets/sources/logo2.png" class="logo"></a>
                     <ul>
                       <!-- Nav Bar -->
                       <li><input type="text" placeholder="Search.."></li>
                       <li><a href="{{ route('home') }}">Home</a></li>
                       <li><a href="a">Products</a></li>
-                      <li class="active"><a href="contact_us.html">Contact Us</a></li>  
+                      <li class="active"><a href="contact_us.html">Contact Us</a></li>   --}}
 
                     <a href="home"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                     <ul>

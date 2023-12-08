@@ -31,9 +31,10 @@
         <span class="big-circle"></span>
 
         <div class="form_basket">
+            
 
-            <div class="checkout-info">
                 <h3 class="title">Your Basket</h3>
+
 
                 <div class="total">
                     <p>Total:</p>

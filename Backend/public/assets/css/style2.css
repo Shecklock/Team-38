@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,6 +24,68 @@ nav {
 
 .logo {
   width: 250px;
+}
+
+.slider-container {
+  text-align: center;
+  margin-left: 500px;
+}
+
+.slider-item {
+  display: inline-block;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+.container1 {
+  padding: 10px 10%;
+  background: lightgreen;
+  border-radius: 25px;
+  width: 130%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 250px;
+}
+
+.slider-container {
+  text-align: center;
+  margin-left: 500px; /* Adjust the margin as needed */
+}
+
+.slider-item {
+  display: inline-block;
+}
+
+.navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 10px 0; /* Adjust the margin as needed */
+}
+
+.menuItem {
+  margin-right: 40px;
+  cursor: pointer;
+  color: black;
+  font-weight: 200;
 }
 
 nav ul li input[type="text"] {
@@ -96,6 +158,93 @@ nav ul li a:hover::after {
   
 }
 
+
+/* Style for the product container */
+#product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Style for each product item */
+.productItem {
+  width: 250px;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* .navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px 10px;
+}
+
+.menuItem {
+  margin-right: 40px;
+  cursor: pointer;
+  color: black;
+  font-weight: 200;
+} */
+
+
+.productItem:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the product image */
+.productImg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Style for product details (title, price, description) */
+.productDetails {
+  margin-top: 15px;
+}
+
+.productTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.productPrice {
+  font-size: 16px;
+  color: #e44d26; /* You can change this to your desired color */
+}
+
+.productDesc {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Style for the "BUY NOW!" button */
+.productButton {
+  background-color: #4CAF50; /* Green color, you can change this */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.productButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
 
 .container {
   position: relative;
