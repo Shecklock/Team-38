@@ -13,32 +13,33 @@
 </head>
 <body>
     <header>
-        <div id="header">
-            <nav>
+        
+            
                 <div id="header">
                     <div class="container1">
                         <nav>
                             <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                             
-                                <form action="{{ url('/search') }}" method="GET" role="search">
-                                    <div class="input-group">                                  
-                                        <input type="search" name="search" placeholder="Search...">
-                                        <button class="btn bg-white" type="submit">
-                                            <i>search<i>
-                                    </div>
-                                </form>
-
                                 <ul>
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="#">Products</a></li>
-                                <li><a href="{{ route('about_us') }}">About Us</a></li>
+                                    <li>    <form action="{{ url('/search') }}" method="GET" role="search">
+                                            <div class="input-group">                                  
+                                                <input type="search" name="search" placeholder=" Products...">
+                                                <button class="btn bg-white" type="submit">
+                                                    <i>search<i>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="#">Products</a></li>
+                                    <li class="active"><a href="contact-us">Contact Us</a></li>
+                                    <li><a href="{{ route('about_us') }}">About Us</a></li>
                                 
-                                @guest
+                                    @guest
                                     <li><a href="{{ route('login') }}">Login</a></li>
                                     @if (Route::has('register'))
                                         <li><a href="{{ route('register') }}">Register</a></li>
                                     @endif
-                                @else
+                                    @else
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             <i class="mdi mdi-logout text-primary"></i> Logout
@@ -48,14 +49,13 @@
                                         </form>
                                     </li>
                                     <li><a href="a">Account</a></li>
-                                @endguest
+                                    @endguest
                                 
                                 <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-            </nav>
         </header>
 
 <!-- Add a slider section at the top -->
