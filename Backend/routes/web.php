@@ -52,13 +52,17 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('/category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin\category\edit');
     Route::get('admin/category/index',[App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin/category/index');
     Route::match(['put'], '/category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin/category/update');
+    
+    
+
 
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
+   
     
-
 });
 
+Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
 
 Route::get('/about-us', function () {
     return view('about_us');
@@ -123,4 +127,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 use App\Http\Controllers\BasketController;
 
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+
+
+
 
