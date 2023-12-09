@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
+use App\Http\Controllers\ProductController;
+
 
 
 /*
@@ -124,10 +126,14 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-use App\Http\Controllers\BasketController;
+// use App\Http\Controllers\BasketController;
 
-Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+// Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 
-
+Route::get('/home', [ProductController::class, 'index']);  
+Route::get('/shopping-cart', [ProductController::class, 'productCart'])->name('shopping.cart');
+Route::get('/product/{productId}', [ProductController::class, 'addProductToCart'])->name('addproduct.to.cart');
+Route::patch('/update-shopping-cart', [ProductController::class, 'updateCart'])->name('update.shopping.cart');
+Route::delete('/delete-cart-product', [ProductController::class, 'deleteProduct'])->name('delete.cart.product');
 
 

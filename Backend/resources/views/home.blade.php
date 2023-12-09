@@ -51,7 +51,13 @@
                                     <li><a href="a">Account</a></li>
                                     @endguest
                                 
-                                <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                                {{-- <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li> --}}
+                                <li class="nav-item">
+                                    <a class="btn btn-outline-dark" href="{{ route('shopping.cart') }}">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
+                                        <span class="badge bg-danger">{{ count((array) session('cart')) }}</span>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -104,18 +110,23 @@
                     <h1 class="productTitle">{{ $product->ProductName }}</h1>
                     <h2 class="productPrice">${{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+                    {{-- <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button> --}}
+                    <p class="btn-holder">
+                        <a href="{{ route('addproduct.to.cart', $productId->productId) }}" class="btn btn-outline-danger">
+                            Add to Cart
+                        </a>
+                    </p>
                 </div>
             </div>
         @endforeach
     </div>
 </nav>
 
-<script>
+{{-- <script>
     function redirectToBasket() {
-        window.location.href = "{{ route('basket') }}";
+        window.location.href = "{{ route('cart') }}";
     }
-</script>
+</script> --}}
 
 <footer>
             <p>
