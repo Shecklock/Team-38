@@ -131,3 +131,10 @@ Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 
 
 
+=======
+// Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
+Route::delete('/delete-basket-product', [BasketController::class, 'deleteProduct'])->name('delete.basket.product');
+Route::get('/shopping-basket', [BasketController::class, 'productBasket'])->name('shopping.basket');
+Route::get('/product/{productId}', [BasketController::class, 'addItem'])->name('addproduct.to.basket');
+Route::patch('/update-shopping-cart', [BasketController::class, 'updateBasket'])->name('update.shopping.basket');
+>>>>>>> Stashed changes
