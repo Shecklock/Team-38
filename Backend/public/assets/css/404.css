@@ -14,6 +14,31 @@ body{
 }
 
 
+.input-group button {
+  height: 30px;
+  width:55px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-color: black;
+  border-radius: 25px; 
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #90ee90; 
+  color: #ffffff;
+}
+
+.input-group input{
+  height: 30px;
+  width:150px;
+  background-color: white;
+  border: 1px solid #ccc; /* Match the border with input for consistency */
+  border-color: black;
+  border-radius: 25px; /* Set border-radius for round edges */
+
+}
+
 .container1{
     padding: 10px 10%;
     background: lightgreen;

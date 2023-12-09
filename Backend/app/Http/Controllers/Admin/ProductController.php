@@ -117,7 +117,7 @@ class ProductController extends Controller
 
    
 
-   
+   //search the product in the for the Customer side
     public function search(Request $request)
     {
         $searchTerm = $request->input('search');
