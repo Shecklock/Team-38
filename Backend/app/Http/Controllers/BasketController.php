@@ -1,8 +1,8 @@
-<?php
-
+<?php 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product; // Import the Product model
 
 class BasketController extends Controller
 {
@@ -13,27 +13,42 @@ class BasketController extends Controller
      */
     public function index()
     {
-        // You can retrieve and display the basket contents here
-        return view('basket');
+        $basketItems = session()->get('basket', []); // Retrieve basket items from session
+        
+        return view('basket', ['basketItems' => $basketItems]);
     }
-
     /**
      * Add an item to the basket.
      *
      * @param  int  $productId
      * @return \Illuminate\Http\Response
      */
+
     public function addItem($productId)
     {
-        // Logic to add an item to the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
-        // BasketService::addItem($productId);
-
-        return redirect()->route('basket')->with('success', 'Item added to the basket successfully!');
+        $basket = session()->get('basket', []); // Retrieve basket from session or initialize as an empty array
+    
+        // Fetch product details using $productId (replace this with your actual logic)
+        $product = Product::find($productId);
+    
+        // Check if the product details are valid before adding to the basket
+        if ($product) {
+            // Ensure that the product details have the expected structure
+            $basket[] = [
+                'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
+                'price' => $product->Price, // Replace 'Price' with the correct field from your product details
+                // Add more necessary keys and values
+            ];
+    
+            // Store the updated basket in the session
+            session()->put('basket', $basket);
+    
+            return redirect()->route('basket')->with('success', 'Item added to the basket successfully!');
+        } else {
+            return redirect()->route('basket')->with('error', 'Failed to add item to the basket!');
+        }
     }
-
+    
     /**
      * Remove an item from the basket.
      *
@@ -41,15 +56,18 @@ class BasketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeItem($itemId)
-    {
-        // Logic to remove an item from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
+{
+    $basket = session()->get('basket', []);
 
-        // For example:
-        // BasketService::removeItem($itemId);
-
-        return redirect()->route('basket')->with('success', 'Item removed from the basket successfully!');
+    if (array_key_exists($itemId, $basket)) {
+        unset($basket[$itemId]);
+        session()->put('basket', $basket);
+        return response()->json(['success' => true, 'message' => 'Item removed from the basket successfully']);
+    } else {
+        return response()->json(['success' => false, 'message' => 'Failed to remove item from the basket']);
     }
+}
+
 
     /**
      * Clear all items from the basket.
@@ -58,10 +76,8 @@ class BasketController extends Controller
      */
     public function clearBasket()
     {
-        // Logic to clear all items from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
+        // Logic to clear all items from the basket
+        // Replace this with your actual logic to clear the basket
         // BasketService::clearBasket();
 
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
