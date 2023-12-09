@@ -113,6 +113,7 @@ Route::get('/{any}', function() {
     return view('/errors/404');
 })->where('any', '.*');
 
+<<<<<<< Updated upstream
 
 // Other routes...
 
