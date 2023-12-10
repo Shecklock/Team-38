@@ -16,13 +16,12 @@ use App\Http\Requests\CategoryFormRequest;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-// Sending admins to the dashboard if they input the wrong url
+// Sending admins to the dashboard if they input the wrong URL
 Route::get('/admin', function() {
     return redirect('/admin/dashboard');
 });
@@ -30,16 +29,15 @@ Route::get('/admin', function() {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Correcting the route group
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
-    // You can define more routes specific to the 'dashboard' prefix here
+// Authenticated routes for admin
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
     
-    Route::get('products/create',[App\Http\Controllers\Admin\ProductController::class, 'create']); 
-    // Using resource route for product
-    Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
-    // Explicitly define the create route
+    
+   
+ // Product routes
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class)->except(['create']); 
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
 
     
@@ -71,18 +69,10 @@ Route::get('/about-us', function () {
 })->name('about_us');
 
 
-use App\Http\Controllers\HomeController;
 
-Route::get('/basket', function () { //URL LINK
-    return view('basket'); //File Name
-
-});
-
-Route::get('/checkout', function () { //URL LINK
-    return view('checkout'); //File Name
-
-});
-
+// Basket routes
+Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
 Route::get('/contact-us', function () { //URL LINK
     return view('contact_us'); //File Name
 
@@ -112,12 +102,25 @@ Route::get('/register', function () { //URL LINK
 
 });
 
+// Other static page routes...
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
+Route::get('/forgot-password', function () { //URL LINK
+    return view('forgot_password'); //File Name
 
 // Route any unknown webpage to display the 404 error
 Route::get('/{any}', function() {
+Route::get('/{any}', function () {
     return view('/errors/404');
 })->where('any', '.*');
 
+
+// Other static page routes...
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 
 // Other routes...
 
@@ -129,10 +132,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-use App\Http\Controllers\BasketController;
 
+Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
-
-
-
+Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
 

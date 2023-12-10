@@ -102,7 +102,11 @@
                     <h1 class="productTitle">{{ $product->ProductName }}</h1>
                     <h2 class="productPrice">${{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+
+                    <button class="productButton">
+                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
+                    </button>
+
                 </div>
             </div>
         @endforeach
