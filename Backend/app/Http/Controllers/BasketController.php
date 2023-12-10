@@ -37,6 +37,7 @@ class BasketController extends Controller
             $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
                 'price' => $product->Price, // Replace 'Price' with the correct field from your product details
+                'image' => $product->image,
                 // Add more necessary keys and values
             ];
     

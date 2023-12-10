@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -109,9 +111,10 @@ Route::get('/checkout', function () {
 
 Route::get('/forgot-password', function () { //URL LINK
     return view('forgot_password'); //File Name
+});
 
 // Route any unknown webpage to display the 404 error
-Route::get('/{any}', function() {
+
 Route::get('/{any}', function () {
     return view('/errors/404');
 })->where('any', '.*');
@@ -130,10 +133,11 @@ Auth::routes();
 // Your other routes...
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
+
 

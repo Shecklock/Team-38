@@ -41,39 +41,55 @@
         <h3 class="title">Your Basket</h3>
 
         <!-- Display basket items -->
-<div class="basket-items">
-    @if(count($basketItems) > 0)
-        @foreach($basketItems as $key => $item)
-            @if(is_array($item)) <!-- Check if $item is an array -->
-                <div class="basket-item">
-                    <p>{{ $item['name'] ?? 'Unknown' }}</p>
-                    <p>${{ $item['price'] ?? 'Unknown' }}</p>
-                    <!-- Add more details as needed -->
-                    <form action="{{ route('removeItem', ['itemId' => $key]) }}" method="POST" class="remove-form">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="productButton">Remove</button>
-                    </form>
-                </div>
-            @else
-                <!-- Handle case where $item is not an array -->
-                <div class="basket-item">
-                    <p>Item structure is invalid</p>
-                </div>
-            @endif
-        @endforeach
-    @else
-        <p>No items in the basket</p>
-    @endif
-</div>
+        <div class="basket-items">
+    @php
+        $totalPrice = 0; // Initialize the total price variable
+    @endphp
 
+    @if(count($basketItems) > 0)
+    @foreach($basketItems as $key => $item)
+        @if(is_array($item))
+            <div class="basket-item">
+                @if(isset($item['image']))
+                    <img src="{{ asset('/uploads/product/' . $item['image']) }}" alt="{{ $item['name'] ?? 'Unknown' }}" class="item-image">
+                @else
+                    <p>No image available</p>
+                @endif
+                <p>{{ $item['name'] ?? 'Unknown' }}</p>
+                <p>${{ $item['price'] ?? 'Unknown' }}</p>
+
+                <form action="{{ route('removeItem', ['itemId' => $key]) }}" method="POST" class="remove-form">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="productButton">Remove</button>
+                </form>
+            </div>
+
+            @php
+                // Update the total price
+                $totalPrice += ($item['price'] ?? 0);
+            @endphp
+        @else
+            <div class="basket-item">
+                <p>Item structure is invalid</p>
+            </div>
+        @endif
+    @endforeach
+
+    <!-- Display the total price -->
+    <div class="total-price">
+        <p>Total: ${{ $totalPrice }}</p>
+    </div>
+@else
+    <p>No items in the basket</p>
+@endif
+</div>
         <div class="total">
-            <p>Total:</p>
             <!-- Button to proceed to checkout -->
             <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
             <script>
                 function redirectToCheckout() {
-                    window.location.href = "{{ url('checkout.html') }}";
+                    window.location.href = "{{ route('checkout') }}";
                 }
             </script>
         </div>
