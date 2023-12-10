@@ -14,7 +14,7 @@
     <body>
     <header>
         
-            
+            <!-- All the header code, containing the form request for the serach bar and the user login and logout -->
                 <div id="header">
                     <div class="container1">
                         <nav>
@@ -57,7 +57,8 @@
                     </div>
                 </div>
         </header>
-        <nav>
+        <nav> 
+            <!-- This code gets the product details from the database -->
         <div class="product" id="product">
             @forelse($search as $product)
                 <div class="productItem">
@@ -73,7 +74,7 @@
             @endforelse
         </div>
     </nav>
-
+<!-- If there was no product found then it uses this code to display no products found -->
     <div id="NoSearchFound">
         <h1>Search Results</h1>
 
@@ -90,6 +91,7 @@
         @endif
     </div>
 </nav>
+<!-- All the footer code -->
 <footer>
     <p>
         <a href="contact_us.html">Contact us</a><br>

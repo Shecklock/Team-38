@@ -7,6 +7,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryFormRequest;
 
+// Created a category contorller class to controll all the functions of the category
+//This controlls all create, edit, delete, update functions
 
 class CategoryController extends Controller
 {
@@ -41,22 +43,14 @@ class CategoryController extends Controller
         return view('admin\category\edit')->with('category', $category);
     }
 
-     
-
-
-        public function update(CategoryFormRequest $request, $category)
-        {
-            $category = Category::find($category);
-            $input = $request->all();
-            $category->update($input);
-            return redirect()->route('admin/category/index')->with('success', 'Category updated successfully');
-           
-        }
-
-
-
-
-
+    public function update(CategoryFormRequest $request, $category)
+    {
+        $category = Category::find($category);
+        $input = $request->all();
+        $category->update($input);
+        return redirect()->route('admin/category/index')->with('success', 'Category updated successfully');
+        
+    }
 
     public function destroy($category)
     {
