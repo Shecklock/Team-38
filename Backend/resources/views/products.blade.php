@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <script src="{{ asset('js/contact.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/products.css') }}">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
+
+<header>
         <div id="header">
             <div class="container1">
                 <nav>
@@ -24,7 +24,7 @@
                                 </form>
                             </li>
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="#">Products</a></li>
+                            <li><a href="{{ route('products') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
                         
@@ -51,83 +51,49 @@
             </div>
         </div>
     </header>
-    
-    <div class="container">
-        <h1>Connect with us: </h1>
+    <section class="Product-Intro">
+        <h1>New arrivals</h1><br>
+        <p>Newest arrivals for the winter season</p><br>
+        <img src="sources/productPageImage.png" height="300"><br><br>
+        <button>Shop now</button>
+    </section>
 
-        <div class="contact-box">
-            <div class="contact-form">
-                <h3>Contact us here:</h3>
-                <form id="myForm">
-                    <div class="input-info">
-                        <div class="inputs">
-                            <label for="First-name">First Name:</label>
-                            <input type="text" placeholder="First Name" required>
-                        </div>
-                        <div class="inputs">
-                            <label for="Lastname">Last Name:</label>
-                            <input type="text" placeholder="Last Name">
-                        </div>
+    <section class="pro">
+        <h1 class="pheading">Our products</h1>
+        <div class="products">
+            <!-- card start -->
+            @for ($i = 0; $i < 6; $i++)
+                <div class="card">
+                    <div class="img"><img src="sources/productPageImage.png"></div>
+                    <div class="description">Item1</div>
+                    <div class="title">Lady items</div>
+                    <div class="box">
+                        <div class="price">£56</div>
+                        <button class="btn">Buy</button>
                     </div>
-                    <div class="input-info">
-                        <div class="inputs">
-                            <label for="email">Email:</label>
-                            <input type="email" placeholder="Enter Email" required>
-                        </div>
-                        <div class="inputs">
-                            <label for="phonenumber">Phone No:</label>
-                            <input type="text" placeholder="+44">
-                        </div>
-                    </div>
-                    <label>Message</label>
-                    <textarea name="reason-for-contact" placeholder="message" cols="20" rows="5">Enter reason here...</textarea>
-                    <!-- <input type="submit" value="Submit"> -->
-                    <button type="submit">Submit</button>
-                </form>
-                <script>
-                    document.getElementById('myForm').addEventListener('submit', function(event) {
-                        event.preventDefault();
-                        window.location.href = '{{ url("about_us.html") }}'; 
-                    });
-                </script>
-            </div>
-
-            <div class="company-info">
-                <h3>Company details:</h3>
-                <table>
-                    <tr>
-                        <td>Email: </td>
-                        <td>sportifypromax@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Phone: </td>
-                        <td>+44 123435390</td>
-                    </tr>
-                    <tr>
-                        <td>Address: </td>
-                        <td>Aston St, Birmingham B4 7ET</td>
-                    </tr>
-                </table>
-            </div>
+                </div>
+            @endfor
+            <!-- card end -->
         </div>
-    </div>
+    </section>
 
     <footer>
         <p>
-            <a href="{{ url('contact_us.html') }}">Contact us</a><br>
+            <a href="{{ url('contact_us') }}">Contact us</a><br>
             Telephone: +44 123435390 <br>
             Email: sportifypromax@gmail.com
         </p>
         <p>
-            <a href="{{ url('about_us.html') }}">About us </a><br>
+            <a href="{{ url('about_us') }}">About us </a><br>
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
-            <a href="{{ url('faqs.html') }}">FAQs</a><br>
+            <a href="{{ url('faqs') }}">FAQs</a><br>
             <a href="https://www.instagram.com/">Instagram</a><br>
             <a href="https://en-gb.facebook.com/">Facebook</a><br>
             <a href="https://twitter.com/login">X</a>
         </p>
-    </footer>   
+    </footer>
 </body>
+
 </html>

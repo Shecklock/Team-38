@@ -36,6 +36,7 @@
         <span class="big-circle"></span>
 
         <div class="form_basket">
+
     <div class="checkout-info">
         <h3 class="title">Your Basket</h3>
 
@@ -66,6 +67,16 @@
             <p>Total:</p>
             <!-- Button to proceed to checkout -->
             <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
+
+            
+
+                <h3 class="title">Your Basket</h3>
+
+
+                <div class="total">
+                    <p>Total:</p>
+                    <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
+
 
             <script>
                 function redirectToCheckout() {
