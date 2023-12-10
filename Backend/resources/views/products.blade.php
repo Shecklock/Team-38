@@ -24,7 +24,7 @@
                                 </form>
                             </li>
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('products') }}">Products</a></li>
+                            <li><a href="{{ route('showproducts') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
                         
@@ -58,7 +58,7 @@
         <button>Shop now</button>
     </section>
 
-    <section class="pro">
+    {{-- <section class="pro">
         <h1 class="pheading">Our products</h1>
         <div class="products">
             <!-- card start -->
@@ -75,17 +75,39 @@
             @endfor
             <!-- card end -->
         </div>
+    </section> --}}
+
+    <section class="pro">
+        <h1 class="pheading">Our products</h1>
+        <div class="products">
+            <!-- card start -->
+            @foreach($products as $product)
+                <div class="card">
+                    <div class="img"><img src="{{ asset('uploads/product/' . $product->image) }}" alt="{{ $product->ProductName }}"></div>
+                    <div class="description">{{ $product->Description }}</div>
+                    <div class="title">{{ $product->ProductName }}</div>
+                    <div class="box">
+                        <div class="price">£{{ $product->Price }}</div>
+                        <button class="productButton">
+                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
+                            </button>                    
+                        </div>
+                </div>
+            @endforeach
+            <!-- card end -->
+        </div>
     </section>
+    
 
     <footer>
         <p>
-            <a href="{{ url('contact_us') }}">Contact us</a><br>
-            Telephone: +44 123435390 <br>
+            <a href="contact-us">Contact Us</a> <br>
+            Telephone: +44 123435390
             Email: sportifypromax@gmail.com
         </p>
         <p>
-            <a href="{{ url('about_us') }}">About us </a><br>
-            Address: Aston St, Birmingham B4 7ET
+            <a href="{{ route('about_us') }}">About Us</a> <br>
+             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
             <a href="{{ url('faqs') }}">FAQs</a><br>

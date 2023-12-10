@@ -28,7 +28,7 @@
                                 </form>
                             </li>
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('products') }}">Products</a></li>
+                            <li><a href="{{ route('showproducts') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
                         
@@ -69,12 +69,12 @@
 <!-- Rest of your existing content -->
 
 <div class="navBottom">
-    <h3 class="menuItem">Men</h3>
-    <h3 class="menuItem">Women</h3>
-    <h3 class="menuItem">Children</h3>
-    <h3 class="menuItem">Gym & Equipment</h3>
-    <h3 class="menuItem">Accessories</h3>
+    <a href="{{ url('/search?search=Men') }}"><h3 class="menuItem">Men</h3></a>
+    <a href="{{ url('/search?search=Women') }}"><h3 class="menuItem">Women</h3></a>
+    <a href="{{ url('/search?search=Trainers') }}"><h3 class="menuItem">Trainers</h3></a>
+    <a href="{{ url('/search?search=Accessories') }}"><h3 class="menuItem">Accessories</h3></a>
 </div>
+
 
 
 <script>
@@ -100,7 +100,7 @@
                 <div class="productDetails">
                 <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
                     <h1 class="productTitle">{{ $product->ProductName }}</h1>
-                    <h2 class="productPrice">${{ $product->Price }}</h2>
+                    <h2 class="productPrice">£{{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
 
                     <button class="productButton">
@@ -119,23 +119,22 @@
     }
 </script>
 
-<footer>
-            <p>
-                <a href="contact_us.html">Contact us</a><br>
-                Telephone: +44 123435390 <br>
-                Email: sportifypromax@gmail.com
-                
-            </p>
-        <p>
-            <a href="{{ route('about_us') }}">About us</a><br>
-            Address: Aston St, Birmingham B4 7ET
-        </p>
-        <p>
-            
-            <a href="https://www.instagram.com/">Instagram</a><br>
-            <a href="https://en-gb.facebook.com/">Facebook</a><br>
-            <a href="https://twitter.com/login">X</a>
-        </p>
-    </footer>
+<<footer>
+    <p>
+        <a href="contact-us">Contact Us</a> <br>
+        Telephone: +44 123435390
+        Email: sportifypromax@gmail.com
+    </p>
+    <p>
+        <a href="{{ route('about_us') }}">About Us</a> <br>
+         Address: Aston St, Birmingham B4 7ET
+    </p>
+    <p>
+        <a href="{{ url('faqs') }}">FAQs</a><br>
+        <a href="https://www.instagram.com/">Instagram</a><br>
+        <a href="https://en-gb.facebook.com/">Facebook</a><br>
+        <a href="https://twitter.com/login">X</a>
+    </p>
+</footer>
 </body>
 </html>

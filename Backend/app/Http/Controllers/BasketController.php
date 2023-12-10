@@ -49,6 +49,15 @@ class BasketController extends Controller
             return redirect()->route('basket')->with('error', 'Failed to add item to the basket!');
         }
     }
+
+    public function showProducts()
+    {
+        // Fetch products from the database
+        $products = Product::all(); // Assuming Product is your model name
+    
+        // Pass the products to the view
+        return view('products', ['products' => $products]);
+    }
     
     /**
      * Remove an item from the basket.
@@ -84,3 +93,5 @@ class BasketController extends Controller
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
     }
 }
+
+

@@ -1,7 +1,6 @@
 <!-- resources/views/search.blade.php -->
 
 
-<
 <!DOCTYPE html>
 
 <html lang = "en">
@@ -30,7 +29,7 @@
                                         </form>
                                     </li>
                                     <li><a href="{{ route('home') }}">Home</a></li>
-                                    <li><a href="#">Products</a></li>
+                                    <li><a href="{{ route('showproducts')}}">Products</a></li>
                                     <li class="active"><a href="contact-us">Contact Us</a></li>
                                     <li><a href="{{ route('about_us') }}">About Us</a></li>
                                 
@@ -67,7 +66,9 @@
                         <h1 class="productTitle">{{ $product->ProductName }}</h1>
                         <h2 class="productPrice">${{ $product->Price }}</h2>
                         <p class="productDesc">{{ $product->Description }}</p>
-                        <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+                        <button class="productButton">
+                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
+                            </button>                    
                     </div>
                 </div>
             @empty

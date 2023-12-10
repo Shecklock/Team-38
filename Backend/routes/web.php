@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CategoryController;
+
+
 
 
 /*
@@ -39,8 +44,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     
    
  // Product routes
-    Route::resource('products', App\Http\Controllers\Admin\ProductController::class)->except(['create']); 
-    Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class); 
+    Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('admin.products.create');
 
     
     //created routes for category controller
@@ -139,5 +144,6 @@ Auth::routes();
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
+Route::get('/products', [BasketController::class, 'showProducts'])->name('showproducts');;
 
 
