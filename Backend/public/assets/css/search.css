@@ -14,7 +14,33 @@
       border-radius: 25px; 
       cursor: pointer;
     }
+
+  /* All no seach found releates back to the no seach found in the middle of the screen */
+    #NoSearchFound {
+      text-align: center;
+      margin-top: 20px; 
+      border-bottom: 2px solid #ddd; 
+      padding-bottom: 20px; 
+      margin-bottom: 300px;
+  }
+  
+  #NoSearchFound h1 {
+      color: #333; 
+  }
+  
+  #NoSearchFound p {
+      color: #777; 
+  }
+  
+  
+  #NoSearchFound {
+      border: 2px solid #ddd; 
+      padding: 20px; 
+      border-radius: 10px; 
+      background-color: #f8f8f8; 
+  }
     
+/* Input group button is for the search bar and the search button  */
     .input-group button:hover {
       background-color: #90ee90; 
       color: #ffffff;
@@ -24,9 +50,9 @@
       height: 30px;
       width:150px;
       background-color: white;
-      border: 1px solid #ccc; /* Match the border with input for consistency */
+      border: 1px solid #ccc; 
       border-color: black;
-      border-radius: 25px; /* Set border-radius for round edges */
+      border-radius: 25px;
     
     }
     
