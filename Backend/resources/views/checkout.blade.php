@@ -7,32 +7,58 @@
     <link href="{{ asset('assets/css/style2.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div id="header">
-        <div class="container1">
-            <nav>
-                <a href="{{ url('index.html') }}"><img src="{{ asset('sources/logo2.png') }}" class="logo"></a>
-                <ul>
-                    <!-- Nav Bar -->
-                    <li><input type="text" placeholder="Search.."></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li class="active"><a href="{{ url('contact_us.html') }}">Contact Us</a></li>
-                    <li><a href="{{ url('about_us.html') }}">About Us</a></li>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="{{ url('basket.html') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>       
-                    <!-- Nav Bar -->
-                </ul>
-            </nav>
+<header>
+        
+    <!-- All the header code, containing the form request for the serach bar and the user login and logout -->
+        <div id="header">
+            <div class="container1">
+                <nav>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
+                    
+                        <ul>
+                            <li>    <form action="{{ url('/search') }}" method="GET" role="search">
+                                    <div class="input-group">                                  
+                                        <input type="search" name="search" placeholder=" Products...">
+                                        <button class="btn bg-white" type="submit">
+                                            <i>search<i>
+                                    </div>
+                                </form>
+                            </li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('showproducts')}}">Products</a></li>
+                            <li class="active"><a href="contact-us">Contact Us</a></li>
+                            <li><a href="{{ route('about_us') }}">About Us</a></li>
+                        
+                            @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            @if (Route::has('register'))
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                            @endif
+                            @else
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="mdi mdi-logout text-primary"></i> Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                            <li><a href="a">Account</a></li>
+                            @endguest
+                        
+                        <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
+</header>
 
     <div class="container">
         <span class="big-circle"></span>
 
         <div class="form">
             <div class="checkout-info">
-                <h1 class="title"><a href="{{ url('basket.html') }}" class="title-link"><i class="fa-solid fa-arrow-left"></i> Back to Basket</a></h1>
+                <h1 class="title"><a href="{{ route('basket') }}" class="title-link"><i class="fa-solid fa-arrow-left"></i> Back to Basket</a></h1>
 
                 <h3 class="title">Billing Information</h3>
                 <div class="billing-info">

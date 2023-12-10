@@ -35,6 +35,8 @@ nav {
   display: inline-block;
 } */
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +80,22 @@ textarea {
   border-radius: 25px;
   max-width: 100%;
 }
+
+.Shop-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none; /* Remove underline */
+}
+
+
+
+
 
 
 nav {
@@ -266,7 +284,91 @@ nav ul li a:hover::after {
   background-color: #45a049; /* Darker green on hover */
 }
 
+/* Add this CSS to your stylesheet */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* .big-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+  border-radius: 50%;
+} */
+
+.form_basket {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-info {
+  text-align: center;
+}
+
+.title {
+  color: #333;
+}
+
+.basket-items {
+  margin-top: 20px;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.item-image {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+.total-price {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.total {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn_basket {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn_basket:hover {
+  background-color: #267bb5;
+}
+
+/* Adjust as needed */
+
+
+/* .container {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -332,7 +434,7 @@ nav ul li a:hover::after {
   font-size: 1.5rem;
   line-height: 1;
   margin-bottom: 0.7rem;
-}
+} */
 
 .input-container {
   position: relative;
@@ -382,7 +484,7 @@ textarea.input {
   transform: translateY(0);
 }
 
-.btn_basket {
+/* .btn_basket {
   padding: 0.6rem 1.3rem;
   background-color: lightgreen;
   border: 2px solid lightgreen;
@@ -399,7 +501,7 @@ textarea.input {
 .btn_basket:hover {
   background-color: transparent;
   color: lightgreen;
-}
+} */
 
 /* .btn {
   padding: 0.6rem 1.3rem;
@@ -490,7 +592,7 @@ textarea.input {
 }
 
 footer{
-  width:97%;
+  width: 97%;
   margin:auto;
   padding-left: 40px;
   background-color: lightgreen;
@@ -501,6 +603,7 @@ footer{
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:black;
   align-items: center;
+  margin-top: 100px;
   
 }
 

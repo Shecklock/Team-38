@@ -37,6 +37,7 @@ class BasketController extends Controller
             $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
                 'price' => $product->Price, // Replace 'Price' with the correct field from your product details
+                'image' => $product->image,
                 // Add more necessary keys and values
             ];
     
@@ -47,6 +48,15 @@ class BasketController extends Controller
         } else {
             return redirect()->route('basket')->with('error', 'Failed to add item to the basket!');
         }
+    }
+
+    public function showProducts()
+    {
+        // Fetch products from the database
+        $products = Product::all(); // Assuming Product is your model name
+    
+        // Pass the products to the view
+        return view('products', ['products' => $products]);
     }
     
     /**
@@ -83,3 +93,5 @@ class BasketController extends Controller
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
     }
 }
+
+

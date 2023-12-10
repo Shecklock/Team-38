@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <a class="btn btn-success" href="{{ route('products.create') }}">Create new product</a>
+            <a class="btn btn-success" href="{{ route('admin.products.create') }}">Create new product</a>
         </div>
     </div>
 

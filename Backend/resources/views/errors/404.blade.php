@@ -22,7 +22,7 @@
                                 </form>
                             </li>
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('products') }}">Products</a></li>
+                            <li><a href="{{ route('showproducts') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
                         
