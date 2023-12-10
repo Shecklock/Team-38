@@ -103,10 +103,15 @@ Route::get('/login', function () { //URL LINK
 
 });
 
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+
 Route::get('/register', function () { //URL LINK
     return view('register'); //File Name
 
 });
+
 
 // Route any unknown webpage to display the 404 error
 Route::get('/{any}', function() {
