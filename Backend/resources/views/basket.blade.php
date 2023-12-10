@@ -71,17 +71,6 @@
             <p>Total:</p>
             <!-- Button to proceed to checkout -->
             <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
-
-            
-
-                <h3 class="title">Your Basket</h3>
-
-
-                <div class="total">
-                    <p>Total:</p>
-                    <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
-
-
             <script>
                 function redirectToCheckout() {
                     window.location.href = "{{ url('checkout.html') }}";
