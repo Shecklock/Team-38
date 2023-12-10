@@ -118,18 +118,24 @@ class ProductController extends Controller
    
 
    //search the product in the for the Customer side
-    public function search(Request $request)
-    {
-        $searchTerm = $request->input('search');
+   public function search(Request $request)
+{
+    $searchTerm = $request->input('search');
 
-        if ($searchTerm) {
-            $search = Product::where('ProductName', 'LIKE', '%' . $searchTerm . '%')->latest()->paginate(15);
-        } else {
-            $search = Product::latest()->paginate(15);
-        }
-
-        return view('search', compact('search', 'searchTerm'));
+    if ($searchTerm) {
+        $search = Product::where('ProductName', 'LIKE', '%' . $searchTerm . '%')
+            ->orWhereHas('category', function ($query) use ($searchTerm) {
+                $query->where('CategoryName', 'LIKE', '%' . $searchTerm . '%');
+            })
+            ->latest()
+            ->paginate(15);
+    } else {
+        // The se
+        $search = collect();
     }
+
+    return view('search', compact('search', 'searchTerm'));
+}
 }
 
 

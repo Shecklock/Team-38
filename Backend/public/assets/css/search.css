@@ -14,6 +14,29 @@
       border-radius: 25px; 
       cursor: pointer;
     }
+    #NoSearchFound {
+      text-align: center;
+      margin-top: 20px; /* Adjust as needed */
+      border-bottom: 2px solid #ddd; /* Add a line below the text */
+      padding-bottom: 20px; /* Add padding below the line */
+      margin-bottom: 300px;
+  }
+  
+  #NoSearchFound h1 {
+      color: #333; /* Set your desired text color */
+  }
+  
+  #NoSearchFound p {
+      color: #777; /* Set your desired text color */
+  }
+  
+  /* Optional: Add a box around the content */
+  #NoSearchFound {
+      border: 2px solid #ddd; /* Set your desired border color */
+      padding: 20px; /* Adjust as needed */
+      border-radius: 10px; /* Optional: Add rounded corners */
+      background-color: #f8f8f8; /* Optional: Add background color */
+  }
     
     .input-group button:hover {
       background-color: #90ee90; 

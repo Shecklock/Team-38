@@ -57,23 +57,39 @@
                     </div>
                 </div>
         </header>
-
-<nav>
-    <div class="product" id="product">
-        @foreach($search as $product)
-            <div class="productItem">
-                <div class="productDetails">
-                    <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
-                    <h1 class="productTitle">{{ $product->ProductName }}</h1>
-                    <h2 class="productPrice">${{ $product->Price }}</h2>
-                    <p class="productDesc">{{ $product->Description }}</p>
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+        <nav>
+        <div class="product" id="product">
+            @forelse($search as $product)
+                <div class="productItem">
+                    <div class="productDetails">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                        <h1 class="productTitle">{{ $product->ProductName }}</h1>
+                        <h2 class="productPrice">${{ $product->Price }}</h2>
+                        <p class="productDesc">{{ $product->Description }}</p>
+                        <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @empty
+            @endforelse
+        </div>
+    </nav>
+
+    <div id="NoSearchFound">
+        <h1>Search Results</h1>
+
+        @if($search->isEmpty())
+            <p>No products found.</p>
+        @else
+            {{-- Display your search results here --}}
+            @foreach($search as $product)
+                {{-- Your product display logic --}}
+            @endforeach
+
+            {{-- Add pagination links if necessary --}}
+            {{ $search->links() }}
+        @endif
     </div>
 </nav>
-
 <footer>
     <p>
         <a href="contact_us.html">Contact us</a><br>
