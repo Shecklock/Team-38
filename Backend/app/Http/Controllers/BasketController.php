@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product; // Import the Product model
 
 class BasketController extends Controller
 {
+    protected $product;
+
+    public function __construct(Product $product)
+    {
+        $this->product = $product;
+    }
+
     /**
      * Display the contents of the basket.
      *
@@ -13,8 +21,9 @@ class BasketController extends Controller
      */
     public function index()
     {
-        // You can retrieve and display the basket contents here
-        return view('basket');
+        $basket = session()->get('basket', []); // Retrieve basket items from session
+
+        return view('basket', ['basket' => $basket]);
     }
 
     /**
@@ -25,45 +34,51 @@ class BasketController extends Controller
      */
     public function addItem($productId)
     {
-        // Logic to add an item to the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
+        $product = $this->product->findOrFail($productId);
+        $basket = session()->get('basket', []);
 
-        // For example:
-        // BasketService::addItem($productId);
+        // Check if the product details are valid before adding to the basket
+        if ($product) {
+            // Check if the item already exists in the basket
+            $existingItem = collect($basket)->firstWhere('id', $productId);
 
-        return redirect()->route('basket')->with('success', 'Item added to the basket successfully!');
+            if ($existingItem) {
+                // Increment the quantity if the item already exists
+                $existingItem['quantity']++;
+            } else {
+                // Add a new item to the basket
+                $basket[] = [
+                    'id' => $productId,
+                    'name' => $product->ProductName,
+                    'quantity' => 1, // Set quantity to 1 for a new item in the basket
+                    'price' => $product->Price,
+                    'photo' => $product->image,
+                ];
+            }
+
+            // Store the updated basket in the session
+            session()->put('basket', $basket);
+
+            return redirect()->route('basket')->with('success', 'Item added to the basket successfully!');
+        } else {
+            return redirect()->route('basket')->with('error', 'Failed to add item to the basket!');
+        }
     }
 
     /**
      * Remove an item from the basket.
      *
-     * @param  int  $itemId
+     * @param  int  $productId
      * @return \Illuminate\Http\Response
      */
-    public function removeItem($itemId)
+    public function deleteProductFromBasket($productId)
     {
-        // Logic to remove an item from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
+        $basket = session()->get('basket');
 
-        // For example:
-        // BasketService::removeItem($itemId);
-
-        return redirect()->route('basket')->with('success', 'Item removed from the basket successfully!');
-    }
-
-    /**
-     * Clear all items from the basket.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function clearBasket()
-    {
-        // Logic to clear all items from the basket (you need to implement this)
-        // You might want to use a service to handle basket-related operations
-
-        // For example:
-        // BasketService::clearBasket();
-
-        return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
+        if (isset($basket[$productId])) {
+            unset($basket[$productId]);
+            session()->put('basket', $basket);
+            session()->flash('success', 'Product successfully deleted from basket.');
+        }
     }
 }

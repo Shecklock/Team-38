@@ -35,6 +35,8 @@ nav {
   display: inline-block;
 } */
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -383,22 +385,62 @@ textarea.input {
 }
 
 .btn_basket {
-  padding: 0.6rem 1.3rem;
+  padding: 10px 20px;
   background-color: lightgreen;
   border: 2px solid lightgreen;
   font-size: 0.95rem;
   color: #fff;
-  line-height: 1;
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   margin: 0;
+  display: inline-block; /* Aligns with surrounding elements */
 }
 
 .btn_basket:hover {
   background-color: transparent;
   color: lightgreen;
+}
+
+.basket-items {
+  margin-top: 20px;
+}
+
+.basket-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.basket-item img {
+  margin-right: 15px;
+}
+
+.basket-item p {
+  margin: 0;
+}
+
+.remove-item {
+  margin-left: auto;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-block; /* Aligns with surrounding elements */
+}
+
+.remove-item:hover {
+  background-color: #c0392b;
+}
+
+.total {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* .btn {

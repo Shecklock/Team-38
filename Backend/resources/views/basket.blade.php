@@ -29,17 +29,40 @@
 
     <div class="container">
         <span class="big-circle"></span>
-
+    
         <div class="form_basket">
-            
-
+            <div class="checkout-info">
                 <h3 class="title">Your Basket</h3>
-
-
+    
+                <div class="basket-items">
+                    @if(isset($basket) && count($basket) > 0)
+                        @foreach($basket as $key => $item)
+                            @if(is_array($item))
+                                <div class="basket-item">
+                                    @if(isset($item['image']))
+                                        <img src="{{ asset('uploads/product/' . $item['image']) }}" class="card-img-top" height="50px"/>
+                                    @else
+                                        <p>No image available</p>
+                                    @endif
+                                    <p>{{ $item['name'] ?? 'Unknown' }}</p>
+                                    <p>${{ $item['price'] ?? 'Unknown' }}</p>
+                                    <button class="remove-item" data-item="{{ $key }}">Remove</button>
+                                </div>
+                            @else
+                                <div class="basket-item">
+                                    <p>Item structure is invalid</p>
+                                </div>
+                            @endif
+                        @endforeach
+                    @else
+                        <p>No items in the basket</p>
+                    @endif
+                </div>
+    
                 <div class="total">
                     <p>Total:</p>
                     <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
-
+    
                     <script>
                         function redirectToCheckout() {
                             window.location.href = "{{ url('checkout.html') }}";
@@ -49,6 +72,9 @@
             </div>
         </div>
     </div>
+    
+    
+    
     <footer>
         <p>
             <a href="{{ url('contact_us.html') }}">Contact us</a><br>

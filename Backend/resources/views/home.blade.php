@@ -14,7 +14,6 @@
 <body>
     <header>
         
-            
                 <div id="header">
                     <div class="container1">
                         <nav>
@@ -51,8 +50,8 @@
                                     <li><a href="a">Account</a></li>
                                     @endguest
                                 
-                                <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
-                            </ul>
+                                    {{-- <li><a href="{{ route('basket', ['productId' => $product->ProductID]) }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                                </ul> --}}
                         </nav>
                     </div>
                 </div>
@@ -104,18 +103,15 @@
                     <h1 class="productTitle">{{ $product->ProductName }}</h1>
                     <h2 class="productPrice">${{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
+                    <button class="productButton">
+                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
+                    </button>
                 </div>
             </div>
         @endforeach
     </div>
 </nav>
 
-<script>
-    function redirectToBasket() {
-        window.location.href = "{{ route('basket') }}";
-    }
-</script>
 
 <footer>
             <p>

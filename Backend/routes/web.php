@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BasketController;
+
 
 
 /*
@@ -70,8 +73,12 @@ Route::get('/about-us', function () {
     
 })->name('about_us');
 
+// Basket routes
+// Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+Route::get('/remove-item/{productId}', [BasketController::class, 'deleteProductFromBasket'])->name('remove-item');
+Route::patch('/update-shopping-basket', [BasketController::class, 'updateBasket'])->name('update.shopping.basket');
 
-use App\Http\Controllers\HomeController;
 
 Route::get('/basket', function () { //URL LINK
     return view('basket'); //File Name
@@ -121,13 +128,6 @@ Auth::routes();
 
 // Your other routes...
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-use App\Http\Controllers\BasketController;
-
-Route::get('/basket', [BasketController::class, 'index'])->name('basket');
-
-
 
 
