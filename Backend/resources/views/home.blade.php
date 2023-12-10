@@ -107,8 +107,6 @@
                     <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
                     </button>
 
-                    <button class="productButton" onclick="redirectToBasket()">BUY NOW!</button>
-
                 </div>
             </div>
         @endforeach
