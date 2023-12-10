@@ -1,8 +1,9 @@
-<?php 
+<?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\BasketController;
+use App\Http\Requests\CategoryFormRequest;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,33 +16,29 @@ use App\Http\Controllers\BasketController;
 |
 */
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 // Sending admins to the dashboard if they input the wrong URL
-Route::get('/admin', function () {
+Route::get('/admin', function() {
     return redirect('/admin/dashboard');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Authenticated routes for admin
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-    // Product routes
-    Route::resource('products', App\Http\Controllers\Admin\ProductController::class)->except(['create']);
+    
+    
+   
+ // Product routes
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class)->except(['create']); 
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
-
-
-    // Category routes
-    Route::resource('category', App\Http\Controllers\Admin\CategoryController::class)->except(['create']);
-    Route::get('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('category.create');
-    // Other category routes...
-
-    // Additional admin routes...
-});
-
-// Other routes
 
     
     //created routes for category controller
@@ -61,26 +58,40 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
    
     
-
+});
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
 
-
 Route::get('/about-us', function () {
     return view('about_us');
+    
+    
 })->name('about_us');
+
+
 
 // Basket routes
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+Route::get('/contact-us', function () { //URL LINK
+    return view('contact_us'); //File Name
 
-// Other static page routes...
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
+});
 
+Route::get('/faqs', function () { //URL LINK
+    return view('faqs'); //File Name
 
-// ... (Other routes for contact-us, faqs, login, register, etc.)
+});
+
+Route::get('/forgot-password', function () { //URL LINK
+    return view('forgot_password'); //File Name
+
+});
+
+Route::get('/login', function () { //URL LINK
+    return view('login'); //File Name
+
+});
 
 Route::get('/products', function () {
     return view('products');
@@ -91,16 +102,25 @@ Route::get('/register', function () { //URL LINK
 
 });
 
+// Other static page routes...
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 
+Route::get('/forgot-password', function () { //URL LINK
+    return view('forgot_password'); //File Name
 
 // Route any unknown webpage to display the 404 error
+Route::get('/{any}', function() {
 Route::get('/{any}', function () {
     return view('/errors/404');
 })->where('any', '.*');
 
 
-Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
-
+// Other static page routes...
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 
 // Other routes...
 
@@ -113,10 +133,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-
+Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
-
-
-
 
