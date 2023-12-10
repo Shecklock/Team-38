@@ -49,7 +49,11 @@
                     <p>{{ $item['name'] ?? 'Unknown' }}</p>
                     <p>${{ $item['price'] ?? 'Unknown' }}</p>
                     <!-- Add more details as needed -->
-                    <button class="remove-item" data-item="{{ $key }}">Remove</button>
+                    <form action="{{ route('removeItem', ['itemId' => $key]) }}" method="POST" class="remove-form">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="productButton">Remove</button>
+                    </form>
                 </div>
             @else
                 <!-- Handle case where $item is not an array -->

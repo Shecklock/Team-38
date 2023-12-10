@@ -61,7 +61,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
    
     
-});
+
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
 
@@ -112,10 +112,10 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-use App\Http\Controllers\BasketController;
+
 
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
-
+Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
 
 
 

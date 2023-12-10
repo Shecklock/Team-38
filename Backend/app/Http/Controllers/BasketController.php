@@ -56,17 +56,17 @@ class BasketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeItem($itemId)
-{
-    $basket = session()->get('basket', []);
+    {
+        $basket = session()->get('basket', []);
 
-    if (array_key_exists($itemId, $basket)) {
-        unset($basket[$itemId]);
-        session()->put('basket', $basket);
-        return response()->json(['success' => true, 'message' => 'Item removed from the basket successfully']);
-    } else {
-        return response()->json(['success' => false, 'message' => 'Failed to remove item from the basket']);
+        if (array_key_exists($itemId, $basket)) {
+            unset($basket[$itemId]);
+            session()->put('basket', $basket);
+            return redirect()->route('basket')->with('success', 'Item removed from the basket successfully!');
+        } else {
+            return redirect()->route('basket')->with('error', 'Failed to remove item from the basket');
+        }
     }
-}
 
 
     /**
