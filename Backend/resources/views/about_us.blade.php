@@ -87,8 +87,6 @@
                     <div class="team-role">
                         <div class="team-images">
 
-                            <img src="assets/sources/img_female.png" alt="female"></img>
-
                             <img src="{{ asset('assets/sources/img_female.png') }}" alt="female"></img>
 
                         </div>
@@ -100,8 +98,6 @@
                     <div class="team-role">
                         <div class="team-images">
 
-                            <img src="assets/sources/img_male.png" alt="male"></img>
-
                             <img src="{{ asset('assets/sources/img_male.png') }}" alt="male"></img>
 
                         </div>
@@ -112,8 +108,6 @@
                     </div>
                     <div class="team-role">
                         <div class="team-images">
-
-                            <img src="assets/sources/img_female.png" alt="girl"></img>
 
                             <img src="{{ asset('assets/sources/img_female.png') }}" alt="girl"></img>
 
