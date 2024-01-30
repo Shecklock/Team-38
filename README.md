@@ -1,8 +1,14 @@
 <h1>Laravelle e-commerce Development Project</h1>
 
 <h2>Accounts</h2>
-- SapnaKarsan
-
+- SapnaKarsan = 220090438 Sapna Karsan
+- Shecklock = 220036506 Ho Yin Siu
+- Bashayer81 = 220036584 Bashayer Aljassim
+- ZA3N = 220180979 Zaen Hussain
+- MattBrian22 = 220330231 Matthew Tahir
+- umar-ahmad-astonuni = 220189606 umar ahmad
+- RickyNandhra = Ricky Nandhra 
+- Uzzy-A633 = Usmaan Amar
 
 <h2>Environment used</h2>
 - VS code<br>
