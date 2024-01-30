@@ -1,5 +1,9 @@
 <h1>Laravelle e-commerce Development Project</h1>
 
+<h2>Accounts</h2>
+- SapnaKarsan
+
+
 <h2>Environment used</h2>
 - VS code<br>
 - Laravelle<br>
