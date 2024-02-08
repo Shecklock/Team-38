@@ -13,7 +13,7 @@
 </head>
 <body>
     
-<iframe src="header.html" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
+@include('header')
 
 <!-- Add a slider section at the top -->
 <div class="slider-container">
