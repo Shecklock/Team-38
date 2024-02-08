@@ -9,7 +9,7 @@
 </head>
 
 <body>
-@include('header')
+
 
     <main>
         <section id="home">

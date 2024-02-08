@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<header>
+    @include('header')
+</header>
+
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
@@ -9,7 +15,7 @@
 </head>
 
 <body>
-@include('header')
+
 
     <div class="container">
         <h1>Connect with us: </h1>

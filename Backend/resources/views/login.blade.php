@@ -9,7 +9,7 @@
 </head>
 
 <body>
-@include('header')
+
 
     <main>
         <div class="account-page">

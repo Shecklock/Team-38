@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<header>
+    @include('header')
+</header>
+
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Page</title>
@@ -13,7 +19,7 @@
 </head>
 <body>
     
-@include('header')
+
 
 <!-- Add a slider section at the top -->
 <div class="slider-container">

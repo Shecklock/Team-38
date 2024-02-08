@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<header>
+    @include('header')
+</header>
+
+
 <head>
     <title>Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +13,8 @@
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
 
-@include('header')
+    
+
 
     <section class="Product-Intro">
         <h1>New arrivals</h1><br>

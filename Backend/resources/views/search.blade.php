@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 
 <html lang = "en">
+
+<header>
+    @include('header')
+</header>
+
+
     <head>
         <title>About Us</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +17,7 @@
         <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
     </head>
     <body>
-    @include('header')
+  
         <nav> 
             <!-- This code gets the product details from the database -->
         <div class="product" id="product">

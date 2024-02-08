@@ -1,6 +1,9 @@
-
-
 <!DOCTYPE html>
+
+<header>
+    @include('header')
+</header>
+
 
 <html lang = "en">
     <head>
@@ -11,9 +14,7 @@
     </head>
     <body>
 
-    @include('header')
-        
-     
+   
       
         <div class="About-Us">
             <h2>About Our Company</h2><hr size="5"><br><br>
