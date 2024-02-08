@@ -39,17 +39,16 @@ body{
   }
 
 .container1{
-    padding: 10px 10%;
     background: lightgreen;
     border-radius: 25px;
   }
  
-  .logo {
+  /* .logo {
     width: 185px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0px;
+    margin-right: 20px;
   }
-  
+   */
   nav ul li {
     display: inline-block;
     list-style: none;
@@ -247,6 +246,7 @@ hr{
     font-weight: 900;
     background-color: black;
 } */
+
 .pro .pheading{
     text-align: center;
     font-size: 34px;

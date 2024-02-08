@@ -15,7 +15,7 @@
 
 <header>
         <div id="header">
-            <div class="container1">
+            <div class="HeaderMain">
                 <nav>
                     <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
                     
