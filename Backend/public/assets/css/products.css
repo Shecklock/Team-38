@@ -43,13 +43,7 @@ body{
     background: lightgreen;
     border-radius: 25px;
   }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
+ 
   .logo {
     width: 185px;
     margin-left: 10px;
