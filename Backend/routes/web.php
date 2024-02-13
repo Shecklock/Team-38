@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Frontend\FrontendController;
+
 
 
 
@@ -34,7 +36,8 @@ Route::get('/admin', function() {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Route::get('/products/{id}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView'])->name('productView');
+Route::get('/products/show/{product}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView'])->name('productshow');
 
 // Authenticated routes for admin
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {

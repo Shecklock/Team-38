@@ -123,7 +123,7 @@
                         <input type="text" name="cvv" placeholder="CVV" class="input" required>
                         <span>CVV</span>
                     </div>
-                    <input type="submit" value="Proceed" class="btn" />
+                    <button type="submit">Proceed to Checkout</button>
                 </form>
             </div>
         </div>
