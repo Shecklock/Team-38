@@ -90,8 +90,8 @@ Route::get('/faqs', function () { //URL LINK
 
 });
 
-Route::get('/change-password', [ChangePasswordManager::class, 'changePassword'])->name(change.password);
-Route::post('/change-password', [ChangePasswordManager::class, 'changePasswordPost'])->name(change.password.post);
+Route::get('/change-password', [ChangePasswordController::class, 'changePassword'])->name('change.password');
+Route::post('/change-password', [ChangePasswordController::class, 'changePasswordPost'])->name('change.password.post');
 
 
 Route::get('/login', function () { //URL LINK

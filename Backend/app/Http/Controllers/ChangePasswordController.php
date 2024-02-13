@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ChangePasswordManager extends Controller
+class ChangePasswordController extends Controller
 {
     function changePassword(){
         return view("change_password");
