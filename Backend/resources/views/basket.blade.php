@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<header>
+    @include('header')
+</header>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,23 +19,7 @@
 
 </head>
 <body>
-    <div id="header">
-        <div class="container1">
-            <nav>
-                <a href="{{ url('index.html') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
-                <ul>
-                    <!-- Nav Bar -->
-                    <li><input type="text" placeholder="Search.."></li>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li class="active"><a href="{{ url('contact_us.html') }}">Contact Us</a></li>
-                    <li><a href="{{ route('about_us') }}">About Us</a></li>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
-                    <!-- Nav Bar -->
-                </ul>
-            </nav>
-        </div>
+
     </div>
 
     <div class="container">
