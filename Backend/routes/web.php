@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Requests\CategoryFormRequest;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -75,8 +76,6 @@ Route::get('/about-us', function () {
     
 })->name('about_us');
 
-
-
 // Basket routes
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
@@ -85,15 +84,15 @@ Route::get('/contact-us', function () { //URL LINK
 
 });
 
+// Other page routes (To sort)
 Route::get('/faqs', function () { //URL LINK
     return view('faqs'); //File Name
 
 });
 
-Route::get('/forgot-password', function () { //URL LINK
-    return view('forgot_password'); //File Name
+Route::get('/change-password', [ChangePasswordManager::class, 'changePassword'])->name(change.password);
+Route::post('/change-password', [ChangePasswordManager::class, 'changePasswordPost'])->name(change.password.post);
 
-});
 
 Route::get('/login', function () { //URL LINK
     return view('login'); //File Name
@@ -109,7 +108,6 @@ Route::get('/register', function () { //URL LINK
 
 });
 
-// Other static page routes...
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
@@ -122,12 +120,6 @@ Route::get('/{any}', function () {
 
 // Authentication routes
 Auth::routes();
-
-// Your other routes...
-
-
-
-
 
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');

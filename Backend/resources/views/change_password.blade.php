@@ -4,7 +4,7 @@
 
 <html lang = "en">
     <head>
-        <title>About Us</title>
+        <title>Change Password</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/about.css') }}">
         <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
@@ -63,12 +63,13 @@
                   </div>
         </header>
      
-        <form action="" method="post">
+        <form action="{{route('change.password.post')}}" method="POST">
                 @csrf
-                <p>Forgot your password?</p>
-                <input type="text" name="current" placeholder="Current password" required><br>
-                <input type="text" name="newpass" placeholder="Enter your new password" required><br>
-                <input type="text" name="newpassconf" placeholder="Reenter your new password" required>
+                <p>Change your password</p>
+                <input type="password" name="current" placeholder="Current password" required><br><br>
+                <input type="password" name="newPassword" placeholder="Enter your new password" required><br><br>
+                <input type="password" name="confirmPassword" placeholder="Reenter your new password" required><br><br>
+                <input type="submit">
      
         <footer>
             <p>
