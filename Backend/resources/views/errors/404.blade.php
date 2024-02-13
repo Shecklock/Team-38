@@ -50,7 +50,7 @@
         </div>
     </header>
       <div clas="content">
-         <h3>404 error. The page you are looking for does not exist, or is temporarily unavailable.</h3>
+         <h3>The page you are looking for does not exist, or is temporarily unavailable, please contact us for futher help.</h3>
       </div>
       <footer>
          <p>

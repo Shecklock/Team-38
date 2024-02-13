@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('OrderID');
-            $table->integer('CustomerID')->references('CustomerID')->on('customers');
-            $table->date('OrderDate');
-            $table->decimal('TotalAmount', $precision=10, $scale=2);
-            $table->string('Status', 20);
-            $table->timestamps();
+            $table->string('Orderstatus');
+            $table->date("lastupdate");
         });
     }
 

@@ -135,15 +135,12 @@ Route::get('/checkout', function () {
 // Authentication routes
 Auth::routes();
 
-// Your other routes...
-
-
-
-
-
+// basket route
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
 Route::get('/products', [BasketController::class, 'showProducts'])->name('showproducts');;
 
+// order status route
+Route::get('/order-status/{order}', 'OrderController@show')->name('order.status');
 
