@@ -114,23 +114,11 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/forgot-password', function () { //URL LINK
-    return view('forgot_password'); //File Name
-});
-
 // Route any unknown webpage to display the 404 error
 
 Route::get('/{any}', function () {
     return view('/errors/404');
 })->where('any', '.*');
-
-
-// Other static page routes...
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
-
-// Other routes...
 
 // Authentication routes
 Auth::routes();
