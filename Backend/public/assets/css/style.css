@@ -1,9 +1,10 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+/* Style for product title */
+.productTitle {
+    font-size: 24px;
+    font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 body{
     background:white;
     font-family:sans-serif;
@@ -59,50 +60,22 @@ ul{
 }
 .navbar a:hover{
     background-color: black;
+=======
+/* Style for label indicating stock availability */
+.label-stock {
+    padding: 5px 10px;
+    border-radius: 5px;
+>>>>>>> Stashed changes
     color: white;
 }
 
-
-nav ul li input[type="text"] {
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    margin-top: 8px;
-    transition: 0.3s;
-  }
-  
-  nav ul li input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 10px;
-    background-color: none;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  nav ul li input[type="text"] {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-.container{
-    width:80%;
-    margin:50px auto;
-
+/* Style for product image */
+.productImg {
+    max-width: 100%;
+    height: auto;
 }
 
+<<<<<<< Updated upstream
 .contact-box{
     background-color:lightgreen;
     display:flex;
@@ -271,6 +244,67 @@ footer a {
 .contact-us-form .content h2{
     text-align: center;
     font-family: Century;
+=======
+/* Style for product price */
+.productPrice {
+>>>>>>> Stashed changes
     font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style for quantity input and buttons */
+.input-group {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.input-quantity {
+    width: 50px;
+    text-align: center;
+}
+
+.btn1 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.btn1:hover {
+    background-color: #0056b3;
+}
+
+/* Style for add to cart button */
+.btn-cart {
+    background-color: #28a745;
+}
+
+.btn-cart:hover {
+    background-color: #218838;
+}
+
+/* Style for product description */
+.productDesc {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style for product path links */
+.path-link {
+    color: #007bff; /* Change link color as desired */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.path-link:hover {
+    color: #0056b3; /* Change hover color as desired */
+}
+
+.product-path {
+    font-size: 14px;
 }
 
