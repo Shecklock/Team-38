@@ -7,7 +7,7 @@
 - ZA3N = 220180979 Zaen Hussain<br>
 - MattBrian22 = 220330231 Matthew Tahir<br>
 - umar-ahmad-astonuni = 220189606 umar ahmad<br>
-- RickyNandhra = Ricky Nandhra<br>
+- RickyNandhra = 220076203 Ricky Nandhra<br>
 - Uzzy-A633 = Usmaan Amar<br>
 
 <h2>Environment used</h2>
