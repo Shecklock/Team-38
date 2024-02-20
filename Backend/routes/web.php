@@ -8,7 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\OrderController;
 
 
 
@@ -142,5 +142,12 @@ Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])-
 Route::get('/products', [BasketController::class, 'showProducts'])->name('showproducts');;
 
 // order status route
-Route::get('/order-status/{order}', 'OrderController@show')->name('order.status');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+});
+// Route to display the list of orders (order.blade.php)
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 
+// Route to display a specific order's details (show.blade.php)
+Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
