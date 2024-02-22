@@ -144,8 +144,9 @@ Auth::routes();
 
 
 
-Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');
-Route::get('/basket', [BasketController::class, 'index'])->name('basket');
+Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');                                             
+Route::post('/basket/updateQuantity/{itemId}', [BasketController::class, 'updateQuantity'])->name('updateQuantity');
+Route::get('/basket', [BasketController::class, 'index'])->name('basket');  
 Route::delete('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('removeItem');
 Route::get('/products', [BasketController::class, 'showProducts'])->name('showproducts');;
 

@@ -92,6 +92,23 @@ class BasketController extends Controller
 
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
     }
+
+        public function updateQuantity(Request $request, $itemId)
+        {
+        $basket = session()->get('basket', []);
+        $newQuantity = $request->input('quantity', 1); // Default to 1 if not set
+
+        if (isset($basket[$itemId])) {
+            $basket[$itemId]['quantity'] = max(1, $newQuantity); // Ensure quantity is at least 1
+            session()->put('basket', $basket);
+        }
+
+        return redirect()->back();
+        }
+
+
+
+
 }
 
 
