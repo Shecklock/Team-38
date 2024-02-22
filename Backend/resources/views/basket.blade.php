@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket</title>
-    <link href="{{ asset('assets/css/style2.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/basket.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/basket.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -51,7 +51,7 @@
                     <form action="{{ route('updateQuantity', ['itemId' => $key]) }}" method="POST">
                         @csrf
                         <input type="number" name="quantity" value="{{ $item['quantity'] ?? 1 }}" min="1">
-                        <button type="submit">Update Quantity</button>
+                        <button type="submit" class="update-quantity-button">Update Quantity</button>
                     </form>
 
 
