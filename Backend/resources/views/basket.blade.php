@@ -46,7 +46,9 @@
                     <p>No image available</p>
                 @endif
                 <p>{{ $item['name'] ?? 'Unknown' }}</p>
-                <p>${{ $item['price'] ?? 'Unknown' }}</p>
+                <p>£{{ $item['price'] ?? 'Unknown' }}</p>
+                <p>Subtotal: £{{ ($item['price'] ?? 0) * ($item['quantity'] ?? 1) }}</p>
+
                     <!-- Quantity Update Form -->
                     <form action="{{ route('updateQuantity', ['itemId' => $key]) }}" method="POST">
                         @csrf
@@ -74,7 +76,7 @@
 
         <!-- Display the total price -->
         <div class="total-price">
-            <p>Total: ${{ $totalPrice }}</p>
+            <p>Total: £{{ $totalPrice }}</p>
         </div>
     @else
         <p>No items in the basket</p>
