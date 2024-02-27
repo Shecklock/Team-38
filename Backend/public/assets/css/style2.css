@@ -620,3 +620,41 @@ footer a {
   align-items: center;
 
 }
+
+
+/* Start CSS Styling for Quantity Buttons */
+
+.quantity-form {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.update-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+}
+
+
+/* Ending CSS Styling for Quantity Buttons */
