@@ -114,9 +114,10 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/forgot-password', function () { //URL LINK
-    return view('forgot_password'); //File Name
-});
+// Forgot password 
+// User does not need to be logged in
+Route::get('/change-password', [App\Http\Controllers\PasswordController::class, 'change_password'])->name('change_password');
+Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
 // Route any unknown webpage to display the 404 error
 
