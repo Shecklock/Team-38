@@ -49,4 +49,25 @@
     outline: none;
     text-align: center;
 }
+.productImg {
+    width: 100%; 
+    height: auto; 
+}
+
+.review-name {
+    font-size: 16px;
+}
+
+.review-description {
+    font-size: 14px; 
+}
+
+
+#review-form input[type="text"],
+#review-form textarea {
+    max-width: 250px; /* Adjust this value as needed */
+    display: block;
+    width: 100%;
+}
+
 /* Product View */

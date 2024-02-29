@@ -11,7 +11,7 @@
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/viewproducts.css') }}">
 </head>
 <body>
 
@@ -36,7 +36,6 @@
                             <a href="{{ url('/search?search=Accessories') }}" class="path-link">Accessories</a>
                         </p>
                         
-
                         <div>
                             <span class="productPrice">£{{ $product->Price }}
                         </div>
@@ -47,6 +46,7 @@
                                 <span class="btn btn1"><i class="fa fa-plus"></i></span>
                             </div>
                         </div>
+                        
                         <div class="mt-2">
                             <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}"" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
                             {{-- <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a> --}}
@@ -54,9 +54,47 @@
                         <div class="mt-3">
                             <p class="productDesc">{{ $product->Description }}</p>
                         </div>
+                        <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Reviews</h2>
+                                <div id="reviews-container">
+                                    <!-- Existing reviews will be displayed here -->
+                                </div>
+                                <form id="review-form" action="{{ route('reviews.store', ['product_id' => $product->ProductID]) }}" method="POST">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="reviewer-name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" name="reviewer-name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="review-text" class="form-label">Your Review</label>
+                                        <textarea class="form-control" name="review-text" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+                    <<div class="reviews">
+    <h3>Customer Reviews</h3>
+    @forelse ($product->reviews->take(3) as $review)
+        <div class="review">
+            <h4>{{ $review->reviewer_name }}</h4>
+            <p>{{ $review->review_text }}</p>
+        </div>
+    @empty
+        <p>No reviews yet.</p>
+    @endforelse
+</div>
                 </div>
             </div>
+            </div>
+            
+
+
+
+
             {{-- <div class="row">
                 <div class="col-md-12 mt-3">
                     <div class="card">
