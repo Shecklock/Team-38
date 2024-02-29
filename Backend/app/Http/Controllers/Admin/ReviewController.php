@@ -22,7 +22,7 @@ class ReviewController extends Controller
     $review->product_id = $product_id;
     $review->reviewer_name = $request->input('reviewer-name');
     $review->review_text = $request->input('review-text');
-    $review->rating = $request->input('rating'); // Save the rating
+    $review->rating = $request->input('rating'); 
 
     // Save the review to the database
     $review->save();
