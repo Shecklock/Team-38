@@ -70,4 +70,15 @@
     width: 100%;
 }
 
+.star-rating .star {
+    color: #ddd;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.star-rating .star:hover,
+.star-rating .star:hover ~ .star {
+    color: #fd4;
+}
+
 /* Product View */

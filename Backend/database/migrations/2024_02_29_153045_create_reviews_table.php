@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->string('reviewer_name');
             $table->text('review_text');
+            $table->unsignedTinyInteger('rating');
             $table->timestamps();
         
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
