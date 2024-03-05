@@ -9,7 +9,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-    $orders = Order::where('customer_id', Auth::id()) // Assuming you have a customer_id column
+    $orders = Order::where('UserID', Auth::id()) // Assuming you have a customer_id column
                   ->with(['products' => function($query) {
                       $query->with(['photos' => function($query) {
                           $query->first(); // Adjust this according to your actual relationship/method to get the first photo
@@ -17,7 +17,7 @@ class OrderController extends Controller
                   }])
                   ->get();
 
-    return view('orders.index', compact('orders'));
+    return view('orders', compact('orders')); // compact('orders')
     }
 
     // OrderController.php

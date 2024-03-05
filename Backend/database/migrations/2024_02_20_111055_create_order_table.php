@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('UserID');
             $table->string('Status')->default('Pending'); // For example: Pending, Processing, Shipped, Delivered
             $table->timestamps();
-
+            $table->string('productname');
+            $table->integer('quantity');
             // Foreign key relation
             $table->foreign('UserID')->references('id')->on('users')->onDelete('cascade');
         });

@@ -118,13 +118,6 @@ Route::get('/forgot-password', function () { //URL LINK
     return view('forgot_password'); //File Name
 });
 
-// Route any unknown webpage to display the 404 error
-
-Route::get('/{any}', function () {
-    return view('/errors/404');
-})->where('any', '.*');
-
-
 // Other static page routes...
 Route::get('/checkout', function () {
     return view('checkout');
@@ -143,11 +136,17 @@ Route::get('/products', [BasketController::class, 'showProducts'])->name('showpr
 
 // order status route
 Route::middleware(['auth'])->group(function () {
-    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders');
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 });
 // Route to display the list of orders (order.blade.php)
-Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('orders');
 
 // Route to display a specific order's details (show.blade.php)
 Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+
+
+// Route any unknown webpage to display the 404 error
+Route::get('/{any}', function () {
+    return view('/errors/404');
+})->where('any', '.*');
