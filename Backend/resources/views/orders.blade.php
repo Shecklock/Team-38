@@ -38,8 +38,8 @@
                                 <li><a href="{{ route('register') }}">Register</a></li>
                             @endif
                             @else
-                            <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <li><a href="{{ route('orders.index') }}">My Orders</a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="mdi mdi-logout text-primary"></i> Logout
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -47,7 +47,6 @@
                                 </form>
                             </li>
                             <li><a href="a">Account</a></li>
-                            <li><a href="{{ route('orders') }}">My Orders</a></li>
                             @endguest
                         
                         <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
@@ -59,20 +58,20 @@
 
     <div class="container">
         <h1>My Orders</h1>
+        @section('content')
+<div class="container">
+    <h1>Your Orders</h1>
+    <div class="orders">
         @foreach ($orders as $order)
             <div class="order">
                 <h2>Order #{{ $order->id }}</h2>
-                <div class="order-items">
-                    @foreach ($order->orderItems as $item)
-                        <div class="order-item">
-                            <img src="{{ asset('uploads/product/' . $item->product->image) }}" alt="{{ $item->product->name }}" class="order-item-img">
-                            <div class="order-item-info">
-                                <h3>{{ $item->product->name }}</h3>
-                                <p>Quantity: {{ $item->quantity }}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                <p>Placed on: {{ $order->created_at->format('M d, Y') }}</p>
+                <a href="{{ route('orders.show', $order->id) }}">View Details</a>
+            </div>
+        @endforeach
+    </div>
+</div>
+@endsection
     <footer>
     <p>
         <a href="contact-us">Contact Us</a> <br>
