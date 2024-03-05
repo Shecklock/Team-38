@@ -31,7 +31,6 @@
                             <li><a href="{{ route('showproducts') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
-                            <li><a href="{{ route('orders') }}">My Orders</a></li>
                         
                             @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -48,6 +47,7 @@
                                 </form>
                             </li>
                             <li><a href="a">Account</a></li>
+                            <li><a href="{{ route('orders') }}">My Orders</a></li>
                             @endguest
                         
                         <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
@@ -56,18 +56,33 @@
             </div>
         </div>
     </header>
+
+    <div class="container">
+        <h1>My Orders</h1>
+        @foreach ($orders as $order)
+            <div class="order">
+                <h2>Order #{{ $order->id }}</h2>
+                <div class="order-items">
+                    @foreach ($order->orderItems as $item)
+                        <div class="order-item">
+                            <img src="{{ asset('uploads/product/' . $item->product->image) }}" alt="{{ $item->product->name }}" class="order-item-img">
+                            <div class="order-item-info">
+                                <h3>{{ $item->product->name }}</h3>
+                                <p>Quantity: {{ $item->quantity }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
     <footer>
     <p>
         <a href="contact-us">Contact Us</a> <br>
         Telephone: +44 123435390
         Email: sportifypromax@gmail.com
     </p>
-    <p>
-        <a href="{{ route('about_us') }}">About Us</a> <br>
+<p>
          Address: Aston St, Birmingham B4 7ET
     </p>
     <p>
-        <a href="{{ url('faqs') }}">FAQs</a><br>
         <a href="https://www.instagram.com/">Instagram</a><br>
         <a href="https://en-gb.facebook.com/">Facebook</a><br>
         <a href="https://twitter.com/login">X</a>
