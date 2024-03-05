@@ -24,7 +24,7 @@ class PasswordController extends Controller
         // Ensures the passwords match
         if ($request->input('new_password') != $request->input('confirm_password')) {
             // Shows a message on screen
-            session()->flash('confirm_password', 'The new password and confirm password must match.');
+            session()->flash('confirm_password', 'Passwords do not match.');
             return redirect()->back();
         } else {
 

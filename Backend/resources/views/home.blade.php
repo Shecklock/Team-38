@@ -119,7 +119,7 @@
     }
 </script>
 
-<<footer>
+<footer>
     <p>
         <a href="contact-us">Contact Us</a> <br>
         Telephone: +44 123435390
