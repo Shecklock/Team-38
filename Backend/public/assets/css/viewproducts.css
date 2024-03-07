@@ -84,11 +84,6 @@
     transition: color 0.25s;
 }
 
-.star-rating .star:hover,
-.star-rating .star:hover ~ .star {
-    color: #fd4; /* Illuminate from left to right */
-}
-
 .star-rating .star.filled {
     color: #fd4; /* Filled star color */
 }
