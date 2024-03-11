@@ -9,13 +9,7 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-            </ul>
-        </nav>
-    </header>
+
 
     <main>
         <section id="home">
@@ -46,9 +40,7 @@
         </section>
     </main>
 
-    <footer>
-        <p></p>
-    </footer>
+    
 </body>
 
 </html>
