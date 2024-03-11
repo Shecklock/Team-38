@@ -31,7 +31,7 @@
                             <li><a href="{{ route('showproducts') }}">Products</a></li>
                             <li class="active"><a href="contact-us">Contact Us</a></li>
                             <li><a href="{{ route('about_us') }}">About Us</a></li>
-                            <li><a href="{{ route('orders.index') }}">My Orders</a></li>
+                            <li><a href="{{ route('orders') }}">My Orders</a></li>
                         
                             @guest
                             <li><a href="{{ route('login') }}">Login</a></li>

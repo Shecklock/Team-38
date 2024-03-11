@@ -20,9 +20,11 @@ class Order extends Model
     /**
      * Get the products associated with the order.
      */
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
+
+public function products()
+{
+    return $this->hasMany(Product::class, 'OrderID');
+}
+
 }
 
