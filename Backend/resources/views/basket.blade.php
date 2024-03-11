@@ -86,12 +86,11 @@
 </div>
         <div class="total">
             <!-- Button to proceed to checkout -->
-            <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
-            <script>
-                function redirectToCheckout() {
-                    window.location.href = "{{ route('checkout') }}";
-                }
-            </script>
+            <form action="{{ route('checkout') }}" method="POST">
+    @csrf
+    <button type="submit" class="btn_basket">Proceed to Checkout</button>
+</form>
+
         </div>
     </div>
 </div>

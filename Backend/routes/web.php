@@ -145,12 +145,20 @@ Route::middleware(['auth'])->group(function () {
 // Route to display a specific order's details (show.blade.php)
 //Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('orders.index');
+    //Route::get('/orders/{order}', 'App\Http\Controllers\OrderController@show')->name('orders.show');
+//});
+
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
+
+// Route for displaying orders
 Route::middleware(['auth'])->group(function () {
-    Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('orders.index');
-    Route::get('/orders/{order}', 'App\Http\Controllers\OrderController@show')->name('orders.show');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 });
 
-
+// Route for checkout form submission
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 
 // Route any unknown webpage to display the 404 error
 Route::get('/{any}', function () {

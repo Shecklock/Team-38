@@ -25,7 +25,7 @@ class OrderController extends Controller
 public function show(Order $order)
 {
     // Authorization check to ensure users can only see their own orders
-    if ($order->user_id !== Auth::id()) {
+    if ($order->UserID !== Auth::id()) {
         abort(403);
     }
 

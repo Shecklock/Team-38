@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product; // Import the Product model
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
@@ -92,6 +94,27 @@ class BasketController extends Controller
 
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
     }
+
+    public function checkout(Request $request)
+{
+    // Retrieve basket items from session
+    $basketItems = session()->get('basket', []);
+    
+    // Logic to store the order in the database
+    // You need to adjust this logic according to your database structure
+    $order = new Order();
+    $order->UserID = Auth::id(); // Assuming the user is authenticated
+    // Additional fields for the order, e.g., status, product name, quantity, etc.
+    // Save the order
+    $order->save();
+    
+    // Clear the basket after checkout
+    session()->forget('basket');
+    
+    // Redirect the user to the order page
+    return redirect()->route('orders')->with('success', 'Order placed successfully!');
+}
+
 }
 
 
