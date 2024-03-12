@@ -118,8 +118,9 @@ Route::get('/checkout', function () {
 })->name('checkout');
 
 // Forgot password 
-// User does not need to be logged in
-Route::get('/change-password', [App\Http\Controllers\PasswordController::class, 'change_password'])->name('change_password');
+// User does not need to be logged in 
+// Email must be valid
+Route::get('/forgot-password', [App\Http\Controllers\PasswordController::class, 'forgot_password'])->name('forgot_password');
 Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
 // Route any unknown webpage to display the 404 error

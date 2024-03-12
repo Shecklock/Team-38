@@ -9,8 +9,8 @@ use App\Models\User;
 class PasswordController extends Controller
 {
     // Gets the relevant view 
-    public function change_password() {
-        return view('change_password');
+    public function forgot_password() {
+        return view('forgot_password');
     }
 
     // Validates all the information is present
@@ -22,9 +22,9 @@ class PasswordController extends Controller
         ]);
 
         // Ensures the passwords match
-        if ('new_password' != 'confirm_password') {
+        if ($request->input('new_password') != $request->input('confirm_password')) {
             // Shows a message on screen
-            session()->flash('confirm_password', 'The new password and confirm password must match.');
+            session()->flash('confirm_password', 'Passwords do not match.');
             return redirect()->back();
         } else {
 
@@ -35,10 +35,11 @@ class PasswordController extends Controller
             if ($user) {
                 $user->password = Hash::make($request->new_password);
                 $user->save();
-
+                // Success condition
                 session()->flash('success', 'Password updated successfully!');
                 return redirect()->back();
             } else {
+                // Failure condition
                 session()->flash('error', 'User not found.');
                 return redirect()->back();
             }

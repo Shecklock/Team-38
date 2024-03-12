@@ -53,10 +53,10 @@
             @enderror
         </div>
             <br><button type ="submit" class = "submit"> login </a></button><br>
-            <p> First time shooping in our store? </p><br><ul><li><a href ="register">Register here</a></ul></li>
+            <p> First time shopping in our store? </p><br><ul><li><a href ="register">Register here</a></ul></li>
             <label>
                 <ul>
-                    <li><a href ="{{route ('change_password')}}">Forgot password</a></li>
+                    <li><a href ="{{route ('forgot_password')}}">Forgot password</a></li>
                 </ul>
             </label>
             </label>
