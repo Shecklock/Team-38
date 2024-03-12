@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/viewproducts.css') }}">
 </head>
 <body>
-
     <div class="py-3 py-md-5 bg-light">
         <div class="container">
             <div class="row">
                 <!-- Product Image Column -->
-                <div class="col-lg-4 mt-3">
+                <div class="col-md-4 mt-3">
                     <div class="bg-white border">
                         <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" style="width: 100%; height: auto;">
                     </div>
                 </div>
 
                 <!-- Product Purchasing Details Column -->
-                <div class="col-lg-4 mt-3">
+                <div class="col-md-4 mt-3">
                     <div class="product-view">
                         <h1 class="productTitle">{{ $product->ProductName }}
                             <label class="label-stock bg-success">In Stock</label>
@@ -54,10 +53,10 @@
                     </div>
                 </div>
 
-                <!-- Reviews Column -->
-                <div class="col-lg-4 mt-3">
+                <!-- Create a Review Column -->
+                <div class="col-md-4 mt-3">
                     <div class="reviews">
-                        <h2>Reviews</h2>
+                        <h2>Write a Review</h2>
                         <form id="review-form" action="{{ route('reviews.store', ['product_id' => $product->ProductID]) }}" method="POST">
                             @csrf
                             <div class="mb-3">
@@ -76,6 +75,14 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Submit Review</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Reviews Row -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="reviews">
                         <h3>Customer Reviews</h3>
                         @forelse ($product->reviews()->latest()->take(3)->get() as $review)
                             <div class="review">
@@ -99,9 +106,11 @@
             </div>
         </div>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    
+   
    document.addEventListener('DOMContentLoaded', function() {
     const stars = document.querySelectorAll('#review-form .star-rating .star');
 
