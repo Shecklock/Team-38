@@ -10,6 +10,52 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/viewproducts.css') }}">
 </head>
+
+<header>
+        <div id="header">
+            <div class="HeaderMain">
+                <nav>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/sources/logo2.png') }}" class="logo"></a>
+                    
+                        <ul>
+                            <li>    <form action="{{ url('/search') }}" method="GET" role="search">
+                                    <div class="input-group">                                  
+                                        <input type="search" name="search" placeholder=" Products...">
+                                        <button class="btn bg-white" type="submit">
+                                            <i>search<i>
+                                    </div>
+                                </form>
+                            </li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('showproducts') }}">Products</a></li>
+                            <li class="active"><a href="contact-us">Contact Us</a></li>
+                            <li><a href="{{ route('about_us') }}">About Us</a></li>
+                        
+                            @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            @if (Route::has('register'))
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                            @endif
+                            @else
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="mdi mdi-logout text-primary"></i> Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                            <li><a href="a">Account</a></li>
+                            @endguest
+                        
+                        <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
 <body>
     <div class="py-3 py-md-5 bg-light">
         <div class="container">
@@ -81,31 +127,40 @@
 
             <!-- Previous Reviews Row -->
             <div class="row mt-3">
-                <div class="col-12">
-                    <div class="reviews">
-                        <h3>Customer Reviews</h3>
-                        @forelse ($product->reviews()->latest()->take(3)->get() as $review)
-                            <div class="review">
-                                <h4>{{ $review->reviewer_name }}</h4>
+    <div class="col-12">
+        <div class="reviews">
+            <div class="CustomerRev">
+                <hr>
+                <h3>Customer Reviews</h3>
+                <hr>
+            </div>
+            <div class="row">
+                @forelse ($product->reviews()->latest()->take(3)->get() as $review)
+                    <div class="col-md-4">
+                        <div class="review">
+                            <h4>{{ $review->reviewer_name }}</h4>
+                            <div class="review-text">
                                 <p>{{ $review->review_text }}</p>
-                                <div class="star-rating">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        @if ($i <= $review->rating)
-                                            <span class="star filled" data-value="{{ $i }}">&#9733;</span>
-                                        @else
-                                            <span class="star" data-value="{{ $i }}">&#9733;</span>
-                                        @endif
-                                    @endfor
-                                </div>
                             </div>
-                        @empty
-                            <p>No reviews yet.</p>
-                        @endforelse
+                            <div class="previous-star-rating">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    @if ($i <= $review->rating)
+                                        <span class="star filled" data-value="{{ $i }}">&#9733;</span>
+                                    @else
+                                        <span class="star" data-value="{{ $i }}">&#9733;</span>
+                                    @endif
+                                @endfor
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @empty
+                    <p class="col-12">No reviews yet.</p>
+                @endforelse
             </div>
         </div>
     </div>
+</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
