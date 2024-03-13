@@ -48,7 +48,9 @@
             <!-- card start -->
             @foreach($products as $product)
                 <div class="card">
-                    <div class="img"><img src="{{ asset('uploads/product/' . $product->image) }}" alt="{{ $product->ProductName }}"></div>
+                    <a href="{{ route('productshow', ['product' => $product] )}}">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                        </a>                    
                     <div class="description">{{ $product->Description }}</div>
                     <div class="title">{{ $product->ProductName }}</div>
                     <div class="box">

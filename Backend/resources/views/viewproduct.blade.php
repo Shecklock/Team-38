@@ -43,7 +43,8 @@
                         <div class="mt-2">
                             <div class="input-group">
                                 <span class="btn btn1"><i class="fa fa-minus"></i></span>
-                                <input type="text" value="1" class="input-quantity" />
+                                {{-- <input type="text" value="1" class="input-quantity" /> --}}
+                                <input type="number" name="quantity" class="input-quantity" value="{{ $item['quantity'] ?? 1 }}" min="1">
                                 <span class="btn btn1"><i class="fa fa-plus"></i></span>
                             </div>
                         </div>
