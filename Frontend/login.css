@@ -1,21 +1,34 @@
 body {
-    font-family:'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:"Montserrat", sans-serif;
     justify-content: center;
     min-height: fit-content;
     background-color: white;
 }
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: #4B9CD3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #f8f4f4;
   }
 nav ul li {
-    display: inline-block;
+  display: inline-block;
     list-style: none;
     margin-right: 30px;
     background-color: none;
+    align-items: center;
+  }
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  } 
+  .searchbutton{
+    margin-right: 200px;
+    margin-left: 10px;
     align-items: center;
   }
   nav ul li .search{
@@ -27,24 +40,12 @@ nav ul li {
     height: 27px;
     width: 220px;
   }
-  .searchbutton{
-    margin-right: 200px;
-    margin-left: 10px;
-    align-items: center;
-  }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    position: relative;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-  }
   
 nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
+    background: #4B9CD3;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -66,24 +67,26 @@ nav ul li a:hover::after {
     }
 }
     .navbar a:hover{
-      color: white;
+      color: black;
     }
     nav ul li input[type="text"] {
         padding: 8px;
         border: none;
+        border-radius: 7px;
         margin-top: 8px;
         transition: 0.3s;
       }
+      
       nav ul li input[type="text"]:focus {
         outline: none;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      } 
+      }
 a{
     text-decoration: none;
-    color:white;
+    color:black;
 }
 p{
-    color:white;
+    color:black;
     display: center;
 }
 .container{
@@ -107,36 +110,39 @@ button:hover {
   }
 .logo{
     list-style-type: none;
-    width: 275px;
+    width: 200px;
 }
 .submit{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     padding: 10px 28px;
     font-size: 15px;
-    background-color: white;
+    background-color: #fafafa;
     border: none;
-    margin-top: 20px;
-    margin-bottom: 17px;
+    margin-left: 250px;
+    margin-top: 80px
 }
 .login-links{
   display: flex;
   flex-direction: column;
+  margin-right: 350px;
+  margin-bottom: 50px;
+  margin-top: -120px
 }
 .input-control-usernamepass{
-    display: flex;
-    justify-content: space-evenly;
-    align-content: space-around;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 20px;
+  display: flex;
+  place-content: space-around space-evenly;
+  flex-flow: column;
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: 320px;
+    /*padding: 20px;*/
 }
 .username{
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;
   margin-left: 80px;
   margin-top: 20px;
   width: 220px;
-  display: block;
+  display: block;*/
   
 }
 .bi bi-person-badge{
@@ -148,13 +154,13 @@ button:hover {
 /*.bi bi-lock{
   margin-right: 30px;
 }*/
-.password{
+.password{/*
   height: 27px;
   width: 220px;
-  margin-left: 70px;
+  margin-left: 70px;*/
 }
 button {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
     padding: 8px;
     border-radius: 3px;
@@ -167,43 +173,56 @@ button {
     padding:50px 0;
 }
 .form-container{
-background: #4B9CD3;
-width : 400px;
-height: 460px;
+background: #fafafa;
+width : 100%;
+height: 100px;
 position: relative;
 text-align:center;
-padding :20px 0;
-margin: auto;
-border-radius: 8px;
-/*border: 50px solid #4B9CD3;*/
+padding :2rem;
+margin: 6% auto;
+word-spacing: normal;
+margin-bottom: 70px;
+min-height: 50vh;
+overflow: hidden;
+max-width: 600px;
+border-radius: 10px;
+box-shadow: 0 0 10px 0.1px #086bef;
+z-index: 1000;
+grid-template-columns: repeat(2, 1fr);
 }
+
 h1{
-  color: white;
+  color: black;
+  margin-right: 350px;
+  margin-top: 10px;
 }
 label{
-  color: white;
+  color: black;
+}
+.rdo-customer{
+  margin-left: 289px;
 }
 footer{
     width:97%;
     margin:auto;
     padding-left: 40px;
-    background-color: #4B9CD3;
+    background-color: #f8f4f4;
     display: flex;
     justify-content: space-evenly;
     height:90px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     align-items: center;
 }
 footer p{
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"Montserrat", sans-serif;
     font-size: 14px;
     align-items: center;
-    color: white;
+    color: black;
 }
 footer a {
     font-size: 14px;
-    color:white;
+    color:black;
     text-decoration: none;
     align-items: center;
 }
@@ -215,3 +234,4 @@ footer a {
   border-radius: 7px;
 
 }
+
