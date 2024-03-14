@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<header>
-    @include('header')
-</header>
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link href="{{ asset('assets/css/style2.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/checkout.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
-<header>
-    
+<body>
+    <header>
+        @include('header')
+    </header>
 
-    <div class="container">
+    <div class="checkout-container">
         <span class="big-circle"></span>
 
-        <!-- Add this section to display basket items -->
-<h3 class="title">Basket Items</h3>
-<div class="basket-items">
-    <ul>
-        @foreach($basketItems as $item)
-        <li>{{ $item['name'] }} - ${{ $item['price'] }}</li>
+        <h3 class="title">Basket Items</h3>
+        <div class="Confirm Items">
+            <ul>
+            <div class="checkout-info">
+        <h3 class="title">Confirm Your Order</h3>
+
+        <!-- Display basket items -->
+        <div class="basket-items">
+    @php
+        $totalPrice = 0; // Initialize the total price variable
+    @endphp
+
+    @if(count($basketItems) > 0)
+        @foreach($basketItems as $key => $item)
+            @if(is_array($item))
+                <div class="basket-item">
+                    @if(isset($item['image']))
+                    <img src="{{ asset('/uploads/product/' . $item['image']) }}" alt="{{ $item['name'] ?? 'Unknown' }}" class="item-image">
+                @else
+                    <p>No image available</p>
+                @endif
+                <p>{{ $item['name'] ?? 'Unknown' }}</p>
+                <p>£{{ $item['price'] ?? 'Unknown' }}</p>
+                <p>Subtotal: £{{ ($item['price'] ?? 0) * ($item['quantity'] ?? 1) }}</p>
+
+                    
+                </div>
+                @php
+                    $totalPrice += ($item['price'] ?? 0) * ($item['quantity'] ?? 1);
+                @endphp
+            @else
+                <div class="basket-item">
+                    <p>Item structure is invalid</p>
+                </div>
+            @endif
         @endforeach
-    </ul>
+
+        <!-- Display the total price -->
+        <div class="total-price">
+            <p>Total: £{{ $totalPrice }}</p>
+        </div>
+    @else
+        <p>No items in the basket</p>
+    @endif
 </div>
 
-<!-- Add a button to confirm the order -->
-<form action="{{ route('checkout.process') }}" method="post">
-    @csrf
-    <button type="submit">Confirm Order</button>
-</form>
-
-        
-            </div>
+            </ul>
         </div>
+
+        <form action="{{ route('checkout.process') }}" method="post">
+            @csrf
+            <button type="submit">Confirm Order</button>
+        </form>
     </div>
+
     <footer>
         @include('footer')
     </footer>
-
+    
 </body>
 </html>
