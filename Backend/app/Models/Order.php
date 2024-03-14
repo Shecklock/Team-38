@@ -12,7 +12,7 @@ class Order extends Model
     // Define relationships
     public function customer()
     {
-        return $this->belongsTo(User::class, 'UserID');
+        return $this->belongsTo(User::class, 'CustomerID');
     }
 
     public function orderDetails()

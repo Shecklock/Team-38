@@ -6,9 +6,21 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    public function track($order_id)
+    public function checkout(Request $request)
     {
-        $order = Order::findOrFail($order_id);
-        return view('order.track', ['order' => $order]);
+        $basketItems = session()->get('basket', []);
+        // Your checkout logic goes here
+        return view('checkout', ['basketItems' => $basketItems]);
     }
+
+    public function track($customer_id)
+    {
+        // Find orders for the given customer ID
+        $orders = Order::where('CustomerID', $customer_id)->get();
+    
+        // Pass the orders to the view
+        return view('tracking', ['orders' => $orders]);
+    }
+
 }
+

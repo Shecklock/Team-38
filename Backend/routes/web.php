@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\CheckoutController;
+
 
 
 
@@ -155,6 +157,7 @@ Route::get('/products', [BasketController::class, 'showProducts'])->name('showpr
 
 Route::post('/product/{product_id}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
-Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout.process');
-Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
 
