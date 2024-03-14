@@ -155,4 +155,6 @@ Route::get('/products', [BasketController::class, 'showProducts'])->name('showpr
 
 Route::post('/product/{product_id}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout.process');
+Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
 
