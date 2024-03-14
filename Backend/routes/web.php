@@ -159,5 +159,5 @@ Route::post('/product/{product_id}/reviews', [ReviewController::class, 'store'])
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
-Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
+Route::get('/order/track/{order_id}', [OrderController::class, 'tracking'])->name('order.track');
 

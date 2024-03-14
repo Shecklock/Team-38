@@ -14,13 +14,14 @@ class OrderController extends Controller
     }
 
     public function track($customer_id)
-    {
-        // Find orders for the given customer ID
-        $orders = Order::where('CustomerID', $customer_id)->get();
+{
+    // Find orders for the given customer ID
+    $orders = Order::where('CustomerID', $customer_id)->get();
     
-        // Pass the orders to the view
-        return view('tracking', ['orders' => $orders]);
-    }
+    // Pass the orders to the view
+    return view('track', ['orders' => $orders]);
+}
+
 
 }
 
