@@ -1,4 +1,3 @@
-
 nav {
   display: flex;
   align-items: center;
@@ -21,11 +20,9 @@ nav ul li a {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: large;
   } 
-  .searchbutton{
-    margin-right: 200px;
-    margin-left: 10px;
-    align-items: center;
-  }
+.nav-links{
+margin-right: 500px;
+}
   nav ul li .search{
     display: inline-block;
     list-style: none;
@@ -129,7 +126,6 @@ body {
     background-color: white;
 }
 button{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
     padding: 8px;
     border-radius: 40px;
@@ -144,13 +140,18 @@ button:hover {
 }
 /*the button for the form*/
 .signin{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 10px 28px;
   font-size: 15px;
   border-radius: 7px;
-  background-color: #F5F5F5;
-  border: none;
-  
+  border: 1px solid #086bef;
+  font-size: 0.95rem;
+  background: #086bef;
+  color: white;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
 }
 footer{
     width:97%;
@@ -186,7 +187,8 @@ ul li {
   margin-top: 10px;
   color: black;
   width: 380px;
-  height: 20px;
+  height: 30px;
+  border-radius: 20px;
 }
 .bday{
 margin-top: 13px;

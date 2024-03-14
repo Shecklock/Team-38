@@ -14,7 +14,7 @@ nav {
 nav ul li {
   display: inline-block;
     list-style: none;
-    margin-right: 30px;
+    margin-top: 50px;
     background-color: none;
     align-items: center;
   }
@@ -26,17 +26,12 @@ nav ul li a {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: large;
   } 
-  .searchbutton{
-    margin-right: 200px;
-    margin-left: 10px;
-    align-items: center;
-  }
+  
   nav ul li .search{
     display: inline-block;
     list-style: none;
     background-color: none;
-    text-align: center;
-    border-radius: 7px;
+    border-radius: 15px;
     height: 27px;
     width: 220px;
   }
@@ -66,6 +61,12 @@ nav ul li a:hover::after {
       opacity: 1;
     }
 }
+#nav-links{
+margin-right: 400px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
     .navbar a:hover{
       color: black;
     }
@@ -93,6 +94,7 @@ p{
 max-width: 1300px;
 margin: auto;
 padding-left: auto;
+
 }
 section{
     text-align: center;
@@ -113,20 +115,35 @@ button:hover {
     width: 200px;
 }
 .submit{
-    font-family: "Montserrat", sans-serif;
     padding: 10px 28px;
-    font-size: 15px;
-    background-color: #fafafa;
-    border: none;
-    margin-left: 250px;
-    margin-top: 80px
+    background-color: #086bef;
+    margin-left: 278px;
+    margin-top: 27px;
+    border-radius: 20px;
+    padding: 0.6rem 1.3rem;
+  border: 1px solid #086bef;
+  font-size: 0.95rem;
+  color: #fff;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.submit:hover {
+  background-color: transparent;
+  color: #086bef;
+}
+.submit:hover {
+  background: #fff;
+  color: #086bef;
 }
 .login-links{
   display: flex;
   flex-direction: column;
   margin-right: 350px;
   margin-bottom: 50px;
-  margin-top: -120px
+  margin-top: -161px;
 }
 .input-control-usernamepass{
   display: flex;
@@ -137,8 +154,15 @@ button:hover {
   margin-left: 320px;
     /*padding: 20px;*/
 }
-.username{
-  /*margin-bottom: 20px;
+#username{
+  margin-bottom: 20px;
+  margin-top: 40px;
+  width: 220px;
+  height: 40px;
+  border-radius: 22px;
+  resize: none;
+  overflow-y: auto;
+  /*
   margin-left: 80px;
   margin-top: 20px;
   width: 220px;
@@ -147,14 +171,19 @@ button:hover {
 }
 .bi bi-person-badge{
   margin-right: 25px;
+  margin-bottom: -5;
 }
-.u-icon{
-  margin-right: 20px;
+.bi bi-lock{
+  margin-bottom: 10px;
 }
-/*.bi bi-lock{
-  margin-right: 30px;
-}*/
-.password{/*
+#password{
+  width: 220px;
+  height: 21px;
+  height: 40px;
+  border-radius: 22px;
+  resize: none;
+  overflow-y: auto;
+  /*
   height: 27px;
   width: 220px;
   margin-left: 70px;*/
@@ -194,13 +223,14 @@ grid-template-columns: repeat(2, 1fr);
 h1{
   color: black;
   margin-right: 350px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 label{
   color: black;
 }
 .rdo-customer{
   margin-left: 289px;
+  margin-top: -20px;
 }
 footer{
     width:97%;
@@ -226,12 +256,8 @@ footer a {
     text-decoration: none;
     align-items: center;
 }
-/*input{
-  border-radius: 7px;
-  height: 15px;
-}*/
 .nav-srch{
   border-radius: 7px;
-
+  margin-left: 500px;
 }
 
