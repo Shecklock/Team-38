@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="HomePageCSS.css">
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="top-navbar">
+        <div class="container1">
+            <nav>
+                <a href="index.html"><img src="logo.png" class="logo"></a>
+                <ul> 
+                  <li><input type="text" placeholder="Search.."></li>
+                  <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>       
+                </ul>
+              </nav>
+        </div>
+    </div>
+    </div>
+    
+    <div class="main-navbar">
+        <nav>
+            <ul>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="offer-banner" id="slider">
+        <div class="slides">
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <!-- slider malfunctions after going through the slides so repeats to avoid the issue-->
+        </div>
+    </div>
+
+    <div class="filter-container">
+        <select name="gender" id="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <select name="size" id="size">
+            <option value="">Select Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <button onclick="filterProducts()">Filter</button>
+    </div>
+    
+
+<div class="products-grid">
+    <div class="products-grid">
+
+        <div class="product">
+            <img src="menproduct1.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="menproduct2.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="menproduct3.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="productimagemenclothing.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="productimagementrainers.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="productimagetrainers2.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="placeholder.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        <div class="product">
+            <img src="placeholder.png" alt="Product">
+            <div class="overlay">Add to Basket</div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- Normal Banner -->
+<div class="wide-banner">
+    <img src="banner.png" alt="Wide Banner Placeholder">
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+    
+        // Start the first slide from the right into the view
+        slides[currentSlide].style.transform = 'translateX(0)';
+    
+        const changeSlide = () => {
+            const nextSlide = (currentSlide + 1) % slides.length;
+    
+            // Ensure the next slide is ready to come in from the right
+            slides[nextSlide].style.transform = 'translateX(100%)';
+            // Trigger reflow to apply the transform reset for the next slide
+            slides[nextSlide].offsetWidth;
+    
+            // Slide out the current slide to the left
+            slides[currentSlide].style.transform = 'translateX(-100%)';
+            
+            // Short delay to ensure the slides do not collide
+            setTimeout(() => {
+                // Bring the next slide in from the right
+                slides[nextSlide].style.transform = 'translateX(0)';
+                // Update the current slide index
+                currentSlide = nextSlide;
+            }, 50); // This short delay helps in syncing the exit and entry of slides smoothly
+    
+        };
+    
+        // Set an interval to change slides
+        setInterval(changeSlide, 4000); // Includes time for the slide to stay in view plus transition
+    });
+    
+        </script>
+ </body>
+</html>
