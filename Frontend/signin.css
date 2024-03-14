@@ -215,3 +215,72 @@ h1{
   margin-top: 8px;
   margin-left: 10px;
 }
+.fp-container{
+  width : 100%;
+  height: 620px;
+  position: relative;
+  margin: 6% auto;
+  margin-right: 50px;
+  word-spacing: normal;
+  padding :2rem; 
+  margin-bottom: 70px;
+  margin-left: -170px;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  max-width:750px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0.1px #086bef;
+  z-index: 1000;
+  grid-template-columns: repeat(2, 1fr);
+}
+.fp-email{
+  height: 20px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+.fp-newPass{
+  height: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+.fp-pass{
+  height: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+.fp-inputFeilds{
+  display: inline-grid;
+  margin-bottom: 10px;
+  justify-items: start;
+  margin-top: 166px;
+  color: black;
+  width: 380px;
+  height: 30px;
+  border-radius: 20px;
+}
+.submit-fp{
+  margin-top: 80px;
+  font-size: 15px;
+  border-radius: 7px;
+  border: 1px solid #086bef;
+  font-size: 0.95rem;
+  background: #086bef;
+  color: white;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+h2{
+  margin-top: 270px;
+}
