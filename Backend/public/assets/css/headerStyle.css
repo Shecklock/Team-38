@@ -52,14 +52,14 @@
   }
   
   .HeaderMain { 
-    padding: 10px;
+    padding: 10px !important;
     background: lightgreen;
     border-radius: 25px;
     max-width: 100%;
   }
   
   nav {
-    width: 100%;
+    width: 100% !important;
     display: flex;
     align-items: left;
     flex-wrap: line;
@@ -67,8 +67,8 @@
   }
   .logo {
     width: 185px ;
-    margin-left: 110px;
-    margin-right: 50px;
+    margin-left: 110px !important;
+    margin-right: 50px !important;
     
   }
   
@@ -124,18 +124,18 @@
   
   
 footer{
-  width: 97%;
-  margin:auto;
+  width: 100% !important;
+  margin:auto !important;
   padding-left: 40px;
   background-color: lightgreen;
   border-radius: 25px;
-  display: flex;
+  display: flex ;
   justify-content: space-evenly;
-  height:90px;
+  height:90px ;
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:black;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 100px!important;
   
 }
 
@@ -153,4 +153,15 @@ footer a {
 
 }
 
+footer p,
+footer a {
+    margin: 0 !important; /* Overrides any existing margins */
+    padding: 0 !important; /* Overrides any existing padding */
+    padding-top: 0 !important; /* Removes top padding */
+    padding-bottom: 0 !important;
+}
  
+
+
+
+
