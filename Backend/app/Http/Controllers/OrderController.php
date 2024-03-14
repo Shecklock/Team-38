@@ -19,7 +19,7 @@ class OrderController extends Controller
     $orders = Order::where('CustomerID', $customer_id)->get();
     
     // Pass the orders to the view
-    return view('track', ['orders' => $orders]);
+    return view('order.track', ['orders' => $orders]);
 }
 
 

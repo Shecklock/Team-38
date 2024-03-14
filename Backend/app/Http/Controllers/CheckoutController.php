@@ -51,8 +51,12 @@ public function process(Request $request)
         // Retrieve the ID of the newly created order
         $orderId = $order->OrderID;
 
-        // Redirect the user to the order tracking page with the order ID
-        return redirect()->route('order.track', ['order_id' => $orderId]);
+        // Get the ID of the authenticated user
+        $customerId = auth()->id();
+
+        // Redirect the user to the order tracking page with the customer ID
+        return redirect()->route('order.track', ['customer_id' => $customerId]);
+
     } else {
         // User is not authenticated, handle this case accordingly
         return redirect()->route('login')->with('error', 'You must be logged in to place an order.');

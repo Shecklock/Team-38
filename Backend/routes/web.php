@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\CheckoutController;
-
+use App\Http\Controllers\OrderController;
 
 
 
@@ -128,9 +128,6 @@ Route::post('/update-password', [App\Http\Controllers\PasswordController::class,
 
 // Route any unknown webpage to display the 404 error
 
-Route::get('/{any}', function () {
-    return view('/errors/404');
-})->where('any', '.*');
 
 
 // Other static page routes...
@@ -159,5 +156,10 @@ Route::post('/product/{product_id}/reviews', [ReviewController::class, 'store'])
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
-Route::get('/order/track/{order_id}', [OrderController::class, 'tracking'])->name('order.track');
+Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
+Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
 
+
+Route::get('/{any}', function () {
+    return view('/errors/404');
+})->where('any', '.*');
