@@ -3,18 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
     public function checkout(Request $request)
-    {
-        // Retrieve basket items from session
+{
+    // Retrieve the products being purchased from the request
+    $products = $request->input('products', []);
+    
+    // Start a database transaction
+    \DB::beginTransaction();
+    
+    try {
+        // Loop through each product being purchased
+        foreach ($products as $productId => $quantity) {
+            // Retrieve the product from the database
+            $product = Product::findOrFail($productId);
+
+            // Check if there's enough stock for this product
+            if ($product->StockQuantity < $quantity) {
+                throw new \Exception("Insufficient stock for product: {$product->ProductName}");
+            }
+
+            // Update the stock quantity of the product
+            $product->decrement('StockQuantity', $quantity);
+        }
+
+        // Commit the transaction if all updates succeed
+        \DB::commit();
+
+        // Retrieve the updated basket items
         $basketItems = session()->get('basket', []);
 
-        // Pass basket items to the checkout view
-        return view('checkout', ['basketItems' => $basketItems]);
+        // Return the checkout view with the updated basket items
+        return view('checkout', ['basketItems' => $basketItems])->with('success', 'Order placed successfully!');
+    } catch (\Exception $e) {
+        // Rollback the transaction if an error occurs
+        \DB::rollBack();
+
+        // Redirect the user back to the basket page with an error message
+        return redirect()->route('basket')->with('error', $e->getMessage());
     }
+}
 
 //     public function process(Request $request)
 //     {
@@ -28,6 +60,20 @@ class CheckoutController extends Controller
         
 //         return redirect()->route('order.track', ['order_id' => $orderId]);
 //     }
+
+public function purchase($itemId)
+{
+    $product = Product::findOrFail($itemId);
+
+    if ($product->StockQuantity > 0) {
+        $product->decrement('StockQuantity');
+        // Process purchase here
+        return redirect()->back()->with('success', 'Product purchased successfully!');
+    } else {
+        return redirect()->back()->with('error', 'Product is out of stock!');
+    }
+}
+
 
 public function process(Request $request)
 {
