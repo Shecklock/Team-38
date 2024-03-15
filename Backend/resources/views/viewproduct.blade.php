@@ -10,16 +10,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/viewproducts.css') }}">
 </head>
+
+
+<header>
+    @include('header')
+</header>
+
+
 <body>
-    <div class="py-3 py-md-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <!-- Product Image Column -->
-                <div class="col-md-4 mt-3">
-                    <div class="bg-white border">
-                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" style="width: 100%; height: auto;">
-                    </div>
-                </div>
+        <div class="py-3 py-md-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!-- Product Image Column -->
+                    <div class="col-md-4 mt-3">
+                        <div class="bg-white border">
+                            <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" style="width: 100%; height: auto;">
 
                 <!-- Product Purchasing Details Column -->
                 <div class="col-md-4 mt-3">
@@ -50,46 +55,28 @@
                         </div>
                         <div class="mt-3">
                             <p class="productDesc">{{ $product->Description }}</p>
+
                         </div>
                     </div>
+                    
+                <!-- Previous Reviews Row -->
+                <div class="row mt-3">
+        <div class="col-12">
+            <div class="reviews">
+                <div class="CustomerRev">
+                    <hr>
+                    <h3>Customer Reviews</h3>
+                    <hr>
                 </div>
-
-                <!-- Create a Review Column -->
-                <div class="col-md-4 mt-3">
-                    <div class="reviews">
-                        <h2>Write a Review</h2>
-                        <form id="review-form" action="{{ route('reviews.store', ['product_id' => $product->ProductID]) }}" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="reviewer-name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" name="reviewer-name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="review-text" class="form-label">Your Review</label>
-                                <textarea class="form-control" name="review-text" rows="3" required></textarea>
-                            </div>
-                            <div class="star-rating mb-3">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <span class="star" data-value="{{ $i }}">&#9733;</span>
-                                @endfor
-                                <input type="hidden" name="rating" id="rating" value="">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit Review</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Previous Reviews Row -->
-            <div class="row mt-3">
-                <div class="col-12">
-                    <div class="reviews">
-                        <h3>Customer Reviews</h3>
-                        @forelse ($product->reviews()->latest()->take(3)->get() as $review)
+                <div class="row">
+                    @forelse ($product->reviews()->latest()->take(3)->get() as $review)
+                        <div class="col-md-4">
                             <div class="review">
                                 <h4>{{ $review->reviewer_name }}</h4>
-                                <p>{{ $review->review_text }}</p>
-                                <div class="star-rating">
+                                <div class="review-text">
+                                    <p>{{ $review->review_text }}</p>
+                                </div>
+                                <div class="previous-star-rating">
                                     @for ($i = 1; $i <= 5; $i++)
                                         @if ($i <= $review->rating)
                                             <span class="star filled" data-value="{{ $i }}">&#9733;</span>
@@ -99,19 +86,23 @@
                                     @endfor
                                 </div>
                             </div>
-                        @empty
-                            <p>No reviews yet.</p>
-                        @endforelse
-                    </div>
+                        </div>
+                    @empty
+                        <p class="col-12">No reviews yet.</p>
+                    @endforelse
                 </div>
             </div>
         </div>
     </div>
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+<footer>
+    @include('footer')
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
     
-   
    document.addEventListener('DOMContentLoaded', function() {
     const stars = document.querySelectorAll('#review-form .star-rating .star');
 
