@@ -4,7 +4,8 @@
     
 <div class="card" style="margin:20px;">
   <div class="card-header">Edit Order</div>
-  <div class="card-body">
+    <div class="card-body">
+        <!-- Starts a form where the Admin can update an orders Status -->
         <form action="{{ url('admin/orders/update', $order->OrderID) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -12,6 +13,7 @@
             <input type="hidden" name="OrderID" id="OrderID" value="{{$order->OrderID}}" id="OrderID" />
             <label>Status</label><br><br>
             <select name="Status" id="Status" value="{{$order->Status}}" class="form-control">
+                <!-- The predefined values for what an Order's Status can be -->
                 <option value="Pending">Pending</option>
                 <option value="Processing">Processing</option>
                 <option value="Shipped">Shipped</option>

@@ -68,7 +68,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
    
 
-    // Order status routs
+    // Order status routes
     Route::get('orders', [App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('orders');
     Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('orders.edit');
     Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin/orders/update');
