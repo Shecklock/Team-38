@@ -13,7 +13,7 @@ class OrdersController extends Controller
         $orders = Order::all();
         return view('admin.orders.index')->with('orders', $orders);
     }
-    
+
     public function edit($OrderID) {
         $order = Order::findOrFail($OrderID);
         return view('admin.orders.edit', compact('order'));
@@ -23,6 +23,6 @@ class OrdersController extends Controller
         $order = Order::findOrFail($order);
         $input = $request->all();
         $order->update($input);
-        return redirect()->back()->with('success', 'Order updated successfully');
+        return redirect()->route('orders')->with('success', 'Order updated successfully');
     }
 }
