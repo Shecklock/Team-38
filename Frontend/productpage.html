@@ -9,17 +9,6 @@
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="HomePageCSS.css">
-    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
-</head>
-<body>
     <div class="top-navbar">
         <div class="container1">
             <nav>
@@ -112,42 +101,58 @@
 
         <div class="product">
             <img src="menproduct1.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
         </div>
         <div class="product">
             <img src="menproduct2.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
         </div>
         <div class="product">
             <img src="menproduct3.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
-        </div>
-        <div class="product">
-            <img src="productimagemenclothing.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
         </div>
         <div class="product">
             <img src="productimagementrainers.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
         </div>
         <div class="product">
             <img src="productimagetrainers2.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
-        </div>
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div> 
         <div class="product">
-            <img src="placeholder.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
-        </div>
-        <div class="product">
-            <img src="placeholder.png" alt="Product">
-            <div class="overlay">Add to Basket</div>
+            <img src="productimagekidsclothing.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
         </div>
         
+        <div class="product">
+            <img src="productimagewomensclothing.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>        
+        <div class="product">
+            <img src="womensclothing3.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>
+        <div class="product">
+            <img src="womensclothing2.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>
+        <div class="product">
+            <img src="womenstrainers1.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>
+        <div class="product">
+            <img src="kidstrainer2.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>
+        <div class="product">
+            <img src="kidsclothing2.png" alt="Product">
+            <div class="overlay"><a href="#" onclick="addToBasket('ProductID'); return false;">Add to Basket</a></div>
+        </div>
+        
+        </div>
     </div>
     
 </div>
-
-<!-- Normal Banner -->
 <div class="wide-banner">
     <img src="banner.png" alt="Wide Banner Placeholder">
 </div>
@@ -155,35 +160,35 @@
     document.addEventListener('DOMContentLoaded', () => {
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-    
-        // Start the first slide from the right into the view
         slides[currentSlide].style.transform = 'translateX(0)';
     
         const changeSlide = () => {
             const nextSlide = (currentSlide + 1) % slides.length;
-    
-            // Ensure the next slide is ready to come in from the right
             slides[nextSlide].style.transform = 'translateX(100%)';
-            // Trigger reflow to apply the transform reset for the next slide
             slides[nextSlide].offsetWidth;
-    
-            // Slide out the current slide to the left
             slides[currentSlide].style.transform = 'translateX(-100%)';
             
-            // Short delay to ensure the slides do not collide
             setTimeout(() => {
-                // Bring the next slide in from the right
                 slides[nextSlide].style.transform = 'translateX(0)';
-                // Update the current slide index
                 currentSlide = nextSlide;
-            }, 50); // This short delay helps in syncing the exit and entry of slides smoothly
+            }, 50); 
     
         };
     
-        // Set an interval to change slides
-        setInterval(changeSlide, 4000); // Includes time for the slide to stay in view plus transition
+        setInterval(changeSlide, 4000); 
     });
     
+    function addToBasket(productID) {
+    console.log("Adding product to basket:", productID);
+}
+
         </script>
+
+<footer>
+    <p><a href="contact_us.html">Contact us</a>
+    <p><a href="about_us.html">About us </a>
+    <p><a href="faqs.html">FAQs</a><br><a href="https://www.instagram.com/">Instagram</a><br><a href="https://en-gb.facebook.com/">Facebook</a><br><a href="https://twitter.com/login">X</a></p>Address: Aston St, Birmingham B4 7ET</p>
+</footer>
+
  </body>
 </html>
