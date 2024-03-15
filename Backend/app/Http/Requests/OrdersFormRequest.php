@@ -19,14 +19,14 @@ class OrdersFormRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+    // Sets the rules for the Status variable
     public function rules(): array
     {
         return [
             'Status'=> [
                 'required',
                 'string'
-            ]
-            
+            ] 
         ];
     }
 }

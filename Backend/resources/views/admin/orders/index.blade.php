@@ -5,7 +5,7 @@
     <div class="pull-left">
         <h2>Order Status System</h2>
     </div>
-
+    <!-- Creates a table where all previous orders can be displayed -->
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr>
@@ -25,5 +25,7 @@
                 <td>{{ $order->Status}}</td>
                 <td>{{ $order->OrderDate}}</td>
                 <td>{{ $order->updated_at}}</td>
+            </tr>
         @endforeach
+    </table>
 @endsection
