@@ -15,11 +15,11 @@
     <div class="checkout-container">
         <span class="big-circle"></span>
 
-        <h3 class="title">Basket Items</h3>
+        <h3 class="title">Confirm Your Order</h3>
         <div class="Confirm Items">
             <ul>
             <div class="checkout-info">
-        <h3 class="title">Confirm Your Order</h3>
+        <h3 class="title">Please review your order</h3>
 
         <!-- Display basket items -->
         <div class="basket-items">
