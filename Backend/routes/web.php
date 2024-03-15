@@ -105,7 +105,7 @@ Route::get('/forgot-password', function () { //URL LINK
 });
 
 Route::get('/login', function () { //URL LINK
-    return view('login'); //File Name
+    return view('login')->name('login'); //File Name
 
 });
 
