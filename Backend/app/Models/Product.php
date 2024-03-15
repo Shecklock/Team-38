@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Product extends Model
 {
     use HasFactory;
+
     protected $primaryKey = 'ProductID';
 
     protected $fillable = [
-        'ProductName', 'Description', 'image', 'Price', 'CategoryID',
+        'ProductName', 'Description', 'image', 'Price', 'CategoryID', 'StockQuantity',
     ];
 
     protected $table = 'products';
@@ -27,9 +27,8 @@ class Product extends Model
         return $this->hasMany(Review::class, 'product_id');
     }
 
-    public function orders(): HasMany
+    public function orders()
     {
         return $this->hasMany(Order::class, 'CustomerID');
     }
-
 }

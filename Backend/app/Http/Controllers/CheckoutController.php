@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -16,51 +18,58 @@ class CheckoutController extends Controller
         return view('checkout', ['basketItems' => $basketItems]);
     }
 
-//     public function process(Request $request)
-//     {
-//         // Process checkout logic here
-//         // For example, create order in the database
-        
-//         // Clear the basket after checkout
-//         session()->forget('basket');
+    public function process(Request $request)
+    {
+        // Retrieve the products being purchased from the request
+        $products = $request->input('products', []);
 
-//         // Redirect the user to a thank you page or any other appropriate page
-        
-//         return redirect()->route('order.track', ['order_id' => $orderId]);
-//     }
+        // Start a database transaction
+        \DB::beginTransaction();
 
-public function process(Request $request)
-{
-    // Check if the user is authenticated
-    if (auth()->check()) {
-        // Process checkout logic here
-        // For example, create order in the database
+        try {
+            // Loop through each product being purchased
+            foreach ($products as $productId => $quantity) {
+                // Retrieve the product from the database
+                $product = Product::findOrFail($productId);
 
-        // Assuming you have created an order in the database
-        $order = new Order();
-        $order->CustomerID = auth()->user()->id; // Access user ID only if authenticated
-        $order->OrderDate = now();
-        // Calculate total amount and set it
-        $order->TotalAmount = array_sum(array_column(session()->get('basket', []), 'price'));
-        $order->Status = 'Pending'; // Initial status
-        $order->save();
+                // Check if there's enough stock for this product
+                if ($product->StockQuantity < $quantity) {
+                    throw new \Exception("Insufficient stock for product: {$product->ProductName}");
+                }
 
-        // Clear the basket after checkout
-        session()->forget('basket');
+                // Update the stock quantity of the product
+                $product->decrement('StockQuantity', $quantity);
+            }
 
-        // Retrieve the ID of the newly created order
-        $orderId = $order->OrderID;
+            // Commit the transaction if all updates succeed
+            \DB::commit();
 
-        // Get the ID of the authenticated user
-        $customerId = auth()->id();
+            // Assuming you have created an order in the database
+            $order = new Order();
+            $order->CustomerID = auth()->user()->id; // Access user ID only if authenticated
+            $order->OrderDate = now();
+            // Calculate total amount and set it
+            $order->TotalAmount = array_sum(array_column(session()->get('basket', []), 'price'));
+            $order->Status = 'Pending'; // Initial status
+            $order->save();
 
-        // Redirect the user to the order tracking page with the customer ID
-        return redirect()->route('order.track', ['customer_id' => $customerId]);
+            // Clear the basket after checkout
+            session()->forget('basket');
 
-    } else {
-        // User is not authenticated, handle this case accordingly
-        return redirect()->route('login')->with('error', 'You must be logged in to place an order.');
+            // Retrieve the ID of the newly created order
+            $orderId = $order->OrderID;
+
+            // Get the ID of the authenticated user
+            $customerId = auth()->id();
+
+            // Redirect the user to the order tracking page with the customer ID
+            return redirect()->route('order.track', ['customer_id' => $customerId])->with('success', 'Order placed successfully!');
+        } catch (\Exception $e) {
+            // Rollback the transaction if an error occurs
+            \DB::rollBack();
+
+            // Redirect the user back to the checkout page with an error message
+            return redirect()->route('checkout')->with('error', $e->getMessage());
+        }
     }
-}
-
 }
