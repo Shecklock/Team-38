@@ -37,7 +37,7 @@ class PasswordController extends Controller
                 $user->save();
 
                 session()->flash('success', 'Password updated successfully!');
-                return redirect()->back();
+                return redirect()->route('login');
             } else {
                 session()->flash('error', 'User not found.');
                 return redirect()->back();
