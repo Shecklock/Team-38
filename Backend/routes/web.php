@@ -12,6 +12,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfileController;
+
 
 
 
@@ -126,7 +128,7 @@ Route::get('/checkout', function () {
 Route::get('/forgot-password', [App\Http\Controllers\PasswordController::class, 'forgot_password'])->name('forgot_password');
 Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
-// Route any unknown webpage to display the 404 error
+
 
 
 
@@ -141,6 +143,20 @@ Route::get('/checkout', function () {
 Auth::routes();
 
 // Your other routes...
+
+
+
+
+
+Route::get('/profile/{customerId}', 'App\Http\Controllers\ProfileController@show')->name('profile.show');
+Route::post('/profile/{customer}', [ProfileController::class, 'update'])->name('profile.update');
+
+
+
+Route::get('/account', function () {
+    return view('account');
+})->name('account');
+
 
 
 
