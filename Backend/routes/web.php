@@ -49,7 +49,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     
     
    
- // Product routes
+    // Product routes
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class); 
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('admin.products.create');
 
@@ -64,12 +64,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('admin/category/index',[App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin/category/index');
     Route::match(['put'], '/category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin/category/update');
     
-    
-
-
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
    
+
+    // Order status routs
+    Route::get('orders', [App\Http\Controllers\Admin\OrdersController::class, 'index']);
     
 });
 
