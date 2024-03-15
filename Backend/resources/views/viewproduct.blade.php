@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/viewproducts.css') }}">
 </head>
 
+
 <header>
     @include('header')
 </header>
@@ -24,67 +25,40 @@
                     <div class="col-md-4 mt-3">
                         <div class="bg-white border">
                             <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" style="width: 100%; height: auto;">
-                        </div>
-                    </div>
 
-                    <!-- Product Purchasing Details Column -->
-                    <div class="col-md-4 mt-3">
-                        <div class="product-view">
-                            <h1 class="productTitle">{{ $product->ProductName }}
-                                <label class="label-stock bg-success">In Stock</label>
-                            </h1>
-                            <hr>
-                            <p class="product-path">
-                                <a href="{{ url('/search?search=Men') }}" class="path-link">Men</a> /
-                                <a href="{{ url('/search?search=Women') }}" class="path-link">Women</a> /
-                                <a href="{{ url('/search?search=Trainers') }}" class="path-link">Trainers</a> /
-                                <a href="{{ url('/search?search=Accessories') }}" class="path-link">Accessories</a>
-                            </p>
-                            <div>
-                                <span class="productPrice">£{{ $product->Price }}</span>
-                            </div>
-                            <div class="mt-2">
-                                <div class="input-group">
-                                    <span class="btn btn1"><i class="fa fa-minus"></i></span>
-                                    <input type="text" value="1" class="input-quantity" />
-                                    <span class="btn btn1"><i class="fa fa-plus"></i></span>
-                                </div>
-                            </div>
-                            <div class="mt-2">
-                                <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
-                            </div>
-                            <div class="mt-3">
-                                <p class="productDesc">{{ $product->Description }}</p>
+                <!-- Product Purchasing Details Column -->
+                <div class="col-md-4 mt-3">
+                    <div class="product-view">
+                        <h1 class="productTitle">{{ $product->ProductName }}
+                            <label class="label-stock bg-success">In Stock</label>
+                        </h1>
+                        <hr>
+                        <p class="product-path">
+                            <a href="{{ url('/search?search=Men') }}" class="path-link">Men</a> /
+                            <a href="{{ url('/search?search=Women') }}" class="path-link">Women</a> /
+                            <a href="{{ url('/search?search=Trainers') }}" class="path-link">Trainers</a> /
+                            <a href="{{ url('/search?search=Accessories') }}" class="path-link">Accessories</a>
+                        </p>
+                        <div>
+                            <span class="productPrice">£{{ $product->Price }}</span>
+                        </div>
+                        <div class="mt-2">
+                            <div class="input-group">
+                                <span class="btn btn1"><i class="fa fa-minus"></i></span>
+                                {{-- <input type="text" value="1" class="input-quantity" /> --}}
+                                <input type="number" name="quantity" class="input-quantity" value="{{ $item['quantity'] ?? 1 }}" min="1">
+                                <span class="btn btn1"><i class="fa fa-plus"></i></span>
                             </div>
                         </div>
-                    </div>
+                        <div class="mt-2">
+                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                        </div>
+                        <div class="mt-3">
+                            <p class="productDesc">{{ $product->Description }}</p>
 
-                    <!-- Create a Review Column -->
-                    <div class="col-md-4 mt-3">
-                        <div class="reviews">
-                            <h2>Write a Review</h2>
-                            <form id="review-form" action="{{ route('reviews.store', ['product_id' => $product->ProductID]) }}" method="POST">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="reviewer-name" class="form-label">Your Name</label>
-                                    <input type="text" class="form-control" name="reviewer-name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="review-text" class="form-label">Your Review</label>
-                                    <textarea class="form-control" name="review-text" rows="3" required></textarea>
-                                </div>
-                                <div class="star-rating mb-3">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <span class="star" data-value="{{ $i }}">&#9733;</span>
-                                    @endfor
-                                    <input type="hidden" name="rating" id="rating" value="">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit Review</button>
-                            </form>
                         </div>
                     </div>
-                </div>
-
+                    
                 <!-- Previous Reviews Row -->
                 <div class="row mt-3">
         <div class="col-12">
