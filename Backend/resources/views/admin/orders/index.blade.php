@@ -19,7 +19,7 @@
         </thead>
         @foreach($orders as $order)
             <tr>
-                <td>{{ $order->OrderID }}</td>
+                <td><a href="{{ route('orders.edit', $order->OrderID) }}">{{ $order->OrderID }}</a></td>
                 <td>{{ $order->customer->name}}</td>
                 <td>{{ $order->TotalAmount}}</td>
                 <td>{{ $order->Status}}</td>

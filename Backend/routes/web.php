@@ -70,7 +70,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     // Order status routs
     Route::get('orders', [App\Http\Controllers\Admin\OrdersController::class, 'index']);
-    
+    Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('orders.edit');
+    Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin/orders/update');
+
 });
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
@@ -86,6 +88,7 @@ Route::get('/about-us', function () {
 // Basket routes
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+
 Route::get('/contact-us', function () { //URL LINK
     return view('contact_us'); //File Name
 
