@@ -9,7 +9,7 @@
     <h1>Order Tracking</h1>
     
     @if ($orders->isEmpty())
-        <p>No orders found for this customer.</p>
+        <p>You haven't placed any order yet.</p>
     @else
         <ul>
             @foreach ($orders as $order)
