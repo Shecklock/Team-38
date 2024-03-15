@@ -8,6 +8,9 @@ class Order extends Model
 {
     protected $table = 'orders';
     protected $primaryKey = 'OrderID';
+    protected $fillable = [
+        'Status'
+    ];
 
     // Define relationships
     public function customer()
