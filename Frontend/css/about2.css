@@ -46,7 +46,7 @@ nav ul li input[type="text"]:focus {
 nav ul li {
   display: inline-block;
   list-style: none;
-  margin: 10px 10px;
+  margin: auto;
   background-color: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
