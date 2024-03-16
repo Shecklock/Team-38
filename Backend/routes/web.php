@@ -161,6 +161,10 @@ Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
 Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
 Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
+// routes/web.php
+
+Route::get('/orders/{id}', 'OrderController@show')->name('order.details');
+
 
 
 Route::get('/{any}', function () {
