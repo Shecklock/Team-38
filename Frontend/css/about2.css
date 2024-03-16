@@ -355,6 +355,7 @@ footer a {
 .input-info .inputs{
   flex-basis:45%;
 }
+
 input{
   width:100%;
   border:1px solid black;
@@ -376,8 +377,8 @@ label{
   color:black;
 }
 button{
-  background:#4B9CD3;
-  color:black;
+  background:#086bef;
+  color:white;
   font-weight: 700;
   border:none;
   width:70px;
