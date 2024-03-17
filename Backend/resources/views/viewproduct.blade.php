@@ -31,7 +31,11 @@
                 <div class="col-md-4 mt-3">
                     <div class="product-view">
                         <h1 class="productTitle">{{ $product->ProductName }}
-                            <label class="label-stock bg-success">In Stock</label>
+                            @if($product->StockQuantity > 0)
+                                <label class="label-stock bg-success">In Stock ({{ $product->StockQuantity }} available)</label>
+                            @else
+                                <label class="label-stock bg-danger">Out of Stock</label>
+                            @endif
                         </h1>
                         <hr>
                         <p class="product-path">

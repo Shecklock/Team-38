@@ -1,11 +1,7 @@
 
-
-
-
-
 /* Product View */
 .product-view .product-name {
-    font-size: 24px;
+    font-size: 15px;
     color: #2874f0;
 }
 
@@ -38,6 +34,25 @@
     font-weight: 400;
     text-decoration: line-through;
 }
+
+.label-stock {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+.in-stock {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.out-of-stock {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
 
 .product-view .btn1 {
     border: 1px solid;

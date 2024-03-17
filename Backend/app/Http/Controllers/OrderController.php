@@ -22,6 +22,10 @@ class OrderController extends Controller
     return view('order.track', ['orders' => $orders]);
 }
 
+    public function show($id)
+    {
+        $order = Order::with('orderDetails.product')->findOrFail($id); // eager load order details and related products
+        return view('order.details', compact('order'));
+    }
 
 }
-

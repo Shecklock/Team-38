@@ -107,6 +107,8 @@ class BasketController extends Controller
 
         return redirect()->back();
         }
+        
+        
         public function checkout(Request $request)
 {
     $basketItems = session()->get('basket', []);
