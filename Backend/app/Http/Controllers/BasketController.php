@@ -122,11 +122,35 @@ class BasketController extends Controller
     $order = new Order();
     $order->CustomerID = auth()->user()->id; // Assuming you have user authentication
     $order->OrderDate = now();
-    $order->TotalAmount = array_sum(array_column($basketItems, 'price')); // Calculate total amount
+    
+    // Calculate total amount and initialize order status
+    $totalAmount = 0;
     $order->Status = 'Pending'; // Initial status
+    
+    foreach ($basketItems as $itemId => $item) {
+        $totalAmount += $item['price'] * $item['quantity']; // Update total amount
+        
+        // Check if the product exists and has sufficient quantity in stock
+        $product = Product::find($item['product_id']);
+        if (!$product || $product->StockQuantity < $item['quantity']) {
+            return redirect()->route('basket')->with('error', 'Product not available in sufficient quantity!');
+        }
+        
+        // Update product stock quantity
+        $product->StockQuantity -= $item['quantity'];
+        $product->save();
+        
+        // Remove the item from the basket after checkout
+        unset($basketItems[$itemId]);
+    }
+    
+    // Save order details
+    $order->TotalAmount = $totalAmount;
     $order->save();
 
-    // Save order details
+    // Save order details and clear the basket after checkout
+    session()->put('basket', $basketItems);
+
     foreach ($basketItems as $item) {
         $orderDetail = new OrderDetail();
         $orderDetail->OrderID = $order->OrderID;
@@ -140,6 +164,6 @@ class BasketController extends Controller
     session()->forget('basket');
 
     // Redirect the user to order tracking page
-    return redirect()->route('order.track', ['order_id' => $order->OrderID])->with('success', 'Order placed successfully!');
-  }
+    //return redirect()->route('order.track', ['order_id' => $order->OrderID])->with('success', 'Order placed successfully!');
+}
 }
