@@ -179,7 +179,7 @@ nav ul li a:hover::after {
   text-align: center;
   font-size:14px;
   width:100%;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
 }
 .team-section .container .team-profiles .team-role .role-explain1 h4{
 
@@ -253,8 +253,17 @@ nav ul li a:hover::after {
   text-align: center;
   font-size:14px;
   width:100%;
-
+  /* margin-top:20px; */
 }
+
+.Community .container2 .com-image .Community-role .activities h3{
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size:17px;
+  width:100%;
+  margin-bottom: 3px;
+}
+
 .Community .container2 .com-image .Community-role .activities1{
   font-family: "Montserrat", sans-serif;
   text-align: center;
