@@ -446,7 +446,7 @@ tr td{
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     
   }
   
@@ -460,6 +460,7 @@ tr td{
     padding: 10px 10%;
     margin-bottom: 50px;
     background: #F5F5F5;
+    width: fit-content;
   }
   
   .logo {
@@ -532,26 +533,102 @@ tr td{
   nav ul li a:hover::after {
     width: 100%;
   }
-  
+
   .About-Us{
     color:black;
-    margin-top:25px;
-    padding: 150px;
-    padding-top: 40px;
+    padding-top: 9px;
     padding-bottom: 250px;
     text-align:center;
     background-color:white;
     box-shadow: 0 0 10px 1px #086bef;
     border-radius: 10px;
-    align-items: center;
     flex-wrap:wrap;
-    flex-direction: column;
     margin: auto;
-    width:70%;
-    height:90px;
+    width:95%;
+    height:410px;
     font-family: "Montserrat", sans-serif;
-}
-.About-Us h3{
+    font-size: 8px;
     font-weight: 600;
 }
+.About-Us h3{
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.team-section{
+  width:98%;
+  background-color:white;
+  box-shadow: 0 0 10px 1px #086bef;
+  border-radius: 10px;
+  height:250px;
+  margin-bottom:10px;
+  margin-left: 9px;
+  margin-top: 0px;
+}
+
+.team-section .container{
+  width:100%;
+  margin:auto;
+}
+.team-section .container .row{
+  width:50%;
+  margin:auto;
+}
+
+.team-section .container .row .Our-team{
+  text-align: center;
+  margin-top: 80px;
+}
+.team-section .container .row .Our-team h1{
+  font-family: "Montserrat", sans-serif;
+  font-size:20px;
+  padding-top: 20px;
+  
+}
+.team-section .container .team-profiles{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(3,2fr);
+  grid-gap: 30px;
+  margin-top: 35px;
+
+}
+.team-section .container .team-profiles .team-role{
+  width:100%;
+  background-color: white;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding:20px;
+}
+
+.team-section .container .team-profiles .team-role .team-images img{
+  height:50px;
+  width:50px;
+}
+.team-section .container .team-profiles .team-role .role-explain{
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size:8px;
+  width:100%;
+
+}
+.team-section .container .team-profiles .team-role .role-explain1{
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size:8px;
+  width:100%;
+  margin-bottom: 12px;
+}
+.team-section .container .team-profiles .team-role .role-explain1 h4{
+
+  font-weight: 500;
+}
+
+.team-section .container .team-profiles .team-role .role-explain h4{
+ 
+  font-weight: 500;
+}
+
 }
