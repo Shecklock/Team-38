@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\Customer; // Import the Customer model
 
 class ProfileController extends Controller
@@ -20,12 +21,28 @@ class ProfileController extends Controller
         return view('customer', compact('customer'));
     }
 
-    public function update(Request $request, $id)
-{
-    $customer = Customer::findOrFail($id);
-    // Your update logic
-    return redirect()->route('some.route.after.update');
-}
-
-
+    public function update(Request $request, $CustomerID) {
+        \Log::info('CustomerID: ' . $CustomerID);
+    
+        $customer = Customer::findOrFail($CustomerID);
+    
+        // Define the fields that can be null
+        $nullableFields = ['Address', 'Phone', 'City', 'State', 'Postcode', 'Country'];
+    
+        $input = $request->except('_token');
+        foreach ($input as $key => $value) {
+            if (in_array($key, $nullableFields)) {
+                // If the field is nullable and is empty, set it to null
+                $customer->$key = $value !== '' ? $value : null;
+            } else {
+                // For non-nullable fields, just assign the value
+                $customer->$key = $value;
+            }
+        }
+    
+        $customer->save();
+    
+        return redirect()->route('account');
+    }
+    
 }

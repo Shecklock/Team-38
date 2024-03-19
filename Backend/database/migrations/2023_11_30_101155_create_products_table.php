@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
@@ -16,17 +13,14 @@ return new class extends Migration
             $table->string('ProductName');
             $table->longText('Description');
             $table->double('Price');
-            $table->integer('StockQuantity')->default('0');
+            $table->integer('StockQuantity')->default(0); // Removed quotes from default value
             $table->string('image')->nullable();
-            $table->unsignedInteger('CategoryID')->nullable();
+            $table->unsignedBigInteger('CategoryID')->nullable(); // Changed to unsignedBigInteger
             $table->foreign('CategoryID')->references('CategoryID')->on('categories');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('products');

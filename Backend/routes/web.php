@@ -149,7 +149,7 @@ Auth::routes();
 
 
 Route::get('/profile/{customerId}', 'App\Http\Controllers\ProfileController@show')->name('profile.show');
-Route::post('/profile/{customer}', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/{CustomerID}', [ProfileController::class, 'update'])->name('profile.update');
 
 
 

@@ -23,7 +23,7 @@
     </div>
 
 
-    <form action="/profile/{{ $customer->id }}" method="POST">
+    <form action="{{ route('profile.update', ['CustomerID' => 12]) }}" method="POST">
     @csrf
     <p><strong>Name:</strong> 
             <input type="text" name="FirstName" value="{{ $customer->FirstName }}">
