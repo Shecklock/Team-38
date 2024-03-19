@@ -440,3 +440,118 @@ tr td{
   color:rgb(74, 73, 73);
   font-size: 13px; 
 }
+
+@media only screen and (max-width: 600px) {
+  /* Styles for screens smaller than 600px */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  body,
+  input,
+  textarea {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .container1{
+    padding: 10px 10%;
+    margin-bottom: 50px;
+    background: #F5F5F5;
+  }
+  
+  .logo {
+    width: 90px;
+  }
+  
+  nav ul li input[type="text"] {
+    padding: 3px;
+    width: 90px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 8px;
+    
+    transition: 0.3s;
+  }
+  
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 4px #086bef;
+  }
+  
+
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: auto;
+    background-color: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  nav ul li input[type="text"] {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 10px;
+    background-color: none;
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #086bef;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .About-Us{
+    color:black;
+    margin-top:25px;
+    padding: 150px;
+    padding-top: 40px;
+    padding-bottom: 250px;
+    text-align:center;
+    background-color:white;
+    box-shadow: 0 0 10px 1px #086bef;
+    border-radius: 10px;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: column;
+    margin: auto;
+    width:70%;
+    height:90px;
+    font-family: "Montserrat", sans-serif;
+}
+.About-Us h3{
+    font-weight: 600;
+}
+}
