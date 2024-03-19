@@ -1,63 +1,100 @@
-.container1{
-
-    background: #4B9CD3;
-    width:100%;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 20px;
-    height: 95px;
-  }
-  .container1 .logo{
-    width:275px;
-    margin-top: 20px;
-    margin-left: 10px;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin-right: 30px;
-    background-color: none;
-    align-items: center;
-  }
-  nav ul li .search{
-    display: inline-block;
-    list-style: none;
-    background-color: none;
-    text-align: center;
-    border-radius: 7px;
-    height:27px;
-    width:220px;
-
-  }
-.searchbutton{
-  margin-right: 200px;
-  margin-left:10px;
-  align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
-  nav ul li a {
-    color:white;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-    font-family: "Montserrat", sans-serif;
-    align-items: center;
-    font-weight: 600;
-  }
 
-  nav ul li a:hover {
-    color:black;
-  }
+body,
+input,
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
 
-  .About-Us{
+.container1{
+  padding: 10px 10%;
+  margin-bottom: 50px;
+  background: #F5F5F5;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 200px;
+}
+
+nav ul li input[type="text"] {
+  padding: 8px;
+  width: auto;
+  border: none;
+  border-radius: 20px;
+  margin-top: 8px;
+  
+  transition: 0.3s;
+}
+
+nav ul li input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 4px #086bef;
+}
+
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: auto;
+  background-color: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+nav ul li input[type="text"] {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+  background-color: none;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #086bef;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.About-Us{
     color:black;
     margin-top:25px;
     padding: 150px;
@@ -70,7 +107,7 @@
     align-items: center;
     flex-wrap:wrap;
     flex-direction: column;
-    margin-left: 40px;
+    margin: auto;
     width:70%;
     height:90px;
     font-family: "Montserrat", sans-serif;
@@ -251,33 +288,29 @@ a.link:hover {
   font-weight: 500;
 }
 
-  footer{
-    width:97%;
-    margin:auto;
-    padding-left: 40px;
-    background-color: #4B9CD3;
-    display: flex;
-    justify-content: space-evenly;
-    height:90px;
-    font-family: "Montserrat", sans-serif;
-    color:white;
-    align-items: center;
-    margin-top: 3px;
-    
+footer{
+  margin:auto;
+  padding-left: 40px;
+  background-color: #F5F5F5;
+  
+  display: flex;
+  justify-content: space-evenly;
+  height:90px;
+  color:black;
+  align-items: center;
+  
 }
 
 footer p{
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    align-items: center;
-    margin-right: 70px;
+  text-decoration: none;
+  font-size: 12px;
+  align-items: center;
 }
 footer a {
-    font-size: 14px;
-    color:white;
-    text-decoration: none;
-    align-items: center;
+  font-size: 12px;
+  color:black;
+  text-decoration: underline;
+  align-items: center;
 
 }
 .container{
@@ -322,6 +355,7 @@ footer a {
 .input-info .inputs{
   flex-basis:45%;
 }
+
 input{
   width:100%;
   border:1px solid black;
@@ -343,8 +377,8 @@ label{
   color:black;
 }
 button{
-  background:#4B9CD3;
-  color:black;
+  background:#086bef;
+  color:white;
   font-weight: 700;
   border:none;
   width:70px;
