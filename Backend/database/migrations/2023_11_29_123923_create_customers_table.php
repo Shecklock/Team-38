@@ -9,7 +9,6 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('CustomerID');
-            $table->unsignedBigInteger('user_id'); // Add this line to create a user_id column
             $table->string('FirstName',50);
             $table->string('LastName',50)->nullable()->default('');
             $table->string('Email',100);
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign key constraint referencing the 'users' table
-            $table->foreign('UserID')->references('id')->on('users');
         });
     }
 

@@ -2,47 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Customer; // Import the Customer model
+use Illuminate\Support\Facades\Auth;
+use App\Models\Customer;
 
 class ProfileController extends Controller
 {
-    public function __construct()
+    public function show()
     {
-        $this->middleware('auth');
+        // Retrieve the currently authenticated user
+        $user = Auth::user();
+
+        // Retrieve the associated customer record based on the user's email
+        $customer = Customer::where('Email', $user->email)->first();
+
+        // Pass the user and customer data to the view
+        return view('customer', compact('user', 'customer'));
     }
 
-    public function show($customerId)
+    public function update(Request $request)
     {
-        // Fetch the customer based on the provided CustomerID
-        $customer = Customer::where('CustomerID', $customerId)->first();
+        // Retrieve the currently authenticated user
+        $user = Auth::user();
 
-        return view('customer', compact('customer'));
-    }
+        // Retrieve the associated customer record based on the user's email
+        $customer = Customer::where('Email', $user->email)->first();
 
-    public function update(Request $request, $CustomerID) {
-        \Log::info('CustomerID: ' . $CustomerID);
-    
-        $customer = Customer::findOrFail($CustomerID);
-    
-        // Define the fields that can be null
-        $nullableFields = ['Address', 'Phone', 'City', 'State', 'Postcode', 'Country'];
-    
-        $input = $request->except('_token');
-        foreach ($input as $key => $value) {
-            if (in_array($key, $nullableFields)) {
-                // If the field is nullable and is empty, set it to null
-                $customer->$key = $value !== '' ? $value : null;
-            } else {
-                // For non-nullable fields, just assign the value
-                $customer->$key = $value;
-            }
-        }
-    
-        $customer->save();
-    
-        return redirect()->route('account');
+        // Update customer information
+        $customer->update($request->all());
+
+        // Redirect back to the profile page
+        return redirect()->route('profile.show');
     }
-    
 }

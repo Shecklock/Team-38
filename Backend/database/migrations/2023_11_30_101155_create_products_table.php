@@ -15,8 +15,9 @@ return new class extends Migration
             $table->double('Price');
             $table->integer('StockQuantity')->default(0); // Removed quotes from default value
             $table->string('image')->nullable();
-            $table->unsignedBigInteger('CategoryID')->nullable(); // Changed to unsignedBigInteger
+            $table->unsignedInteger('CategoryID')->nullable(); // Changed to unsignedInteger
             $table->foreign('CategoryID')->references('CategoryID')->on('categories');
+
             $table->timestamps();
         });
     }
