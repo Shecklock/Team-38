@@ -14,13 +14,13 @@ return new class extends Migration
         if (!Schema::hasTable('reviews')) {
             Schema::create('reviews', function (Blueprint $table) {
                 $table->id();
-                $table->unsignedBigInteger('product_id');
+                $table->unsignedInteger('product_id');
                 $table->string('reviewer_name');
                 $table->text('review_text');
                 $table->unsignedTinyInteger('rating');
                 $table->timestamps();
                 // Ensure product_id references id column in the products table
-                $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+                $table->foreign('product_id')->references('ProductID')->on('products')->onDelete('cascade');
             });
         }
     }

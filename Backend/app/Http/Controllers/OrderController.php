@@ -28,5 +28,15 @@ class OrderController extends Controller
         return view('order.details', compact('order'));
     }
 
+    // OrderController.php
+
+public function details($id)
+{
+    $order = Order::with(['orderDetails.product'])->findOrFail($id); // Assumes your OrderDetail model has a 'product' relationship
+
+    return view('order.order-details', compact('order'));
+}
+
+
 }
 
