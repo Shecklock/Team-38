@@ -25,15 +25,15 @@ class ProductsSeeder extends Seeder
         $productsData = [
             // T-shirts
             [
-                'ProductName' => 'Puma T-shirt',
-                'Description' => 'White Puma T-shirt',
+                'ProductName' => 'Puma T-Shirt',
+                'Description' => 'White Puma T-Shirt',
                 'Price' => '10.99',
                 'StockQuantity' => '50',
                 'image' => 'puma_tshirt.jpg',
                 'CategoryID' => $tshirtCategoryID
             ], 
             [
-                'ProductName' => 'Nike T-shirt',
+                'ProductName' => 'Nike T-Shirt',
                 'Description' => 'Black Nike T-Shirt',
                 'Price' => '15.99',
                 'StockQuantity' => '30',
@@ -41,15 +41,15 @@ class ProductsSeeder extends Seeder
                 'CategoryID' => $tshirtCategoryID
             ], 
             [
-                'ProductName' => 'Adidas T-shirt',
+                'ProductName' => 'Adidas T-Shirt',
                 'Description' => 'Blue Adidas T-Shirt',
                 'Price' => '16.99',
                 'StockQuantity' => '45',
-                'image' => 'Adidas_tshirt.jpg',
+                'image' => 'adidas_tshirt.jpg',
                 'CategoryID' => $tshirtCategoryID
             ], 
             [
-                'ProductName' => 'Lacoste T-shirt',
+                'ProductName' => 'Lacoste T-Shirt',
                 'Description' => 'Pink Lacoste T-Shirt',
                 'Price' => '7.99',
                 'StockQuantity' => '90',
@@ -57,7 +57,7 @@ class ProductsSeeder extends Seeder
                 'CategoryID' => $tshirtCategoryID
             ], 
             [
-                'ProductName' => 'Under Armour T-shirt',
+                'ProductName' => 'Under Armour T-Shirt',
                 'Description' => 'Light blue Under Armour T-Shirt',
                 'Price' => '17.99',
                 'StockQuantity' => '10',
@@ -87,7 +87,7 @@ class ProductsSeeder extends Seeder
                 'Description' => 'Black Adidas Tracksuit',
                 'Price' => '30.99',
                 'StockQuantity' => '15',
-                'image' => 'Adidas_tracksuit.jpg',
+                'image' => 'adidas_tracksuit.jpg',
                 'CategoryID' => $tracksuitCategoryID
             ], 
             [
@@ -125,27 +125,27 @@ class ProductsSeeder extends Seeder
                 'CategoryID' => $jacketsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Nike Jacket',
+                'Description' => 'White and blue Nike Jacket',
+                'Price' => '45.99',
+                'StockQuantity' => '32',
+                'image' => 'nike_jacket.png',
                 'CategoryID' => $jacketsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Superdry Jacket',
+                'Description' => 'Black Superdry Jacket',
+                'Price' => '55.99',
+                'StockQuantity' => '74',
+                'image' => 'superdry_jacket.jpg',
                 'CategoryID' => $jacketsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Adidas Jacket',
+                'Description' => 'Blue Adidas Jacket',
+                'Price' => '53.99',
+                'StockQuantity' => '52',
+                'image' => 'adidas_jacket.webp',
                 'CategoryID' => $jacketsCategoryID
             ], 
             
@@ -193,46 +193,45 @@ class ProductsSeeder extends Seeder
             
             // Bags
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Adidas Bag',
+                'Description' => 'Grey and brown Adidas Bag',
+                'Price' => '15.99',
+                'StockQuantity' => '21',
+                'image' => 'adidas_bag.jpg',
                 'CategoryID' => $bagsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
+                'ProductName' => 'Sports Bag',
+                'Description' => 'Black Sports Bag',
                 'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'StockQuantity' => '25',
+                'image' => 'sports_bag.jpeg',
                 'CategoryID' => $bagsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Nike Gym Bag',
+                'Description' => 'Black Nike Gym Bag',
+                'Price' => '9.99',
+                'StockQuantity' => '112',
+                'image' => 'nike_bag.jpg',
                 'CategoryID' => $bagsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Adidas Bag',
+                'Description' => 'Pink/grey Adidas Bag',
+                'Price' => '29.99',
+                'StockQuantity' => '32',
+                'image' => 'adidas_bag.webp',
                 'CategoryID' => $bagsCategoryID
             ], 
             [
-                'ProductName' => 'Nike Tracksuit',
-                'Description' => 'Grey Nike Tracksuit',
-                'Price' => '25.99',
-                'StockQuantity' => '42',
-                'image' => 'nike_tracksuit.webp',
+                'ProductName' => 'Under Armour Crossbody Bag',
+                'Description' => 'Black Under Armour Crossbody Bag',
+                'Price' => '17.99',
+                'StockQuantity' => '73',
+                'image' => 'underarmour_bag.webp',
                 'CategoryID' => $bagsCategoryID
-            ], 
-            
+            ]
         ];
 
         // Loop through each tuple and create a record in the database
