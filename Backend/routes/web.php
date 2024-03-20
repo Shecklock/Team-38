@@ -129,25 +129,13 @@ Route::get('/checkout', function () {
 Route::get('/forgot-password', [App\Http\Controllers\PasswordController::class, 'forgot_password'])->name('forgot_password');
 Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
-// Route any unknown webpage to display the 404 error
-
-
-
 // Other static page routes...
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-// Other routes...
-
 // Authentication routes
 Auth::routes();
-
-// Your other routes...
-
-
-
-
 
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');                                             
 Route::post('/basket/updateQuantity/{itemId}', [BasketController::class, 'updateQuantity'])->name('updateQuantity');

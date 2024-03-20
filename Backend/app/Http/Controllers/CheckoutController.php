@@ -5,45 +5,58 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\OrderDetail;
 
 class CheckoutController extends Controller
 {
-    public function checkout(Request $request)
-    {
-        // Retrieve basket items from the session
-        $basketItems = session()->get('basket', []);
-
-        // Pass basket items to the checkout view
-        return view('checkout', ['basketItems' => $basketItems]);
-    }
 
     public function process(Request $request)
     {
         // Check if the user is authenticated
         if (!Auth::check()) {
-            // If not authenticated, redirect to the login page with an error message
             return redirect()->route('login')->with('error', 'You must be logged in to place an order.');
         }
 
-        // Create a new order and set its attributes
-        $order = new Order();
-        $order->CustomerID = Auth::id(); // Set the customer ID to the ID of the authenticated user
-        $order->OrderDate = now(); // Set the current date as the order date
-        $order->UserID = Auth::id(); // Use UserID instead of CustomerID
+    $basketItems = session()->get('basket', []);
+    if (empty($basketItems)) {
+        return redirect()->route('basket')->with('error', 'Your basket is empty.');
+    }
 
-        // Calculate the total amount from the basket items
-        $totalAmount = array_sum(array_column(session()->get('basket', []), 'price'));
-        $order->TotalAmount = $totalAmount;
+    // Create a new order and set its attributes
+    $order = new Order();
+    $order->CustomerID = Auth::id();
+    $order->OrderDate = now();
+    $order->TotalAmount = array_sum(array_column($basketItems, 'price'));
+    $order->Status = 'Pending';
+    $order->UserID = Auth::id();
+    $order->save();
 
-        $order->Status = 'Pending'; // Set the initial status of the order
-        $order->save(); // Save the order to the database
+    // Create order details for each basket item
+    foreach ($basketItems as $item) {
 
-        // Clear the basket after successfully creating the order
-        session()->forget('basket');
+        if (!isset($item['product_id'])) {
+            // Handle the missing product_id case, e.g., skip this item, show an error, etc.
+            continue; // This will skip the current iteration and move to the next item.
+        }
+        // Ensure you have 'product_id' in your $item array
+        $orderDetail = new OrderDetail();
+        $orderDetail->OrderID = $order->id;
+        $orderDetail->ProductID = $item['product_id'];
+        $orderDetail->Quantity = $item['quantity'];
+        $orderDetail->Price = $item['price'];
+        $orderDetail->save();
+    }
 
-        // Redirect the user to a page where they can track their order, passing the order ID
-        // In CheckoutController.php
-return redirect()->route('order.track', ['customer_id' => Auth::id()])->with('success', 'Order placed successfully!');
+    session()->forget('basket');
 
+    return redirect()->route('order.track', ['customer_id' => Auth::id()])->with('success', 'Order placed successfully!');
+}
+
+
+    public function checkout(Request $request)
+    {
+        $basketItems = session()->get('basket', []);
+        // Pass basket items to the checkout view
+        return view('checkout', ['basketItems' => $basketItems]);
     }
 }
