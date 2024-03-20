@@ -163,7 +163,7 @@ Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('
 Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
 // routes/web.php
 
-Route::get('/orders/{id}', 'OrderController@show')->name('order.details');
+Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.details');
 
 
 

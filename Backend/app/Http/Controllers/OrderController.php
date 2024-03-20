@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Order;
+
 
 class OrderController extends Controller
 {
+    //
     public function checkout(Request $request)
     {
         $basketItems = session()->get('basket', []);
@@ -28,5 +31,7 @@ class OrderController extends Controller
         return view('order.details', compact('order'));
     }
 
+    public function products() {
+        return $this->belongsToMany(Product::class, 'orderdetails')->withPivot('quantity');
+    }
 }
-
