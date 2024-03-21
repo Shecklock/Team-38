@@ -36,7 +36,7 @@
                 <h4 class="card-title">Order Status</h4>
             </div>
             <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
-            <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+            <div style="width: 800px;"><canvas id="stockChart"></canvas></div>
 
             <!-- <script type="module" src="dimensions.js"></script> -->
             <script type="module" src="resources/js/chart.js"></script>
