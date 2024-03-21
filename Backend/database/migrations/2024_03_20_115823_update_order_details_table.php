@@ -36,5 +36,6 @@ return new class extends Migration
             // Optionally, rollback the table name change if needed
             // Schema::rename('order_details', 'orderdetails');
         });
+        Schema::dropIfExists('order_details');
     }
 };

@@ -48,7 +48,7 @@
                                     @csrf
                                 </form>
                             </li>
-                            <li><a href="a">Account</a></li>
+                            <li><a href="{{ route('account') }}">Account</a></li>
                             @endguest
                         
                         <li><a href="{{ route('basket') }}"><i class="fa-solid fa-basket-shopping"></i></a></li>

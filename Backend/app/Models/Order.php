@@ -12,6 +12,8 @@ class Order extends Model
     protected $fillable = [
         'UserID','CustomerID', 'OrderDate', 'TotalAmount', 'Status'
     ];
+    protected $tableOrderDetails = 'order_details';
+
 
 
     // Define relationships
@@ -23,5 +25,10 @@ class Order extends Model
     public function products(){
         return $this->belongsToMany(Product::class, 'order_product', 'OrderID', 'ProductID')
                 ->withPivot('Quantity');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'ProductID');
     }
 }
