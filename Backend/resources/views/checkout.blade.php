@@ -39,8 +39,6 @@
                 <p>{{ $item['name'] ?? 'Unknown' }}</p>
                 <p>£{{ $item['price'] ?? 'Unknown' }}</p>
                 <p>Subtotal: £{{ ($item['price'] ?? 0) * ($item['quantity'] ?? 1) }}</p>
-
-                    
                 </div>
                 @php
                     $totalPrice += ($item['price'] ?? 0) * ($item['quantity'] ?? 1);
