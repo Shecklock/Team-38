@@ -43,7 +43,8 @@ class BasketController extends Controller
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
                 'price' => $product->Price, // Replace 'Price' with the correct field from your product details
                 'image' => $product->image,
-                'product_id' => $product->id,
+                'product_id' => $product->ProductID,
+                'quantity' => 1,
                 // Add more necessary keys and values
             ];
     
