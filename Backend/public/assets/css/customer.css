@@ -1,0 +1,108 @@
+.form-container {
+    
+    justify-content: center;
+   
+
+    margin: 0;
+}
+
+.form-container form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-top: 100px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.form-container form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #4a4d4a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.form-container button:hover {
+    background-color: #000000;
+}
+
+.form-container form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px; /* Adjust this value as needed */
+}
+
+
+
+.AccountsInfo {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: none;
+    padding: 12px 24px; /* Larger padding for a wider button */
+    font-size: 16px; /* Adjust size as needed */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate this is a clickable button */
+}
+
+
+.AccountsInfo button {
+    background-color: #4a4d4a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 15px;
+    
+}
+
+.AccountsInfo button:hover {
+    background-color: #000000;
+}

@@ -12,6 +12,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfileController;
+
 
 
 
@@ -129,6 +131,7 @@ Route::get('/checkout', function () {
 Route::get('/forgot-password', [App\Http\Controllers\PasswordController::class, 'forgot_password'])->name('forgot_password');
 Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
+
 // Other static page routes...
 Route::get('/checkout', function () {
     return view('checkout');
@@ -136,6 +139,16 @@ Route::get('/checkout', function () {
 
 // Authentication routes
 Auth::routes();
+
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+
+Route::get('/account', function () {
+    return view('account');
+})->name('account');
+
 
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');                                             
 Route::post('/basket/updateQuantity/{itemId}', [BasketController::class, 'updateQuantity'])->name('updateQuantity');
