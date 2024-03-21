@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     public function up(): void
     {
         if (!Schema::hasTable('reviews')) {
             Schema::create('reviews', function (Blueprint $table) {
                 $table->id();
                 $table->unsignedInteger('product_id'); // Changed to unsignedInteger to match ProductID in products table
+
                 $table->string('reviewer_name');
                 $table->text('review_text');
                 $table->unsignedTinyInteger('rating');
@@ -21,6 +23,7 @@ return new class extends Migration
             });
         }
     }
+
 
     public function down(): void
     {

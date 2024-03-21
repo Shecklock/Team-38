@@ -26,8 +26,7 @@
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
-            <!-- User chooses to redirect themselves to login page upon password change -->
-            <a href="{{ route('login')}}">Click to go back to login</button>
+            <!-- User is redirected to the login page -->
         @endif
         @if (session('error'))
             <div class="alert alert-danger">

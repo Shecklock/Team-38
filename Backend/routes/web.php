@@ -51,7 +51,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     
     
    
- // Product routes
+    // Product routes
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class); 
     Route::get('products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('admin.products.create');
 
@@ -66,13 +66,15 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('admin/category/index',[App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin/category/index');
     Route::match(['put'], '/category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin/category/update');
     
-    
-
-
     Route::post('/addimage', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('addimage');
     Route::get('/index', [App\Http\Controllers\Admin\ProductController::class, 'display']);
    
-    
+
+    // Order status routes
+    Route::get('orders', [App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('orders');
+    Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('orders.edit');
+    Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin/orders/update');
+
 });
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
@@ -88,6 +90,7 @@ Route::get('/about-us', function () {
 // Basket routes
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+
 Route::get('/contact-us', function () { //URL LINK
     return view('contact_us'); //File Name
 
@@ -104,7 +107,7 @@ Route::get('/forgot-password', function () { //URL LINK
 });
 
 Route::get('/login', function () { //URL LINK
-    return view('login'); //File Name
+    return view('login')->name('login'); //File Name
 
 });
 
@@ -129,23 +132,13 @@ Route::get('/forgot-password', [App\Http\Controllers\PasswordController::class, 
 Route::post('/update-password', [App\Http\Controllers\PasswordController::class, 'update_password'])->name('update_password');
 
 
-
-
-
 // Other static page routes...
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-// Other routes...
-
 // Authentication routes
 Auth::routes();
-
-// Your other routes...
-
-
-
 
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
@@ -155,10 +148,6 @@ Route::put('/profile', [ProfileController::class, 'update'])->name('profile.upda
 Route::get('/account', function () {
     return view('account');
 })->name('account');
-
-
-
-
 
 
 Route::get('/remove-item/{itemId}', [BasketController::class, 'removeItem'])->name('remove-item');                                             
@@ -171,8 +160,13 @@ Route::post('/product/{product_id}/reviews', [ReviewController::class, 'store'])
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
-Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
+//Route::get('/order/track/{order_id}', [OrderController::class, 'track'])->name('order.track');
 Route::get('/order/track/{customer_id}', [OrderController::class, 'track'])->name('order.track');
+
+Route::get('/orders/{id}', 'OrderController@show')->name('order.details');
+
+
+Route::get('/order-details/{id}', [OrderController::class, 'details'])->name('order.details');
 
 
 Route::get('/{any}', function () {

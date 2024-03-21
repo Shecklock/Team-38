@@ -15,7 +15,7 @@
     <div class="checkout-container">
         <span class="big-circle"></span>
 
-        <h3 class="title">Confirm Your Order</h3>
+        <h3 class="title">Confirming Your Order</h3>
         <div class="Confirm Items">
             <ul>
             <div class="checkout-info">
