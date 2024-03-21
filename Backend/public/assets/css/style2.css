@@ -72,6 +72,7 @@ body,
 input,
 textarea {
   font-family: "Poppins", sans-serif;
+  background: #ffffff !important;
 }
 
 .container1 {
@@ -591,35 +592,6 @@ textarea.input {
   transform: scale(1.05);
 }
 
-footer{
-  width: 97%;
-  margin:auto;
-  padding-left: 40px;
-  background-color: lightgreen;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-evenly;
-  height:90px;
-  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:black;
-  align-items: center;
-  margin-top: 100px;
-  
-}
-
-footer p{
-  text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 14px;
-  align-items: center;
-}
-footer a {
-  font-size: 14px;
-  color:black;
-  text-decoration: underline;
-  align-items: center;
-
-}
 
 
 /* Start CSS Styling for Quantity Buttons */

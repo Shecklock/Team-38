@@ -11,88 +11,6 @@ textarea {
   font-family: "Montserrat", sans-serif;
 }
 
-.container1{
-  padding: 10px 10%;
-  margin-bottom: 50px;
-  background: #F5F5F5;
-}
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo {
-  width: 200px;
-}
-
-nav ul li input[type="text"] {
-  padding: 8px;
-  width: auto;
-  border: none;
-  border-radius: 20px;
-  margin-top: 8px;
-  
-  transition: 0.3s;
-}
-
-nav ul li input[type="text"]:focus {
-  outline: none;
-  box-shadow: 0 0 4px #086bef;
-}
-
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: auto;
-  background-color: none;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-nav ul li input[type="text"] {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 10px 20px;
-  background-color: none;
-}
-
-nav ul li a {
-  color: black;
-  text-decoration: none;
-  font-size: 12px;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  width: 0;
-  height: 3px;
-  background: #086bef;
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: 0.2s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
 
 .About-Us{
     color:black;
@@ -298,31 +216,6 @@ a.link:hover {
   font-weight: 500;
 }
 
-footer{
-  margin:auto;
-  padding-left: 40px;
-  background-color: #F5F5F5;
-  
-  display: flex;
-  justify-content: space-evenly;
-  height:90px;
-  color:black;
-  align-items: center;
-  
-}
-
-footer p{
-  text-decoration: none;
-  font-size: 12px;
-  align-items: center;
-}
-footer a {
-  font-size: 12px;
-  color:black;
-  text-decoration: underline;
-  align-items: center;
-
-}
 .container{
   width:80%;
   margin:50px auto;
@@ -463,77 +356,6 @@ tr td{
     width: fit-content;
   }
   
-  .logo {
-    width: 90px;
-  }
-  
-  nav ul li input[type="text"] {
-    padding: 3px;
-    width: 90px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 8px;
-    
-    transition: 0.3s;
-  }
-  
-  nav ul li input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 4px #086bef;
-  }
-  
-
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: auto;
-    background-color: none;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  nav ul li input[type="text"] {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 10px;
-    background-color: none;
-  }
-  
-  nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
-    position: relative;
-  }
-  
-  nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #086bef;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.2s;
-  }
-  
-  nav ul li a:hover::after {
-    width: 100%;
-  }
-
   .About-Us{
     color:black;
     padding-top: 9px;
