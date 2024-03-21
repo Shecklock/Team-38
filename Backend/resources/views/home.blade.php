@@ -58,7 +58,7 @@
     });
 </script>
 
-    <nav>
+    
     <div class="product" id="product">
         @foreach($products as $product)
             <div class="productItem">
@@ -78,7 +78,7 @@
             </div>
         @endforeach
     </div>
-</nav>
+
 
 <script>
     function redirectToBasket() {

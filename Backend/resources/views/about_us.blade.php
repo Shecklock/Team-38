@@ -12,28 +12,14 @@
     
   </head>
   <body>
-    <div id="header">
-    <div class="container1">
-    <nav>
-        <a href="index.html"><img src="{{ asset('assets/sources/logo2.3.png') }}" class="logo"></a>
+    
         
-        <ul>
-          <!-- Nav Bar -->
-          
-          <li><a href="#">New</a></li>
-          <li><a href="#">Men</a></li>
-          <li class="active"><a href="contact_us.html">Women</a></li>
-          <li><a href="about_us.html">Kids</a></li>
-          <li><a href="#">Sale</a></li>
-          <li><input type="text" placeholder="Search..."></li>
-          <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>
-          <li><a href="login.css"><i class="fa-solid fa-user"></i></a></li>         
-        </ul>
-        <!-- Nav Bar -->
-      </nav>
-      </div>
-      </div>
-        </header>
+
+
+
+    <header>
+        @include('header')   
+    </header>
         <div class="About-Us">
           <h2>About Our Company</h2><hr size="5"><br><br>
           <h3>Who we are and what we do</h3>
