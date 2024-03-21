@@ -27,6 +27,7 @@
                 <th>Category</th>
                 <th>Image</th>
                 <th>Price</th>
+                <th>Stock Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -44,6 +45,7 @@
                     @endif
                 </td>    
                 <td>{{ $product->Price }}</td>
+                <td>{{ $product->StockQuantity }}</td>
                 <td>
                     <form onsubmit="return confirm('Are you sure you want to delete?')" action="{{ route('products.destroy', $product->ProductID) }}" method="POST">
                         <a class="btn btn-info" href="{{ route('products.show', $product->ProductID) }}">Show</a>
