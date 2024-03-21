@@ -9,6 +9,11 @@
     <script src="{{ asset('assets/js/basket.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
+
+<header>
+@include('header')
+</header>
+
 <body>
 <div class="container">
     <span class="big-circle"></span>
