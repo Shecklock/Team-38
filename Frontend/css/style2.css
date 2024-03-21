@@ -497,3 +497,19 @@ footer a {
   align-items: center;
 
 }
+
+@media screen and (max-width: 768px) {
+  
+
+  .container1 {
+    padding: 10px 5%;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  
+}
