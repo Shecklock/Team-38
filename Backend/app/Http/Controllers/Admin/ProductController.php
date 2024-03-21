@@ -34,6 +34,7 @@ class ProductController extends Controller
         'image' => 'required|image',
         'Price' => 'required',
         'CategoryID' => 'required',
+        'StockQuantity' => 'required',
     ]);
 
     try {
@@ -43,6 +44,7 @@ class ProductController extends Controller
         $product->Description = $request->input('Description');
         $product->Price = $request->input('Price');
         $product->CategoryID = $request->input('CategoryID');
+        $product->StockQuantity = $request->input('StockQuantity');
 
         // Handle image upload
         if ($request->hasFile('image')) {
@@ -81,6 +83,7 @@ class ProductController extends Controller
         'Price' => 'required|numeric',
         'CategoryID' => 'required|exists:categories,CategoryID',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'StockQuantity' => 'required|numeric',
     ]);
 
     $product = Product::find($id);
@@ -88,6 +91,7 @@ class ProductController extends Controller
     $product->Description = $request->input('Description');
     $product->Price = $request->input('Price');
     $product->CategoryID = $request->input('CategoryID');
+    $product->StockQuantity = $request->input('StockQuantity');
 
     // Check if a new image is uploaded
     if ($request->hasFile('image')) {
