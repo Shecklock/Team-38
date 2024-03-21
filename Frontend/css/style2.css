@@ -108,6 +108,141 @@ nav ul li a:hover::after {
   color: #086bef;
 }
 
+/* Hamburger menu */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 999; 
+  display: none;
+  overflow-x: hidden;
+}
+
+
+@media only screen and (min-width: 769px) {
+  .mobile-nav {
+      display: none !important;
+  }
+}
+
+
+/* mobile nav */
+@media screen and (max-width: 768px) {
+
+  nav ul.desktop-nav {
+      display: none;
+  }
+
+  .hamburger-menu {
+      display: block;
+  }
+
+  .mobile-nav {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 75%;
+      background-color: #F5F5F5;
+      text-align: left;
+      z-index: 2;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transform: translateX(110%);
+      transition: transform 0.3s ease-out;
+  }
+
+  .mobile-nav[data-visible="true"]{
+      transform: translateX(0%);
+  }
+  
+  .mobile-nav i.fa-xmark {
+      font-size: 26px; 
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      cursor: pointer;
+  }
+  
+  .mobile-nav i.fa-xmark:hover {
+      color: #086bef; 
+  }
+  
+  .centered-icons {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+  
+  .centered-icons li {
+      margin: 10px 10; 
+  }
+   
+  .mobile-input{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+  }
+
+  .mobile-input input[type="text"] {
+      padding: 12px; 
+      border-radius: 20px; 
+      font-size: 16px; 
+      width: auto; 
+  }
+  
+  
+  .mobile-nav li {
+      display: block;
+      margin-top: 25px;
+  }
+
+  
+  .mobile-nav li a {
+      color: black; 
+      text-decoration: none; 
+      font-size: 24px; 
+      font-weight: 500; 
+      transition: color 0.3s; 
+  }
+
+  
+  .mobile-nav li a:hover {
+      color: #086bef; 
+  }
+
+  .form {
+    grid-template-columns: 1fr; 
+    max-width: 90%; 
+    margin: 0 auto; 
+  }
+}
+
+
 .container {
   position: relative;
   width: 100%;
