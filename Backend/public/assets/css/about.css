@@ -250,33 +250,5 @@ hr{
     
 }
 
-footer{
-    width:100%;
-    margin:auto;
-    padding-left: 40px;
-    background-color: lightgreen;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-evenly;
-    height:90px;
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:black;
-    align-items: center;
-    
-}
-
-footer p{
-    text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 14px;
-    align-items: center;
-}
-footer a {
-    font-size: 14px;
-    color:black;
-    text-decoration: underline;
-    align-items: center;
-
-}
 
 

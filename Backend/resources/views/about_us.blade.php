@@ -57,6 +57,7 @@
                     <div class="team-images">
                     <img src="{{ asset('assets/sources/img_female.png') }}" alt="female"></img>
                     </div>
+                    
                     <div class="role-explain1">
                         <h3>Christina Jenkins </h3>
                         <h4>CEO of Sportify Pro Max</h4>
@@ -108,7 +109,7 @@
                 </div>
                 <div class="Community-role">
                     <div class="community-photo">
-                        <img src="{{ asset('sources/sport-playing.jpg') }}" alt="male">
+                        <img src="{{ asset('assets/sources/sport-playing.jpg') }}" alt="male">
 
                         
                     </div>
