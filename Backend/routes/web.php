@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -37,6 +38,15 @@ Auth::routes();
 Route::get('/admin', function() {
     return redirect('/admin/dashboard');
 });
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::get('/account', function () {
+    return view('account');
+})->name('account');
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/products/{id}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView'])->name('productView');
