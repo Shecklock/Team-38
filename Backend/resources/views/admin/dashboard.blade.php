@@ -24,37 +24,27 @@
             <div class="card-header">
                 <h4 class="card-title">Recent Bookings</h4>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Customer Name</th>
-                                <th>Booking Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>123</td>
-                                <td>John Doe</td>
-                                <td>2024-02-27</td>
-                                <td>Confirmed</td>
-                            </tr>
-                            <tr>
-                                <td>124</td>
-                                <td>Jane Smith</td>
-                                <td>2024-02-26</td>
-                                <td>Pending</td>
-                            </tr>
-                            <!-- Add more rows for other bookings -->
-                        </tbody>
-                    </table>
-                </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart Container -->
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Order Status</h4>
             </div>
+            <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
+            <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+
+            <!-- <script type="module" src="dimensions.js"></script> -->
+            <script type="module" src="resources/js/chart.js"></script>
+            @vite('resources/js/chart.js')
         </div>
     </div>
 </div>
 
 @endsection
+
+

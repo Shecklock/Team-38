@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller; // Ensure you are extending the correct base controller
+use App\Http\Controllers\Controller; 
 use Illuminate\Http\Request;
+use App\Models\Order; // Import the Order model
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        // Calculate counts of incoming and outgoing orders
+        $incomingOrdersCount = Order::where('Status', 'incoming')->count();
+        $outgoingOrdersCount = Order::where('Status', 'outgoing')->count();
+
+        // Pass the counts to the view
+        return view('admin.dashboard', compact('incomingOrdersCount', 'outgoingOrdersCount'));
     }
 }

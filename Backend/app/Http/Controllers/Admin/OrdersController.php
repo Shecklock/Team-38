@@ -29,4 +29,13 @@ class OrdersController extends Controller
         $order->update($input);
         return redirect()->route('orders')->with('success', 'Order updated successfully');
     }
+
+    public function showOrderDetails($orderId)
+    {
+        // Retrieve the order with eager loaded orderDetails and products
+        $order = Order::with('orderDetails.product')->find($orderId);
+
+        // Pass the order details to the view
+        return view('order-details', ['order' => $order, 'details' => $order->orderDetails]);
+    }
 }
