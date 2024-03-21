@@ -11,21 +11,27 @@ class OrdersController extends Controller
 {
     // Allows the page to be displayed
     public function index(Request $request) {
-        $searchTerm = $request->query('search');
+        $query = Order::query();
     
-        if (!empty($searchTerm)) {
-            // Adjust the query to search by the desired attributes, e.g., customer name, order ID, etc.
-            $orders = Order::where('OrderID', 'LIKE', '%' . $searchTerm . '%')
-                            ->orWhereHas('customer', function ($query) use ($searchTerm) {
-                                $query->where('name', 'LIKE', '%' . $searchTerm . '%');
-                            })
-                            ->get();
-        } else {
-            $orders = Order::all();
+        // Search by term in order ID or customer name
+        if ($searchTerm = $request->query('search')) {
+            $query->where('OrderID', 'LIKE', '%' . $searchTerm . '%')
+                  ->orWhereHas('customer', function ($query) use ($searchTerm) {
+                      $query->where('name', 'LIKE', '%' . $searchTerm . '%');
+                  });
         }
+    
+        // Filter by order status
+        if ($status = $request->query('status')) {
+            $query->where('Status', $status);
+        }
+    
+        $orders = $query->get();
     
         return view('admin.orders.index', compact('orders'));
     }
+    
+    
     
 
     // Finds an order with the ID OrderID
