@@ -10,10 +10,23 @@ use App\Http\Requests\OrdersFormRequest;
 class OrdersController extends Controller
 {
     // Allows the page to be displayed
-    public function index() {
-        $orders = Order::all();
-        return view('admin.orders.index')->with('orders', $orders);
+    public function index(Request $request) {
+        $searchTerm = $request->query('search');
+    
+        if (!empty($searchTerm)) {
+            // Adjust the query to search by the desired attributes, e.g., customer name, order ID, etc.
+            $orders = Order::where('OrderID', 'LIKE', '%' . $searchTerm . '%')
+                            ->orWhereHas('customer', function ($query) use ($searchTerm) {
+                                $query->where('name', 'LIKE', '%' . $searchTerm . '%');
+                            })
+                            ->get();
+        } else {
+            $orders = Order::all();
+        }
+    
+        return view('admin.orders.index', compact('orders'));
     }
+    
 
     // Finds an order with the ID OrderID
     // If one is found, returns in an array called 'order' and passes it to admin.order.edit

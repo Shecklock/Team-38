@@ -5,6 +5,15 @@
     <div class="pull-left">
         <h2>Order Status System</h2>
     </div>
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-right">
+                @include('admin.components.search_form_order') {{-- Make sure the path matches your structure --}}
+            </div>
+        </div>
+    </div>
+
     <!-- Creates a table where all previous orders can be displayed -->
     <table class="table table-bordered">
         <thead class="thead-dark">

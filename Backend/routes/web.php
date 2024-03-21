@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\OrdersController;
 
 
 
@@ -82,7 +83,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('orders', [App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('orders');
     Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('orders.edit');
     Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin/orders/update');
-
+    Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
 });
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
