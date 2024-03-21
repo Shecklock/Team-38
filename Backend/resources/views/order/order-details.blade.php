@@ -1,5 +1,4 @@
 {{-- order-details.blade.php --}}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +15,19 @@
 
         <h3>Items in this Order:</h3>
         <ul>
-            @foreach($order->orderDetails as $detail)
-                <li>{{ $detail->product->ProductName }} - Quantity: {{ $detail->Quantity }} - Price: £{{ $detail->Price }}</li>
-            @endforeach
+            @if($order->orderDetails->isNotEmpty())
+                @foreach($order->orderDetails as $detail)
+                    <li>
+                        Product ID: {{ $detail->product_id }} - 
+                        Product Name: {{ $detail->product->ProductName }} - 
+                        Quantity: {{ $detail->Quantity }} - 
+                        Price: £{{ $detail->Price }}
+                    </li>
+                @endforeach
+            @else
+                <li>No items ordered.</li>
+            @endif
         </ul>
-
         <a href="{{ route('order.track', ['customer_id' => Auth::id()]) }}">Back to Orders</a>
     </div>
 </body>
