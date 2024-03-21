@@ -25,6 +25,25 @@ class OrdersController extends Controller
         if ($status = $request->query('status')) {
             $query->where('Status', $status);
         }
+
+        // Filter by price range
+    if ($minPrice = $request->query('minPrice')) {
+        $query->where('TotalAmount', '>=', $minPrice);
+    }
+    if ($maxPrice = $request->query('maxPrice')) {
+        $query->where('TotalAmount', '<=', $maxPrice);
+    }
+
+    // Filter by order date
+    if ($orderDate = $request->query('orderDate')) {
+        $query->whereDate('OrderDate', '=', $orderDate);
+    }
+
+    // Filter by last updated date
+    if ($updatedDate = $request->query('updatedDate')) {
+        $query->whereDate('updated_at', '=', $updatedDate);
+    }
+
     
         $orders = $query->get();
     
