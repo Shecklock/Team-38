@@ -1,28 +1,41 @@
-import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
 
 (async function() {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
+  // Dummy product data
+  const productsData = [
+    { productName: 'Product A', productStock: 50 },
+    { productName: 'Product B', productStock: 30 },
+    { productName: 'Product C', productStock: 20 },
+    { productName: 'Product D', productStock: 40 },
+    { productName: 'Product E', productStock: 60 },
   ];
 
+  // Extract product names and stock quantities
+  const productNames = productsData.map(product => product.productName);
+  const productStocks = productsData.map(product => product.productStock);
+
   new Chart(
-    document.getElementById('acquisitions'),
+    document.getElementById('stockChart'),
     {
       type: 'bar',
       data: {
-        labels: data.map(row => row.year),
+        labels: productNames,
         datasets: [
           {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
+            label: 'Stock Availability',
+            data: productStocks,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Specify background color
+            borderColor: 'rgba(54, 162, 235, 1)', // Specify border color
+            borderWidth: 1
           }
         ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // Ensure y-axis starts from zero
+          }
+        }
       }
     }
   );
