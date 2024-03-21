@@ -511,5 +511,18 @@ footer a {
     margin: 0 auto;
   }
 
-  
+  .footer {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  footer div {
+    margin-bottom: 20px;
+  }
+
+  footer p {
+    margin: 0;
+  }
 }
