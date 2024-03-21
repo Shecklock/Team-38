@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Product;
 use App\Models\Category;
 
+// php artisan db:seed --class=ProductsSeeder
 class ProductsSeeder extends Seeder
 {
     /**
