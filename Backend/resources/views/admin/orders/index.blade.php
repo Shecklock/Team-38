@@ -20,7 +20,7 @@
             <tr>
                 <th>OrderID</th>
                 <th>Name</th>
-                <th>Price</th>
+                <th>Total Price</th>
                 <th>Order Status</th>
                 <th>Ordered at</th>
                 <th>Updated at</th>

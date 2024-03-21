@@ -1,6 +1,6 @@
 <form action="{{ route('orders.index') }}" method="GET" class="form-inline">
     <div class="input-group">
-        <input type="text" name="search" class="form-control" placeholder="Search orders..." value="{{ request()->query('search') }}">
+        <input type="text" name="search" class="form-control" placeholder="Search orer by orderID or user name" value="{{ request()->query('search') }}">
 
         <!-- Dropdown for selecting order status -->
         <select name="status" class="form-control ml-2">
