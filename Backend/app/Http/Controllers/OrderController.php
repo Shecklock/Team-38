@@ -23,21 +23,14 @@ class OrderController extends Controller
     return view('order.track', ['orders' => $orders]);
 }
 
-    public function show($id)
-    {
-        $order = Order::with('orderDetails.product')->findOrFail($id); // eager load order details and related products
-        return view('order.details', compact('order'));
-    }
-
-    // OrderController.php
-
-public function details($id)
+public function show($id)
 {
-    $order = Order::with(['orderDetails.product'])->findOrFail($id); // Assumes your OrderDetail model has a 'product' relationship
+    // Eager load products associated with the order along with pivot data
+    $order = Order::with('products')->findOrFail($id);
 
+    // Pass the order to the view
     return view('order.order-details', compact('order'));
 }
-
 
 }
 
