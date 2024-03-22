@@ -357,19 +357,45 @@
     width: 100%;
   }
   
+  .products-container {
+    background-color: #fff; /* Set background color */
+    padding: 20px; /* Add padding for spacing */
+    margin: 20px; /* Add margin to create space between container and sides of the screen */
+  }
+  
+  
+  .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add margin to separate from product grid */
+  }
+  
+  .filter-container select,
+  .filter-container button {
+    padding: 10px; /* Add padding to select and button */
+    border: 1px solid #ccc; /* Add border to select and button */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: #fff; /* Set background color */
+  }
+  
+  .filter-container select:focus,
+  .filter-container button:focus {
+    outline: none; /* Remove outline on focus */
+  }
+  
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
     gap: 20px;
-    width: 100%;
-    margin: auto; 
-    padding: 20px 0; 
   }
   
   .product {
     position: relative;
     width: 100%;
     overflow: hidden;
+    border-radius: 10px;
+  box-shadow: 0 0 10px 0.1px #086bef;
   }
   
   .product img {
@@ -377,16 +403,18 @@
     height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
+    transform: scale(1.1);
+    
   }
   
   .overlay {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     width: 100%;
     text-align: center;
-    padding: 10px 0; 
+    padding: 10px 0;
     transform: translateY(100%);
     transition: transform 0.3s ease;
   }
@@ -396,14 +424,21 @@
   }
   
   .product:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.19);
   }
   
   @media (max-width: 768px) {
     .products-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
     }
+    .product {
+        border-radius: 6px;
+      }
   }
+  
+  
+  
+  
   
   
   footer{
