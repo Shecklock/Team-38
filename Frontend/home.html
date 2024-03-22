@@ -1,0 +1,123 @@
+<!--HomePage-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
+</head>    
+<body>
+    <div class="top-navbar">
+        <div class="container1">
+            <nav>
+                <a href="index.html"><img src="logo.png" class="logo"></a>
+                <ul> 
+                  <li><input type="text" placeholder="Search.."></li>
+                  <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>       
+                </ul>
+              </nav>
+        </div>
+    </div>
+    <div class="main-navbar">
+        <nav>
+            <ul>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="offer-banner" id="slider">
+        <div class="slides">
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+        </div>
+    </div>
+
+    <div class="main-image">
+        <img src="homepagemainimage.png" alt="Placeholder">
+    </div>
+    
+    <div class="top-picks">
+        <h2>Top Picks</h2>
+        <div class="top-picks-images">
+            <img src="productimagemenclothing.png" alt="Placeholder">
+            <img src="productimagementrainers.png" alt="Placeholder">
+            <img src="productimagekidsclothing.png" alt="Placeholder">
+            <img src="productimagetrainers2.png" alt="Placeholder">
+        </div>
+    </div>
+
+    <div class="wide-banner">
+        <img src="banner.png" alt="Wide Banner Placeholder">
+    </div>
+    
+    <footer>
+        <p><a href="contact_us.html">Contact us</a>
+        <p><a href="about_us.html">About us </a>
+        <p><a href="faqs.html">FAQs</a><br><a href="https://www.instagram.com/">Instagram</a><br><a href="https://en-gb.facebook.com/">Facebook</a><br><a href="https://twitter.com/login">X</a></p>Address: Aston St, Birmingham B4 7ET</p>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    // Start the first slide from the right into the view
+    slides[currentSlide].style.transform = 'translateX(0)';
+
+    const changeSlide = () => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+
+        // Ensure the next slide is ready to come in from the right
+        slides[nextSlide].style.transform = 'translateX(100%)';
+        // Trigger reflow to apply the transform reset for the next slide
+        slides[nextSlide].offsetWidth;
+
+        // Slide out the current slide to the left
+        slides[currentSlide].style.transform = 'translateX(-100%)';
+        
+        // Short delay to ensure the slides do not collide
+        setTimeout(() => {
+            // Bring the next slide in from the right
+            slides[nextSlide].style.transform = 'translateX(0)';
+            // Update the current slide index
+            currentSlide = nextSlide;
+        }, 50); // This short delay helps in syncing the exit and entry of slides smoothly
+
+    };
+
+    // Set an interval to change slides
+    setInterval(changeSlide, 4000); // Includes time for the slide to stay in view plus transition
+});
+
+    </script>
+</body>
+</html>
