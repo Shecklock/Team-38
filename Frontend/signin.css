@@ -1,84 +1,84 @@
-nav {
+*{
+  text-decoration: none;
+}
+.navbar{
+  background: #F5F5F5;
+  font-family:"Montserrat", sans-serif;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navdiv{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: #f8f4f4;
-  }
-  nav.fp-page{
-    margin-left: 130px;
-  }
-nav ul li {
-  display: inline-block;
-    list-style: none;
-    margin-right: 30px;
-    background-color: none;
-    align-items: center;
-  }
-nav ul li a {
-  color: black;
-  text-decoration: none;
-  font-size: 13px;
-  position: relative;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: large;
-  } 
-.nav-links{
-margin-right: 500px;
+
 }
-  nav ul li .search{
-    display: inline-block;
-    list-style: none;
-    background-color: none;
-    text-align: center;
-    border-radius: 7px;
-    height: 27px;
-    width: 220px;
-  }
+.navlogo-fp{
+  width: 200px;
+}
+.nav-srch{
+  border-radius: 25px;
+    border: none;
+    height: 18px;
+    font-family: "Montserrat", sans-serif;
+}
 nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #4B9CD3;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.2s;
+  content: '';
+  width: 0;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li input[type="text"] {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.navbar a:hover{
+  color: black;
+}
+nav ul li input[type="text"] {
+    padding: 8px;
+    border: none;
+    margin-top: 8px;
+    transition: 0.3s;
   }
   
-nav ul li a:hover::after {
-    width: 100%;
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
-  nav ul li input[type="text"] {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 46px;
 }
-    .navbar a:hover{
-      color: black;
-    }
-    nav ul li input[type="text"] {
-        padding: 8px;
-        border: none;
-        border-radius: 7px;
-        margin-top: 8px;
-        transition: 0.3s;
-      }
-      
-      nav ul li input[type="text"]:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-      .logo{
-        list-style-type: none;
-        width: 200px;
-    }
+li a {
+  color:black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.nav-items{
+  display: flex;
+  align-items: center;
+}
+.bi-bi-basket, .bi-bi-person {
+  fill: black;
+}
 a{
     color: #086bef;
     text-decoration: none;
@@ -122,7 +122,7 @@ p{
   display: grid;*/
 }
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     justify-content: center;
     min-height: fit-content;
     background-color: white;
@@ -134,7 +134,7 @@ button{
     background-color: white;
     border: none;
     display: center;
-    margin-left: 150px;
+    margin-left: 124px;
 }
 button:hover {
     opacity: 0.8;
@@ -154,6 +154,7 @@ button:hover {
   outline: none;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Montserrat", sans-serif;
 }
 footer{
     width:97%;
@@ -163,12 +164,12 @@ footer{
     display: flex;
     justify-content: space-evenly;
     height:90px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     align-items: center; 
 }
 footer p{
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"Montserrat", sans-serif;
     font-size: 14px;
     align-items: center;
     color: black;
@@ -188,35 +189,42 @@ ul li {
   justify-items: start;
   margin-top: 10px;
   color: black;
-  width: 380px;
-  height: 30px;
+  width: 343px;
+  height: 27px;
   border-radius: 20px;
+  border-color: #086bef;
 }
 .bday{
 margin-top: 13px;
 margin-bottom: 15px;
-margin-left: 110px;
+margin-left: 78px;
 }
 .go-to-login{
-margin-left: 120px;
+margin-left: 80px;
 margin-top:20px;
 }
 .gendr{
 margin-bottom: 15px;
 margin-top:10px;
-margin-left: 100px;
+margin-left: 59px;
+}
+.signin-img{
+  height: 170px;
+  margin-top: 350px;
+  margin-right: 180px;
 }
 h1{
   margin-bottom: 10px;
   color: black;
-  margin-top: 250px;
-    margin-right: 65px;
+  margin-top: 153px;
+    margin-right: -263px;
 }
 .contact-meth{
   margin-bottom:22px;
   margin-top: 8px;
   margin-left: 10px;
 }
+
 .fp-container{
   width : 100%;
   height: 470px;
@@ -228,7 +236,7 @@ h1{
   margin-bottom: 70px;
   margin-left: 230px;
   background-color: #fafafa;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   overflow: hidden;
   max-width:750px;
@@ -241,36 +249,43 @@ h1{
   height: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
-  width: 264px;
-  height: 30px;
+  width: 227px;
+  height: 39px;
+  border-color: #086bef;
+  font-family: "Montserrat", sans-serif;
 }
 .fp-newPass{
   height: 20px;
   margin-bottom: 30px;
   margin-top: 10px;
   border-radius: 20px;
-  width: 255px;
-  height: 30px;
+  width: 223px;
+  height: 39px;
+  border-color: #086bef;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 18px;
 }
 .fp-pass{
   height: 20px;
   margin-top: 15px;
   border-radius: 20px;
-  width: 244px;
-  height: 30px;
+  width: 225px;
+  height: 39px;
+  border-color: #086bef;
+  font-family:"Montserrat", sans-serif;
 }
 .fp-inputFeilds{
   display: inline-grid;
   margin-bottom: 15px;
   justify-items: center;
-  margin-top: 119px;
+  margin-top: 8px;
   color: black;
   width: 380px;
   height: 30px;
   border-radius: 20px;
 }
 .submit-fp{
-  margin-top: 70px;
+  margin-top: 36px;
   margin-left: 10px;
   font-size: 15px;
   border-radius: 7px;
@@ -283,16 +298,24 @@ h1{
   outline: none;
   cursor: pointer;
   transition: 0.5s;
+  font-family:"Montserrat", sans-serif;
+}
+.nav-srch-sgpage{
+  height: 29px;
+  border-radius: 25px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
 }
 h2{
-  margin-top: 270px;
-  margin-left: 10px;
+  margin-top: 70px;
+  margin-left: 57px;
+  margin-right: -250px;
 }
 .bck-to-login{
 margin-top: 30px;
 }
-/*img{
-  width: 50px;
-  height: 50px;
-  
-}*/
+.fp-page-icon {
+  height: 196px;
+  margin-top: 202px;
+  margin-right: 201px;
+}
