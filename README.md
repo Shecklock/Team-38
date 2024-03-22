@@ -11,7 +11,7 @@ This is the website/software development project in group 38 during the study in
 
 This is a e-commerce website called "Sportify Pro Max"
 
-![Spotify Pro Max]!(https://github.com/Shecklock/Team-38/assets/148438898/91812326-5bae-4a0f-841c-2fe11010bf7b)
+![Spotify Pro Max](https://github.com/Shecklock/Team-38/assets/148438898/91812326-5bae-4a0f-841c-2fe11010bf7b)
 
 
 
