@@ -25,6 +25,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
 }
 
 .form-container button {
@@ -35,16 +36,14 @@
     padding: 10px 15px;
 }
 
-.form-container button:hover {
-    background-color: #45a049;
-}
 
 .form-container form {
     border: 1px solid #ccc;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px 1px #086bef;
 }
 
 .form-container input[type="text"],
@@ -81,8 +80,8 @@
 
 .AccountsInfo {
     text-align: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     border: none;
     padding: 12px 24px; /* Larger padding for a wider button */
     font-size: 16px; /* Adjust size as needed */
@@ -106,3 +105,7 @@
 .AccountsInfo button:hover {
     background-color: #000000;
 }
+
+
+
+

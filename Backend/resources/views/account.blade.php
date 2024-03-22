@@ -8,7 +8,7 @@
 
 <header>
     @include('header')
-</header>
+</header>   
 
 
 <head>

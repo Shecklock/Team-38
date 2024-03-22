@@ -15,6 +15,7 @@
 </head>
 
 <nav>
+    
     <img src="{{ asset('assets/sources/logo2.3.png') }}" class="logo">
             
         <header>

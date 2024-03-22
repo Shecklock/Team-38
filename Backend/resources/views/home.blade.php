@@ -58,7 +58,7 @@
     });
 </script>
 
-    
+
     <div class="product" id="product">
         @foreach($products as $product)
             <div class="productItem">

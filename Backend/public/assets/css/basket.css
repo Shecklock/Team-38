@@ -41,6 +41,7 @@ nav {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
   
   }
     .input-group button {
@@ -53,10 +54,7 @@ nav {
       cursor: pointer;
     }
     
-    .input-group button:hover {
-      background-color: #90ee90; 
-      color: #ffffff;
-    }
+   
     
     .input-group input{
       height: 30px;
@@ -76,7 +74,6 @@ nav {
   
   .container1 {
     padding: 10px;
-    background: lightgreen;
     border-radius: 25px;
     max-width: 100%;
   }
@@ -267,7 +264,7 @@ nav {
   
   /* Style for the "BUY NOW!" button */
   .productButton {
-    background-color: #4CAF50; /* Green color, you can change this */
+    background-color: #086bef; /* Green color, you can change this */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -281,7 +278,7 @@ nav {
   }
   
   .productButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #086bef; /* Darker green on hover */
   }
   
   /* Add this CSS to your stylesheet */
@@ -353,7 +350,7 @@ nav {
   }
   
   .btn_basket {
-    background-color: #3498db;
+    background-color: #086bef;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -362,7 +359,7 @@ nav {
   }
   
   .btn_basket:hover {
-    background-color: #267bb5;
+    background-color: #0954b6;
   }
   
   /* Adjust as needed */
