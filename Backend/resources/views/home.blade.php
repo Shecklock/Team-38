@@ -34,10 +34,12 @@
 <!-- Rest of your existing content -->
 
 <div class="navBottom">
-    <a href="{{ url('/search?search=Men') }}"><h3 class="menuItem">Men</h3></a>
-    <a href="{{ url('/search?search=Women') }}"><h3 class="menuItem">Women</h3></a>
-    <a href="{{ url('/search?search=Trainers') }}"><h3 class="menuItem">Trainers</h3></a>
-    <a href="{{ url('/search?search=Accessories') }}"><h3 class="menuItem">Accessories</h3></a>
+    <a href="{{ url('/search?search=T-shirts') }}"><h3 class="menuItem">T-shirts</h3></a>
+    <a href="{{ url('/search?search=Tracksuits') }}"><h3 class="menuItem">Tracksuits</h3></a>
+    <a href="{{ url('/search?search=Jackets') }}"><h3 class="menuItem">Jackets</h3></a>
+    <a href="{{ url('/search?search=Shoes') }}"><h3 class="menuItem">Shoes</h3></a>
+    <a href="{{ url('/search?search=Bags') }}"><h3 class="menuItem">Bags</h3></a>
+
 </div>
 
 
