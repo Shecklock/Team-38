@@ -4,6 +4,7 @@ function closeMenu() {
     mobileNav.setAttribute('data-visible', 'false');
     document.body.classList.remove('menu-open'); // Remove the blur class
 }
+document.querySelector('.fa-xmark').addEventListener('click', toggleMenu);
 
 // Function to toggle the mobile navigation menu
 function toggleMenu() {
@@ -32,3 +33,4 @@ document.body.addEventListener('click', function(event) {
         closeMenu();
     }
 });
+

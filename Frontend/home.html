@@ -1,123 +1,103 @@
-<!--HomePage-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="css/homestyle.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
-</head>    
+</head>
 <body>
-    <div class="top-navbar">
+    <div id="header">
         <div class="container1">
             <nav>
-                <a href="index.html"><img src="logo.png" class="logo"></a>
-                <ul> 
-                  <li><input type="text" placeholder="Search.."></li>
-                  <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>       
+                <a href="index.html"><img src="images/logo2.3.png" class="logo"></a>
+                <!--  mobile nav bar -->
+                <ul class="mobile-nav" data-visible="false">
+                    <i class="fa-solid fa-xmark"></i>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="contact_us.html">Women</a></li>
+                    <li><a href="about_us.html">Kids</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <div class="mobile-input">
+                        <li><input type="text" placeholder="Search..."></li>
+                    </div>
+                    <div class="centered-icons">
+                        <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>  
+                        <li><a href="login.css"><i class="fa-solid fa-user"></i></a></li>
+                    </div>
                 </ul>
-              </nav>
+                <!-- End mobile nav bar -->
+                <div class="menu-container">
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="desktop-nav">
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li class="active"><a href="contact_us.html">Women</a></li>
+                        <li><a href="about_us.html">Kids</a></li>
+                        <li><a href="#">Sale</a></li>
+                        <li><input type="text" placeholder="Search.."></li>
+                        <li><a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a></li>  
+                        <li><a href="login.css"><i class="fa-solid fa-user"></i></a></li>        
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </div>
-    <div class="main-navbar">
-        <nav>
-            <ul>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Sale</a></li>
-            </ul>
-        </nav>
     </div>
     <div class="offer-banner" id="slider">
         <div class="slides">
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
-            <div class="slide">Free shipping on all orders over £50</div>
-            <div class="slide">Check out our sale items!</div> 
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
-            <div class="slide">Free shipping on all orders over £50</div>
-            <div class="slide">Check out our sale items!</div> 
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
-            <div class="slide">Free shipping on all orders over £50</div>
-            <div class="slide">Check out our sale items!</div> 
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
-            <div class="slide">Free shipping on all orders over £50</div>
-            <div class="slide">Check out our sale items!</div> 
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
-            <div class="slide">Free shipping on all orders over £50</div>
-            <div class="slide">Check out our sale items!</div> 
-            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
-            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Students get 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now! <a href="link-to-collections"> Shop Now</a></div>
             <div class="slide">Free shipping on all orders over £50</div>
             <div class="slide">Check out our sale items!</div> 
         </div>
     </div>
 
     <div class="main-image">
-        <img src="homepagemainimage.png" alt="Placeholder">
+        <img src="/Frontend/images/desktop-middle-banner-1704x740-23-4a255800b390c867764d515cb74301ed.webp" alt="Placeholder">
     </div>
     
     <div class="top-picks">
         <h2>Top Picks</h2>
         <div class="top-picks-images">
-            <img src="productimagemenclothing.png" alt="Placeholder">
-            <img src="productimagementrainers.png" alt="Placeholder">
-            <img src="productimagekidsclothing.png" alt="Placeholder">
-            <img src="productimagetrainers2.png" alt="Placeholder">
+            <img src="/Frontend/images/jd_693925_bl.webp" alt="Placeholder">
+            <img src="/Frontend/images/jd_694958_bl.webp" alt="Placeholder">
+            <img src="/Frontend/images/jd_699073_bl.webp" alt="Placeholder">
+            <img src="/Frontend/images/jd_700568_bl.webp" alt="Placeholder">
         </div>
     </div>
 
     <div class="wide-banner">
-        <img src="banner.png" alt="Wide Banner Placeholder">
+        <img src="/Frontend/images/desktop-strip-1680x244-1-dac5b5ed63877829fc5af5f2b5513228.webp" alt="Wide Banner Placeholder">
     </div>
     
     <footer>
-        <p><a href="contact_us.html">Contact us</a>
-        <p><a href="about_us.html">About us </a>
-        <p><a href="faqs.html">FAQs</a><br><a href="https://www.instagram.com/">Instagram</a><br><a href="https://en-gb.facebook.com/">Facebook</a><br><a href="https://twitter.com/login">X</a></p>Address: Aston St, Birmingham B4 7ET</p>
+        <p>
+            <a href="contact_us.html">Contact us</a><br>
+            Telephone: +44 123435390 <br>
+            Email: sportifypromax@gmail.com
+            
+        </p>
+        <p>
+            <a href="about_us.html">About us </a><br>
+            Address: Aston St, Birmingham B4 7ET
+        </p>
+        <p>
+                <a href="faqs.html">FAQs</a><br>
+                <a href="https://www.instagram.com/">Instagram</a><br>
+                <a href="https://en-gb.facebook.com/">Facebook</a><br>
+                <a href="https://twitter.com/login">X</a>
+            </p>
     </footer>
 
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-
-    // Start the first slide from the right into the view
-    slides[currentSlide].style.transform = 'translateX(0)';
-
-    const changeSlide = () => {
-        const nextSlide = (currentSlide + 1) % slides.length;
-
-        // Ensure the next slide is ready to come in from the right
-        slides[nextSlide].style.transform = 'translateX(100%)';
-        // Trigger reflow to apply the transform reset for the next slide
-        slides[nextSlide].offsetWidth;
-
-        // Slide out the current slide to the left
-        slides[currentSlide].style.transform = 'translateX(-100%)';
-        
-        // Short delay to ensure the slides do not collide
-        setTimeout(() => {
-            // Bring the next slide in from the right
-            slides[nextSlide].style.transform = 'translateX(0)';
-            // Update the current slide index
-            currentSlide = nextSlide;
-        }, 50); // This short delay helps in syncing the exit and entry of slides smoothly
-
-    };
-
-    // Set an interval to change slides
-    setInterval(changeSlide, 4000); // Includes time for the slide to stay in view plus transition
-});
-
-    </script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>
