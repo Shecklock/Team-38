@@ -55,6 +55,9 @@
                             </form>
                         </li>
                         <li><a href="{{ route('account') }}">Account</a></li>
+                        @if(Auth::user()->role_as == 1) {{-- Check if the user is an admin --}}
+                                <li><a href="{{ route('admin.dashboard') }}">Admin Dashboard</a></li>
+                            @endif
                         @endguest
 
                         <li>    

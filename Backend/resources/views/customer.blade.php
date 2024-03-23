@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<header>
-    @include('header')
-</header>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Your Information</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/customer.css') }}">
-    <title>Edit Customer Information</title>
-    <script>
-        function clearEditableFields() {
-            var form = document.getElementById("editForm");
-            form['Phone'].value = '';
-            form['Address'].value = '';
-            form['City'].value = '';
-            form['State'].value = '';
-            form['Postcode'].value = '';
-            form['Country'].value = '';
-        }
-    </script>
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
 </head>
+<body>
+    @include('header')
 
-<div class="form-container">
-        
-    <body>
-        
+    <div class="edit-form-container">
+<div class="back-button-container">
+<button type="button" class="edit-button" onclick="window.location.href='{{ route('profile.show') }}'">Back to Account</button>
+</div>        
+<h2>Edit Your Information</h2>
         <form id="editForm" action="{{ route('profile.update') }}" method="POST">
             @csrf
             @method('PUT')
             
+            <div class="edit-form-details">
             <p><strong>Name:</strong> 
                 <input type="text" name="FirstName" value="{{ $customer->FirstName }}" readonly>
             </p>
@@ -56,18 +44,25 @@
             <p><strong>Country:</strong> 
                 <input type="text" name="Country" value="{{ $customer->Country }}">
             </p>
+        </div>
 
-            <button type="submit">Save</button>
-            <button type="button" onclick="window.location.href='/'">Back to Home</button>
-            <button type="button" onclick="clearEditableFields()">Clear Fields</button>
+            <div class="button-container">
+                <button type="submit" class="edit-button">Save</button>
+                <button type="button" class="edit-button" onclick="window.location.href='{{ route('home') }}'">Back to Home</button>
+                <button type="button" class="edit-button" onclick="clearEditableFields()">Clear Fields</button>
+            </div>
         </form>
-    </body>
-</div>
+    </div>
 
-
-<footer>
-    
     @include('footer')
-</footer>
 
+    <script>
+        function clearEditableFields() {
+            var form = document.getElementById("editForm");
+            form['Phone'].value = '';
+            form['Address'].value = '';
+            // Clear other fields as necessary
+        }
+    </script>
+</body>
 </html>

@@ -23,7 +23,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #79AC78;
+    background: #086bef;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -74,7 +74,7 @@ p{
     max-width: 1300px;
     margin: auto;
     padding-left: 25px;
-    background-color: lightgreen;
+    background-color: #F5F5F5 !important;
     border-radius: 25px;
 }
 .signin-page{
@@ -83,7 +83,9 @@ p{
     width: 1200px;
 }
 .form-container {
-    background: lightgreen;
+    color:black !important;
+    background-color:white;
+    box-shadow: 0 0 10px 1px #086bef;
     width : 500px;
     height: 620px;
     position: relative;
@@ -128,3 +130,32 @@ input{
   border: none;
   height: 26px;
 }
+
+
+footer {
+  margin: auto !important;
+  background-color: #F5F5F5 !important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  height: 90px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  color: black !important;
+  align-items: center !important;
+
+}
+
+footer p {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  align-items: center !important;
+  margin: 140px !important; 
+}
+
+footer a {
+  font-size: 12px;
+  color: black !important;
+  text-decoration: underline !important;
+  align-items: center !important;
+  
+}
+

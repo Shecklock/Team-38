@@ -1,0 +1,57 @@
+.account-container {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 600px; /* Adjust this value as needed */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-inner-container {
+    position: relative; /* This makes it a reference for absolutely positioned elements inside it */
+    padding-top: 40px; /* Add padding to prevent the button from overlapping the form content */
+}
+
+.account-details {
+    margin-bottom: 20px;
+}
+
+.account-details p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px; /* Adjust size as needed */
+}
+
+.account-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+    position: relative;
+}
+
+.account-button {
+    background-color: #4a4d4a; /* Primary button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px; /* Larger padding for a wider button */
+    font-size: 16px; /* Adjust size as needed */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.admin-button-container {
+    position: absolute;
+    top: 0;  /* Aligns the container to the top of the account-container */
+    right: 0; /* Aligns the container to the right of the account-container */
+    padding: 10px; /* Adds some spacing around the button */
+}
+
+
+.account-button:hover {
+    background-color: #000000; /* Darker shade on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}

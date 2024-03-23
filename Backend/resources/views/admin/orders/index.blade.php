@@ -20,7 +20,7 @@
             <tr>
                 <th>OrderID</th>
                 <th>Name</th>
-                <th>Total Price</th>
+                <th>Total Price (£)</th>
                 <th>Order Status</th>
                 <th>Ordered at</th>
                 <th>Updated at</th>
@@ -28,7 +28,7 @@
         </thead>
         @foreach($orders as $order)
             <tr>
-                <td><a href="{{ route('orders.edit', $order->OrderID) }}">{{ $order->OrderID }}</a></td>
+                <td><a href="{{ route('admin.orders.edit', $order->OrderID) }}">{{ $order->OrderID }}</a></td>
                 <td>{{ $order->customer->name}}</td>
                 <td>{{ $order->TotalAmount}}</td>
                 <td>{{ $order->Status}}</td>

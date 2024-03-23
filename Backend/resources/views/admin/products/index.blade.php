@@ -35,13 +35,15 @@
                 <th>Description</th>
                 <th>Category</th>
                 <th>Image</th>
-                <th>Price</th>
+                <th>Price (£)</th>
                 <th>Stock Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
-            @forelse($products as $product)
+            @php
+            	$sortedProducts = $products->sortBy('ProductID')
+            @endphp
+            @foreach($sortedProducts as $product)
                 <tr>
                     <td>{{ $product->ProductID }}</td>
                     <td>{{ $product->ProductName }}</td>
@@ -49,7 +51,7 @@
                     <td>{{ $product->category->CategoryName ?? 'Uncategorized' }}</td>
                     <td>
                         @if($product->image)
-                            <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
+                            <img src="{{ asset('uploads/product/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
                         @else
                             No Image
                         @endif
@@ -68,12 +70,8 @@
                         </form>
                     </td>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="8" class="text-center">No products found</td>
-                </tr>
-            @endforelse
-        </tbody>
+            @endforeach
+
     </table>
 
 @endsection

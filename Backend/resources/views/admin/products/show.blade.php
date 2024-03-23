@@ -38,7 +38,7 @@
                     <p class="card-text">Category: {{ $product->category->CategoryName ?? 'Uncategorized' }}</p>
                     <!-- Display other relevant product details -->
                     @if($product->image)
-                        <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
                     @else
                         <p>No Image Available</p>
                     @endif
