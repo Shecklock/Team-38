@@ -1,50 +1,85 @@
 @extends('layouts.admin')
 
 @section('content')
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Product Stock Report</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('admin.dashboard') }}" method="GET" class="mb-4">
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control" name="search" placeholder="Search products..." value="{{ request('search') }}">
+                            </div>
+                            <div class="col">
+@if ($showWarning)
+    <div class="alert alert-warning">
+        Showing items that are low in stock or out of stock. Adjust the filters to refine your view.
+    </div>
+@endif
+<!-- Added onChange attribute to call handleFilterChange(this) -->
+<select name="filter" class="form-control" onchange="handleFilterChange(this)">
+    <option value="">All Products</option>
+    <option value="lowStock" {{ $filter == 'lowStock' ? 'selected' : '' }}>Low Stock</option>
+    <option value="outOfStock" {{ $filter == 'outOfStock' ? 'selected' : '' }}>Out of Stock</option>
+</select>
+                                <input type="hidden" name="all_products" id="all_products">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" type="submit">Filter</button>
+                            </div>
+                        </div>
+                    </form>
 
-<div class="row">
-    <div class="col-md-12 grid-margin">
-        <div class="d-flex justify-content-between flex-wrap">
-            <div class="d-flex align-items-end flex-wrap">
-                <div class="me-md-3 me-xl-5">
-                    <h2>Admin dashboard</h2>
-                    <p class="mb-md-0">Sportify Pro Max admin dashboard.</p>
+                    @if($stockItems->isNotEmpty())
+<!-- Place this before the table to debug -->
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Stock Quantity</th>
+									<th>Stock Level</th>
+                                </tr>
+                            </thead>
+                                @foreach($stockItems as $item)
+                                    <tr>
+                                        <td>{{ $item->ProductID }}</td>
+                                        <td>{{ $item->ProductName }}</td>
+                                        <td>{{ $item->StockQuantity }}</td>
+										<!-- if you have another way to do this feel free -->
+										@php
+											$stockLevel = "";
+											if($item->StockQuantity == 0) { $stockLevel = "Out of stock"; }
+                                            elseif($item->StockQuantity <= 10) { $stockLevel = "Low stock"; }
+                                            else { $stockLevel = "High stock"; }
+										@endphp
+										<td>{{ $stockLevel }}</td>
+                                    </tr>
+                                @endforeach
+                        </table>
+                    @else
+                        <div class="alert alert-warning">No items match the condition, please try again.</div>
+                    @endif
                 </div>
             </div>
-            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ asset('/home') }}" class="btn btn-primary mt-2 mt-xl-0">Public Webpage</a>
-            </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12 grid-margin">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Recent Bookings</h4>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Chart Container -->
-<div class="row">
-    <div class="col-md-12 grid-margin">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Order Status</h4>
-            </div>
-            <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
-            <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
-
-            <!-- <script type="module" src="dimensions.js"></script> -->
-            <script type="module" src="resources/js/chart.js"></script>
-            @vite('resources/js/chart.js')
-        </div>
-    </div>
-</div>
-
+<script>
+    function handleFilterChange(select) {
+        var allProductsInput = document.getElementById('all_products');
+        if (select.value === '') {
+            allProductsInput.value = '1';
+        } else {
+            allProductsInput.value = '';
+        }
+        // Submit the form automatically when the filter changes
+        select.form.submit();
+    }
+</script>
 @endsection
-
-

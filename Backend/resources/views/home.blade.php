@@ -34,10 +34,14 @@
 <!-- Rest of your existing content -->
 
 <div class="navBottom">
-    <a href="{{ url('/search?search=Men') }}"><h3 class="menuItem">Men</h3></a>
-    <a href="{{ url('/search?search=Women') }}"><h3 class="menuItem">Women</h3></a>
     <a href="{{ url('/search?search=Trainers') }}"><h3 class="menuItem">Trainers</h3></a>
-    <a href="{{ url('/search?search=Accessories') }}"><h3 class="menuItem">Accessories</h3></a>
+    <a href="{{ url('/search?search=T-shirts') }}"><h3 class="menuItem">T-shirts</h3></a>
+    <a href="{{ url('/search?search=Tracksuits') }}"><h3 class="menuItem">Tracksuits</h3></a>
+    <a href="{{ url('/search?search=Jackets') }}"><h3 class="menuItem">Jackets</h3></a>
+	<a href="{{ url('/search?search=Shoes') }}"><h3 class="menuItem">Shoes</h3></a>
+	    <a href="{{ url('/search?search=Bags') }}"><h3 class="menuItem">Bags</h3></a>
+
+
 </div>
 
 
@@ -58,6 +62,12 @@
     });
 </script>
 
+<form action="{{ route('filter.by.price') }}" method="GET" class="filter-form">
+    <input type="text" name="min_price" placeholder="Min Price" class="filter-input">
+    <input type="text" name="max_price" placeholder="Max Price" class="filter-input">
+    <button type="submit" class="filter-button">Filter</button>
+</form>
+
     
     <div class="product" id="product">
         @foreach($products as $product)
@@ -70,9 +80,7 @@
                     <h2 class="productPrice">£{{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
 
-                    <button class="productButton">
-                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
-                    </button>
+                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" class="productButton">BUY NOW!</a>
 
                 </div>
             </div>

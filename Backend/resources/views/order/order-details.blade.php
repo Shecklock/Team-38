@@ -1,7 +1,15 @@
-{{-- order.details.blade.php --}}
-@extends('layouts.app')
+@include('header')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link href="{{ asset('assets/css/OrderDetails.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
 
-@section('content')
 <div class="container">
     <h1>Order Details</h1>
     <div class="order-details">
@@ -42,4 +50,5 @@
         </table>
     </div>
 </div>
-@endsection
+                    <a href="{{ route('order.track', ['customer_id' => Auth::user()->id]) }}" class="btn btn-primary">Back to Orders</a>
+@include('footer')

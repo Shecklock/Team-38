@@ -6,6 +6,10 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\OrderDetail;
+use App\Models\Product;
+use Illuminate\Support\Facades\Log;
+
+
 
 class CheckoutController extends Controller
 {
@@ -34,15 +38,31 @@ class CheckoutController extends Controller
     $order->UserID = Auth::id(); // Assuming UserID refers to the authenticated user
     $order->save();
 
-    // Create order details for each basket item
-    foreach ($basketItems as $item) {
-        //if (!isset($item['product_id'], $item['quantity'])) {
-            // Handle the missing product_id case
-            //continue; // This skips the current iteration and moves to the next item
-        //}
-        //$order->product()->attach($item['product_id'], ['quantity' => $item['quantity']]);
-        $order->products()->attach($item['product_id'], ['Quantity' => $item['quantity']]);
+     // Reduce stock for each basket item and create order details
+        foreach ($basketItems as $item) {
+    $product = Product::find($item['product_id']);
+    if ($product) {
+        // Accessing StockQuantity directly as per your database schema
+        $currentStock = $product->StockQuantity;
+        
+        Log::info("Attempting to order '{$product->ProductName}' with quantity: {$item['quantity']}. Current stock: {$currentStock}.");
+
+        if ($currentStock >= $item['quantity']) {
+            $product->StockQuantity -= $item['quantity'];
+            $product->save();
+            
+            Log::info("New stock for '{$product->ProductName}': {$product->StockQuantity}.");
+        } else {
+            Log::warning("Not enough stock for '{$product->ProductName}'.");
+            // Return with error message or handle accordingly
+        }
+    } else {
+        Log::error("Product not found with ID: {$item['product_id']}");
+        // Handle product not found
     }
+    $order->products()->attach($item['product_id'], ['Quantity' => $item['quantity']]);
+}
+
 
     // Clear the session basket after successfully placing the order
     session()->forget('basket');
@@ -53,8 +73,6 @@ class CheckoutController extends Controller
     return redirect()->route('order.track', ['customer_id' => Auth::id()])->with('success', 'Order placed successfully!');
 
 }
-
-
 
     public function checkout(Request $request)
     {

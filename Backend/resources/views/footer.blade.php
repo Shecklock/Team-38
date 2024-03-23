@@ -13,7 +13,7 @@
 
 <footer>
         <p>
-            <a href="contact_us.html">Contact us</a><br>
+            <a href="{{ route('contact_us') }}">Contact us</a><br>
             
             Telephone: +44 123435390 <br>
             Email: sportifypromax@gmail.com
@@ -24,7 +24,7 @@
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>
-                <a href="faqs.html">FAQs</a><br>
+                <a href="{{ route('faqs') }}">FAQs</a><br>
                 <a href="https://www.instagram.com/">Instagram</a><br>
                 <a href="https://en-gb.facebook.com/">Facebook</a><br>
                 <a href="https://twitter.com/login">X</a>

@@ -29,6 +29,7 @@
 
     <div class="checkout-info">
         <h3 class="title">Your Basket</h3>
+        
 
         <!-- Display basket items -->
         <div class="basket-items">
@@ -46,6 +47,7 @@
                     <p>No image available</p>
                 @endif
                 <p>{{ $item['name'] ?? 'Unknown' }}</p>
+    			<p>{{ $item['size'] ?? 'Unknown' }}</p>
                 <p>£{{ $item['price'] ?? 'Unknown' }}</p>
                 <p>Subtotal: £{{ ($item['price'] ?? 0) * ($item['quantity'] ?? 1) }}</p>
 
@@ -87,9 +89,13 @@
         <div class="total">
             <!-- Button to proceed to checkout -->
             <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
+            <button class="btn_basket" onclick="continueShopping()">Continue to Shopping</button>
             <script>
                 function redirectToCheckout() {
                     window.location.href = "{{ route('checkout') }}";
+                }
+                function continueShopping() {
+                    window.location.href = "{{ route('home') }}"; 
                 }
             </script>
         </div>

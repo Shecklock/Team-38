@@ -1,10 +1,16 @@
-.HeaderMain  {
-  margin: 0 !important;
-  padding-right: 50px !important;
 
-  
-  box-sizing: border-box !important;
-  background: #F5F5F5 !important;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.HeaderMain  {
+  margin: 0 ;
+  padding-right: 50px ; 
+  box-sizing: border-box ;
+  background: #F5F5F5;
 }
 
 .body, input, textarea {
@@ -12,53 +18,52 @@
 }
 
 .container1 {
-  padding: 10px 10% !important;
- 
+  padding: 10px 10% ;
   
 }
 
 .logo {
-  width: 200px !important; /* Updated width */
+  width: 200px ; /* Updated width */
 }
 
 nav {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-wrap: wrap !important;
-  background: #F5F5F5 !important;
-  padding-bottom: 6px !important;
-  padding-top: 4px !important;
+  display: flex ;
+  align-items: center ;
+  justify-content: space-between ;
+  flex-wrap: wrap ;
+  background: #F5F5F5 ;
+  padding-bottom: 6px ;
+  padding-top: 4px ;
 }
 
 .nav-items {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important; /* Align the navigation items to the right */
-  flex-grow: 1 !important; /* This makes the nav-items container take up the remaining space */
+  display: flex ;
+  align-items: center ;
+  justify-content: flex-end ; /* Align the navigation items to the right */
+  flex-grow: 1 ; /* This makes the nav-items container take up the remaining space */
 }
 
 
 nav ul li {
-  display: inline-block !important;
-  list-style: none !important;
-  margin: 10px 20px; /* Merged and updated margin */
-  background-color: none !important;
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 600 !important;
+  display: inline-block ;
+  list-style: none ;
+  margin: 10px 20px !important; /* Merged and updated margin */
+  background-color: none ;
+  font-family: "Montserrat", sans-serif ;
+  font-weight: 600 ;
 }
 
 nav ul li a {
-  color: black !important;
-  text-decoration: none !important;
+  color: black ;
+  text-decoration: none ;
   font-size: 12px !important; /* Updated font size */
-  position: relative !important;
+  position: relative ;
 }
 
 nav ul li a::after {
-  content: '' !important;
-  width: 0 !important;
-  height: 3px !important;
+  content: '' ;
+  width: 0 ;
+  height: 3px ;
   background: #086bef !important;
   position: absolute !important;
   left: 0 !important;
@@ -121,14 +126,14 @@ nav ul li input[type="text"]:focus {
 
 footer {
   margin: auto !important;
-  padding-left: 40px !important;
-  background-color: #e9ffff !important;
+  background-color: #F5F5F5 !important;
   display: flex !important;
   justify-content: space-evenly !important;
   height: 90px !important;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   color: black !important;
   align-items: center !important;
+
 }
 
 footer p {
@@ -143,4 +148,5 @@ footer a {
   color: black !important;
   text-decoration: underline !important;
   align-items: center !important;
+  
 }

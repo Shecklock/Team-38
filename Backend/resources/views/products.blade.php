@@ -16,13 +16,6 @@
 
 
 
-    <section class="Product-Intro">
-        <h1>New arrivals</h1><br>
-        <p>Newest arrivals for the winter season</p><br>
-        <img src="sources/productPageImage.png" height="300"><br><br>
-        <button>Shop now</button>
-    </section>
-
     {{-- <section class="pro">
         <h1 class="pheading">Our products</h1>
         <div class="products">
@@ -56,7 +49,7 @@
                     <div class="box">
                         <div class="price">£{{ $product->Price }}</div>
                         <button class="productButton">
-                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
+                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}"> BUY NOW!</a>
                             </button>                    
                         </div>
                 </div>

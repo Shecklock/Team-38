@@ -18,7 +18,7 @@
 
 
     <header>
-        @include('header')   
+        @include('header')   <br>
     </header>
         <div class="About-Us">
           <h2>About Our Company</h2><hr size="5"><br><br>
@@ -88,7 +88,7 @@
                         
                     </div>
                     <div class="activities1">
-                    <h3><a href="a" class ="link">Protecting the planet</a></h3>
+                    <h3>Protecting the planet</h3>
                         <h4>We are constantly developing game-changing innovations across carbon, 
                           waste and water to help protect the future of sport.</h4>
                     </div>
@@ -100,7 +100,7 @@
                         
                     </div>
                     <div class="activities">
-                        <h3><a href="a" class ="link">Empowering communites</a> </h3>
+                        <h3>Empowering communites</h3>
                         <h4>We are bringing sport-based programs, with a focus on expanding opportunities for underserved communities</h4>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         
                     </div>
                     <div class="activities">
-                        <h3><a href="a" class="link">Defining diversity</a></h3>
+                        <h3>Defining diversity</h3>
                         <h4> Our goal is to provide economic opportunities to historically disempowered diversity groups in each country that we operate</h4></div>
                 </div>
             </div>
@@ -122,22 +122,7 @@
       </div>
 
       <footer>
-        <p>
-            <a href="contact_us.html">Contact us</a><br>
-            Telephone: +44 123435390 <br>
-            Email: sportifypromax@gmail.com
-            
-        </p>
-        <p>
-            <a href="about_us.html">About us </a><br>
-            Address: Aston St, Birmingham B4 7ET
-        </p>
-        <p>
-                <a href="faqs.html">FAQs</a><br>
-                <a href="https://www.instagram.com/">Instagram</a><br>
-                <a href="https://en-gb.facebook.com/">Facebook</a><br>
-                <a href="https://twitter.com/login">X</a>
-            </p>
+        @include('footer')
     </footer>
 
     </body>

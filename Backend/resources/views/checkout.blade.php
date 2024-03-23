@@ -74,6 +74,12 @@
             @csrf
             <button type="submit">Confirm Order</button>
         </form>
+         <button class="btn_basket" onclick="continueShopping()">Continue to Shopping</button>
+            <script>
+                function continueShopping() {
+                    window.location.href = "{{ route('home') }}"; 
+                }
+            </script>
     </div>
 
     <footer>

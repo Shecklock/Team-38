@@ -8,6 +8,8 @@ use App\Models\Customer; // Add this line to include the Customer model
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\RegistrationCode;
+
 
 class RegisterController extends Controller
 {
@@ -37,13 +39,20 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+{
+    $rules = [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+    ];
+
+    // Conditional rule for the registration code
+    if (!empty($data['registration_code'])) {
+        $rules['registration_code'] = ['string', 'exists:registration_codes,code'];
     }
+
+    return Validator::make($data, $rules);
+}
 
     /**
      * Create a new user instance after a valid registration.
@@ -54,11 +63,32 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        $registrationCode = null;
+        $isAdmin = false;
+
+        if (!empty($data['registration_code'])) {
+        $registrationCode = RegistrationCode::where('code', $data['registration_code'])
+                                         ->where('expires_at', '>', now())
+                                         ->where('used', false)
+                                         ->first();
+
+    if (!$registrationCode) {
+        return redirect()->back()->withInput()->withErrors(['registration_code' => 'Invalid registration code.']);
+    }
+
+    $registrationCode->used = true;
+    $registrationCode->save();
+}
+        if ($registrationCode) {
+        $isAdmin = true; // Or set it based on any condition you have for admin registration
+    }
+
         // Create the user
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role_as' => $isAdmin ? 1 : 0, // Set 'role_as' to 1 if isAdmin is true, otherwise set to 0
         ]);
     
         // Create a record in the customers table
@@ -70,5 +100,4 @@ class RegisterController extends Controller
     
         return $user;
     }
-    
 }
