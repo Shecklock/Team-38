@@ -316,6 +316,42 @@ form {
   line-height: 1;
   margin-bottom: 0.7rem;
 }
+.subhead{
+  margin-top: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  }
+
+  .reg{
+  margin-top: 20px;
+  text-align: center;
+  color: #086bef;
+  text-decoration: none;
+  font-size: 17px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  transition: color 0.3s, text-decoration 0.3s;
+  }
+
+ .reg:hover {
+    color: #086bef;
+    text-decoration: underline;
+  }
+
+  .fp{
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #086bef;
+    transition: 0.3s;
+  }
+
+  .fp:hover {
+    color: #086bef;
+    text-decoration: underline;
+  }
 
 .input-container {
   position: relative;
@@ -516,7 +552,26 @@ footer a {
 }
 
 @media screen and (max-width: 768px) {
-  
+
+  .reg{
+    margin-top: 10px;
+    text-align: center;
+    color: #086bef;
+    text-decoration: none;
+    font-size: 17px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    transition: color 0.3s, text-decoration 0.3s;
+    }
+
+  .subhead{
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  } 
   
 
   .container1 {
