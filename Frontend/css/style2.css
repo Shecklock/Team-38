@@ -2,18 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body,
 input,
 textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  overflow-x: hidden !important;
 }
 
 .container1{
   padding: 10px 10%;
-  background: lightgreen;
-  border-radius: 25px;
+  background: #F5F5F5;
 }
 nav {
   display: flex;
@@ -23,7 +27,7 @@ nav {
 }
 
 .logo {
-  width: 250px;
+  width: 200px;
 }
 
 nav ul li input[type="text"] {
@@ -36,7 +40,7 @@ nav ul li input[type="text"] {
 
 nav ul li input[type="text"]:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 4px #086bef;
 }
 
 
@@ -45,6 +49,8 @@ nav ul li {
   list-style: none;
   margin: 10px 10px;
   background-color: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
 @keyframes fadeIn {
@@ -70,7 +76,7 @@ nav ul li {
 nav ul li a {
   color: black;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   position: relative;
 }
 
@@ -78,7 +84,7 @@ nav ul li a::after {
   content: '';
   width: 0;
   height: 3px;
-  background: black;
+  background: #086bef;
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -90,10 +96,149 @@ nav ul li a:hover::after {
 }
 
 .title-link {
-  color: lightgreen;
+  color: black;
   text-decoration: none;
   font-size: 15px;
+  transition: 0.3s;
   
+}
+
+.title-link:hover {
+  color: #086bef;
+}
+
+/* Hamburger menu */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 999; 
+  display: none;
+  overflow-x: hidden;
+}
+
+
+@media only screen and (min-width: 769px) {
+  .mobile-nav {
+      display: none !important;
+  }
+}
+
+
+/* mobile nav */
+@media screen and (max-width: 768px) {
+
+  nav ul.desktop-nav {
+      display: none;
+  }
+
+  .hamburger-menu {
+      display: block;
+  }
+
+  .mobile-nav {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 75%;
+      background-color: #F5F5F5;
+      text-align: left;
+      z-index: 2;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transform: translateX(110%);
+      transition: transform 0.3s ease-out;
+  }
+
+  .mobile-nav[data-visible="true"]{
+      transform: translateX(0%);
+  }
+  
+  .mobile-nav i.fa-xmark {
+      font-size: 26px; 
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      cursor: pointer;
+  }
+  
+  .mobile-nav i.fa-xmark:hover {
+      color: #086bef; 
+  }
+  
+  .centered-icons {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+  
+  .centered-icons li {
+      margin: 10px 10; 
+  }
+   
+  .mobile-input{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+  }
+
+  .mobile-input input[type="text"] {
+      padding: 12px; 
+      border-radius: 20px; 
+      font-size: 16px; 
+      width: auto; 
+  }
+  
+  
+  .mobile-nav li {
+      display: block;
+      margin-top: 25px;
+  }
+
+  
+  .mobile-nav li a {
+      color: black; 
+      text-decoration: none; 
+      font-size: 24px; 
+      font-weight: 500; 
+      transition: color 0.3s; 
+  }
+
+  
+  .mobile-nav li a:hover {
+      color: #086bef; 
+  }
+
+  .form {
+    grid-template-columns: 1fr; 
+    max-width: 90%; 
+    margin: 0 auto; 
+  }
 }
 
 
@@ -107,6 +252,7 @@ nav ul li a:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 
@@ -115,7 +261,7 @@ nav ul li a:hover::after {
   max-width: 820px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 20px 1px #618264;
+  box-shadow: 0 0 10px 0.1px #086bef;
   z-index: 1000;
   overflow: hidden;
   display: grid;
@@ -142,7 +288,7 @@ form {
   max-width: 820px;
   background-color: #f7faf6;
   border-radius: 10px;
-  box-shadow: 0 0 20px 1px #618264;
+  box-shadow: 0 0 10px 0.1px #086bef;
   z-index: 1000;
   overflow: hidden;
   display: grid;
@@ -159,12 +305,12 @@ form {
 
 
 .checkout-form {
-  background-color: lightgreen;
+  background-color:#efefef ;
   position: relative;
 }
 
 .title {
-  color: #fff;
+  color: black;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
@@ -176,10 +322,27 @@ form {
   margin: 1rem 0;
 }
 
+.input-container input {
+  padding-left: 2.5rem;
+  transition: border-width 0.3s;
+  transform: translateZ(0);
+}
+.input-container input:focus {
+  border-width: 2px; 
+}
+
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #ccc; 
+}
+
 .input_billing {
   width: 100%;
   outline: none;
-  border: 2px solid lightgreen;
+  border: 1px solid #086bef;
   background: none;
   padding: 0.6rem 1.2rem;
   color: #000000;
@@ -193,10 +356,10 @@ form {
 .input {
   width: 100%;
   outline: none;
-  border: 2px solid #fafafa;
+  border: 1px solid #086bef;
   background: none;
   padding: 0.6rem 1.2rem;
-  color: #fff;
+  color: black;
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -221,8 +384,8 @@ textarea.input {
 
 .btn_basket {
   padding: 0.6rem 1.3rem;
-  background-color: lightgreen;
-  border: 2px solid lightgreen;
+  background-color: #086bef;
+  border: 1px solid #086bef;
   font-size: 0.95rem;
   color: #fff;
   line-height: 1;
@@ -235,26 +398,26 @@ textarea.input {
 
 .btn_basket:hover {
   background-color: transparent;
-  color: lightgreen;
+  color: #086bef;
 }
 
 .btn {
   padding: 0.6rem 1.3rem;
-  background-color: #fff;
-  border: 2px solid #fafafa;
+  background: #086bef;
+  border: 1px solid #086bef;
   font-size: 0.95rem;
-  color: lightgreen;
+  color: #fff;
   line-height: 1;
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
   margin: 0;
 }
 
 .btn:hover {
-  background-color: transparent;
-  color: #fff;
+  background: #fff;
+  color: #086bef;
 }
 
 .input-container span {
@@ -276,7 +439,7 @@ textarea.input {
 }
 
 .checkout-info .title {
-  color: lightgreen;
+  color: black;
 }
 
 .text {
@@ -314,7 +477,7 @@ textarea.input {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: linear-gradient(45deg, #D0E7D2, lightgreen);
+  background: linear-gradient(45deg, #e3e8ee, #086bef);
   color: #fff;
   text-align: center;
   line-height: 35px;
@@ -327,15 +490,13 @@ textarea.input {
 }
 
 footer{
-  width:97%;
   margin:auto;
   padding-left: 40px;
-  background-color: lightgreen;
-  border-radius: 25px;
+  background-color: #F5F5F5;
+  
   display: flex;
   justify-content: space-evenly;
   height:90px;
-  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:black;
   align-items: center;
   
@@ -343,14 +504,43 @@ footer{
 
 footer p{
   text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   align-items: center;
 }
 footer a {
-  font-size: 14px;
+  font-size: 12px;
   color:black;
   text-decoration: underline;
   align-items: center;
 
+}
+
+@media screen and (max-width: 768px) {
+  
+  
+
+  .container1 {
+    padding: 10px 5%;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  footer div {
+    margin-bottom: 20px;
+  }
+
+  footer p {
+    margin: 0;
+  }
 }
