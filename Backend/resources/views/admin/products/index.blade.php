@@ -7,6 +7,15 @@
     </div>
 
     <div class="row">
+        <h3>Search Product</h3>
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-right">
+                @include('admin.components.search_form')  {{-- Including the search form --}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <a class="btn btn-success" href="{{ route('admin.products.create') }}">Create new product</a>
         </div>
@@ -26,37 +35,43 @@
                 <th>Description</th>
                 <th>Category</th>
                 <th>Image</th>
-                <th>Price</th>
+                <th>Price (£)</th>
+                <th>Stock Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>
-        @foreach($products as $product)
-            <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $product->ProductName }}</td>
-                <td>{{ $product->Description }}</td>
-                <td>{{ $product->category->CategoryName ?? 'Uncategorized' }}</td>
-                <td>
-                    @if($product->image)
-                        <img src="{{ asset('admin/images/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
-                    @else
-                        No Image
-                    @endif
-                </td>    
-                <td>{{ $product->Price }}</td>
-                <td>
-                    <form onsubmit="return confirm('Are you sure you want to delete?')" action="{{ route('products.destroy', $product->ProductID) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('products.show', $product->ProductID) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('products.edit', $product->ProductID) }}">Edit</a>
+            @php
+            	$sortedProducts = $products->sortBy('ProductID')
+            @endphp
+            @foreach($sortedProducts as $product)
+                <tr>
+                    <td>{{ $product->ProductID }}</td>
+                    <td>{{ $product->ProductName }}</td>
+                    <td>{{ $product->Description }}</td>
+                    <td>{{ $product->category->CategoryName ?? 'Uncategorized' }}</td>
+                    <td>
+                        @if($product->image)
+                            <img src="{{ asset('uploads/product/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
+                        @else
+                            No Image
+                        @endif
+                    </td>    
+                    <td>{{ $product->Price }}</td>
+                    <td>{{ $product->StockQuantity }}</td>
+                    <td>
+                        <form onsubmit="return confirm('Are you sure you want to delete?')" action="{{ route('products.destroy', $product->ProductID) }}" method="POST">
+                            <a class="btn btn-info" href="{{ route('products.show', $product->ProductID) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('products.edit', $product->ProductID) }}">Edit</a>
 
-                        @csrf
-                        @method('DELETE')
+                            @csrf
+                            @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+
     </table>
 
 @endsection

@@ -42,4 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function isAdmin()
+
+    {
+    return $this->role_as == 1; // Check if role_as is 1 (admin)
+
+    }
 }

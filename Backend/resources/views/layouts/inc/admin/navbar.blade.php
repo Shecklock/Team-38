@@ -1,14 +1,14 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="/admin/dashboard">
+          <a class="navbar-brand brand-logo" href="{{ route('admin.dashboard') }}">
         
             <!-- Try to get the logo instead of text, issue with white text on white background -->
             <!-- <img src="images/logo2.png" alt="Sportify Pro Max"> -->
             Sportify Pro Max
 
           </a>
-          <a class="navbar-brand brand-logo-mini" href="/admin/dashboard"><img src="images/favicon.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}"><img src="images/favicon.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -135,7 +135,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/img_male.png" alt="profile"/>
+              <img src="{{ asset('assets/sources/img_male.png') }}" alt="profile"/>
               <span class="nav-profile-name">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -144,6 +144,10 @@
                 <i class="mdi mdi-settings text-primary"></i>
                 Account
               </a>
+			  <a class ="dropdown-item" href="{{route('home') }}">
+			  	<i class="mdi mdi-web text-primary"></i>
+				Public Webpage
+			  </a>
               <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

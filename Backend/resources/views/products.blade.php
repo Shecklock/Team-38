@@ -48,7 +48,9 @@
             <!-- card start -->
             @foreach($products as $product)
                 <div class="card">
-                    <div class="img"><img src="{{ asset('uploads/product/' . $product->image) }}" alt="{{ $product->ProductName }}"></div>
+                    <a href="{{ route('productshow', ['product' => $product] )}}">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                        </a>                    
                     <div class="description">{{ $product->Description }}</div>
                     <div class="title">{{ $product->ProductName }}</div>
                     <div class="box">
@@ -65,22 +67,9 @@
     
 
     <footer>
-        <p>
-            <a href="contact-us">Contact Us</a> <br>
-            Telephone: +44 123435390
-            Email: sportifypromax@gmail.com
-        </p>
-        <p>
-            <a href="{{ route('about_us') }}">About Us</a> <br>
-             Address: Aston St, Birmingham B4 7ET
-        </p>
-        <p>
-            <a href="{{ url('faqs') }}">FAQs</a><br>
-            <a href="https://www.instagram.com/">Instagram</a><br>
-            <a href="https://en-gb.facebook.com/">Facebook</a><br>
-            <a href="https://twitter.com/login">X</a>
-        </p>
+        @include('footer')
     </footer>
+
 </body>
 
 </html>

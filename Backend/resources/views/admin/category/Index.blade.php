@@ -19,15 +19,26 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+										<th>Products in Category</th>
                                         <th>Options</th>
                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($category as $item)
+									@php
+										$products = \App\Models\Product::all();
+										$categoryCount = 0;
+										foreach($products as $product) {
+											if($product->CategoryID == $item->CategoryID) {					
+												$categoryCount++;
+                                        	}
+                                        }
+                                    @endphp
                                     <tr>
                                         <td>{{ $item->CategoryID }}</td>
                                         <td>{{ $item->CategoryName }}</td>
+										<td>{{ $categoryCount }}</td>
                                         <div class = "Option buttons float-right">
                                             <td>
                                                 <a href="{{ url('admin/category/show/' . $item->CategoryID) }}" title="View Categories"><button class="btn btn-info btn-md"></i> View</button></a>
@@ -42,7 +53,6 @@
 
                                             </td>
                                         </div>
-                                                    
                                     </tr>
                                 @endforeach
                                 </tbody>

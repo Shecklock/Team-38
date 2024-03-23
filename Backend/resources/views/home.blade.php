@@ -58,7 +58,7 @@
     });
 </script>
 
-    <nav>
+    
     <div class="product" id="product">
         @foreach($products as $product)
             <div class="productItem">
@@ -70,15 +70,13 @@
                     <h2 class="productPrice">£{{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
 
-                    <button class="productButton">
-                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
-                    </button>
+                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" class="productButton">BUY NOW!</a>
 
                 </div>
             </div>
         @endforeach
     </div>
-</nav>
+
 
 <script>
     function redirectToBasket() {
@@ -86,23 +84,9 @@
     }
 </script>
 
-
-<<footer>
-    <p>
-        <a href="contact-us">Contact Us</a> <br>
-        Telephone: +44 123435390
-        Email: sportifypromax@gmail.com
-    </p>
-    <p>
-        <a href="{{ route('about_us') }}">About Us</a> <br>
-         Address: Aston St, Birmingham B4 7ET
-    </p>
-    <p>
-        <a href="{{ url('faqs') }}">FAQs</a><br>
-        <a href="https://www.instagram.com/">Instagram</a><br>
-        <a href="https://en-gb.facebook.com/">Facebook</a><br>
-        <a href="https://twitter.com/login">X</a>
-    </p>
+<footer>
+    
+    @include('footer')
 </footer>
 
 </body>

@@ -552,6 +552,7 @@ footer a {
 }
 
 @media screen and (max-width: 768px) {
+
   .reg{
     margin-top: 10px;
     text-align: center;
@@ -570,8 +571,7 @@ footer a {
   display: flex;
   justify-content: center; 
   align-items: center;
-  }
-  
+  } 
   
 
   .container1 {

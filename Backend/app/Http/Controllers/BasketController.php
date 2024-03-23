@@ -3,6 +3,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product; // Import the Product model
+use App\Models\Order;
+use App\Models\OrderDetail;
+use Illuminate\Support\Facades\DB;
+
+
 
 class BasketController extends Controller
 {
@@ -34,12 +39,26 @@ class BasketController extends Controller
         // Check if the product details are valid before adding to the basket
         if ($product) {
             // Ensure that the product details have the expected structure
-            $basket[] = [
+        $foundInBasket = false;
+        foreach ($basket as $index => $item) {
+            if ($item['product_id'] == $productId) {
+                $basket[$index]['quantity'] += 1; // Increment the quantity
+                $foundInBasket = true;
+                break;
+            }
+        }
+        
+        if (!$foundInBasket) {
+
+        $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
                 'price' => $product->Price, // Replace 'Price' with the correct field from your product details
                 'image' => $product->image,
+                'product_id' => $product->ProductID,
+                'quantity' => 1,
                 // Add more necessary keys and values
             ];
+        }
     
             // Store the updated basket in the session
             session()->put('basket', $basket);
@@ -92,6 +111,26 @@ class BasketController extends Controller
 
         return redirect()->route('basket')->with('success', 'Basket cleared successfully!');
     }
+
+        public function updateQuantity(Request $request, $itemId)
+        {
+        $basket = session()->get('basket', []);
+        $newQuantity = $request->input('quantity', 1); // Default to 1 if not set
+
+        if (isset($basket[$itemId])) {
+            $basket[$itemId]['quantity'] = max(1, $newQuantity); // Ensure quantity is at least 1
+            session()->put('basket', $basket);
+        }
+
+        return redirect()->back();
+        }
+
+        public function checkout(Request $request)
+{
+    $basketItems = session()->get('basket', []);
+
+    // Pass basket items to the checkout view
+    return view('checkout', ['basketItems' => $basketItems]);
 }
 
-
+}

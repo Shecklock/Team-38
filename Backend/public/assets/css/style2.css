@@ -72,6 +72,7 @@ body,
 input,
 textarea {
   font-family: "Poppins", sans-serif;
+  background: #ffffff !important;
 }
 
 .container1 {
@@ -267,22 +268,27 @@ nav ul li a:hover::after {
 
 /* Style for the "BUY NOW!" button */
 .productButton {
-  background-color: #4CAF50; /* Green color, you can change this */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+    background-color: #4a4d4a; /* Matching the overall theme's button color */
+    color: white;
+    border: 2px solid transparent; /* Adds a border that matches the button color for a solid look */
+    padding: 12px 24px; /* Slightly larger padding for a more prominent button */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Slightly larger font size for better readability */
+    border-radius: 15px; /* Increased border-radius for rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-.productButton:hover {
-  background-color: #45a049; /* Darker green on hover */
+.productButton:hover, .productButton:focus {
+    background-color: #000000; /* Darker shade on hover/focus for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover/focus for depth */
+    border-color: #000000; /* Border color changes to match the hover background */
+    color: white; /* Ensures text color remains white for readability */
 }
+
 
 /* Add this CSS to your stylesheet */
 body {
@@ -591,32 +597,41 @@ textarea.input {
   transform: scale(1.05);
 }
 
-footer{
-  width: 97%;
-  margin:auto;
-  padding-left: 40px;
-  background-color: lightgreen;
-  border-radius: 25px;
+
+
+/* Start CSS Styling for Quantity Buttons */
+
+.quantity-form {
   display: flex;
-  justify-content: space-evenly;
-  height:90px;
-  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:black;
   align-items: center;
-  margin-top: 100px;
-  
 }
 
-footer p{
-  text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 14px;
-  align-items: center;
+.quantity-btn {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
-footer a {
-  font-size: 14px;
-  color:black;
-  text-decoration: underline;
-  align-items: center;
 
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
 }
+
+.update-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+}
+
+
+/* Ending CSS Styling for Quantity Buttons */
