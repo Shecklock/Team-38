@@ -65,7 +65,7 @@ class OrdersController extends Controller
         $order = Order::findOrFail($order);
         $input = $request->all();
         $order->update($input);
-        return redirect()->route('orders')->with('success', 'Order updated successfully');
+        return redirect()->route('admin.orders.index')->with('success', 'Order updated successfully');
     }
 
     public function showOrderDetails($orderId)

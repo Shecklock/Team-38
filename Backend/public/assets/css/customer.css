@@ -1,108 +1,66 @@
-.form-container {
-    
-    justify-content: center;
-   
-
-    margin: 0;
-}
-
-.form-container form {
-    border: 1px solid #ccc;
+.edit-form-container {
+    text-align: left; /* For better alignment of form labels and inputs */
+    margin: 30px auto;
+    max-width: 600px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-top: 100px;
+    position: relative;
 }
 
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container button {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.edit-form-details {
+    margin-bottom: 20px;
 }
 
-.form-container button {
-    background-color: #4CAF50;
+.edit-form-details label {
+    display: block; /* Ensure labels are above inputs */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333;
+    font-size: 16px;
+}
+
+.edit-form-details input[type="text"],
+.edit-form-details input[type="email"] {
+    width: 100%; /* Full width to match container */
+    padding: 8px; /* Comfortable padding inside inputs */
+    margin-bottom: 15px; /* Space between input fields */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Match rounded corners */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px; /* Adjust padding to control the button's distance from the top and right edges */
+}
+.edit-button {
+    background-color: #4a4d4a; /* Consistent button color */
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px 15px;
-}
-
-.form-container button:hover {
-    background-color: #45a049;
-}
-
-.form-container form {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container button {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.form-container button {
-    background-color: #4a4d4a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-}
-
-.form-container button:hover {
-    background-color: #000000;
-}
-
-.form-container form {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px; /* Adjust this value as needed */
-}
-
-
-
-.AccountsInfo {
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    border: none;
     padding: 12px 24px; /* Larger padding for a wider button */
-    font-size: 16px; /* Adjust size as needed */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
-    cursor: pointer; /* Changes the cursor to a pointer to indicate this is a clickable button */
+    font-size: 16px; /* Comfortable font size for readability */
+    border-radius: 15px; /* Rounded corners for aesthetic */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
 
-
-.AccountsInfo button {
-    background-color: #4a4d4a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 15px;
-    
+.edit-button:hover {
+    background-color: #000000; /* Darker on hover for interaction feedback */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
-.AccountsInfo button:hover {
-    background-color: #000000;
+/* Additional style for read-only fields to differentiate them */
+input[readonly] {
+    background-color: #e9ecef; /* Lighter background for readonly fields */
+    color: #6c757d; /* Dimmed text color */
 }

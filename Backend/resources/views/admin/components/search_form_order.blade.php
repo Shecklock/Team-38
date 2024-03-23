@@ -1,4 +1,4 @@
-<form action="{{ route('orders.index') }}" method="GET" class="form-inline">
+<form action="{{ route('admin.orders.index') }}" method="GET" class="form-inline">
     <div class="input-group">
         <input type="text" name="search" class="form-control" placeholder="orderID/user name" value="{{ request()->query('search') }}">
 

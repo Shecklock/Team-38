@@ -28,19 +28,19 @@ class CategoryController extends Controller
     {
         $input = $request->all();
         category::create($input);
-        return redirect('admin/category/create')->with('flash_message', 'Category Addedd!');
+        return redirect(route('admin.category.index'))->with('flash_message', 'Category Addedd!');
     }
 
     public function show($CategoryID)
     {
         $category = category::find($CategoryID);
-        return view('admin\category\show')->with('category', $category);
+        return view('admin.category.show')->with('category', $category);
     }
 
     public function edit($CategoryID)
     {
         $category = category::find($CategoryID);
-        return view('admin\category\edit')->with('category', $category);
+        return view('admin.category.edit')->with('category', $category);
     }
 
     public function update(CategoryFormRequest $request, $category)
@@ -48,14 +48,14 @@ class CategoryController extends Controller
         $category = Category::find($category);
         $input = $request->all();
         $category->update($input);
-        return redirect()->route('admin/category/index')->with('success', 'Category updated successfully');
+        return redirect()->route('admin.category.index')->with('success', 'Category updated successfully');
         
     }
 
     public function destroy($category)
     {
         category::destroy($category);
-        return redirect()->route('admin/category/index')->with('success', 'CATEGORY DELETED');
+        return redirect()->route('admin.category.index')->with('success', 'CATEGORY DELETED');
            
     }
 

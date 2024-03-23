@@ -87,9 +87,13 @@
         <div class="total">
             <!-- Button to proceed to checkout -->
             <button class="btn_basket" onclick="redirectToCheckout()">Proceed to Checkout</button>
+            <button class="btn_basket" onclick="continueShopping()">Continue to Shopping</button>
             <script>
                 function redirectToCheckout() {
                     window.location.href = "{{ route('checkout') }}";
+                }
+                function continueShopping() {
+                    window.location.href = "{{ route('home') }}"; 
                 }
             </script>
         </div>

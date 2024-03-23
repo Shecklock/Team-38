@@ -39,7 +39,18 @@ class BasketController extends Controller
         // Check if the product details are valid before adding to the basket
         if ($product) {
             // Ensure that the product details have the expected structure
-            $basket[] = [
+        $foundInBasket = false;
+        foreach ($basket as $index => $item) {
+            if ($item['product_id'] == $productId) {
+                $basket[$index]['quantity'] += 1; // Increment the quantity
+                $foundInBasket = true;
+                break;
+            }
+        }
+        
+        if (!$foundInBasket) {
+
+        $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
                 'price' => $product->Price, // Replace 'Price' with the correct field from your product details
                 'image' => $product->image,
@@ -47,6 +58,7 @@ class BasketController extends Controller
                 'quantity' => 1,
                 // Add more necessary keys and values
             ];
+        }
     
             // Store the updated basket in the session
             session()->put('basket', $basket);

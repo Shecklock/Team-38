@@ -7,6 +7,9 @@
 <title> Sign in </title>
 </head>
 
+
+
+
 <body>
 <main>
     <div class ="signin-page">
@@ -72,20 +75,7 @@
     </div>
     
 <footer>
-    <p>
-        <a href="contact_us.html"> <b> Contact us </b></a><br>
-        Telephone: +44 123435390 <br>
-        Email: sportifypromax@gmail.com
-       
-    </p>
-    <p><a href="about_us.html"> <b> About us </b></a><br>
-        Address: Aston St, Birmingham B4 7ET</p>
-        <p>
-            <a href="faqs.html"><b>FAQs</b></a><br>
-            <a href="https://www.instagram.com/">Instagram</a><br>
-            <a href="https://en-gb.facebook.com/">Facebook</a><br>
-            <a href="https://twitter.com/login">X</a>
-        </p>
+    @include('footer')
 </footer>
 </main>
 </body>

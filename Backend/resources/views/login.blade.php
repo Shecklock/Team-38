@@ -16,7 +16,8 @@
             <div class="row">
                 <div class="col-2">
                     <form class="form-container" method="post" action="login_process.php">
-                        <h1>Login</h1>
+                       @csrf
+                            <h1>Login</h1>
                         <label>
                             Admin <input type="radio" name="rdo" value="a" />
                         </label>

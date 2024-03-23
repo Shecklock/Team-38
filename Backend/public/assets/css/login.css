@@ -30,7 +30,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #79AC78;
+    background: #086bef;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -81,7 +81,7 @@ p{
 max-width: 1300px;
 margin: auto;
 padding-left: 25px;
-background-color: lightgreen;
+background-color: #F5F5F5 !important;
 border-radius: 25px;
 }
 section{
@@ -98,6 +98,9 @@ button:hover {
     opacity: 0.8;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
+
+  
+
 .logo{
     list-style-type: none;
     width: 130px;
@@ -124,16 +127,20 @@ button {
     padding:50px 0;
 }
 .form-container{
-background: lightgreen;
+color:black !important;
+background-color:white;
+box-shadow: 0 0 10px 1px #086bef;
 width : 400px;
 height: 460px;
 position: relative;
 text-align:center;
 padding :20px 0;
 margin: auto;
-border-radius: 8px;
+border-radius: 10px;
+align-items: center !important;
 }
 
+    
 
 .navbtt{
 border-radius: 10px;
@@ -142,4 +149,33 @@ input{
   border-radius: 12px;
   border: none;
   height: 25px;
+}
+
+
+
+footer {
+  margin: auto !important;
+  background-color: #F5F5F5 !important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  height: 90px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  color: black !important;
+  align-items: center !important;
+
+}
+
+footer p {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  align-items: center !important;
+  margin: 140px !important; 
+}
+
+footer a {
+  font-size: 12px;
+  color: black !important;
+  text-decoration: underline !important;
+  align-items: center !important;
+  
 }
