@@ -1,3 +1,4 @@
+
 /* General Styles */
 body {
     background-color: #f4f4f4;
@@ -94,3 +95,63 @@ body {
     color: #ffc107;
     margin-right: 5px;
 }
+
+/* Product Details Page Layout */
+.product-view-container {
+    text-align: left; /* Aligning content to the left for a more standard e-commerce product view */
+    margin: 30px auto;
+    max-width: 1200px; /* Wider container to accommodate product image, details, and reviews side by side */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex; /* Using flex to layout the image and details side by side */
+    gap: 20px; /* Space between product image and details */
+}
+
+.product-image-container {
+    flex-basis: 30%; /* Limiting image container width, similar to Amazon's product detail page */
+    text-align: center; /* Centering the product image */
+}
+
+.product-image-container img {
+    max-width: 100%; /* Adjusting max width to control the size of the product image */
+    height: auto; /* Maintaining aspect ratio */
+    border-radius: 8px; /* Adding a slight border radius to the image for a softer look */
+}
+
+/* Product Details and Reviews */
+.product-details, .reviews-section {
+    flex-basis: 70%; /* Allocating the rest of the space to details and reviews */
+}
+
+.product-details h1, .product-details span, .product-details p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Add to Basket Button Styling */
+.add-to-basket-container {
+    display: flex;
+    justify-content: center; /* Centering the button */
+    margin-top: 20px;
+}
+
+.add-to-basket-button {
+    background-color: #4a4d4a; /* Matching the account page button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjusting padding to match the size of the original button */
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-to-basket-button:hover {
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

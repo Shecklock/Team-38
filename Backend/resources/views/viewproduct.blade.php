@@ -13,7 +13,11 @@
 <body>
 
 <header>
+
     @include('header') <!-- Ensure this includes your sites header -->
+
+    @include('header') <!-- Ensure this includes your site's header -->
+
 </header>
 
 <div class="py-3 py-md-5 bg-light">
@@ -28,6 +32,7 @@
 
                 <!-- Product Purchasing Details -->
                 <div class="product-details">
+
     				<h1>{{ $product->ProductName }}</h1>
    					 @if($product->StockQuantity > 10)
         				<span class="label-stock bg-success">In Stock ({{ $product->StockQuantity }} available)</span>
@@ -38,6 +43,13 @@
    				     @endif
 				</div>
 
+                    <h1>{{ $product->ProductName }}</h1>
+                    @if($product->StockQuantity > 0)
+                        <span class="label-stock bg-success">In Stock ({{ $product->StockQuantity }} available)</span>
+                    @else
+                        <span class="label-stock bg-danger">Out of Stock</span>
+                    @endif
+
                     <div><span class="productPrice">£{{ $product->Price }}</span></div>
                     <p class="productDesc">{{ $product->Description }}</p>
                     
@@ -45,6 +57,7 @@
                     <div class="add-to-basket-container">
                         <form action="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" method="POST">
                             @csrf
+
                             <div class="mb-3">
             <label for="size" class="form-label">Size:</label>
             <select name="size" id="size" class="form-select">
@@ -53,6 +66,7 @@
                 @endforeach
             </select>
         </div>
+
                             <input type="number" name="quantity" value="1" min="1" max="{{ $product->StockQuantity }}" class="input-quantity">
                             <button type="submit" class="add-to-basket-button"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
                         </form>

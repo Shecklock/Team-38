@@ -7,6 +7,9 @@
     <title>Sign in</title>
 </head>
 
+
+
+
 <body>
     <main>
         <div class="signin-page">
@@ -66,10 +69,19 @@
                 </form>
             </div>
         </div>
+
         <footer>
             @include('footer')
         </footer>
     </main>
+
+    </div>
+    
+<footer>
+    @include('footer')
+</footer>
+</main>
+
 </body>
                        
 @endsection

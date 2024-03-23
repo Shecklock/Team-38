@@ -1,143 +1,179 @@
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-    background-color: none;
-  }
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 13px;
-    position: relative;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
-  } 
+*{
+  text-decoration: none;
+}
+.navbar{
+  background: #F5F5F5;
+  font-family:"Montserrat", sans-serif;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navdiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navlogo-fp{
+  width: 200px;
+}
+.nav-srch{
+  border-radius: 25px;
+    border: none;
+    height: 18px;
+    font-family: "Montserrat", sans-serif;
+}
 nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #79AC78;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.2s;
+  content: '';
+  width: 0;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li input[type="text"] {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.navbar a:hover{
+  color: #086bef;
+}
+nav ul li input[type="text"] {
+    padding: 8px;
+    border: none;
+    margin-top: 8px;
+    transition: 0.3s;
   }
   
-nav ul li a:hover::after {
-    width: 100%;
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
-  nav ul li input[type="text"] {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 46px;
 }
-    .navbar a:hover{
-      color: gray;
-    }
-    nav ul li input[type="text"] {
-        padding: 8px;
-        border: none;
-        border-radius: 20px;
-        margin-top: 8px;
-        transition: 0.3s;
-      }
-      
-      nav ul li input[type="text"]:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-      .logo{
-        list-style-type: none;
-        width: 130px;
-    }
+li a {
+  color:black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.nav-items{
+  display: flex;
+  align-items: center;
+}
+.bi-bi-basket, .bi-bi-person {
+  fill: black;
+}
 a{
-    color: black;
+    color: #086bef;
     text-decoration: none;
 }
 p{
     color:black;
 }
 .container{
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    background-color: lightgreen;
-    border-radius: 25px;
+  max-width: 1300px;
+  margin: auto;
+  padding-left: auto;
 }
+
 .signin-page{
     background: white;
     padding:50px 0;
     width: 1200px;
 }
 .form-container {
-    background: lightgreen;
-    width : 500px;
+    width : 100%;
     height: 620px;
     position: relative;
     margin: 6% auto;
     text-align: center;
     word-spacing: normal;
-    padding :5px ;
-    border-radius: 8px;  
-    margin-bottom: 15px;
+    padding :2rem; 
+    margin-bottom: 70px;
+    margin-left: 185px;
+    background-color: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    max-width:820px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0.1px #086bef;
+    z-index: 1000;
+    grid-template-columns: repeat(2, 1fr);
+
+    /*
+  background-color: #fff;
+  display: grid;*/
 }
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Montserrat", sans-serif;
     justify-content: center;
     min-height: fit-content;
     background-color: white;
 }
 button{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
     padding: 8px;
     border-radius: 40px;
     background-color: white;
     border: none;
+    display: center;
+    margin-left: 124px;
 }
 button:hover {
     opacity: 0.8;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+/*the button for the form*/
 .signin{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 10px 28px;
   font-size: 15px;
-  border-radius: 40px;
-  background-color: white;
-  border: none;
+  border-radius: 7px;
+  border: 1px solid #086bef;
+  font-size: 0.95rem;
+  background: #086bef;
+  color: white;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: "Montserrat", sans-serif;
 }
 footer{
     width:97%;
     margin:auto;
     padding-left: 40px;
-    background-color: lightgreen;
-    border-radius: 25px;
+    background-color: #F5F5F5;
     display: flex;
     justify-content: space-evenly;
     height:90px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:black;
+    font-family: "Montserrat", sans-serif;
     align-items: center; 
 }
 footer p{
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"Montserrat", sans-serif;
     font-size: 14px;
     align-items: center;
+    color: black;
 }
 footer a {
     font-size: 14px;
@@ -148,8 +184,142 @@ footer a {
 ul li {
   list-style-type: none;
 }
-input{
-  border-radius: 12px;
+.input-feilds{
+  display: inline-grid;
+  margin-bottom: 10px;
+  justify-items: start;
+  margin-top: 10px;
+  color: black;
+  width: 343px;
+  height: 27px;
+  border-radius: 20px;
+  border-color: #086bef;
+  font-family: "Montserrat", sans-serif;
+}
+.bday{
+margin-top: 13px;
+margin-bottom: 15px;
+margin-left: 78px;
+}
+.go-to-login{
+margin-left: 80px;
+margin-top:20px;
+}
+.gendr{
+margin-bottom: 15px;
+margin-top:10px;
+margin-left: 59px;
+}
+.signin-img{
+  height: 170px;
+  margin-top: 350px;
+  margin-right: 180px;
+}
+h1{
+  margin-bottom: 10px;
+  color: black;
+  margin-top: 153px;
+    margin-right: -263px;
+}
+.contact-meth{
+  margin-bottom:22px;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.fp-container{
+  width : 100%;
+  height: 470px;
+  position: relative;
+  margin: 6% auto;
+  margin-right: 50px;
+  word-spacing: normal;
+  padding :2rem; 
+  margin-bottom: 70px;
+  margin-left: 230px;
+  background-color: #fafafa;
+  min-height: 70vh;
+  display: flex;
+  overflow: hidden;
+  max-width:750px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0.1px #086bef;
+  z-index: 1000;
+  grid-template-columns: repeat(2, 1fr);
+}
+.fp-email{
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  width: 227px;
+  height: 39px;
+  border-color: #086bef;
+  font-family: "Montserrat", sans-serif;
+}
+.fp-newPass{
+  height: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width: 223px;
+  height: 39px;
+  border-color: #086bef;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 18px;
+}
+.fp-pass{
+  height: 20px;
+  margin-top: 15px;
+  border-radius: 20px;
+  width: 225px;
+  height: 39px;
+  border-color: #086bef;
+  font-family:"Montserrat", sans-serif;
+}
+.fp-inputFeilds{
+  display: inline-grid;
+  margin-bottom: 15px;
+  justify-items: center;
+  margin-top: 8px;
+  color: black;
+  width: 380px;
+  height: 30px;
+  border-radius: 20px;
+}
+.submit-fp{
+  margin-top: 36px;
+  margin-left: 10px;
+  font-size: 15px;
+  border-radius: 7px;
+  border: 1px solid #086bef;
+  font-size: 0.95rem;
+  background: #086bef;
+  color: white;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family:"Montserrat", sans-serif;
+  width: 100px;
+  height: 40px;
+}
+.nav-srch-sgpage{
+  height: 29px;
+  border-radius: 25px;
   border: none;
-  height: 26px;
+  font-family: "Montserrat", sans-serif;
+}
+h2{
+  margin-top: 70px;
+  margin-left: 57px;
+  margin-right: -250px;
+}
+.bck-to-login{
+margin-top: 30px;
+}
+.fp-page-icon {
+  height: 196px;
+  margin-top: 202px;
+  margin-right: 201px;
 }

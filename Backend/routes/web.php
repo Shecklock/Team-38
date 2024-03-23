@@ -87,6 +87,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('admin.orders.edit');
     Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin.orders.update');
 
+
     Route::resource('codes', App\Http\Controllers\Admin\RegistrationCodeController::class)->names('admin.code');
 
 });

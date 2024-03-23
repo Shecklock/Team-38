@@ -74,6 +74,27 @@ class CheckoutController extends Controller
 
 }
 
+public function showCheckout() {
+    $basketItems = session()->get('basketItems', []); // Assuming you store basket items in session
+    foreach ($basketItems as $key => &$item) {
+        if (is_array($item) && isset($item['id'])) {
+            $product = Product::find($item['id']);
+            if ($product && $product->stock_quantity > 0) {
+                $product->stock_quantity -= $item['quantity']; // Decrease the stock by the quantity in the basket
+                $product->save(); // Save the updated product
+            } else {
+                // Handle the case where there's not enough stock
+                unset($basketItems[$key]); // Optional: remove the item from the basket if there's no stock
+            }
+        }
+    }
+    // Update the session with the potentially modified basket
+    session()->put('basketItems', $basketItems);
+
+    return view('checkout', compact('basketItems')); // Pass the updated basket items to the view
+}
+
+
     public function checkout(Request $request)
     {
         $basketItems = session()->get('basket', []);
