@@ -23,9 +23,42 @@ This is a e-commerce website called "Sportify Pro Max"
 
 ![Spotify Pro Max](https://github.com/Shecklock/Team-38/assets/148438898/91812326-5bae-4a0f-841c-2fe11010bf7b)
 
-
-
 <h2>Website Walkthrough</h2>
+
+<h3>User type</h3>
+Admin and Normal User
+
+- Admin accounts are able to do the followings:
+  1. Manage all the products and orders through the admin dashboard,
+  2. Sign up for the first time and use the website as a customer, with password change functionality after first login.
+  3. Change their password for future security
+  4. Process an order, by checking customers transactions and processing shipments
+  5. View, add, delete and update customers’ details
+  6. Effectively operate the inventory management system
+  7. To search, filter and view the status of selected products and orders
+  8. To add, edit or remove products to/from the inventory through the website.
+  9. Initiate and process an incoming order in a friendly way. Following this entry, the stock level will be automatically updated.
+      
+- Customer accounts are able to do the followings:
+  1. sign up for the first time and use teh website as a customer, with password change functionality after first login
+  2. change their password for future security.
+  3. search and filter products by names of categories and/or by price range.
+  4. place an order, which submits their basket and registers it as an order in the database, along with the total price(dummy order)
+  5. return a product which they have already purchased in previous orders
+  6. add, update, or remove items to/from their basket.
+  7. view, add, delete and update their personal information
+  8. check the status of their past orders
+  9. rate and review individual products and the overall service provided by the website.
+ 
+
+<h2>Home Page</h2>
+![image](https://github.com/Shecklock/Team-38/assets/84926502/4ded4c13-9f92-412b-b587-98e8ae39db8b)
+
+In our home page, all the product was listed in this page with a Buy Now button, which will bring you to the product details page
+
+
+
+
 
 <h2>Website Development record</h2>
 
@@ -43,3 +76,4 @@ Now the function is working perfect and fine.
 07/12/2023
 Futher developmet was made, html files from front end was converted to lade templates for the laravel framework. Home page is linked to the database so that it show any products uploaded by the admin.
 
+For more development record please visit the trello board: https://trello.com/b/WHEj4KB6
