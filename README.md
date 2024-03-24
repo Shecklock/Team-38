@@ -8,7 +8,7 @@
 - MattBrian22 = 220330231 Matthew Tahir<br>
 - umar-ahmad-astonuni = 220189606 umar ahmad<br>
 - RickyNandhra = 220076203 Ricky Nandhra<br>
-- Uzzy-A633 = Usmaan Amar<br>
+- Uzzy-A633 = 210140437 Usmaan Amar<br>
 
 <h2>Environment used</h2>
 - VS code<br>
