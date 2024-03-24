@@ -1,3 +1,101 @@
+
+/* General Styles */
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Product Details Styles */
+.product-details h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.label-stock {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.bg-success {
+    background-color: #28a745; /* Green */
+}
+
+.bg-warning {
+    background-color: #ffc107; /* Yellow */
+}
+
+.bg-danger {
+    background-color: #dc3545; /* Red */
+}
+
+.productPrice {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.add-to-basket-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-to-basket-button:hover {
+    background-color: #0056b3;
+}
+
+/* Review Submission Styles */
+.reviews {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    margin-bottom: 20px;
+}
+
+.star-rating .star {
+    cursor: pointer;
+    color: #ffc107; /* Star color */
+}
+
+.star-rating .star.filled {
+    color: #e6a115; /* Filled star color */
+}
+
+/* Customer Reviews Styles */
+.review {
+    background-color: #f8f8f8;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.review h4 {
+    margin-top: 0;
+}
+
+.review-text p {
+    color: #333;
+    font-size: 14px;
+}
+
+.previous-star-rating .star {
+    color: #ffc107;
+    margin-right: 5px;
+}
+
 /* Product Details Page Layout */
 .product-view-container {
     text-align: left; /* Aligning content to the left for a more standard e-commerce product view */
@@ -56,3 +154,4 @@
     background-color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+

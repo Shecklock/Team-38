@@ -29,5 +29,15 @@ class HomeController extends Controller
              
              return view('home', ['products' => $products]);
          }
-     }
+
+         public function filterByPrice(Request $request)
+        {
+             $minPrice = $request->input('min_price');
+             $maxPrice = $request->input('max_price');
+
+             $products = Product::whereBetween('price', [$minPrice, $maxPrice])->get();
+
+             return view('home', ['products' => $products]);
+        }
+      }
      

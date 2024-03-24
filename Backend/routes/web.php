@@ -14,6 +14,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\CodeGeneratorController;
 
 
 
@@ -31,9 +32,12 @@ use App\Http\Controllers\Admin\OrdersController;
 */
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    return redirect()->route('home');
+});
 
 // Sending admins to the dashboard if they input the wrong URL
 Route::get('/admin', function() {
@@ -48,8 +52,7 @@ Route::get('/account', function () {
 })->name('account');
 
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/filter', [HomeController::class, 'filterByPrice'])->name('filter.by.price');
 // Route::get('/products/{id}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView'])->name('productView');
 Route::get('/products/show/{product}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView'])->name('productshow');
 
@@ -84,6 +87,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('orders/edit/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('admin.orders.edit');
     Route::match(['put'], 'orders/update/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('admin.orders.update');
 
+
+    Route::resource('codes', App\Http\Controllers\Admin\RegistrationCodeController::class)->names('admin.code');
+
 });
 
 Route::get('/search', [App\Http\Controllers\Admin\ProductController::class, 'search']);
@@ -99,6 +105,8 @@ Route::get('/about-us', function () {
 // Basket routes
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+Route::post('/add-to-basket/{productId}', [BasketController::class, 'addItem'])->name('add-to-basket');
+
 
 Route::get('/contact-us', function () { //URL LINK
     return view('contact_us'); //File Name

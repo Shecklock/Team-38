@@ -258,14 +258,7 @@ hr{
     box-shadow: 0 10px 20px rgba(0,0,0,0,3);
 
 }
-.pro{
-    padding:10px 10%;
-    border-color:grey;
-    border:solid;
-    border-radius: 30px;
-    width:100%;
-    margin-bottom: 20px;
-}
+
 .products .card{
     width:270px;
     background-color: white;
@@ -312,18 +305,36 @@ hr{
     font-weight: bold;
 }
 
-.products .card .box .btn{
-    font-size:13px;
-    color:black;
-    background-color: lightgreen;
-    border:solid;
-    border-color: black;
-    border-radius: 10px;
-    width:50px;
+
+
+/* Style for the "BUY NOW!" button */
+.productButton {
+    background-color: #4a4d4a; /* Matching the overall theme's button color */
+    color: white;
+    border: 2px solid transparent; /* Adds a border that matches the button color for a solid look */
+    padding: 12px 24px; /* Slightly larger padding for a more prominent button */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Slightly larger font size for better readability */
+    border-radius: 15px; /* Increased border-radius for rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
-.products .card .box .btn:hover{
-    cursor:pointer;
-    background-color: #79AC78;
-    color:white;
+
+.productButton a {
+    color: #fff; /* Ensure link text is white */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Block display for full width clickable area */
 }
+
+
+.productButton:hover, .productButton:focus {
+    background-color: ; /* Darker shade on hover/focus for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover/focus for depth */
+    border-color: #000000; /* Border color changes to match the hover background */
+    color: white; /* Ensures text color remains white for readability */
+}
+
 
