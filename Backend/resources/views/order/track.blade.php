@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking</title>
-    <link href="{{ asset('assets/css/basket.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/track.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/155df07167.js" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/basket.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 </head>
+
 <body>
+@include('header')
+<div class="track-page">
 <div class="container">
     <span class="big-circle"></span>
     <div class="form_basket">
@@ -30,6 +34,8 @@
             @endif
         </div>
     </div>
+    <a href="{{ route('profile.show') }}" class="btn">Back to Account</a>
+</div>
 </div>
 @include('footer')
 </body>

@@ -15,7 +15,7 @@
     <div class="checkout-container">
         <span class="big-circle"></span>
 
-        <h3 class="title">Confirm Your Order</h3>
+        <h3 class="title">Confirming Your Order</h3>
         <div class="Confirm Items">
             <ul>
             <div class="checkout-info">
@@ -39,7 +39,13 @@
                 <p>{{ $item['name'] ?? 'Unknown' }}</p>
                 <p>£{{ $item['price'] ?? 'Unknown' }}</p>
                 <p>Subtotal: £{{ ($item['price'] ?? 0) * ($item['quantity'] ?? 1) }}</p>
-
+                {{-- <p>
+                    @php
+                    var_dump($item)
+                    @endphp
+                </p> --}}
+                
+            
                     
                 </div>
                 @php
@@ -68,6 +74,12 @@
             @csrf
             <button type="submit">Confirm Order</button>
         </form>
+         <button class="btn_basket" onclick="continueShopping()">Continue to Shopping</button>
+            <script>
+                function continueShopping() {
+                    window.location.href = "{{ route('home') }}"; 
+                }
+            </script>
     </div>
 
     <footer>

@@ -44,35 +44,39 @@
 
         <div class="form-group">
             <label for="image">Product Image</label>
-            <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg, image/gif">
+            <input type="file" name="image" class="form-control" accept="image/*">
             @error('image')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
-            @if (isset($product) && $product->image)
-                <img src="{{ asset('admin/images/' . $product->image) }}" alt="Product Image">
-            @endif
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <input type="double" name="Price" class="form-control">
+                <input type="text" name="Price" class="form-control" placeholder="Price">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
-    <div class="form-group">
-        <strong>Category:</strong>
-        <select name="CategoryID" class="form-control">
-            <option value="">Select a category</option>
-            @foreach($categories as $category)
-                <option value="{{ $category->CategoryID }}">{{ $category->CategoryName }}</option>
-            @endforeach
-        </select>
-    </div>
-</div>
+            <div class="form-group">
+                <strong>Stock Quantity:</strong>
+                <input type="number" name="StockQuantity" class="form-control" placeholder="Stock Quantity">
+            </div>
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Category:</strong>
+                <select name="CategoryID" class="form-control">
+                    <option value="">Select a category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->CategoryID }}">{{ $category->CategoryName }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>

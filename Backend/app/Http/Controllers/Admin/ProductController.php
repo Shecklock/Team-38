@@ -12,12 +12,22 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
+    public function index(Request $request)
+{
+    $searchTerm = $request->query('search');
+
+    if (!empty($searchTerm)) {
+        $products = Product::where('ProductName', 'LIKE', '%' . $searchTerm . '%')
+                            ->orWhere('Description', 'LIKE', '%' . $searchTerm . '%')
+                            ->latest()->get();
+    } else {
         $products = Product::latest()->get();
-        return view('admin.products.index', compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    return view('admin.products.index', compact('products'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+}
+
 
     public function create()
     {
@@ -34,6 +44,7 @@ class ProductController extends Controller
         'image' => 'required|image',
         'Price' => 'required',
         'CategoryID' => 'required',
+        'StockQuantity' => 'required',
     ]);
 
     try {
@@ -43,6 +54,7 @@ class ProductController extends Controller
         $product->Description = $request->input('Description');
         $product->Price = $request->input('Price');
         $product->CategoryID = $request->input('CategoryID');
+        $product->StockQuantity = $request->input('StockQuantity');
 
         // Handle image upload
         if ($request->hasFile('image')) {
@@ -81,6 +93,7 @@ class ProductController extends Controller
         'Price' => 'required|numeric',
         'CategoryID' => 'required|exists:categories,CategoryID',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'StockQuantity' => 'required|numeric',
     ]);
 
     $product = Product::find($id);
@@ -88,6 +101,7 @@ class ProductController extends Controller
     $product->Description = $request->input('Description');
     $product->Price = $request->input('Price');
     $product->CategoryID = $request->input('CategoryID');
+    $product->StockQuantity = $request->input('StockQuantity');
 
     // Check if a new image is uploaded
     if ($request->hasFile('image')) {

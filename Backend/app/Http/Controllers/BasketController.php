@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use App\Models\Product; // Import the Product model
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Size;
+use Illuminate\Support\Facades\DB;
+
+
 
 class BasketController extends Controller
 {
@@ -26,22 +30,43 @@ class BasketController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function addItem($productId)
+    public function addItem($productId, Request $request)
     {
         $basket = session()->get('basket', []); // Retrieve basket from session or initialize as an empty array
     
         // Fetch product details using $productId (replace this with your actual logic)
         $product = Product::find($productId);
     
+    	// Logic to find what size the user selected
+    	$sizeID = $request->input('size');
+    	$size = Size::find($sizeID);
+    	if ($size) { $selectedSize = $size->size; }
+    	else { $selectedSize = "Unknown"; }
+    
         // Check if the product details are valid before adding to the basket
         if ($product) {
             // Ensure that the product details have the expected structure
-            $basket[] = [
+        $foundInBasket = false;
+        foreach ($basket as $index => $item) {
+            if ($item['product_id'] == $productId) {
+                $basket[$index]['quantity'] += 1; // Increment the quantity
+                $foundInBasket = true;
+                break;
+            }
+        }
+        
+        if (!$foundInBasket) {
+
+        $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
-                'price' => $product->Price, // Replace 'Price' with the correct field from your product details
+                'size' => $selectedSize,
+		        'price' => $product->Price, // Replace 'Price' with the correct field from your product details
                 'image' => $product->image,
+                'product_id' => $product->ProductID,
+                'quantity' => 1,
                 // Add more necessary keys and values
             ];
+        }
     
             // Store the updated basket in the session
             session()->put('basket', $basket);
@@ -107,37 +132,21 @@ class BasketController extends Controller
 
         return redirect()->back();
         }
+
         public function checkout(Request $request)
 {
     $basketItems = session()->get('basket', []);
-    
-    // Ensure $basketItems is not empty
-    if (empty($basketItems)) {
-        return redirect()->route('basket')->with('error', 'No items in the basket!');
-    }
-    
-    // Create a new order
-    $order = new Order();
-    $order->CustomerID = auth()->user()->id; // Assuming you have user authentication
-    $order->OrderDate = now();
-    $order->TotalAmount = array_sum(array_column($basketItems, 'price')); // Calculate total amount
-    $order->Status = 'Pending'; // Initial status
-    $order->save();
+        
+        if (session()->has('basket') && count(session('basket')) > 0) {
+        // Proceed with the checkout process
 
-    // Save order details
-    foreach ($basketItems as $item) {
-        $orderDetail = new OrderDetail();
-        $orderDetail->OrderID = $order->OrderID;
-        $orderDetail->ProductID = $item['product_id']; // Assuming you have product IDs in the basket
-        $orderDetail->Quantity = $item['quantity']; // Assuming you have quantity in the basket
-        $orderDetail->Price = $item['price'];
-        $orderDetail->save();
+    } else {
+        // Redirect back to the basket page with a warning message
+        return redirect()->route('basket')->with('warning', 'You don\'t have anything in your basket. Please add something and try again.');
     }
 
-    // Clear the basket after checkout
-    session()->forget('basket');
+    // Pass basket items to the checkout view
+    return view('checkout', ['basketItems' => $basketItems]);
+}
 
-    // Redirect the user to order tracking page
-    return redirect()->route('order.track', ['order_id' => $order->OrderID])->with('success', 'Order placed successfully!');
-  }
 }

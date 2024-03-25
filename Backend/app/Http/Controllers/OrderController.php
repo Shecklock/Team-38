@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -22,11 +23,14 @@ class OrderController extends Controller
     return view('order.track', ['orders' => $orders]);
 }
 
-    public function show($id)
-    {
-        $order = Order::with('orderDetails.product')->findOrFail($id); // eager load order details and related products
-        return view('order.details', compact('order'));
-    }
+public function show($id)
+{
+    // Eager load products associated with the order along with pivot data
+    $order = Order::with('products')->findOrFail($id);
+
+    // Pass the order to the view
+    return view('order.order-details', compact('order'));
+}
 
 }
 

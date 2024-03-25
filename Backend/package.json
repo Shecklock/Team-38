@@ -8,6 +8,12 @@
     "devDependencies": {
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
+        "parcel": "^2.6.2",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@cubejs-client/core": "^0.31.0",
+        "@types/chart.js": "^2.9.41",
+        "chart.js": "^4.4.2"
     }
 }

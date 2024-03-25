@@ -1,134 +1,157 @@
 
-
-
-
-
-/* Product View */
-.product-view .product-name {
-    font-size: 24px;
-    color: #2874f0;
+/* General Styles */
+body {
+    background-color: #f4f4f4;
 }
 
-.product-view .product-name .label-stock {
-    font-size: 13px;
-    padding: 4px 13px;
+.container {
+    max-width: 1200px;
+}
+
+/* Product Details Styles */
+.product-details h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.label-stock {
+    display: inline-block;
+    padding: 5px 10px;
     border-radius: 5px;
+    font-weight: bold;
     color: #fff;
-    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
-    float: right;
+    margin-bottom: 10px;
 }
 
-.product-view .product-path {
-    font-size: 13px;
-    font-weight: 500;
-    color: #252525;
-    margin-bottom: 16px;
+.bg-success {
+    background-color: #28a745; /* Green */
 }
 
-.product-view .selling-price {
-    font-size: 26px;
-    color: #000;
-    font-weight: 600;
-    margin-right: 8px;
+.bg-warning {
+    background-color: #ffc107; /* Yellow */
 }
 
-.product-view .original-price {
-    font-size: 18px;
-    color: #937979;
-    font-weight: 400;
-    text-decoration: line-through;
+.bg-danger {
+    background-color: #dc3545; /* Red */
 }
 
-.product-view .btn1 {
-    border: 1px solid;
-    margin-right: 3px;
-    border-radius: 0px;
-    font-size: 14px;
-    margin-top: 10px;
+.productPrice {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.product-view .btn1:hover {
-    background-color: #2874f0;
-    color: #fff;
-}
-
-.product-view .input-quantity {
-    border: 1px solid #000;
-    margin-right: 3px;
-    font-size: 12px;
-    margin-top: 10px;
-    width: 58px;
-    outline: none;
-    text-align: center;
-}
-
-.productImg {
-    width: 100%;
-    height: auto;
-}
-
-.review-name {
+.add-to-basket-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
 }
 
-.review-description {
-    font-size: 14px;
+.add-to-basket-button:hover {
+    background-color: #0056b3;
 }
 
-#review-form input[type="text"],
-#review-form textarea {
-    max-width: 250px; /* Adjust this value as needed */
-    display: block;
-    width: 100%;
+/* Review Submission Styles */
+.reviews {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    margin-bottom: 20px;
 }
 
 .star-rating .star {
-    color: #ddd; /* Default star color */
     cursor: pointer;
-    font-size: 24px;
-    transition: color 0.25s;
-}
- 
-.previous-star-rating{
-    color: #ddd; /* Default star color */
-    cursor: pointer;
-    font-size: 24px;
-    transition: color 0.25s;
+    color: #ffc107; /* Star color */
 }
 
 .star-rating .star.filled {
-    color: #fd4; /* Filled star color */
+    color: #e6a115; /* Filled star color */
 }
 
-.previous-star-rating .star.filled {
-    color: #fd4; /* Filled star color */
+/* Customer Reviews Styles */
+.review {
+    background-color: #f8f8f8;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .review h4 {
-    text-align: center; /* Center-aligns reviewer's name */
+    margin-top: 0;
 }
 
-.previous-star-rating {
-    text-align: center; /* Center-aligns the star rating */
-    /* Additional styles for star rating as needed */
+.review-text p {
+    color: #333;
+    font-size: 14px;
 }
 
-.review-col {
-    margin-bottom: 20px; /* Space between rows */
-    padding-right: 15px; /* Space on the right side of each column */
-    padding-left: 15px;  /* Space on the left side of each column */
+.previous-star-rating .star {
+    color: #ffc107;
+    margin-right: 5px;
 }
 
-.review-text {
-    max-height: 150px; /* Adjust the max height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-    word-wrap: break-word; /* Breaks long words if necessary */
-    margin-bottom: 10px; /* Space between text and stars */
-    text-align: center;
+/* Product Details Page Layout */
+.product-view-container {
+    text-align: left; /* Aligning content to the left for a more standard e-commerce product view */
+    margin: 30px auto;
+    max-width: 1200px; /* Wider container to accommodate product image, details, and reviews side by side */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex; /* Using flex to layout the image and details side by side */
+    gap: 20px; /* Space between product image and details */
 }
 
-.CustomerRev{
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 35px;
+.product-image-container {
+    flex-basis: 30%; /* Limiting image container width, similar to Amazon's product detail page */
+    text-align: center; /* Centering the product image */
 }
+
+.product-image-container img {
+    max-width: 100%; /* Adjusting max width to control the size of the product image */
+    height: auto; /* Maintaining aspect ratio */
+    border-radius: 8px; /* Adding a slight border radius to the image for a softer look */
+}
+
+/* Product Details and Reviews */
+.product-details, .reviews-section {
+    flex-basis: 70%; /* Allocating the rest of the space to details and reviews */
+}
+
+.product-details h1, .product-details span, .product-details p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Add to Basket Button Styling */
+.add-to-basket-container {
+    display: flex;
+    justify-content: center; /* Centering the button */
+    margin-top: 20px;
+}
+
+.add-to-basket-button {
+    background-color: #4a4d4a; /* Matching the account page button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjusting padding to match the size of the original button */
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-to-basket-button:hover {
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

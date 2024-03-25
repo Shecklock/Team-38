@@ -389,16 +389,6 @@ html {
     cursor: pointer;
   }
   
-  footer {
-    display: flex;
-  }
-  
-  .footerLeft {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-  }
   
   .fMenuTitle {
     font-size: 16px;
@@ -413,14 +403,6 @@ html {
     margin-bottom: 10px;
     color: gray;
     cursor: pointer;
-  }
-  
-  .footerRight {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
   
   .fInput {
@@ -539,23 +521,7 @@ html {
       padding: 50px;
     }
   
-    footer{
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footerLeft{
-      padding: 20px;
-      width: 90%;
-    }
-  
-    .footerRight{
-      padding: 20px;
-      width: 90%;
-      align-items: center;
-      background-color: whitesmoke;
-    }
-  
+    
     .payment{
       width: 90%;
       padding: 20px;

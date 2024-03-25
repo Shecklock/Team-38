@@ -1,0 +1,17 @@
+/* Review Section */
+.reviews-section {
+    margin-top: 30px; /* Adding space between product details and reviews */
+}
+
+.review-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.review-item h4, .review-item p {
+    margin: 10px 0;
+    color: #333;
+}
