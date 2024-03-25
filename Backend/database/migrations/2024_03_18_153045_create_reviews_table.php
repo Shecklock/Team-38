@@ -12,7 +12,7 @@ return new class extends Migration
         if (!Schema::hasTable('reviews')) {
             Schema::create('reviews', function (Blueprint $table) {
                 $table->id();
-                $table->unsignedInteger('product_id'); // Changed to unsignedInteger to match ProductID in products table
+                $table->unsignedBigInteger('product_id'); // Changed to unsignedInteger to match ProductID in products table
 
                 $table->string('reviewer_name');
                 $table->text('review_text');
