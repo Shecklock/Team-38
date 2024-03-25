@@ -19,9 +19,8 @@ use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\CodeGeneratorController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\ServiceReviewController;
-use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ProdctSizeController;
-
+use App\Http\Controllers\Admin\CustomerAccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,10 +99,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 	Route::get('orders/refund', [App\Http\Controllers\Admin\OrdersController::class, 'refund'])->name('admin.orders.refund');
 	Route::get('orders/return/{OrderID}', [App\Http\Controllers\Admin\OrdersController::class, 'returnOrder'])->name('admin.orders.return');
     Route::resource('codes', App\Http\Controllers\Admin\RegistrationCodeController::class)->names('admin.code');
-	Route::get('/users', [UsersController::class, 'index'])->name('admin.users.index');
-	Route::get('/users/{user}', [UsersController::class, 'show'])->name('admin.users.show');
-	Route::get('/users/{user}/edit', [UsersController::class, 'edit'])->name('admin.users.edit');
-	Route::put('/users/{user}', [UsersController::class, 'update'])->name('admin.users.update');
+	Route::get('/users', [App\Http\Controllers\Admin\CustomerAccountController::class, 'index'])->name('admin.users.index');
+	Route::get('/users/{user}', [App\Http\Controllers\Admin\CustomerAccountController::class, 'show'])->name('admin.users.show');
+	Route::get('/users/{user}/edit', [App\Http\Controllers\Admin\CustomerAccountController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/admin/users/{id}', [App\Http\Controllers\Admin\CustomerAccountController::class, 'update'])->name('admin.users.update');
 
 });
 

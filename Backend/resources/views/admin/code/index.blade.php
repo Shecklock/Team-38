@@ -10,7 +10,7 @@
                 <th>Code</th>
                 <th>Expires At</th>
                 <th>Used</th>
-                <th>Actions</th>
+        
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                 <td>{{ $code->code }}</td>
                 <td>{{ $code->expires_at }}</td>
                 <td>{{ $code->used ? 'Yes' : 'No' }}</td>
-                <td><a href="{{ route('admin.code.show', $code->id) }}">View</a></td>
+            
             </tr>
             @endforeach
         </tbody>
