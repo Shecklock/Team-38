@@ -65,7 +65,32 @@ Admin and Normal User
   8. check the status of their past orders
   9. rate and review individual products and the overall service provided by the website.
  
+<h2>Application usage</h2>
 
+Welcome to our comprehensive application walkthrough, designed to provide you with a detailed overview of the user journey, from exploring products to placing an order, and the administrative functionalities that keep our platform running smoothly.
+
+<h4>Navigating the Platform</h4>
+Upon landing on our home page, you'll be greeted with a curated selection of products, showcasing five items from each of our main categories, providing a glimpse into the variety we offer. The navigation bar at the top is your gateway to the broader product range, equipped with filters for names and categories, ensuring you find exactly what you're looking for with ease.
+
+<h4>Discovering Products</h4>
+When you venture into the product page, a wealth of options unfolds. Here, an additional filter bar allows you to refine your search further by price range, category, or product name. Each product is represented by an image that, when clicked, along with the "Buy Now" button, takes you to a detailed product page. This page is where the magic happens: you can select sizes, check stock availability, read reviews from other customers, and contribute your own insights and ratings.
+
+<h4>Making a Purchase</h4>
+Your shopping journey continues as you add items to your basket, where quantities can be adjusted simply by entering your desired number and updating it. Ready to finalize your purchase? The "Proceed to Checkout" button will lead you to the order confirmation page. Here, you can review your order and choose to "Pay Now" or "Pay Later," keeping in mind that all transactions are simulated for a smooth experience.
+
+<h4>Account Management</h4>
+Creating an account is a gateway to additional functionalities. Once registered, you can update your personal details, such as your address and phone number. For security reasons, email changes are reserved for admin intervention.
+
+<h4>Tracking and Managing Orders</h4>
+After placing an order, you can monitor its progress and, if necessary, opt to "Pay Now" for any orders designated for later payment directly from the order details page. This ease of management extends to order cancellation and returns, with limitations based on the shipping status to ensure a seamless process.
+
+<h4>Admin Capabilities</h4>
+Administrators have a bird's-eye view of the platform through the admin dashboard, displaying the latest orders and inventory statuses. Managing orders is straightforward, with the ability to update order statuses affecting inventory levels automatically. The product management system in the backend serves as the control center for inventory, allowing admins to adjust stock levels and handle returns efficiently.
+
+<h4>Invitation Codes and User Management</h4>
+Admins can generate time-sensitive invitation codes for new admin registrations, adding a layer of exclusivity and security. The customer details section offers comprehensive filters for managing user accounts, from viewing detailed profiles to editing information as needed.
+
+This walkthrough encapsulates the seamless integration of front-end usability with back-end management, ensuring both our users and administrators have a smooth, efficient experience on our platform.
 
 <h2>Website Development record</h2>
 
