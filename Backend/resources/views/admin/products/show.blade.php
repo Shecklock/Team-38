@@ -68,18 +68,30 @@
                     	</thead>
                     	<tbody>
                     		@foreach($product->sizes as $size)
-                    			<tr>
-                    				<td>{{ $size->size }}</td>
-                    				<td>{{ $size->pivot->quantity }}</td>
-                    				@if($size->pivot->quantity == 0)
-                    					<td>Out of stock</td>	
-									@elseif($size->pivot->quantity <= 10)
-                    					<td>Low stock</td>	
-                    				@else
-                    					<td>High stock</td>	
-                    				@endif
-                    			</tr>
-                    		@endforeach
+<tr>
+    <td>{{ $size->size }}</td>
+    <form action="{{ route('admin.products.updateStock', [$product->ProductID, $size->id]) }}" method="POST">
+        @csrf
+        @method('PATCH')
+        <td>
+            <input type="number" name="quantity" value="{{ $size->pivot->quantity }}" class="form-control" min="0">
+        </td>
+        <td>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </td>
+    </form>
+    <td>
+        @if($size->pivot->quantity == 0)
+            Out of stock
+        @elseif($size->pivot->quantity <= 10)
+            Low stock
+        @else
+            High stock
+        @endif
+    </td>
+</tr>
+@endforeach
+
                     	</tbody>
 					</table>
                 </div>
