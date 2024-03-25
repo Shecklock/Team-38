@@ -1,0 +1,14 @@
+  function addToBasket(productID) {
+    console.log("Adding product to basket:", productID);
+}
+
+        </script>
+
+<footer>
+    <p><a href="contact_us.html">Contact us</a>
+    <p><a href="about_us.html">About us </a>
+    <p><a href="faqs.html">FAQs</a><br><a href="https://www.instagram.com/">Instagram</a><br><a href="https://en-gb.facebook.com/">Facebook</a><br><a href="https://twitter.com/login">X</a></p>Address: Aston St, Birmingham B4 7ET</p>
+</footer>
+
+ </body>
+</html>
