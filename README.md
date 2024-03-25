@@ -23,7 +23,7 @@ This is a e-commerce website called "Sportify Pro Max"
 
 ![Spotify Pro Max](https://github.com/Shecklock/Team-38/assets/148438898/91812326-5bae-4a0f-841c-2fe11010bf7b)
 
-<h2>Website Walkthrough</h2>
+<h2>Website Account type</h2>
 
 <h3>User type</h3>
 Admin and Normal User
@@ -49,16 +49,21 @@ Admin and Normal User
   7. view, add, delete and update their personal information
   8. check the status of their past orders
   9. rate and review individual products and the overall service provided by the website.
- 
 
-<h2>Home Page</h2>
-![image](https://github.com/Shecklock/Team-38/assets/84926502/4ded4c13-9f92-412b-b587-98e8ae39db8b)
+<h2>How to run</h2>
+ When running the code, a database is needed, some of the migration are not fully functioning and our team decided in order to let things work, we modify th database directly in phpmyadmin. The sql of the database is included in the file u_220036506_ecommerce
 
-In our home page, all the product was listed in this page with a Buy Now button, which will bring you to the product details page
+ After database was made, you may need to modify the .env file as while for database connection, .env file of this project is under Team-38/Backend/
+ Modify the following part so that it matches your database:
 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=u_220036506_ecommerce
+DB_USERNAME= "your user name"
+DB_PASSWORD= "Your password"
 
-
-
+after connection of the database, the applciation shoulkd work fine
 
 <h2>Website Development record</h2>
 
