@@ -1,0 +1,35 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    // Start the first slide from the right into the view
+    slides[currentSlide].style.transform = 'translateX(0)';
+
+    const changeSlide = () => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+
+        // Ensure the next slide is ready to come in from the right
+        slides[nextSlide].style.transform = 'translateX(100%)';
+        // Trigger reflow to apply the transform reset for the next slide
+        slides[nextSlide].offsetWidth;
+
+        // Slide out the current slide to the left
+        slides[currentSlide].style.transform = 'translateX(-100%)';
+        
+        // Short delay to ensure the slides do not collide
+        setTimeout(() => {
+            // Bring the next slide in from the right
+            slides[nextSlide].style.transform = 'translateX(0)';
+            // Update the current slide index
+            currentSlide = nextSlide;
+        }, 50); // This short delay helps in syncing the exit and entry of slides smoothly
+
+    };
+
+    // Set an interval to change slides
+    setInterval(changeSlide, 4000); // Includes time for the slide to stay in view plus transition
+});
+
+    </script>
+</body>
+</html>
