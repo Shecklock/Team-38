@@ -71,16 +71,6 @@
         </select>
     </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Stock Quantity:</strong>
-                <input type="double" name="StockQuantity" value="{{ $product->StockQuantity }}" class="form-control" placeholder="StockQuantity">
-            </div>
-        </div>
-</div>
-
-
-
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
