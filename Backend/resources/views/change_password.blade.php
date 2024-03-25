@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
-    <title> Update Password </title>
+    <title> Change Password </title>
     <link rel="stylesheet" href="{{ asset('assets/css/about2.css') }}">
 </head>
 <body>
     <main>
         <div class="login-page">
-            <form class="form-container" method="POST" action="{{ route('forgot_update_password') }}">
+            <form class="form-container" method="POST" action="{{ route('change_update_password') }}">
                 @csrf
-                <h1> Forgot Password </h1>
+                <h1> Change Password </h1>
                 <div class="input-control">
-                    <p> Enter your email : </p>
-                    <input id="email" type="email" class="form-control" name="email" required>
+                    <p> Enter your old password : </p>
+                    <input id="old_password" type="password" class="form-control" name="old_password" required>
                 </div>
                 <div class="input-control">
                     <p> Enter your new password : </p>
@@ -26,7 +26,7 @@
                     <input id="confirm_password" type="password" class="form-control" name="confirm_password" required>
                 </div>
                 <br>
-                <button type="submit" class="submit">Update Password</button>
+                <button type="submit" class="submit">Change Password</button>
             </form>
             <!-- Success and failure conditions -->
             @if (session('success'))

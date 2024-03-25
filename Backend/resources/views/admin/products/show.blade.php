@@ -31,17 +31,57 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ $product->ProductName }}</h4>
-                    <p class="card-text">Product ID: {{ $product->ProductID }}</p>
-                    <p class="card-text">Description: {{ $product->Description }}</p>
-                    <p class="card-text">Price: ${{ $product->Price }}</p>
-                    <p class="card-text">Stock Quantity: {{ $product->StockQuantity }}</p>
-                    <p class="card-text">Category: {{ $product->category->CategoryName ?? 'Uncategorized' }}</p>
-                    <!-- Display other relevant product details -->
-                    @if($product->image)
-                        <img src="{{ asset('uploads/product/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
-                    @else
-                        <p>No Image Available</p>
-                    @endif
+                	<table class="table table-bordered">
+    					<thead class="thead-dark">
+        					<tr>
+								<th>Product ID</th>
+                    			<th>Description</th>
+                    			<th>Price (£)</td>
+                				<th>Category</td>
+                				<th>Image</td>
+                    		</tr>
+                    	</thead>
+                		<tbody>
+                			<tr>
+                				<td>{{ $product->ProductID }}</td>
+                				<td>{{ $product->Description }}</td>
+                				<td>{{ $product->Price }}</td>
+                				<td>{{ $product->category->CategoryName ?? 'Uncategorised' }}</td>
+                				<td>
+                					@if($product->image)
+                        				<img src="{{ asset('uploads/product/' . $product->image) }}" width="200px" height="200px" alt="Product Image">
+                    				@else
+                        				No Image Available
+                    				@endif
+                				</td>
+							</tr>
+                		</tbody>
+                	</table>
+					<br>
+                    <table class="table table-bordered">
+    					<thead class="thead-dark">
+        					<tr>
+								<th>Size</th>
+                    			<th>Stock Quantity</th>
+                    			<th>Stock level</td>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		@foreach($product->sizes as $size)
+                    			<tr>
+                    				<td>{{ $size->size }}</td>
+                    				<td>{{ $size->pivot->quantity }}</td>
+                    				@if($size->pivot->quantity == 0)
+                    					<td>Out of stock</td>	
+									@elseif($size->pivot->quantity <= 10)
+                    					<td>Low stock</td>	
+                    				@else
+                    					<td>High stock</td>	
+                    				@endif
+                    			</tr>
+                    		@endforeach
+                    	</tbody>
+					</table>
                 </div>
             </div>
         </div>

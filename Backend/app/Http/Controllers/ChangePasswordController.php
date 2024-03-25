@@ -4,24 +4,23 @@ namespace app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class PasswordController extends Controller
+class ChangePasswordController extends Controller
 {
     // Gets the relevant view 
-    public function forgot_password() {
-        return view('forgot_password');
+    public function change_password() {
+        return view('change_password');
     }
 
     // Validates all the information is present
     public function update_password(Request $request) {
         $request->validate([
-            'email'=>'required|email',
+            'old_password'=>'required',
             'new_password'=>'required',
             'confirm_password'=>'required'
         ]);
-        
+    
         // Ensures the passwords match
         if ($request->input('new_password') != $request->input('confirm_password')) {
             // Shows a message on screen
@@ -29,11 +28,12 @@ class PasswordController extends Controller
             return redirect()->back();
         } else {
 
-            // Uses the first matching email
-            $user = User::where('email', $request->email)->first();
-
-            // Updates the password
-            if ($user) {
+            // Gets the logged in user's details
+			$user = auth()->user();
+            $hashedPassword = $user->password;
+        
+        	// Updates the password
+            if (Hash::check($request->old_password, $hashedPassword)) {
                 $user->password = Hash::make($request->new_password);
                 $user->save();
                 // Success condition
@@ -41,7 +41,7 @@ class PasswordController extends Controller
                 return redirect()->route('login');
             } else {
                 // Failure condition
-                session()->flash('error', 'User not found.');
+                session()->flash('error', 'Old password is incorrect');
                 return redirect()->back();
             }
         }

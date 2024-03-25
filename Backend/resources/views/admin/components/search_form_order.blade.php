@@ -12,7 +12,7 @@
             <option value="Cancelled" {{ request()->query('status') == 'Cancelled' ? 'selected' : '' }}>Cancelled</option>
             <option value="Refunded" {{ request()->query('status') == 'Refunded' ? 'selected' : '' }}>Refunded</option>
             <option value="On hold" {{ request()->query('status') == 'On hold' ? 'selected' : '' }}>On hold</option>
-            <option value="Returned" {{ request()->query('status') == 'Returned' ? 'selected' : '' }}>Returned</option>
+            <option value="Returning" {{ request()->query('status') == 'Returning' ? 'selected' : '' }}>Returning</option>
         </select>
 
          <!-- Input for filtering by price -->

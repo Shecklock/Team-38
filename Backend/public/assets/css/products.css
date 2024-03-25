@@ -337,4 +337,36 @@ hr{
     color: white; /* Ensures text color remains white for readability */
 }
 
+/* Style for the filter form */
+.filter-form {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Center form items horizontally */
+  padding: 20px; 
+  border-radius: 10px; 
+}
 
+/* Style for the filter input fields */
+.filter-input {
+  height: 30px;
+  width: 120px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+/* Style for the filter button */
+.filter-button {
+  background-color: #3498db; 
+  color: #fff; /* Text color */
+  border: none;
+  padding: 8px 20px; /* Adjust padding as needed */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.filter-button:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+}

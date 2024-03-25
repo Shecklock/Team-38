@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrdersFormRequest;
+use App\Models\Size;
+
 
 class OrdersController extends Controller
 {
@@ -65,6 +67,10 @@ class OrdersController extends Controller
         $order = Order::findOrFail($order);
         $input = $request->all();
         $order->update($input);
+    
+        if ($input['Status'] == 'Shipped') {
+        $order->decreaseStock();
+    }
         return redirect()->route('admin.orders.index')->with('success', 'Order updated successfully');
     }
 
@@ -76,4 +82,26 @@ class OrdersController extends Controller
         // Pass the order details to the view
         return view('order-details', ['order' => $order, 'details' => $order->orderDetails]);
     }
+	
+	public function refund() {
+		$orders = Order::where(function ($query) {
+        			$query->where('Status', '=', 'refunded')
+              		->orWhere('Status', '=', 'returning');
+    	})->get();    
+    
+    return view('admin.orders.refund', compact('orders'));
+    }
+
+	public function returnOrder($orderID) {
+		$order = Order::findOrFail($orderID);
+    	$order->Status = 'Refunded';
+    	$order->save();
+    	
+    	$order->increaseStock();
+    	return redirect()->back();
+    }
+
+	
+
+
 }

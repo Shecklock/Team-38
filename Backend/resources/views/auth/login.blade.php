@@ -11,9 +11,8 @@
         <div class="checkout-info">
             <p class="subhead">First Time Shopping in Our Store?</p>
             <a href="{{ route('register') }}" class="reg">Register Here</a>
-            <a href="{{ route('password.request') }}" class="fp">Forgot Password?</a>
+            <a href="{{ route('forgot_password') }}" class="fp">Forgot Password?</a>
         </div>
-
 
         <div class="checkout-form">
             <form method="POST" action="{{ route('login') }}" autocomplete="off">
@@ -29,46 +28,6 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
-<body>
-    
-    <main>
-        <div class ="login-page">
-        <form class="form-container" method="POST" action="{{ route('login') }}">
-            @csrf
-            <h1> Login </h1>
-            <div class = "input-control">
-            <p> Enter your email : </p><input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-        <div class ="input-control">
-            <p> Enter your password : </p><input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"><br>
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-            <br><button type ="submit" class = "submit"> login </a></button><br>
-            <p> First time shopping in our store? </p><br><ul><li><a href ="register">Register here</a></ul></li>
-            <label>
-                <ul>
-                    <li><a href ="{{route ('forgot_password')}}">Forgot password</a></li>
-                </ul>
-            </label>
-            </label>
-            </form>
-                    </div> 
-            
-        </div>
-                    </div>
-            </div>
-        </div>
-
                 </div>
 
                 <div class="input-container">
@@ -87,17 +46,4 @@
         </div>
     </div>
 </div>
-
 @include('footer')
-
-        </div>
-    </div>
-        </section>
-    </main>
-    <footer>
-        @include('footer')       
-    </footer>
-</body>
-</html>
-@endsection
-

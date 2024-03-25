@@ -67,4 +67,20 @@ class LoginController extends Controller
     {
         return redirect('/'); // Redirect to the home page after logging out
     }
+    
+    /**
+     * Get the failed login response instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([
+                $this->username() => 'Your credentials just entered are not correct, please try again.',
+            ]);
+    }
+
 }

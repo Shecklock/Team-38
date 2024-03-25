@@ -17,6 +17,8 @@
                 <li class="nav-item"> <a class="nav-link" href="{{route('products.index') }}">Products</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('admin.category.index') }}">Categories</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('admin.orders.index') }}">Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('admin.orders.refund') }}">Refunds</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('admin.code.index') }}">Invitation Code</a></li>
               </ul>
             </div>
           </li>

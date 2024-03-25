@@ -49,4 +49,14 @@ class User extends Authenticatable
     return $this->role_as == 1; // Check if role_as is 1 (admin)
 
     }
+    
+    public function address()
+    {
+        return $this->hasOne(Address::class, 'user_id');
+    }
+
+    public function phone()
+    {
+        return $this->hasOne(Phone::class, 'user_id');
+    }
 }

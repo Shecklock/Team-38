@@ -41,14 +41,13 @@ class BasketController extends Controller
     	$sizeID = $request->input('size');
     	$size = Size::find($sizeID);
     	if ($size) { $selectedSize = $size->size; }
-    	else { $selectedSize = "Unknown"; }
     
         // Check if the product details are valid before adding to the basket
-        if ($product) {
+        if ($product && $size) {
             // Ensure that the product details have the expected structure
         $foundInBasket = false;
         foreach ($basket as $index => $item) {
-            if ($item['product_id'] == $productId) {
+            if ($item['product_id'] == $productId && $item['size_id'] == $sizeID) {
                 $basket[$index]['quantity'] += 1; // Increment the quantity
                 $foundInBasket = true;
                 break;
@@ -59,10 +58,13 @@ class BasketController extends Controller
 
         $basket[] = [
                 'name' => $product->ProductName, // Replace 'ProductName' with the correct field from your product details
-                'size' => $selectedSize,
+                'size_id' => $sizeID,
+        		'size' => $selectedSize,
 		        'price' => $product->Price, // Replace 'Price' with the correct field from your product details
                 'image' => $product->image,
                 'product_id' => $product->ProductID,
+                'size' => $size->size, // Add the size name
+                'size_id' => $size->id,
                 'quantity' => 1,
                 // Add more necessary keys and values
             ];

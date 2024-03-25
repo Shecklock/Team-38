@@ -31,17 +31,22 @@ class Product extends Model
 
     public function orders(): HasMany
     {
-        return $this->hasMany(Order::class, 'CustomerID');
+        return $this->hasMany(Order::class, 'UserID');
     }
 
     public function order(){
         return $this->belongsToMany(Order::class, 'order_product', 'ProductID', 'OrderID')
-                ->withPivot('Quantity');
+                ->withPivot('Quantity', 'size_id');
     }
-    public function sizes()
-    {
-        return $this->belongsToMany(Size::class, 'product_sizes', 'product_id', 'size_id');
-    }
+    
+public function sizes()
+{
+    return $this->belongsToMany(Size::class, 'product_sizes', 'product_id', 'size_id')
+                ->withPivot('quantity'); // Make sure 'quantity' is lowercase here
+}
+
+
+
 
 
 }
