@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Size;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Log;
@@ -32,7 +33,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all(); // Fetch categories from the database
-        return view('admin.products.create', compact('categories'));
+         $sizes = Size::all(); // Fetch all sizes
+        return view('admin.products.create', compact('categories', 'sizes'));
     }
 
     public function store(Request $request)
@@ -44,7 +46,7 @@ class ProductController extends Controller
         'image' => 'required|image',
         'Price' => 'required',
         'CategoryID' => 'required',
-        'StockQuantity' => 'required',
+        'quantities' => 'required|array',
     ]);
 
     try {
@@ -54,7 +56,6 @@ class ProductController extends Controller
         $product->Description = $request->input('Description');
         $product->Price = $request->input('Price');
         $product->CategoryID = $request->input('CategoryID');
-        $product->StockQuantity = $request->input('StockQuantity');
 
         // Handle image upload
         if ($request->hasFile('image')) {
@@ -65,6 +66,11 @@ class ProductController extends Controller
         }
 
         $product->save();
+        foreach ($request->input('quantities') as $sizeId => $quantity) {
+            if ($quantity > 0) { // Only attach sizes with a specified quantity
+                $product->sizes()->attach($sizeId, ['Quantity' => $quantity]);
+            }
+        }
 
         return redirect()->route('products.index')->with('success', 'Product created successfully');
     } catch (\Exception $e) {
@@ -114,6 +120,13 @@ class ProductController extends Controller
         $filename = $file->getClientOriginalName(); // Consider renaming to avoid conflicts
         $file->move(public_path('uploads/product'), $filename);
         $product->image = $filename;
+    }
+    
+    if ($request->has('sizes')) {
+        foreach ($request->sizes as $sizeId => $value) {
+            $quantity = $request->quantities[$sizeId] ?? 0;
+            $product->sizes()->attach($sizeId, ['quantity' => $quantity]);
+        }
     }
 
     $product->save();
