@@ -1,0 +1,47 @@
+<div class="offer-banner" id="slider">
+        <div class="slides">
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+            <div class="slide active">Calling all students and NHS staff! 10% discount on all items</div>
+            <div class="slide">Discover the latest collections now!<br><a href="link-to-collections">Shop Now</a></div>
+            <div class="slide">Free shipping on all orders over £50</div>
+            <div class="slide">Check out our sale items!</div> 
+        </div>
+    </div>
+
+    <div class="main-image">
+        <img src="homepagemainimage.png" alt="Placeholder">
+    </div>
+    
+    <div class="top-picks">
+        <h2>Top Picks</h2>
+        <div class="top-picks-images">
+            <img src="productimagemenclothing.png" alt="Placeholder">
+            <img src="productimagementrainers.png" alt="Placeholder">
+            <img src="productimagekidsclothing.png" alt="Placeholder">
+            <img src="productimagetrainers2.png" alt="Placeholder">
+        </div>
+    </div>
+
+    <div class="wide-banner">
+        <img src="banner.png" alt="Wide Banner Placeholder">
+    </div>
+    
