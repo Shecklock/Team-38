@@ -109,4 +109,8 @@ Now the function is working perfect and fine.
 Futher developmet was made, html files from front end was converted to lade templates for the laravel framework. Home page is linked to the database so that it show any products uploaded by the admin.
 
 For more development record please visit the trello board: https://trello.com/b/WHEj4KB6
+
+<h2>Note that</h2>
+<br>Some of our migrations are failing to run, we made this issue clear throughout the lab sessions with one of the helpers (Jas), but everything we have tried has failed.
+
 Website was hosted and be linked on: https://220036506.cs2410-web01pvm.aston.ac.uk/Team-38/Backend/public/
