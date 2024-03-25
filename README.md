@@ -1,6 +1,6 @@
 <h1>Laravelle e-commerce Development Project</h1>
 
-<h2>Accounts</h2>
+<h2>Students participating in this project</h2>
 - SapnaKarsan = 220090438 Sapna Karsan<br>
 - Shecklock = 220036506 Ho Yin Siu<br>
 - Bashayer81 = 220036584 Bashayer Aljassim<br>
@@ -109,3 +109,4 @@ Now the function is working perfect and fine.
 Futher developmet was made, html files from front end was converted to lade templates for the laravel framework. Home page is linked to the database so that it show any products uploaded by the admin.
 
 For more development record please visit the trello board: https://trello.com/b/WHEj4KB6
+Website was hosted and be linked on: https://220036506.cs2410-web01pvm.aston.ac.uk/Team-38/Backend/public/
