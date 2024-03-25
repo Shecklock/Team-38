@@ -151,6 +151,19 @@ class ProductController extends Controller
 
     return view('search', compact('search', 'searchTerm'));
 }
+
+public function updateStock(Request $request, $productId, $sizeId)
+{
+    $product = Product::findOrFail($productId);
+    $quantity = $request->input('quantity', 0);
+
+    // Update the pivot table entry for the size and product
+    $product->sizes()->updateExistingPivot($sizeId, ['quantity' => $quantity]);
+
+    return back()->with('success', 'Stock quantity updated successfully.');
+}
+
+
 }
 
 

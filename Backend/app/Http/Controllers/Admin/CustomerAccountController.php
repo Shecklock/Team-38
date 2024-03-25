@@ -67,7 +67,7 @@ class CustomerAccountController extends Controller
     {
         $user = User::with(['address', 'phone'])->findOrFail($id);
 
-        return view('admin.Users.details', compact('user'));
+        return view('admin.Users.show', compact('user'));
     }
 
 public function update(Request $request, $id)
