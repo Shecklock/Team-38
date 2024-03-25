@@ -20,22 +20,6 @@
   
         <nav> 
             <!-- This code gets the product details from the database -->
-        <div class="product" id="product">
-            @forelse($search as $product)
-                <div class="productItem">
-                    <div class="productDetails">
-                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
-                        <h1 class="productTitle">{{ $product->ProductName }}</h1>
-                        <h2 class="productPrice">${{ $product->Price }}</h2>
-                        <p class="productDesc">{{ $product->Description }}</p>
-                        <button class="productButton">
-                            <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}">BUY NOW!</a>
-                            </button>                    
-                    </div>
-                </div>
-            @empty
-            @endforelse
-        </div>
     </nav>
 <!-- If there was no product found then it uses this code to display no products found -->
     <div id="NoSearchFound">
@@ -45,7 +29,24 @@
             <p>No products found.</p>
         @else
             {{-- Display your search results here --}}
-            @foreach($search as $product)
+            <div class="product" id="product">
+
+            @forelse($search as $product)
+                <div class="productItem">
+                    <div class="productDetails">
+                    <a href="{{ route('productshow', ['product' => $product] )}}">
+                    <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                    </a>
+                    <h1 class="productTitle">{{ $product->ProductName }}</h1>
+                    <h2 class="productPrice">£{{ $product->Price }}</h2>
+                    <p class="productDesc">{{ $product->Description }}</p>
+
+                    <a href="{{ route('productshow', ['product' => $product] )}}" class="productButton">BUY NOW!</a>                
+                    </div>
+                </div>
+            @empty
+            @endforelse
+        </div>@foreach($search as $product)
                 {{-- Your product display logic --}}
             @endforeach
 

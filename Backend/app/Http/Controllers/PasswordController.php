@@ -4,6 +4,7 @@ namespace app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
 class PasswordController extends Controller
@@ -20,7 +21,7 @@ class PasswordController extends Controller
             'new_password'=>'required',
             'confirm_password'=>'required'
         ]);
-
+        
         // Ensures the passwords match
         if ($request->input('new_password') != $request->input('confirm_password')) {
             // Shows a message on screen
@@ -45,4 +46,5 @@ class PasswordController extends Controller
             }
         }
     }
+
 }

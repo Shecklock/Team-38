@@ -1,85 +1,101 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Product Stock Report</h4>
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('admin.dashboard') }}" method="GET" class="mb-4">
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="text" class="form-control" name="search" placeholder="Search products..." value="{{ request('search') }}">
-                            </div>
-                            <div class="col">
-@if ($showWarning)
-    <div class="alert alert-warning">
-        Showing items that are low in stock or out of stock. Adjust the filters to refine your view.
-    </div>
-@endif
-<!-- Added onChange attribute to call handleFilterChange(this) -->
-<select name="filter" class="form-control" onchange="handleFilterChange(this)">
-    <option value="">All Products</option>
-    <option value="lowStock" {{ $filter == 'lowStock' ? 'selected' : '' }}>Low Stock</option>
-    <option value="outOfStock" {{ $filter == 'outOfStock' ? 'selected' : '' }}>Out of Stock</option>
-</select>
-                                <input type="hidden" name="all_products" id="all_products">
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-primary" type="submit">Filter</button>
-                            </div>
-                        </div>
-                    </form>
+<div class="container">
+    <form action="{{ route('admin.dashboard') }}" method="GET">
+        <select name="filter" onchange="this.form.submit()">
+            <option value="">Summary</option>
+            <option value="all" {{ $filter === 'all' ? 'selected' : '' }}>All Orders</option>
+            <option value="outgoing" {{ $filter === 'outgoing' ? 'selected' : '' }}>Outgoing Orders</option>
+            <option value="incoming" {{ $filter === 'incoming' ? 'selected' : '' }}>Incoming Orders</option>
+        </select>
+    </form>
 
-                    @if($stockItems->isNotEmpty())
-<!-- Place this before the table to debug -->
-                        <table class="table table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Product Name</th>
-                                    <th>Stock Quantity</th>
-									<th>Stock Level</th>
-                                </tr>
-                            </thead>
-                                @foreach($stockItems as $item)
-                                    <tr>
-                                        <td>{{ $item->ProductID }}</td>
-                                        <td>{{ $item->ProductName }}</td>
-                                        <td>{{ $item->StockQuantity }}</td>
-										<!-- if you have another way to do this feel free -->
-										@php
-											$stockLevel = "";
-											if($item->StockQuantity == 0) { $stockLevel = "Out of stock"; }
-                                            elseif($item->StockQuantity <= 10) { $stockLevel = "Low stock"; }
-                                            else { $stockLevel = "High stock"; }
-										@endphp
-										<td>{{ $stockLevel }}</td>
-                                    </tr>
-                                @endforeach
-                        </table>
-                    @else
-                        <div class="alert alert-warning">No items match the condition, please try again.</div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
+    @if($filter === 'all' || $filter === 'outgoing' || $filter === 'incoming')
+        <h2>{{ ucfirst($filter) }} Orders</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($orders as $order)
+                    <tr>
+                        <td>{{ $order->OrderID }}</td>
+                        <td>{{ $order->UserID }}</td>
+                        <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                        <td>{{ $order->Status }}</td>
+                        <td><a href="{{ route('orders.showMore', ['orderId' => $order->OrderID]) }}" class="btn btn-info btn-sm">View More</a></td>
+                    </tr>
+                @empty
+                    <tr><td colspan="5">No orders found.</td></tr>
+                @endforelse
+            </tbody>
+        </table>
+    @else
+        <div class="summaries">
+            <div class="outgoing-summary">
+    <h3>Recent Outgoing Orders</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>User ID</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($outgoingOrdersSummary as $order)
+                <tr>
+                    <td>{{ $order->OrderID }}</td>
+                    <td>{{ $order->UserID }}</td>
+                    <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                    <td>{{ $order->Status }}</td>
+                    <td>
+                        <a href="{{ route('orders.showMore', ['orderId' => $order->OrderID]) }}" class="btn btn-info btn-sm">View More</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 
-<script>
-    function handleFilterChange(select) {
-        var allProductsInput = document.getElementById('all_products');
-        if (select.value === '') {
-            allProductsInput.value = '1';
-        } else {
-            allProductsInput.value = '';
-        }
-        // Submit the form automatically when the filter changes
-        select.form.submit();
-    }
-</script>
+            
+            <div class="incoming-summary">
+    <h3>Recent Incoming Orders</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>User ID</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($incomingOrdersSummary as $order)
+                <tr>
+                    <td>{{ $order->OrderID }}</td>
+                    <td>{{ $order->UserID }}</td>
+                    <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                    <td>{{ $order->Status }}</td>
+                    <td>
+                        <a href="{{ route('orders.showMore', ['orderId' => $order->OrderID]) }}" class="btn btn-info btn-sm">View More</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+    @endif
+</div>
 @endsection

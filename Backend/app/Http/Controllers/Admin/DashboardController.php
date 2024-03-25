@@ -5,38 +5,33 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Size;
+use App\Models\Order;
+
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+     public function index(Request $request)
     {
-        $searchTerm = $request->input('search');
         $filter = $request->input('filter', '');
-        $allProducts = $request->input('all_products', false);
 
-        $query = Product::query();
+        $outgoingStatuses = ['processing', 'shipped', 'delivered'];
+        $incomingStatuses = ['pending', 'on hold', 'returning'];
 
-        if (!empty($searchTerm)) {
-            // Assuming 'ProductName' is correct; adjust if your column name is different, like 'name'
-            $query->where('ProductName', 'like', "%{$searchTerm}%");
+        // Fetch 5 newest outgoing and incoming orders for the dashboard summary
+        $outgoingOrdersSummary = Order::whereIn('Status', $outgoingStatuses)->orderBy('created_at', 'desc')->take(5)->get();
+        $incomingOrdersSummary = Order::whereIn('Status', $incomingStatuses)->orderBy('created_at', 'desc')->take(5)->get();
+
+        // Determine which set of orders to display based on the filter
+        if ($filter === 'outgoing') {
+            $orders = Order::whereIn('Status', $outgoingStatuses)->orderBy('created_at', 'desc')->get();
+        } elseif ($filter === 'incoming') {
+            $orders = Order::whereIn('Status', $incomingStatuses)->orderBy('created_at', 'desc')->get();
+        } else {
+            // If no filter or 'all', fetch all orders
+            $orders = Order::orderBy('created_at', 'desc')->get();
         }
 
-        if (!$allProducts) { // Only apply filters if 'all_products' is not set
-            switch ($filter) {
-                case 'lowStock':
-                    $query->where('stockQuantity', '<=', 10); // Assuming your column is 'stock_quantity'
-                    break;
-                case 'outOfStock':
-                    $query->where('stockQuantity', '=', 0);
-                    break;
-            }
-        }
-
-        // Decide on the logic for $showWarning based on your application's needs
-        $showWarning = ($filter == 'lowStock' || $filter == 'outOfStock');
-
-        $stockItems = $query->get();
-
-        return view('admin.dashboard', compact('stockItems', 'searchTerm', 'filter', 'showWarning'));
+        return view('admin.dashboard', compact('orders', 'outgoingOrdersSummary', 'incomingOrdersSummary', 'filter'));
     }
 }

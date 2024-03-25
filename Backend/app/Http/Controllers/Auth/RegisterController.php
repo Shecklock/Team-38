@@ -48,11 +48,23 @@ class RegisterController extends Controller
 
     // Conditional rule for the registration code
     if (!empty($data['registration_code'])) {
-        $rules['registration_code'] = ['string', 'exists:registration_codes,code'];
+        $rules['registration_code'] = [
+            'string',
+            function ($attribute, $value, $fail) use ($data) {  // Use the 'use' keyword to inherit variables from the parent scope
+                $registrationCode = RegistrationCode::where('code', $value)
+                                                    ->where('expires_at', '>', now())
+                                                    ->where('used', false)
+                                                    ->first();
+                if (!$registrationCode) {
+                    $fail('The ' . $attribute . ' is invalid.');
+                }
+            }
+        ];
     }
 
     return Validator::make($data, $rules);
 }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -92,11 +104,11 @@ class RegisterController extends Controller
         ]);
     
         // Create a record in the customers table
-        $customer = new Customer();
-        $customer->FirstName = $user->name;
-        $customer->Email = $user->email;
+        $user = new Customer();
+        $user->FirstName = $user->name;
+        $user->Email = $user->email;
         // No need to set LastName, it's handled by the model
-        $customer->save();
+        $user->save();
     
         return $user;
     }

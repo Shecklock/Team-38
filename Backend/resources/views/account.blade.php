@@ -14,15 +14,28 @@
     <h1>Account Information</h1>
     <div class="account-details">
         <p><strong>User ID:</strong> {{ Auth::user()->id }}</p>
-        <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
-        <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-        <p><strong>Address:</strong> {{ Auth::user()->address ?? 'Not provided' }}</p>
-        <p><strong>Phone Number:</strong> {{ Auth::user()->phone ?? 'Not provided' }}</p>
+        <p><strong>User Name:</strong> {{ Auth::user()->name }}</p>
+        @if (Auth::user()->address)
+            <p><strong>Address:</strong> {{ Auth::user()->address->address }}</p>
+            <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
+            <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
+            <p><strong>Postcode:</strong> {{ Auth::user()->address->postcode }}</p>
+            <p><strong>Country:</strong> {{ Auth::user()->address->country }}</p>
+        @else
+            <p><strong>Address Information:</strong> Not provided</p>
+        @endif
+
+        @if (Auth::user()->address)
+            <p><strong>Phone Number:</strong> {{ Auth::user()->phone->phone_number }}</p>
+        @else
+            <p><strong>Phone Information:</strong> Not provided</p>
+        @endif
     </div>
 
     <div class="account-button-container">
         <button class="account-button" onclick="window.location.href='{{ route('profile.show') }}'">Edit Account Information</button>
-        <button class="account-button" onclick="window.location.href='{{ route('order.track', ['customer_id' => Auth::id()]) }}'">Track Orders</button>
+        <button class="account-button" onclick="window.location.href='{{ route('order.track', ['user_id' => Auth::id()]) }}'">Track Orders</button>
+        <button class="account-button" onclick="window.location.href='{{ route('change_password') }}'">Change Password</button>
     </div>
 </div>
 

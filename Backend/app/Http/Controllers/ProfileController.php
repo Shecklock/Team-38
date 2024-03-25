@@ -4,34 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Customer;
 
 class ProfileController extends Controller
 {
-    public function show()
-    {
-        // Retrieve the currently authenticated user
-        $user = Auth::user();
+   public function show()
+{
+    $user = Auth::user();
+    $user = Auth::user()->load('address', 'phone');
 
-        // Retrieve the associated customer record based on the user's email
-        $customer = Customer::where('Email', $user->email)->first();
+    // Eager load the address and phone relationships
+    $user->load('address', 'phone');
 
-        // Pass the user and customer data to the view
-        return view('customer', compact('user', 'customer'));
-    }
+    return view('customer', compact('user'));
+}
+
+
 
     public function update(Request $request)
     {
-        // Retrieve the currently authenticated user
         $user = Auth::user();
 
-        // Retrieve the associated customer record based on the user's email
-        $customer = Customer::where('Email', $user->email)->first();
+        // Validate the request data
+        $request->validate([
+            // Include validation rules for the user, address, and phone data
+            'name' => 'required|string',
+            // Add more fields as necessary
+        ]);
 
-        // Update customer information
-        $customer->update($request->all());
+        // Update the user's information
+        $user->update($request->only(['name', /* other user fields */]));
 
-        // Redirect back to the profile page
-        return redirect()->route('profile.show');
+        // Update the user's address
+        $user->address()->updateOrCreate(
+            [],
+            $request->only(['phone', 'address', 'city', 'state', 'postcode', 'country'])
+        );
+
+        // Update the user's phone
+        $user->phone()->updateOrCreate(
+            [],
+            $request->only(['phone_number'])
+        );
+
+        return redirect()->route('profile.show')->with('success', 'Profile updated successfully.');
     }
 }

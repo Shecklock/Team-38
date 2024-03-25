@@ -20,7 +20,7 @@
             
         </p>
         <p>
-            <a href="{{ route('about_us') }}">About us </a><br>
+             <a href="{{ route('about_us') }}">About us</a><br>
             Address: Aston St, Birmingham B4 7ET
         </p>
         <p>

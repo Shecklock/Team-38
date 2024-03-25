@@ -1,19 +1,18 @@
 @extends('layouts.app')
-
 @section('content')
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <title> Update Password </title>
-    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/about2.css') }}">
 </head>
 <body>
     <main>
         <div class="login-page">
-            <form class="form-container" method="POST" action="./update-password">
+            <form class="form-container" method="POST" action="{{ route('forgot_update_password') }}">
                 @csrf
-                <h1> Update Password </h1>
+                <h1> Forgot Password </h1>
                 <div class="input-control">
                     <p> Enter your email : </p>
                     <input id="email" type="email" class="form-control" name="email" required>

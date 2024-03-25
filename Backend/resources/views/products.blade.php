@@ -35,6 +35,12 @@
         </div>
     </section> --}}
 
+<form action="{{ route('filter.by.price') }}" method="GET" class="filter-form">
+    <input type="text" name="min_price" placeholder="Min Price" class="filter-input">
+    <input type="text" name="max_price" placeholder="Max Price" class="filter-input">
+    <button type="submit" class="filter-button">Filter</button>
+</form>
+
     <section class="pro">
         <h1 class="pheading">Our products</h1>
         <div class="products">
@@ -42,7 +48,7 @@
             @foreach($products as $product)
                 <div class="card">
                     <a href="{{ route('productshow', ['product' => $product] )}}">
-                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg" height="100px">
+                        <img src="{{ asset('uploads/product/' . $product->image) }}" alt="" class="productImg">
                         </a>                    
                     <div class="description">{{ $product->Description }}</div>
                     <div class="title">{{ $product->ProductName }}</div>

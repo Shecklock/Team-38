@@ -13,7 +13,6 @@ return new class extends Migration
             $table->string('ProductName');
             $table->longText('Description');
             $table->double('Price');
-            $table->integer('StockQuantity')->default(0); // Removed quotes from default value
             $table->string('image')->nullable();
             $table->unsignedInteger('CategoryID')->nullable(); // Changed to unsignedInteger
             $table->foreign('CategoryID')->references('CategoryID')->on('categories');

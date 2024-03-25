@@ -1,0 +1,99 @@
+/* Base and Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f2f2f2; /* Light background for a clean look */
+}
+
+/* Basket Container Styles */
+.OrderDetails {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.OrderDetails th {
+	margin: 30px ;
+	padding: 40px;
+
+}
+
+.OrderDetails h3{
+	text-align: center;
+
+}
+
+img {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px; /* Slightly rounded corners for images */
+	margin-left 30px;
+}
+
+
+/* Update Quantity Button */
+.btn_basket, .update-quantity-button {
+    background-color: #4a4d4a; /* Consistent with your theme's button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Allows for margin adjustments */
+    font-size: 14px; /* Readable font size */
+}
+
+.btn_basket:hover, .update-quantity-button:hover {
+    background-color: #000000; /* Darker on hover for interaction feedback */
+}
+
+
+
+/* Adjusting the container and form sizes and alignments */
+.container td{
+    text-align: center; /* Center-align the content for better focus */
+    padding-right: 3px !important;
+    font-size: 14px;
+   
+}
+
+.total p{
+text-align: center;
+padding-top: 30px;
+font-size: 20px !important;
+font-weight: bold;
+
+}
+
+.back-button, .edit-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+	
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+.button-container{
+	text-align: right;
+}
+
+.edit-button-container{
+	text-align: left !important;
+}

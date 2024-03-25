@@ -34,15 +34,11 @@
 <!-- Rest of your existing content -->
 
 <div class="navBottom">
-    <a href="{{ url('/search?search=Trainers') }}"><h3 class="menuItem">Trainers</h3></a>
-    <a href="{{ url('/search?search=T-shirts') }}"><h3 class="menuItem">T-shirts</h3></a>
-    <a href="{{ url('/search?search=Tracksuits') }}"><h3 class="menuItem">Tracksuits</h3></a>
-    <a href="{{ url('/search?search=Jackets') }}"><h3 class="menuItem">Jackets</h3></a>
-	<a href="{{ url('/search?search=Shoes') }}"><h3 class="menuItem">Shoes</h3></a>
-	    <a href="{{ url('/search?search=Bags') }}"><h3 class="menuItem">Bags</h3></a>
-
-
+	@foreach ($categories as $category)
+		<a href="{{ url('/search?search=' . $category->CategoryName) }}"><h3 class="menuItem">{{ $category->CategoryName }}</h3></a>
+	@endforeach
 </div>
+
 
 
 
@@ -62,15 +58,12 @@
     });
 </script>
 
-<form action="{{ route('filter.by.price') }}" method="GET" class="filter-form">
-    <input type="text" name="min_price" placeholder="Min Price" class="filter-input">
-    <input type="text" name="max_price" placeholder="Max Price" class="filter-input">
-    <button type="submit" class="filter-button">Filter</button>
-</form>
-
     
     <div class="product" id="product">
         @foreach($products as $product)
+			@if ($loop->iteration >5)
+				@break
+			@else
             <div class="productItem">
                 <div class="productDetails">
                     <a href="{{ route('productshow', ['product' => $product] )}}">
@@ -80,10 +73,11 @@
                     <h2 class="productPrice">£{{ $product->Price }}</h2>
                     <p class="productDesc">{{ $product->Description }}</p>
 
-                    <a href="{{ route('add-to-basket', ['productId' => $product->ProductID]) }}" class="productButton">BUY NOW!</a>
+                    <a href="{{ route('productshow', ['product' => $product] )}}" class="productButton">BUY NOW!</a>
 
                 </div>
             </div>
+			@endif
         @endforeach
     </div>
 

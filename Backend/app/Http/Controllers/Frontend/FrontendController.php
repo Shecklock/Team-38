@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductSize;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller 

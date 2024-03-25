@@ -1,345 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
-}
-
-body,
-input,
-textarea {
-  font-family: "Montserrat", sans-serif;
-}
-
-
-.About-Us{
-    color:black;
-    margin-top:25px;
-    padding: 150px;
-    padding-top: 40px;
-    padding-bottom: 250px;
-    text-align:center;
-    background-color:white;
-    box-shadow: 0 0 10px 1px #086bef;
-    border-radius: 10px;
-    align-items: center;
-    flex-wrap:wrap;
-    flex-direction: column;
-    margin: auto;
-    width:70%;
-    height:90px;
-    font-family: "Montserrat", sans-serif;
-}
-.About-Us h3{
-    font-weight: 600;
-}
-.team-section{
-  width:78%;
-  background-color:white;
-  box-shadow: 0 0 10px 1px #086bef;
-  border-radius: 10px;
-  height:500px;
-  margin-bottom:20px;
-  margin-left: 135px;
-  margin-top: 0px;
-}
-
-.team-section .container{
-  width:80%;
-  margin:auto;
-}
-.team-section .container .row{
-  width:50%;
-  margin:auto;
-}
-
-.team-section .container .row .Our-team{
-  text-align: center;
-  margin-top: 80px;
-}
-.team-section .container .row .Our-team h1{
-  font-family: "Montserrat", sans-serif;
-  font-size:35px;
-  padding-top: 30px;
-  
-}
-.team-section .container .team-profiles{
-  width:100%;
-  display:grid;
-  grid-template-columns: repeat(3,2fr);
-  grid-gap: 30px;
-  margin-top: 35px;
-
-}
-.team-section .container .team-profiles .team-role{
-  width:100%;
-  background-color: white;
-  display:flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding:20px;
-}
-
-.team-section .container .team-profiles .team-role .team-images img{
-  height:200px;
-  width:200px;
-}
-.team-section .container .team-profiles .team-role .role-explain{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:14px;
-  width:100%;
-
-}
-.team-section .container .team-profiles .team-role .role-explain1{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:14px;
-  width:100%;
-  margin-bottom: 15px;
-}
-.team-section .container .team-profiles .team-role .role-explain1 h4{
-
-  font-weight: 500;
-}
-
-.team-section .container .team-profiles .team-role .role-explain h4{
- 
-  font-weight: 500;
-}
-
-.Community{
-  width:90%;
-  background-color:white;
-  box-shadow: 0 0 10px 1px #086bef;
-  border-radius: 10px;
-  height:550px;
-  margin-bottom:20px;
-  margin-left: 60px;
-  margin-top: 80px;
-}
-
-.Community .container2{
-  width:80%;
-  margin:auto;
-}
-.Community .container2 .row2{
-  width:100%;
-  margin:auto;
-}
-
-.Community .container2 .row2 .News{
-  text-align: center;
-  margin-top: 30px;
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  flex-direction: column-reverse;
-}
-.Community .container2 .row2 .News h1{
-  font-family: "Montserrat", sans-serif;
-  font-size:23px;
-  padding-top: 30px;
-  text-align: center;
-  align-items:start;
-  
-}
-.Community .container2 .com-image{
-  width:100%;
-  display:grid;
-  grid-template-columns: repeat(3,2fr);
-  grid-gap: 30px;
-  margin-top: 21px;
-
-}
-.Community .container2 .com-image .Community-role{
-  width:100%;
-  background-color: white;
-  display:flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding:20px;
-}
-
-.Community .container2 .com-image .Community-role .community-photo img{
-  height:200px;
-  width:200px;
-}
-.Community .container2 .com-image .Community-role .activities{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:14px;
-  width:100%;
-  margin-top:6px;
-}
-
-.Community .container2 .com-image .Community-role .activities h3{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:17px;
-  width:100%;
-  margin-bottom: 3px;
-}
-
-.Community .container2 .com-image .Community-role .activities1{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:14px;
-  width:100%;
-  margin-bottom: 3px;
-  margin-top:10px;
-}
-
-.Community .container2 .com-image .Community-role .activities1 h3{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:17px;
-  width:100%;
-  margin-bottom: 3px;
-}
-a.link{
-  color:black;
-  text-decoration: none; /* Removes underline */
-}
-
-a.link:hover {
-  color:#4B9CD3; /* Change color for visited links */
-}
-.Community .container2 .com-image .Community-role .activities1 h4{
-  
-  font-weight: 500;
-}
-
-.Community .container2 .com-image .Community-role .activities h4{
- 
-  font-weight: 500;
-}
-
-.container{
-  width:80%;
-  margin:50px auto;
-  font-family: "Montserrat", sans-serif;
-
-}
-
-.contact-box{
-  background-color:white;
-  display:flex;
-  box-shadow: 0 0 10px 1px #086bef;
-  border-radius: 10px;
-}
-.contact-form{
-  flex-basis: 60%;
-  padding:40px 60px;
-
-}
-.company-info{
-  flex-basis: 40%;
-  padding:40px;
-  background-color: #fafafa;
-  color:black;
-  border-radius: 10px;
-  box-shadow: 0 1 10px 1px #086bef;
-}
-.container h1{
-  margin-bottom:20px;
-}
-.container p{
-  margin-bottom:40px;
-}
-
-.input-info{
-  display:flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.input-info .inputs{
-  flex-basis:45%;
-}
-
-input{
-  width:100%;
-  border:1px solid black;
-  outline:none;
-  padding-bottom: 5px;
-  border-radius: 10px;
-}
-textarea{
-  width:100%;
-  border:1px solid black;
-  border-radius: 10px;
-  outline:none;
-  padding: 10px;
-  box-sizing: border-box;
-}
-label{
-  margin-bottom: 6px;
-  display:block;
-  color:black;
-}
-button{
-  background:#086bef;
-  color:white;
-  font-weight: 700;
-  border:none;
-  width:70px;
-  margin-top:20px;
-  border-radius: 30px;
-  height:25px;
-}
-.contact-form h3{
-  color:black;
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-size:20px
-}
-.company-info h3{
-  color:black;
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-size:20px
-}
-tr td:first-child{
-  padding-right:20px;
-
-}
-
-tr td{
-  padding-top: 40px;
-}
-
-.company-questions h3{
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-size:20px
-}
-.company-answers{
-  flex-basis: 100%;
-  padding:40px;
-  background-color: #fafafa;
-  color:black;
-  border-radius: 10px;
-}
-.company-answers h3{
-  color:black;
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-size:20px
-}
-
-.company-answers{
-  color:rgb(74, 73, 73);
-  font-size: 13px; 
-}
-
-@media only screen and (max-width: 600px) {
-  /* Styles for screens smaller than 600px */
-  * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     
   }
   
@@ -353,104 +15,623 @@ tr td{
     padding: 10px 10%;
     margin-bottom: 50px;
     background: #F5F5F5;
-    width: fit-content;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 200px;
+  }
+  
+  nav ul li input[type="text"] {
+    padding: 8px;
+    width: auto;
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    
+    transition: 0.3s;
+  }
+  
+  nav ul li input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 4px #086bef;
+  }
+  
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: auto;
+    background-color: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  nav ul li input[type="text"] {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    background-color: none;
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #086bef;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
   }
   
   .About-Us{
-    color:black;
-    padding-top: 9px;
-    padding-bottom: 250px;
-    text-align:center;
+      color:black;
+      margin-top:25px;
+      padding: 150px;
+      padding-top: 40px;
+      padding-bottom: 250px;
+      text-align:center;
+      background-color:white;
+      box-shadow: 0 0 10px 1px #086bef;
+      border-radius: 10px;
+      align-items: center;
+      flex-wrap:wrap;
+      flex-direction: column;
+      margin: auto;
+      width:70%;
+      height:90px;
+      font-family: "Montserrat", sans-serif;
+  }
+  .About-Us h3{
+      font-weight: 600;
+  }
+  .team-section{
+    width:78%;
     background-color:white;
     box-shadow: 0 0 10px 1px #086bef;
     border-radius: 10px;
-    flex-wrap:wrap;
-    margin: auto;
-    width:95%;
-    height:410px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 8px;
-    font-weight: 600;
-}
-.About-Us h3{
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.team-section{
-  width:98%;
-  background-color:white;
-  box-shadow: 0 0 10px 1px #086bef;
-  border-radius: 10px;
-  height:250px;
-  margin-bottom:10px;
-  margin-left: 9px;
-  margin-top: 0px;
-}
-
-.team-section .container{
-  width:100%;
-  margin:auto;
-}
-.team-section .container .row{
-  width:50%;
-  margin:auto;
-}
-
-.team-section .container .row .Our-team{
-  text-align: center;
-  margin-top: 80px;
-}
-.team-section .container .row .Our-team h1{
-  font-family: "Montserrat", sans-serif;
-  font-size:20px;
-  padding-top: 20px;
+    height:500px;
+    margin-bottom:20px;
+    margin-left: 135px;
+    margin-top: 0px;
+  }
   
-}
-.team-section .container .team-profiles{
-  width:100%;
-  display:grid;
-  grid-template-columns: repeat(3,2fr);
-  grid-gap: 30px;
-  margin-top: 35px;
+  .team-section .container{
+    width:80%;
+    margin:auto;
+  }
+  .team-section .container .row{
+    width:50%;
+    margin:auto;
+  }
+  
+  .team-section .container .row .Our-team{
+    text-align: center;
+    margin-top: 80px;
+  }
+  .team-section .container .row .Our-team h1{
+    font-family: "Montserrat", sans-serif;
+    font-size:35px;
+    padding-top: 30px;
+    
+  }
+  .team-section .container .team-profiles{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+    margin-top: 35px;
+  
+  }
+  .team-section .container .team-profiles .team-role{
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+  }
+  
+  .team-section .container .team-profiles .team-role .team-images img{
+    height:200px;
+    width:200px;
+  }
+  .team-section .container .team-profiles .team-role .role-explain{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+  
+  }
+  .team-section .container .team-profiles .team-role .role-explain1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+    margin-bottom: 15px;
+  }
+  .team-section .container .team-profiles .team-role .role-explain1 h4{
+  
+    font-weight: 500;
+  }
+  
+  .team-section .container .team-profiles .team-role .role-explain h4{
+   
+    font-weight: 500;
+  }
+  
+  .Community{
+    width:90%;
+    background-color:white;
+    box-shadow: 0 0 10px 1px #086bef;
+    border-radius: 10px;
+    height:550px;
+    margin-bottom:20px;
+    margin-left: 60px;
+    margin-top: 80px;
+  }
+  
+  .Community .container2{
+    width:80%;
+    margin:auto;
+  }
+  .Community .container2 .row2{
+    width:100%;
+    margin:auto;
+  }
+  
+  .Community .container2 .row2 .News{
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .Community .container2 .row2 .News h1{
+    font-family: "Montserrat", sans-serif;
+    font-size:23px;
+    padding-top: 30px;
+    text-align: center;
+    align-items:start;
+    
+  }
+  .Community .container2 .com-image{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+    margin-top: 21px;
+  
+  }
+  .Community .container2 .com-image .Community-role{
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+  }
+  
+  .Community .container2 .com-image .Community-role .community-photo img{
+    height:200px;
+    width:200px;
+  }
+  .Community .container2 .com-image .Community-role .activities{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+    margin-top:6px;
+  }
+  
+  .Community .container2 .com-image .Community-role .activities h3{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:17px;
+    width:100%;
+    margin-bottom: 3px;
+  }
+  
+  .Community .container2 .com-image .Community-role .activities1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:14px;
+    width:100%;
+    margin-bottom: 3px;
+    margin-top:10px;
+  }
+  
+  .Community .container2 .com-image .Community-role .activities1 h3{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:17px;
+    width:100%;
+    margin-bottom: 3px;
+  }
+  a.link{
+    color:black;
+    text-decoration: none; /* Removes underline */
+  }
+  
+  a.link:hover {
+    color:#4B9CD3; /* Change color for visited links */
+  }
+  .Community .container2 .com-image .Community-role .activities1 h4{
+    
+    font-weight: 500;
+  }
+  
+  .Community .container2 .com-image .Community-role .activities h4{
+   
+    font-weight: 500;
+  }
+  
+  footer{
+    margin:auto;
+    padding-left: 40px;
+    background-color: #F5F5F5;
+    
+    display: flex;
+    justify-content: space-evenly;
+    height:90px;
+    color:black;
+    align-items: center;
+    
+  }
+  
+  footer p{
+    text-decoration: none;
+    font-size: 12px;
+    align-items: center;
+  }
+  footer a {
+    font-size: 12px;
+    color:black;
+    text-decoration: underline;
+    align-items: center;
+  
+  }
+  .container{
+    width:80%;
+    margin:50px auto;
+    font-family: "Montserrat", sans-serif;
+  
+  }
+  
+  .contact-box{
+    background-color:white;
+    display:flex;
+    box-shadow: 0 0 10px 1px #086bef;
+    border-radius: 10px;
+  }
+  .contact-form{
+    flex-basis: 60%;
+    padding:40px 60px;
+  
+  }
+  .company-info{
+    flex-basis: 40%;
+    padding:40px;
+    background-color: #fafafa;
+    color:black;
+    border-radius: 10px;
+    box-shadow: 0 1 10px 1px #086bef;
+  }
+  .container h1{
+    margin-bottom:20px;
+  }
+  .container p{
+    margin-bottom:40px;
+  }
+  
+  .input-info{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .input-info .inputs{
+    flex-basis:45%;
+  }
+  
+  input{
+    width:100%;
+    border:1px solid black;
+    outline:none;
+    padding-bottom: 5px;
+    border-radius: 10px;
+  }
+  textarea{
+    width:100%;
+    border:1px solid black;
+    border-radius: 10px;
+    outline:none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-}
-.team-section .container .team-profiles .team-role{
-  width:100%;
-  background-color: white;
-  display:flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding:20px;
-}
+  label{
+    margin-bottom: 6px;
+    display:block;
+    color:black;
+  }
+  button{
+    background:#086bef;
+    color:white;
+    font-weight: 700;
+    border:none;
+    width:100px;
+    margin-top:20px;
+    border-radius: 30px;
+    height:40px;
+  }
 
-.team-section .container .team-profiles .team-role .team-images img{
-  height:50px;
-  width:50px;
-}
-.team-section .container .team-profiles .team-role .role-explain{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:8px;
-  width:100%;
-
-}
-.team-section .container .team-profiles .team-role .role-explain1{
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size:8px;
-  width:100%;
-  margin-bottom: 12px;
-}
-.team-section .container .team-profiles .team-role .role-explain1 h4{
-
-  font-weight: 500;
-}
-
-.team-section .container .team-profiles .team-role .role-explain h4{
  
-  font-weight: 500;
-}
-
-}
+  .contact-form h3{
+    color:black;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+  }
+  .company-info h3{
+    color:black;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+  }
+  tr td:first-child{
+    padding-right:20px;
+  
+  }
+  
+  tr td{
+    padding-top: 40px;
+  }
+  
+  .company-questions h3{
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+  }
+  .company-answers{
+    flex-basis: 100%;
+    padding:40px;
+    background-color: #fafafa;
+    color:black;
+    border-radius: 10px;
+  }
+  .company-answers h3{
+    color:black;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size:20px
+  }
+  
+  .company-answers{
+    color:rgb(74, 73, 73);
+    font-size: 13px; 
+  }
+  
+  @media only screen and (max-width: 600px) {
+    /* Styles for screens smaller than 600px */
+    * {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+      
+    }
+    
+    body,
+    input,
+    textarea {
+      font-family: "Montserrat", sans-serif;
+    }
+    
+    .container1{
+      padding: 10px 10%;
+      margin-bottom: 50px;
+      background: #F5F5F5;
+      width: fit-content;
+    }
+    
+    .logo {
+      width: 90px;
+    }
+    
+    nav ul li input[type="text"] {
+      padding: 3px;
+      width: 90px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 8px;
+      
+      transition: 0.3s;
+    }
+    
+    nav ul li input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 0 4px #086bef;
+    }
+    
+  
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: auto;
+      background-color: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    nav ul li input[type="text"] {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 10px 10px;
+      background-color: none;
+    }
+    
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      position: relative;
+    }
+    
+    nav ul li a::after {
+      content: '';
+      width: 0;
+      height: 3px;
+      background: #086bef;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.2s;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+  
+    .About-Us{
+      color:black;
+      padding-top: 9px;
+      padding-bottom: 250px;
+      text-align:center;
+      background-color:white;
+      box-shadow: 0 0 10px 1px #086bef;
+      border-radius: 10px;
+      flex-wrap:wrap;
+      margin: auto;
+      width:95%;
+      height:410px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+  }
+  .About-Us h3{
+      font-weight: 800;
+      margin-bottom: 5px;
+  }
+  
+  .team-section{
+    width:98%;
+    background-color:white;
+    box-shadow: 0 0 10px 1px #086bef;
+    border-radius: 10px;
+    height:250px;
+    margin-bottom:10px;
+    margin-left: 9px;
+    margin-top: 0px;
+  }
+  
+  .team-section .container{
+    width:100%;
+    margin:auto;
+  }
+  .team-section .container .row{
+    width:50%;
+    margin:auto;
+  }
+  
+  .team-section .container .row .Our-team{
+    text-align: center;
+    margin-top: 80px;
+  }
+  .team-section .container .row .Our-team h1{
+    font-family: "Montserrat", sans-serif;
+    font-size:20px;
+    padding-top: 20px;
+    
+  }
+  .team-section .container .team-profiles{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+    margin-top: 35px;
+  
+  }
+  .team-section .container .team-profiles .team-role{
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+  }
+  
+  .team-section .container .team-profiles .team-role .team-images img{
+    height:50px;
+    width:50px;
+  }
+  .team-section .container .team-profiles .team-role .role-explain{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:8px;
+    width:100%;
+  
+  }
+  .team-section .container .team-profiles .team-role .role-explain1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size:8px;
+    width:100%;
+    margin-bottom: 12px;
+  }
+  .team-section .container .team-profiles .team-role .role-explain1 h4{
+  
+    font-weight: 500;
+  }
+  
+  .team-section .container .team-profiles .team-role .role-explain h4{
+   
+    font-weight: 500;
+  }
+  
+  }

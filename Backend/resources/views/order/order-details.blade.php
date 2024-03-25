@@ -21,6 +21,7 @@
             <thead>
                 <tr>
                     <th>Product Name</th>
+        			<th>Size</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
@@ -28,27 +29,40 @@
             </thead>
             <tbody>
                 @php $totalPrice = 0; @endphp
+             
                 @foreach($order->products as $product)
+                    
                     @php
                         $subtotal = $product->pivot->Quantity * $product->Price;
                         $totalPrice += $subtotal;
+                        $uniqueKey = $product->id . '_' . $product->pivot->size_id;
                     @endphp
                     <tr>
                         <td>{{ $product->ProductName }}</td>
-                        <td>${{ number_format($product->Price, 2) }}</td>
+                    	<td>{{ $sizes[$uniqueKey] ?? 'Size Not Specified' }}</td>
+                        <td>£{{ number_format($product->Price, 2) }}</td>
                         <td>{{ $product->pivot->Quantity }}</td>
-                        <td>${{ number_format($subtotal, 2) }}</td>
+                        <td>£{{ number_format($subtotal, 2) }}</td>
                     </tr>
                 @endforeach
             </tbody>
             <tfoot>
                 <tr>
-                    <th colspan="3" style="text-align:right">Total Price:</th>
-                    <th>${{ number_format($totalPrice, 2) }}</th>
+                    <th colspan="4" style="text-align:right">Total Price:</th>
+                    <th>£{{ number_format($totalPrice, 2) }}</th>
                 </tr>
+                    @if($order->Status == 'Pending')
+                    <a href="{{ route('pay.options', ['orderId' => $order->OrderID]) }}" class="btn btn-primary">Pay Now</a>
+                    <a href="{{ route('order.cancel', ['orderId' => $order->OrderID]) }}" class="btn btn-primary" style="margin-left: 10px;">Cancel order</a>
+                    @elseif($order->Status == 'Processing')
+					<a href="{{ route('order.cancel', ['orderId' => $order->OrderID]) }}" class="btn btn-primary">Cancel order</a>
+                    @elseif($order->Status == 'Delivered')
+                    	<a href="{{ route('order.refund', ['orderId' => $order->OrderID]) }}"class="btn btn-primary">Return order</a>
+                    @endif
             </tfoot>
         </table>
+                    
     </div>
 </div>
-                    <a href="{{ route('order.track', ['customer_id' => Auth::user()->id]) }}" class="btn btn-primary">Back to Orders</a>
+                    <a href="{{ route('order.track', ['user_id' => Auth::user()->id]) }}" class="btn btn-primary">Back to Orders</a>
 @include('footer')

@@ -11,40 +11,40 @@
     @include('header')
 
     <div class="edit-form-container">
-<div class="back-button-container">
-<button type="button" class="edit-button" onclick="window.location.href='{{ route('profile.show') }}'">Back to Account</button>
-</div>        
-<h2>Edit Your Information</h2>
+        <div class="back-button-container">
+            <button type="button" class="edit-button" onclick="window.location.href='{{ route('profile.show') }}'">Back to Account</button>
+        </div>        
+        <h2>Edit Your Information</h2>
         <form id="editForm" action="{{ route('profile.update') }}" method="POST">
             @csrf
             @method('PUT')
             
             <div class="edit-form-details">
-            <p><strong>Name:</strong> 
-                <input type="text" name="FirstName" value="{{ $customer->FirstName }}" readonly>
-            </p>
-            <p><strong>Email:</strong> 
-                <input type="email" name="Email" value="{{ $customer->Email }}" readonly>
-            </p>
-            <p><strong>Phone:</strong> 
-                <input type="text" name="Phone" value="{{ $customer->Phone }}">
-            </p>
-            <p><strong>Address:</strong> 
-                <input type="text" name="Address" value="{{ $customer->Address }}">
-            </p>
-            <p><strong>City:</strong> 
-                <input type="text" name="City" value="{{ $customer->City }}">
-            </p>
-            <p><strong>State:</strong> 
-                <input type="text" name="State" value="{{ $customer->State }}">
-            </p>
-            <p><strong>Postcode:</strong> 
-                <input type="text" name="Postcode" value="{{ $customer->Postcode }}">
-            </p>
-            <p><strong>Country:</strong> 
-                <input type="text" name="Country" value="{{ $customer->Country }}">
-            </p>
-        </div>
+                <p><strong>Name:</strong> 
+                    <input type="text" name="name" value="{{ $user->name }}">
+                </p>
+                <p><strong>Email:</strong> 
+                    <input type="email" name="email" value="{{ $user->email }}" readonly>
+                </p>
+                <p><strong>Phone Number:</strong> 
+                    <input type="text" name="phone_number" value="{{ $user->phone->phone_number ?? '' }}">
+                </p>
+                <p><strong>Address:</strong> 
+                    <input type="text" name="address" value="{{ $user->address->address ?? '' }}">
+                </p>
+                <p><strong>City:</strong> 
+                    <input type="text" name="city" value="{{ $user->address->city ?? '' }}">
+                </p>
+                <p><strong>State:</strong> 
+                    <input type="text" name="state" value="{{ $user->address->state ?? '' }}">
+                </p>
+                <p><strong>Postcode:</strong> 
+                    <input type="text" name="postcode" value="{{ $user->address->postcode ?? '' }}">
+                </p>
+                <p><strong>Country:</strong> 
+                    <input type="text" name="country" value="{{ $user->address->country ?? '' }}">
+                </p>
+            </div>
 
             <div class="button-container">
                 <button type="submit" class="edit-button">Save</button>
@@ -59,9 +59,13 @@
     <script>
         function clearEditableFields() {
             var form = document.getElementById("editForm");
-            form['Phone'].value = '';
-            form['Address'].value = '';
-            // Clear other fields as necessary
+            form['phone_number'].value = '';
+            form['address'].value = '';
+            // Add other fields to clear as necessary
+            form['city'].value = '';
+            form['state'].value = '';
+            form['postcode'].value = '';
+            form['country'].value = '';
         }
     </script>
 </body>
